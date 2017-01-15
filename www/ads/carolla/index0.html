@@ -1,0 +1,148 @@
+
+<header><!-- allways follow B.E.M. naming -->
+  <script src="//cdn.jsdelivr.net/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+    var images = new Array()
+    function preload() {
+    	for (i = 0; i < preload.arguments.length; i++) {
+    		images[i] = new Image()
+    		images[i].src = preload.arguments[i]
+    	}
+    }
+    preload(
+    	'right.png',
+    	'res.jpg'
+    )
+    
+  </script>
+  <style>
+    * {
+    	vertical-align: baseline;
+    	font-weight: inherit;
+    	font-family: inherit;
+    	font-style: inherit;
+    	font-size: 100%;
+    	border: 0 none;
+    	outline: 0;
+    	padding: 0;
+    	margin: 0;
+    }
+    #adam {
+    	width: 300px;
+    	height: 250px;
+    	overflow: hidden;
+    }
+    #adam #under {
+    	width: 300px;
+    	height: 250px;
+    	background-image: url('res.jpg');
+    	background-position: -8px 0;
+    }
+    #adam #spil {
+    	background-image: url('spil.png');
+    	background-repeat: repeat;
+    	top: 10;
+    	width: 200%;
+    	height: 80;
+    }
+    #adam .headline {
+    	font-size: 38;
+    	text-shadow: 1px 1px white;
+    	line-height: 38px;
+    	z-index: 2;
+    	position: absolute;
+    	top: 10;
+    	left: -5;
+    	color: #72c5f7;
+    	font-style: italic;
+    	width: 300px;
+    	text-align: center;
+    }
+    #adam #chick {
+    	height: 165;
+    	width: auto;
+    	position: absolute;
+    	top: 85;
+    	left: 20;
+    	box-shadow: none;
+    	z-index: 10;
+    }
+    #adam #dude {
+    	height: 185;
+    	width: auto;
+    	position: absolute;
+    	top: 70;
+    	right: 15;
+    	box-shadow: none;
+    	z-index: 8;
+    }
+    
+  </style>
+</header>
+<body>
+  <div id="adam">
+    <div id="under">
+      <div id="spil"></div>
+      <div class="headline">
+        Endless Rant IPA<br>
+        Get it on!
+        
+      </div><img id="chick" src="chick.png"/><img id="dude" src="right.png"/>
+    </div>
+    <script>
+      var width = 200, speed = 15, //pixels per second
+      	duration = width / speed
+      var leftPosition = - width + (speed / 60) //adjust the end position assuming 60fps - per Jack of gsap
+      var rightPosition =  width - (speed / 60)
+      tr = TweenMax.to($('#spil'), duration, {css: { backgroundPosition:rightPosition + "px 0"}, ease:Linear.easeNone, repeat:-1})
+      tl = TweenMax.to($('#spil'), duration, {css: { backgroundPosition:leftPosition +  "px 0"}, ease:Linear.easeNone, repeat:-1})
+      tr.pause()
+      tl.play()
+      
+      $under =$('#under')
+      var dir = - 1
+      function left() {
+      	if(dir == -1) return
+      	dir = -1
+      	TweenLite.to($('#chick'), .2, {rotationY: - 20.1, ease:Linear.easeNone} )
+      	TweenLite.to($('#dude'),  .4, {rotationY:    0.0, ease:Linear.easeNone} )
+      	TweenMax.to($under,  .3, {css: { backgroundPosition:"-7px 0"}, ease:Linear.easeNone})
+      
+      	tr.pause()
+      	tl.play()
+      	TweenMax.fromTo($('#spil'), 3, {opacity:0.01},{opacity: 1})
+      }
+      function right() {
+      	if(dir == 1) return
+      	dir = 1
+      	TweenLite.to($('#dude'),  .2, {rotationY:  15.1, ease:Linear.easeNone} )
+      	TweenLite.to($('#chick'), .4, {rotationY:   0.0, ease:Linear.easeNone} )
+      	TweenMax.to($under,  .3, {css: { backgroundPosition:"-9px 0"}, ease:Linear.easeNone})
+      
+      	tl.pause()
+      	tr.play()
+      	TweenMax.fromTo($('#spil'), 3, {opacity:0.01},{opacity: 1})
+      }
+      
+      var pos   = $under.offset().left
+      $under.on('mousemove',function(e) {
+      	var ax = e.clientX - pos - 150
+      	if(ax > 0) right()
+      	if(ax < 0) left()
+      })
+      function onTilt(e) {
+      	var rot = e.beta //gamma
+      	console.log(rot)
+      	if(rot < 40) left()
+      	else right()
+      }
+      
+      window.addEventListener("deviceorientation", onTilt)
+      
+      console.log('loaded')
+      TweenMax.from($('#adam'),.15,{scale:.95},.1)
+      TweenMax.from($('.headline'), .8, {opacity:0.01, scale: 0.3, ease: Back.easeOut }, .4)
+    </script>
+  </div>
+</body>

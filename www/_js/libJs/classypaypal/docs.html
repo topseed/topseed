@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8" />
+        <title>ClassyPaypal jQuery plugin | vox.SPACE</title>
+        <link rel="stylesheet" href="css/documentation.css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.classypaypal.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.classypaypal.min.css" />
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="main-container">
+                <div id="page-content">
+                    <div class="content-header">
+                        <div class="header-section">
+                            <h1>ClassyPaypal<br><small>Paypal Buttons? I'm loving them!</small></h1>
+                        </div>
+                    </div>
+                    <ul class="breadcrumb breadcrumb-top">
+                        <li><a href="https://vox.space/"><i class="fa fa-home"></i> vox.SPACE</a></li>
+                        <li><a href="https://vox.space/jquery/">jQuery plugins</a></li>
+                        <li>ClassyPaypal</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Introduction</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <p>ClassyPaypal is a <a href="http://www.jquery.com">jQuery</a> plugin that allows you to quickly add stylish PayPal payment buttons to your website for instant and secure payments.</p>
+                                    <ul>
+                                        <li>Buy Now, Donate and Subscribe button types.</li>
+                                        <li>Callback to modify PayPal variables before checkout.</li>
+                                        <li>PayPal variables via "data-" attributes, or as JSON string.</li>
+                                        <li>Built-in tooltip.</li>
+                                        <li>Valid HTML5 markup.</li>
+                                        <li>Integrated plugin API.</li>
+                                    </ul>
+                                    <p>
+                                        <a href="https://vox.space/file_download/29/jquery-classypaypal.zip" class="btn btn-primary">
+                                            <i class="fa fa-folder-open"></i> Download it
+                                        </a>
+                                    </p>
+                                    <div class="alert alert-info">
+                                        <h4><i class="fa fa-info-circle"></i> License</h4>
+                                        This jQuery plugin is distributed under the <a href="https://vox.space/LICENSE-MIT">MIT license</a>. Enjoy!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Demo</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <button id="paypal1" class="ClassyPaypal-button"
+                                            data-business="example@yourdomain.com"
+                                            data-item_name="PayNow Plugin"
+                                            data-amount="10.99"
+                                            data-quantity="1"
+                                            data-currency_code="USD">Just $10.99!</button>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#paypal1').ClassyPaypal({
+                                                type: 'buynow',
+                                                style: 'default',
+                                                tooltip: 'Pay safely with PayPal!'
+                                            });
+                                        });
+                                    </script>
+                                    <br /><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Setup</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <p>First you need to include the jQuery library, since ClassyPaypal is a plugin. You can download it from the jQuery website or link it directly from the Google CDN.</p>
+                                    <pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;</pre>
+                                    <p>Secondly, you need to include the jQuery ClassyPaypal javascript and the CSS file, which you can do it by adding the code below to your page.</p>
+                                    <pre>&lt;script src="js/jquery.classypaypal.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/jquery.classypaypal.min.css" /&gt;</pre>
+                                    <p>Next, you create the HTML structure on which you want to trigger the plugin.</p>
+                                    <pre>&lt;button class="paypal ClassyPaypal-button"
+    data-business="example@yourdomain.com"
+    data-item_name="PayNow Plugin"
+    data-amount="10.99"
+    data-quantity="1"
+    data-currency_code="USD"&gt;Just $10.99!&lt;/button&gt;</pre>
+                                    <p>As the last step, you trigger the plugin on the element you just created. In this case, we trigger it on the element with the class loader.</p>
+                                    <pre>$('.paypal').ClassyPaypal({
+    type: 'buynow',
+    style: 'default',
+    tooltip: 'Pay safely with PayPal!'
+});
+                                    </pre>
+                                    <p>Or, instead of using separate data- parameters, you can pass all required information into a data-json parameter.</p>
+                                    <pre>&lt;button class="paypal ClassyPaypal-button"
+    data-json='{"business": "example@yourdomain.com", "item_name": "ClassyPaypal Plugin", "amount": 10, "quantity": 1, "currency_code": "USD" }'&gt;Buy Now&lt;/button&gt;</pre>
+                                    <p>Also, you can pass a second parameter to the ClassyPaypal function, which is an object with fallback variables, to be used when there is no corresponding data- attribute.</p>
+                                    <pre>$('.paypal').ClassyPaypal({
+    type: 'buynow',
+    style: 'default'
+}, {
+    business: 'example@yourdomain.com',
+    amount: '10.99',
+    currency_code: 'USD'
+});</pre>
+                                    <p>You can access the ClassyPaypal API using the notation below.</p>
+                                    <pre>var api = $('.paypal').data('ClassyPaypal-api');
+// let's change price to $29.99 if today is Wednesday
+var today = new Date();
+if (today.getDay() === 3) {
+    api.setVar('price', 29.99);
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Options</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <ul class="fa-ul">
+                                        <li>
+                                            <h3>Parameters</h3>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-business</span> - specify your PayPal merchant email address.
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-item_name</span> - name of product that you sell.
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-amount</span> - product price.
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-currency_code</span> - currency code.
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-quantity</span> - how many products you sell.
+                                        </li>
+                                        <li>
+                                            You can view a list of all the parameters you can use in a data- statement <a href="https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/">here</a>.
+                                        </li>
+                                        <li>
+                                            <h3>Options</h3>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">type</span> - payment button type, can be <span class="label label-success">buynow</span>, <span class="label label-success">subscribe</span> or <span class="label label-success">donate</span>, default is <span class="label label-primary">buynow</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">style</span> - payment button style, can be <span class="label label-success">default</span>, <span class="label label-success">round</span>, <span class="label label-success">frame</span>, <span class="label label-success">double</span> or <span class="label label-success">square</span>, default is <span class="label label-primary">default</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">innerHTML</span> - payment button inner text/HTML.
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">checkoutTarget</span> - target for PayPal checkout page, default is <span class="label label-primary">_self</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">delaySubmit</span> - delay submit after payment button was clicked, in milliseconds, default is <span class="label label-primary">0</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">tooltip</span> - tooltip text or "" to disable it.
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">beforeSubmit</span> - callback to modify PayPal checkout variables before submit, default is <span class="label label-primary">false</span>
+                                        </li>
+                                        <li>
+                                            <h3>Methods</h3>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">enable()</span> - method to enable button and allow submit
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">disable()</span> - method to disable button and forbid submit
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">setVariable()</span> - method to set "data-" attributes for payment button
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Example</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <button id="paypal2" class="ClassyPaypal-button"
+                                            data-business="example@yourdomain.com"
+                                            data-item_name="ClassyPaypal Plugin"
+                                            data-amount="12"
+                                            data-quantity="1"
+                                            data-currency_code="EUR">Buy Now</button>
+                                    <br /><br />
+                                    <pre>&lt;button id="paypal2" class="ClassyPaypal-button"
+    data-business="example@yourdomain.com"
+    data-item_name="ClassyPaypal Plugin"
+    data-amount="12"
+    data-quantity="1"
+    data-currency_code="EUR"&gt;Buy Now&lt;/button&gt;
+
+$('#paypal2').ClassyPaypal({
+    type: 'buynow',
+    style: 'round'
+});</pre>
+                                    <button id="paypal3" class="ClassyPaypal-button"
+                                            data-business="example@gmail.com"
+                                            data-item_name="ClassyPaypal Plugin"
+                                            data-amount="10"
+                                            data-quantity="2"
+                                            data-discount_amount="2.01"
+                                            data-currency_code="USD">PURCHASE</button>
+                                    <br /><br />
+                                    <pre>&lt;button id="paypal3" class="ClassyPaypal-button"
+    data-business="example@yourdomain.com"
+    data-item_name="ClassyPaypal Plugin"
+    data-amount="10"
+    data-quantity="2"
+    data-discount_amount="2.01"
+    data-currency_code="USD"&gt;PURCHASE&lt;/button&gt;
+
+$('#paypal3').ClassyPaypal({
+    type: 'buynow',
+    style: 'frame'
+});</pre>
+                                    <button id="paypal4" class="ClassyPaypal-button"
+                                            data-business="example@yourdomain.com"
+                                            data-item_name="ClassyPaypal Plugin"
+                                            data-amount="200"
+                                            data-quantity="1"
+                                            data-currency_code="USD">
+                                        <span class="ClassyPaypal-label">Order today</span>
+                                        <span class="ClassyPaypal-price">$200</span>
+                                    </button>
+                                    <br /><br />
+                                    <pre>&lt;button id="paypal4" class="ClassyPaypal-button"
+    data-business="example@gmail.com"
+    data-item_name="ClassyPaypal Plugin"
+    data-amount="200"
+    data-quantity="1"
+    data-currency_code="USD"&gt;
+    &lt;span class="ClassyPaypal-label"&gt;Order today&lt;/span&gt;
+    &lt;span class="ClassyPaypal-price"&gt;$150&lt;/span&gt;
+&lt;/button&gt;
+
+$('#paypal5').ClassyPaypal({
+    type: 'donate',
+    style: 'square'
+});</pre>
+                                    <button id="paypal5" class="ClassyPaypal-button"
+                                            data-business="example@yourdomain.com"
+                                            data-item_name="Donation to support our work"
+                                            data-lc="US"
+                                            data-no_note="0"
+                                            data-currency_code="USD">Donate!
+                                    </button>
+                                    <br /><br />
+                                    <pre>&lt;button id="paypal5" class="ClassyPaypal-button"
+    data-business="example@gmail.com"
+    data-item_name="Donation to support our work"
+    data-lc="US"
+    data-no_note="0"
+    data-currency_code="USD"&gt;Donate!
+&lt;/button&gt;
+
+$('#paypal6').ClassyPaypal({
+    type: 'subscribe',
+    style: 'default'
+});</pre>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#paypal2').ClassyPaypal({
+                                                type: 'buynow',
+                                                style: 'round'
+                                            });
+                                            $('#paypal3').ClassyPaypal({
+                                                type: 'buynow',
+                                                style: 'frame'
+                                            });
+                                            $('#paypal4').ClassyPaypal({
+                                                type: 'buynow',
+                                                style: 'double',
+                                                tooltip: 'Click to checkout with PayPal!'
+                                            });
+                                            $('#paypal5').ClassyPaypal({
+                                                type: 'donate',
+                                                style: 'square'
+                                            });
+                                            $('#paypal6').ClassyPaypal({
+                                                type: 'subscribe',
+                                                style: 'default'
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="clearfix">
+                    <div class="pull-right">
+                        <span>2005 - 2017</span> © <a href="https://vox.space" target="_blank">vox.SPACE</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

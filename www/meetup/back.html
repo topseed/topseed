@@ -1,0 +1,25 @@
+<pre><code>router.post(&#39;/listEmployees&#39;, function (req, res) {
+    var ret = _fakeBackCall()
+    res.status(200).send(JSON.stringify(ret))
+})
+
+function _fakeBackCall() {
+    return {
+    &quot;data&quot;: [
+        [
+            &quot;Cedric Kelly&quot;,
+            &quot;Senior Javascript Developer&quot;,
+            &quot;Edinburgh&quot;,
+            &quot;6224&quot;,
+            &quot;2012/03/29&quot;,
+            &quot;$433,060&quot;
+        ],
+        [
+            &quot;Airi Satou&quot;,
+            &quot;Accountant&quot;,
+            &quot;Tokyo&quot;,
+            &quot;5407&quot;,
+            &quot;2008/11/28&quot;,
+            &quot;$162,700&quot;
+        ]
+</code></pre>

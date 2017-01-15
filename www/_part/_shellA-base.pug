@@ -1,0 +1,41 @@
+include _head
+	block head
+
+body
+	script.
+		document.body.style.opacity = '0.5'
+
+	#ss1
+		nav#appbar.mui-container-fluid.mui--no-user-select
+			table(width='100%')
+				tr
+					td
+						#brand ☰ &nbsp;
+							span My App
+					td.mui--text-right
+						ul#menu.mui-list--inline
+							li
+								a(href='/post/one/') Item 1
+							li
+								a(href='/post/two/') Item 2
+							li
+								a(href='/home/compEx/') Comp Block
+
+		#sidedrawer
+			nav#sidenav.mui--no-user-select
+				h2
+					#sidedrawer-brand.mui--text-title ☰ &nbsp; My App
+				.mui-divider
+				ul.mui-list--unstyled#sidenavstrong
+					li
+						a(href='/post/one/') Item 1
+					li
+						a(href='/post/two/') Item 2
+					li
+						a(href='/home/compEx/') Comp Block
+
+
+		#content-wrapper
+			block content
+
+	block footer

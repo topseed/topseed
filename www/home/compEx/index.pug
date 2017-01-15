@@ -1,0 +1,28 @@
+
+extends  ../../_part/_shellA-base
+
+block content
+	.mui-container-fluid
+		// --- style ---
+		style.
+			.block-cont {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			small-block {
+				margin: 0;
+			}
+
+		// --- dom ---
+		.block-cont
+			a(href='/post/one/')
+				small-block#b1(bkimg='/post/one/index.jpg', titl='Item: One')
+
+			a(href='/post/two/')
+				small-block#b2(bkimg='/post/two/index.jpg', titl='Item: Two')
+
+
+block footer
+	include  ../../_part/_footer

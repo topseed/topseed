@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" manifest="/meetup/cache.mf">
+  <head>
+    <meta http-equiv="cache-control" content="max-age=86400">
+    <link rel="stylesheet" href="//cdn.muicss.com/mui-0.9.6/css/mui.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css">
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.js"></script>
+    <script>
+      $(document).ready(function() {
+      	$('#fullpage').fullpage({
+      		//verticalCentered: false,
+      		css3:false
+      	})//config
+      })
+    </script>
+    <style>
+      .section {
+      	background-size: cover;
+      	background-attachment: fixed;
+      	background-image: url(bg0.jpg);
+      }
+      
+      .section0{
+      	background-image: url(bg1.jpg);
+      }
+      .section2{
+      	background-image: url(bg2.jpg);
+      }
+      .section4{
+      	background-image: url(bg3.jpg);
+      }
+      
+      img {
+      	max-height: 95vh;
+      	max-width:  95vw;
+      
+      	min-height: 50vh;
+      	min-width:  50vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fullpage">
+      <div class="section2 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><h3 id="what-will-be-best-practice-in-summer-of-17">What will be Best Practice in Summer of &#39;17</h3>
+<h4 id="microservices">Microservices</h4>
+<ul>
+<li>Express &amp; deployment</li>
+<li>Front route</li>
+<li>Fetch</li>
+<li>Plain databinding</li>
+<li>CDN</li>
+</ul>
+<h4 id="components">Components</h4>
+<ul>
+<li>Standard Components</li>
+<li>BEM</li>
+</ul>
+<h4 id="preprocessing-and-ui">Preprocessing and UI</h4>
+<ul>
+<li>Material UI - Sass</li>
+<li>Banner Ad</li>
+<li>Serverless</li>
+<li>Statically generated via Pug</li>
+</ul>
+<h4 id="spa">SPA</h4>
+<ul>
+<li>PWA</li>
+<li>Application Shell &amp; &#39;slice&#39;</li>
+<li>Page init()</li>
+<li>&#39;Action&#39;</li>
+</ul>
+<h4 id="conclusion">Conclusion</h4>
+<ul>
+<li>Mobile development </li>
+<li>Learn: <a href="http://tinyurl.com/z9myzjg">http://tinyurl.com/z9myzjg</a></li>
+<li>9 inspirations <a href="https://www.masons-foundation.org/post/asites/">https://www.masons-foundation.org/post/asites/</a></li>
+</ul>
+<h4 id="forum-http-gitter-im-what-best-practice-lobby">Forum: <a href="http://gitter.im/what-best-practice/Lobby">http://gitter.im/what-best-practice/Lobby</a></h4>
+
+          </div>
+        </div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><pre><code>router.post(&#39;/listEmployees&#39;, function (req, res) {
+    var ret = _fakeBackCall()
+    res.status(200).send(JSON.stringify(ret))
+})
+
+function _fakeBackCall() {
+    return {
+    &quot;data&quot;: [
+        [
+            &quot;Cedric Kelly&quot;,
+            &quot;Senior Javascript Developer&quot;,
+            &quot;Edinburgh&quot;,
+            &quot;6224&quot;,
+            &quot;2012/03/29&quot;,
+            &quot;$433,060&quot;
+        ],
+        [
+            &quot;Airi Satou&quot;,
+            &quot;Accountant&quot;,
+            &quot;Tokyo&quot;,
+            &quot;5407&quot;,
+            &quot;2008/11/28&quot;,
+            &quot;$162,700&quot;
+        ]
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="gae.png" width="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid"><img src="tst.png" width="95%"></div>
+      </div>
+      <div class="section3 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><pre><code>    fetch(&#39;http://jsonplaceholder.typicode.com/comments&#39;, { //1 call
+            method: &#39;get&#39;
+        }).then(function(response) { //2 promise
+            return (response.json())
+            }).then(function(value) { //3
+                // your code here
+                console.log(&#39;back&#39;)
+                console.log(JSON.stringify(value))
+        }).catch(function(err) {
+            console.log(&#39;error&#39;)
+            console.log(err)
+    })//fetch()
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section3 section">
+        <div class="mui-container-fluid"><img src="CDN.png" height="95%"></div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <h1>Loosly-coupled to architecture</h1>
+          </div>
+        </div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid"><img src="jsForm.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="custEl.png" width="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid"><img src="web-comp.png" height="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid"><img src="bem.png" height="95%"></div>
+      </div>
+      <div class="section3 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <h1>Step back to Front POV</h1>
+            <h2>Framework: Material UI</h2>
+          </div>
+        </div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid"><img src="css.gif" width="95%"></div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid"><img src="team.jpg" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="sass.png" width="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid"><img src="prepros.png" height="95%"></div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid"><img src="ide.png" height="95%"></div>
+      </div>
+      <div class="section3 section">
+        <div class="mui-container-fluid">
+          <iframe id="ad1" width="300" height="250" style="border: 0; overflow: hidden; background-color: gray"></iframe>
+        </div>
+        <script>
+          var ad = document.getElementById('ad1')
+          ad.setAttribute('src', 'https://www.masons-foundation.org/ads/carolla/')
+          
+          
+        </script>
+      </div>
+      <div class="section3 section">
+        <div class="mui-container-fluid"><img src="arc.jpg" width="95%"></div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid">
+          <video width="80%" height="60%" controls="">
+            <source src="arc.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid"><img src="photo-shop.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="poly.png" height="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid"><img src="serverless.png" height="95%"></div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid"><img src="static.png" width="95%"></div>
+      </div>
+      <div class="section3 section">
+        <div class="mui-container-fluid"><img src="seo.png" width="95%"></div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid"><img src="shell.png" width="95%"></div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid"><img src="googlePug.png" width="95%"></div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid"><img src="pen.png" width="95%"></div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid"><img src="dev-tips.png" width="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><pre><code>    function init() {
+        //fetch().then(&quot; pass data to components&quot;)
+    }
+
+    if(_loaded) init()
+    else {
+        _act.addOnce(function(arg1, arg2) {
+            init()
+            return false
+        })
+    }
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid"><img src="SPA.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="ss.png" width="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><pre><code>    onStart: {
+        duration: 50,
+        render: function (url, $container)  {
+            _act.dispatch(_PRE, window.location, $container)//*a
+            $(&#39;#content-wrapper&#39;).fadeTo(100,.2)
+        }
+    },
+    onReady: {
+        duration: 100,
+        render: function ($container, $newContent) {
+            $container.html($newContent) // VIEW!!!
+
+            $(&#39;#content-wrapper&#39;).fadeTo(200,1)
+
+            _act.dispatch(_ACT, window.location, $newContent)//*a
+
+        }//ren
+    }//ready()
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section3 section">
+        <div class="mui-container-fluid"><img src="phonegap.png" width="95%"></div>
+      </div>
+      <div class="section2 section">
+        <div class="mui-container-fluid"><img src="aim.png" width="95%"></div>
+      </div>
+      <div class="section4 section">
+        <div class="mui-container-fluid"><img src="ani.jpg" width="95%"></div>
+      </div>
+    </div>
+  </body>
+</html>

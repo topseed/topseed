@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+		xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+	<url>
+		<loc>https://www.masons-foundation.org/post/comp/</loc>
+	</url>
+
+	<url>
+		<loc>https://www.masons-foundation.org/post/app-shell/</loc>
+	</url>
+
+	<url>
+		<loc>https://www.masons-foundation.org/post/fireB/</loc>
+	</url>
+
+	<url>
+		<loc>https://www.masons-foundation.org/post/vwall/</loc>
+	</url>
+
+	<url>
+		<loc>https://www.masons-foundation.org/post/best/</loc>
+	</url>
+
+	<url>
+		<loc>https://www.masons-foundation.org/post/convertTo/</loc>
+	</url>
+
+</urlset>

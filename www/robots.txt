@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Host: Cekvenich.site44.com
+Sitemap: https://www.masons-foundation.org/sitemap.xml

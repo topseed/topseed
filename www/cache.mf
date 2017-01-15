@@ -1,0 +1,29 @@
+CACHE MANIFEST
+# load stable asset once and freeze on client, even if asset changes, it won't ping
+
+#index assets
+https://www.masons-foundation.org/favicon.ico
+https://www.masons-foundation.org/_js/libJs/head.load.min.js
+https://code.jquery.com/jquery-2.2.4.min.js
+https://www.masons-foundation.org/_js/libJs/jquery.smoothState.js
+https://cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js
+
+https://www.masons-foundation.org/_compHost/webcomponentsjs/webcomponents-lite.js
+https://www.masons-foundation.org/_compHost/polymer/polymer.html
+https://www.masons-foundation.org/_compHost/polymer/polymer-mini.html
+https://www.masons-foundation.org/_compHost/polymer/polymer-micro.html
+
+https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en
+https://fonts.googleapis.com/icon?family=Material+Icons
+
+#page assets
+https://cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js
+https://cdn.radiantmediatechs.com/rmp/rr/vgs.json
+https://cdn.radiantmediatechs.com/rmp/v3/latest/css/rmp-s1.min.css
+https://cdn.radiantmediatechs.com/rmp/v3/latest/css/fonts/rmp-font.woff?15ft5d
+https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2
+https://www.gstatic.com/cv/js/sender/v1/cast_sender.js
+
+NETWORK:
+*
+

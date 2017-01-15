@@ -1,0 +1,88 @@
+<!--
+  #### Introduction
+
+  The Social Share extension provides a common interface for share buttons, styled to complement each other.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- #### Setup -->
+  <!--
+    Import the `amp-social-share` component in the header.
+  -->
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <!--
+    Ensure you've configured your canonical URL.
+  -->
+  <link rel="canonical" href="<%host%>/components/amp-social-share/">
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    amp-social-share.custom-style {
+      background-color: #008080;
+      background-image: url('https://raw.githubusercontent.com/google/material-design-icons/master/social/1x_web/ic_share_white_48dp.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- #### Basic Usage -->
+  <!--
+    Embed the [`amp-social-share`](https://www.ampproject.org/docs/reference/components/amp-social-share) widget choosing a share type from the [supported types](https://www.ampproject.org/docs/reference/components/amp-social-share#types).
+
+    `amp-social-share` with `type="facebook"` requires to specify the [facebook app id](https://developers.facebook.com/apps) via `data-attribution`.
+  -->
+  <div>
+    <amp-social-share type="twitter"></amp-social-share>
+    <amp-social-share type="gplus"></amp-social-share>
+    <amp-social-share type="email"></amp-social-share>
+    <amp-social-share type="pinterest"></amp-social-share>
+    <amp-social-share type="linkedin"></amp-social-share>
+    <amp-social-share type="facebook" data-param-app_id="254325784911610"></amp-social-share>
+    <amp-social-share type="tumblr"></amp-social-share>
+  </div>
+
+  <!-- #### Configuration -->
+  <!--
+    Embed the `amp-social-share` widget [choosing a type](https://www.ampproject.org/docs/reference/components/amp-social-share#types), then configure the actions.
+
+    * `width`, default 60px.
+    * `height`, default 44px.
+    * `data-param-text` is the text to include in the share.
+    * `data-param-url` is the URL to share, current URL by default.
+    * `data-param-attribution` is where the share is attributed to.
+
+
+    All `data-param-*` prefixed attributes will be turned into URL parameters and passed to the share endpoint.
+  -->
+  <amp-social-share type="linkedin"
+    width="40"
+    height="40"
+    data-param-text="Check out these AMP Examples!"
+    data-param-url="https://ampbyexample.com/"
+    data-param-attribution="AMPhtml">
+  </amp-social-share>
+
+  <!-- #### Custom Style -->
+  <!--
+    Whenever you want to provide your own style, use CSS properties within the `<style amp-custom>` element ([Modify the presentation](https://www.ampproject.org/docs/get_started/create/presentation_layout)). This will make sure the image stays responsive and centered, and the default styling is overwritten.
+
+    * `background-color`, if you want the element to be a different color.
+    * `background-image`, provide another image if you want to change the icon.
+    * `background-repeat` (when using `background-image`), set to `no-repeat`.
+    * `background-position` (when using `background-image`), set to `center`.
+    * `background-size` (when using `background-image`), set to `contain`.
+  -->
+  <amp-social-share type="linkedin"
+    class="custom-style">
+  </amp-social-share>
+
+</body>
+</html>

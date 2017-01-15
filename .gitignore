@@ -1,0 +1,19 @@
+
+###################### 
+**/.DS_Store
+**/.DS_Store?
+**/._*
+**/Thumbs.db
+Icon?
+Icon\r
+**/.dropbox
+**/.vscode/
+**/*.config
+
+
+###################### Other
+**/.project
+**/.cfignore
+
+**/*.log
+**/node_modules/**

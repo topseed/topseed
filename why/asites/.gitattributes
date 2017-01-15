@@ -1,0 +1,12 @@
+arc.mp4 filter=lfs diff=lfs merge=lfs -text
+arcE.mp4 filter=lfs diff=lfs merge=lfs -text
+arcH.mp4 filter=lfs diff=lfs merge=lfs -text
+arcQ.mp4 filter=lfs diff=lfs merge=lfs -text
+chair.mp4 filter=lfs diff=lfs merge=lfs -text
+child.mp4 filter=lfs diff=lfs merge=lfs -text
+lab.mp4 filter=lfs diff=lfs merge=lfs -text
+press.mp4 filter=lfs diff=lfs merge=lfs -text
+shi.mp4 filter=lfs diff=lfs merge=lfs -text
+travel.mp4 filter=lfs diff=lfs merge=lfs -text
+tweet.mp4 filter=lfs diff=lfs merge=lfs -text
+vw2.mp4 filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,15 @@
+
+extends  ../../_part/_shellA-base
+
+block content
+	.mui-container-fluid
+		include ../../con_m/post/two/story2.html
+
+		script.
+			_act.addOnce(function(arg1, arg2) {
+				console.log('t'+arg1, arg2)
+				return false
+			})
+
+block footer
+	include  ../../_part/_footer
