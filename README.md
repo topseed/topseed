@@ -1,9 +1,11 @@
 # what-demos
 
-'WHAT' features:
+'TopSeed' features:
 - Page Transitions for SPA w/ SEO
-- Static, serverless, deployed to CDN; fetching(/using) microservices
+- Static, serverless, deployed to CDN edge (fetch microservices)
 - DOM centric to be more friendly with team that includes interactive designers that code
+- First page can be APM, that upgrade to PWA/interactive
+- Mobile first, including support for Mobile Apps (phonegap/cordova) 
 
 For discussion, comments and Q/A: <https://gitter.im/what-community/Lobby>
 
