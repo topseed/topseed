@@ -1,11 +1,14 @@
 # what-demos
 
 'TopSeed' features:
-- Page Transitions for SPA w/ SEO - all at the same time.
-- Static, serverless, deployed to CDN edge cache (fetch microservices)
+- Page Transitions for SPA w/ SEO - all at the same time
+- Static, serverless, deployed to CDN edge cache (fetch() microservices)
 - DOM centric to be more friendly with team that includes interactive designers that code
-- PWA and AMP. First page can be APM, that upgrade to PWA/interactive
+- PWA and AMP at same time w/ re-use. First page served can be APM, that upgrades to PWA/interactive
 - Support for Native Mobile Apps (phonegap/cordova) 
+- Uses HTML5.1 Standard Web Components - others will have to rewrite
+- Material Design Sass/BEM
+- No magic, you see can how each part works, KISS.
 
 For discussion, comments and Q/A: <https://gitter.im/what-community/Lobby>
 
@@ -14,12 +17,11 @@ Some of the tools we use:
 - <http://smoothstate.com>
 - <http://muicss.com>
 - <http://getbem.com/naming/>
-- <http://site44.com>
 - <http://prepros.io>
 - <http://pugjs.org>
 - <http://www.polymer-project.org>
-- <http://github.com/corinis/jsForm>
 - <http://greensock.com/gsap>
+
 
 Examples/Resources that show basic functionality in 'WHAT'
 
