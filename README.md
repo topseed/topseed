@@ -1,11 +1,11 @@
 # what-demos
 
 'TopSeed' features:
-- Page Transitions for SPA w/ SEO
-- Static, serverless, deployed to CDN edge (fetch microservices)
+- Page Transitions for SPA w/ SEO - all at the same time.
+- Static, serverless, deployed to CDN edge cache (fetch microservices)
 - DOM centric to be more friendly with team that includes interactive designers that code
-- First page can be APM, that upgrade to PWA/interactive
-- Mobile first, including support for Mobile Apps (phonegap/cordova) 
+- PWA and AMP. First page can be APM, that upgrade to PWA/interactive
+- Support for Native Mobile Apps (phonegap/cordova) 
 
 For discussion, comments and Q/A: <https://gitter.im/what-community/Lobby>
 
