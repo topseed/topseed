@@ -1,13 +1,15 @@
 # what-demos
 
 'TopSeed' features:
+- DOM centric to be more friendly with team that includes interactive designers that code
 - Page Transitions for SPA w/ SEO - all at the same time
 - Static, serverless, deployed to CDN edge cache (fetch() microservices)
-- DOM centric to be more friendly with team that includes interactive designers that code
 - PWA and AMP at same time w/ re-use. First page served can be APM, that upgrades to PWA/interactive
 - Support for Native Mobile Apps (phonegap/cordova) 
 - Uses HTML5.1 Standard Web Components - others will have to rewrite
-- Material Design Sass/BEM
+- Material Design Sass/BEM 
+- Reduce bit rot and reduce maintenance costs.
+
 - No magic, you see can how each part works, KISS.
 
 For discussion, comments and Q/A: <https://gitter.im/what-community/Lobby>
@@ -16,6 +18,7 @@ Some of the tools we use:
 - <http://github.github.io/fetch>
 - <http://smoothstate.com>
 - <http://muicss.com>
+- <http://github.com/BorisMoore/jsrender>
 - <http://getbem.com/naming/>
 - <http://prepros.io>
 - <http://pugjs.org>
