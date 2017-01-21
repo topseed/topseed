@@ -1,0 +1,18 @@
+{
+	"name": "AFilter",
+	"version": "0.1.0",
+	"private": true,
+	"engines": 
+		{"node": ">=7.4",
+		 "npm": ">=4.0.4"
+		},
+	"comment_only": "// npm-check-updates -u",
+
+	"dependencies": { 
+		"express": ">=4.14"
+
+		,"jsrender": ">=0.9.83"
+		,"server-components": "*"
+
+	}
+}

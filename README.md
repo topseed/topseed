@@ -4,7 +4,7 @@
 - DOM centric to be more friendly with team that includes interactive designers that code
 - Page Transitions for SPA w/ SEO - all at the same time
 - Static, serverless, deployed to CDN edge cache (fetch() microservices)
-- PWA and AMP at same time w/ re-use. First page served can be APM, that upgrades to PWA/interactive
+- PWA and AMP at same time, w/ re-use. First page served can be APM, that upgrades to PWA/interactive
 - Support for Native Mobile Apps (phonegap/cordova) 
 - Uses HTML5.1 Standard Web Components - others will have to rewrite
 - Material Design Sass/BEM 
