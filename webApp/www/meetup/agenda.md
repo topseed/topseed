@@ -8,10 +8,11 @@
 - Fetch
 - Databinding
 - CDN
-- Node: Databinding
 
 #### Components
-- Examples / Inspirations
+- Goals / Examples / Inspirations
+- Agile 
+- Scrolling and parallax
 - Standard Components
 - BEM
 

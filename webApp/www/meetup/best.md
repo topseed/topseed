@@ -1,13 +1,14 @@
 
 Best
 
-- Designers code / Team player
+- Designers code / Team player / Agile
 - Deploy, ex: Digital Ocean, Google Cloud
 - CDN
 
 - Interactive banner ads and sites
 - Sass / Preprocessing, ex: Pug
 - Material UI
+- Scrolling and parallax
 
 - Standard Web Components (BEM size), ex: Polymer
 - SEO / FTS
