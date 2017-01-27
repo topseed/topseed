@@ -1,30 +1,36 @@
-### What will be Best Practice next year?
+## What will be Best Practice in 2017 and after?
+##### Audience: 5-10 years of professional experience
+##### and some idea on Sass, LESS or such.
+
 #### Microservices
 - Express & deployment
 - Front route
 - Fetch
-- Plain databinding
+- Databinding
 - CDN
+- Node: Databinding
 
 #### Components
+- Examples / Inspirations
 - Standard Components
 - BEM
 
 #### Preprocessing and UI
 - Material UI - Sass
-- Banner Ad
-- Serverless
 - Statically generated via Pug
+- Mobile -> AMP
+- CSS only animation
+- SEO / FTS
 
 #### SPA
+- Dev Env
 - PWA
 - Application Shell & 'slice'
 - Page init()
-- 'Action'
+- Build.PhoneGap
 
 #### Conclusion 
-- Mobile development 
-- Learn: <http://tinyurl.com/z9myzjg>
+- Best practices list
 - 9 inspirations <https://www.masons-foundation.org/post/asites/>
-- <https://github.com/struts3/what-demos>
-#### Forum: http://gitter.im/what-best-practice/Lobby
+- Onsite 2 day hands on labs $2K
+### Forum Q/A: https://gitter.im/topseed-demos/Lobby
