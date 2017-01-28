@@ -25,17 +25,17 @@ exports.filter = function (req, res, next) {
 			} else if (fs.existsSync(pgPath + INDEX)) {// this is not compliant to SPA|AMP
 				console.log(pgPath + INDEX)
 				fs.readFile(pgPath + INDEX, 'utf8', function(err, data) {
-					if(err) throw err
+					if(err) throw new Error(err)
 					res.send(data)
 				})				
 			} else if(isWWWW) {//is it SPA/www? 
 				fs.readFile(pgPath + SPA, 'utf8', function(err, data) {
-					if(err) throw err
+					if(err) throw new Error(err)
 					res.send(data)
 				})
 			} else { //AMP is default
 				fs.readFile(pgPath + AMP, 'utf8', function(err, data) {
-					if(err) throw err
+					if(err) throw new Error(err)
 					res.send(data)
 				})// readfile
 			} //else AMP

@@ -1,0 +1,21 @@
+
+extends  ../../_part/_baseShell
+
+block head
+	include  ../../_part/_headerS
+
+block content
+	.mui-container-fluid
+		include _common
+
+	script.
+		let _people = {people: [{name: "Jim"}, {name: "Pedro"}] }
+
+		let tmpl = $.templates("#peopleList")
+		console.log(tmpl)
+		let html2 = tmpl.render( _people )
+		$('#peopleList').html(html2)
+		
+block footer
+	include   ../../_part/_footerS
+	

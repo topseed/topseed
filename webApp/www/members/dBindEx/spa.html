@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://www.masons-foundation.org/zCDN/libJS/jsrender.min.js"></script>
+  </head>
+</html>
+<body>
+  <div class="mui-container-fluid">
+    <p>Here is a list:</p>
+    <div id="peopleList">
+      <ul>{{for people}}
+        <li>Name: {{:name}}</li>  {{/for}}
+      </ul>
+    </div>
+    <p>That was a list.</p>
+  </div>
+  <script>
+    let _people = {people: [{name: "Jim"}, {name: "Pedro"}] }
+    
+    let tmpl = $.templates("#peopleList")
+    console.log(tmpl)
+    let html2 = tmpl.render( _people )
+    $('#peopleList').html(html2)
+    
+  </script>
+  <p>Footer S</p>
+</body>
