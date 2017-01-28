@@ -1,11 +1,15 @@
 {
-	"name": "middle4WHAT",
+	"name": "middle4Top",
 	"private": true,
-	"engines": {"node": ">=6.9"},
+	"engines":		
+		{"node": ">=7.4",
+		 "npm": ">=4.0.4"
+		},
+	"comment_only": "// npm-check-updates -u",
 	"scripts": {"start": "node index.js"},
 
 	"dependencies": {
-		"express": ">=4.1"
+		"express": ">=4.14"
 		, "body-parser": ">=1.1"
 		, "cors": ">=2.8"
 		, "node-fetch": ">=1.6"

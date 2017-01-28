@@ -1,7 +1,13 @@
 'use strict'
 
-module.exports = {
-_fakeBackCall: function() {
+exports._fakeBind = function() {
+
+	let _people = {people: [{name: 'Jim'}, {name: 'Pedro'}] }
+
+	return _people
+}
+
+exports._fakeDW= function() {
 	return {
 	"data": [
 		[
@@ -166,6 +172,4 @@ _fakeBackCall: function() {
 		]
 	]
 	}//return
-
 }//()
-} //mod
