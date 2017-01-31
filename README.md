@@ -1,4 +1,4 @@
-# what-demos
+# TopSeed-Demos
 
 'TopSeed' features:
 - DOM centric to be more friendly with team that includes interactive designers that code
@@ -41,7 +41,7 @@ App-Shell article: <http://www.masons-foundation.org/post/app-shell/>
 
 IDE article: <https://www.masons-foundation.org/post/IDE/>
 
-Other sites using 'WHAT':
+Other sites using 'TopSeed':
 - <http://www.rfidthings.com/>
 
 Advanced examples are also available once you learn how to use the basics.
@@ -50,6 +50,8 @@ Also, from time to time, usually one a month, we hold online training and an ann
 Consulting is available, leave a message on the gitter forum.
 Ex feedback: <https://www.meetup.com/HackerDojo/events/235472685/>
 
+For forum: http://gitter.im/topseed-demos/Lobbyy
+
 
 Other related links:
-- Pug Book <http://tinyurl.com/jrndabw>
+- Pug https://youtu.be/wzAWI9h3q18
