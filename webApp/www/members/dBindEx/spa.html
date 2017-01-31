@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://www.masons-foundation.org/zCDN/libJS/jsrender.min.js"></script>
+    <script src="https://www.masons-foundation.org/zCDN/libJs/jsrender.min.js"></script>
   </head>
 </html>
 <body>
@@ -16,12 +16,21 @@
     <p>That was a list.</p>
   </div>
   <script>
-    let _people = {people: [{name: "Jim"}, {name: "Pedro"}] }
-    
-    let tmpl = $.templates("#peopleList")
-    console.log(tmpl)
-    let html2 = tmpl.render( _people )
-    $('#peopleList').html(html2)
+    fetch('https://rch-demo.appspot.com/membersPg/mem/', { //1 call
+    	method: 'get'
+    	}).then(function(response) { //2 promise
+    		return (response.json())
+    	}).then(function(value) { //3
+    		// your code here
+    		console.log('back')
+    		console.log(JSON.stringify(value))
+    		let tmpl = $.templates("#peopleList")
+    		let html2 = tmpl.render( value )
+    		$('#peopleList').html(html2)
+    	}).catch(function(err) {
+    		console.log('error')
+    		console.log(err)
+    })//fetch()
     
   </script>
   <p>Footer S</p>
