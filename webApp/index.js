@@ -2,7 +2,7 @@
 const fetch = require('node-fetch')
 const express = require('express')
 const server = express()
-const path = require('path')
+//const path = require('path')
 const fs = require('fs')
 
 const jsrender = require('jsrender')
@@ -18,7 +18,6 @@ server.get('/members/dBindEx/', function (req, res) {
 			res.send(data)
 		})
 	else { //AMP
-//		let _people = {people: [{name: 'Jim'}, {name: 'Pedro'}] }
 		fs.readFile('./www//members/dBindEx/amp.html', 'utf8', function(err, data) {
 			if (err) throw err
 			// js render
@@ -37,8 +36,6 @@ server.get('/members/dBindEx/', function (req, res) {
 					console.log('error')
 					console.log(err)
 			})//fetch()
-			//let html2 = tmpl.render( _people )
-			//res.send(html2)
 		})// readfile
 	} //else
 
