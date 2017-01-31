@@ -1,18 +1,22 @@
-include ../../_part/_headerA
+extends  ../../_part/_baseShellA
 
-		script(async='', custom-element='amp-iframe', src='https://cdn.ampproject.org/v0/amp-iframe-0.1.js')
+block head
+	include ../../_part/_headerA
+	
+	script(async='', custom-element='amp-iframe', src='https://cdn.ampproject.org/v0/amp-iframe-0.1.js')
+	link(rel='canonical', href='/post/amp/')
 
-		link(rel='canonical', href='/post/amp/')
+block main
+	// http://github.com/ampproject/amp-by-example
+	p Hello
 
-body
-		p Hello.
+	//
+		One thing to be aware of: the AMP runtime will only show iframes located at the top of a website if they provide a placeholder image. Instead, we use an image of the chart background which stretches well to different widths.
+		A positive side-effect of encapsulating interactive content into
+		iframes is that it makes it easy to embed these on other
+		platforms as well.
+	amp-iframe(src='https://www.google.com/trends/embed/US_cu_x1aYQFIBAAANlM_en/fe_geo_chart_f5a4cc96-b49b-4d88-9a3f-74cc902c2f35?forceMobileMode=true', height='565', layout='fixed-height', frameborder='0', sandbox='allow-scripts allow-same-origin')
+		amp-img(src='/post/amp/oscars_placeholder.png', layout='fixed-height', height='565', placeholder='')
 
-		//
-			One thing to be aware of: the AMP runtime will only show iframes located at the top of a website if they provide a placeholder image. Instead, we use an image of the chart background which stretches well to different widths.
-			A positive side-effect of encapsulating interactive content into
-			iframes is that it makes it easy to embed these on other
-			platforms as well.
-		amp-iframe(src='https://www.google.com/trends/embed/US_cu_x1aYQFIBAAANlM_en/fe_geo_chart_f5a4cc96-b49b-4d88-9a3f-74cc902c2f35?forceMobileMode=true', height='565', layout='fixed-height', frameborder='0', sandbox='allow-scripts allow-same-origin')
-			amp-img(src='/post/amp/oscars_placeholder.png', layout='fixed-height', height='565', placeholder='')
-
-include ../../_part/_footerA
+block footer
+	include ../../_part/_footerA
