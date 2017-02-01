@@ -8,7 +8,7 @@ const INDEX = 'index.html'
 
 function endsWithSlash(str ) {
 	let suffix = '/'
-    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+	return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
 exports.filter = function (req, res, next) {
