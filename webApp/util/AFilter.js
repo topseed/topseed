@@ -17,9 +17,12 @@ exports.filter = function (req, res, next) {
 	} else { // no dot, it is a path:
 		try {
 			const pgPath = ROOT + req.path
-			const containsWWWW = (req.subdomains.indexOf('www') > -1) //for subdomain
+			let containsWWWW = (req.subdomains.indexOf('www') > -1) //for subdomain
+			if(req.socket.localPort == 8082) containsWWWW = true
 			const isWWWW = (req.query.w == '1') || containsWWWW
+			
 			console.log(pgPath + ' ^ ' + isWWWW)
+
 			if(!endsWithSlash(req.path)) {
 				res.redirect(req.path + '/')
 			} else if (fs.existsSync(pgPath + INDEX)) {// this is not compliant to SPA|AMP
