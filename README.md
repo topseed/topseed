@@ -2,6 +2,9 @@
 
 [![Join the chat at https://gitter.im/topseed-demos/Lobby](https://badges.gitter.im/topseed-demos/Lobby.svg)](https://gitter.im/topseed-demos/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+TopSeed aims to be a showcase of best practices and approaches for great looking webapps for developers and designers
+who want to build stunning mobile-first web apps with some of the best technologies.
+
 'TopSeed' features:
 - DOM centric to be more friendly with team that includes interactive designers that code
 - Page Transitions for SPA w/ SEO - all at the same time
