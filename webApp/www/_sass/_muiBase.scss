@@ -82,7 +82,7 @@ body {
 }
 
 #menu li:hover, #menu li:hover * {
-	color: $primary-color-text !important;
+	color: $primary-color-text;
 	background-color: $accent-color;
 	cursor: pointer;
 }
@@ -125,13 +125,13 @@ body {
 }
 
 #sidenavstrong li:hover, #sidenavstrong li:hover * {
-	color: $primary-color-text !important;
+	color: $primary-color-text ;
 	background-color: $accent-color;
 }
 
 // draw:
 #sidedrawer {
-	height: 100%  !important;
+	height: 100% ;
 	background-color: $primary-color;
 	width: 200px;
 	bottom: 0;

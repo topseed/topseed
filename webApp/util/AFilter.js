@@ -10,6 +10,11 @@ function endsWithSlash(str ) {
 	let suffix = '/'
 	return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
+function nocache(res) {
+	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+	res.header('Expires', '-1')
+	res.header('Pragma', 'no-cache')
+}
 
 exports.filter = function (req, res, next) {
 	if (req.path.indexOf('.') !=-1) { // hasDot?
@@ -40,6 +45,7 @@ exports.filter = function (req, res, next) {
 						console.log(err)
 						res.redirect('/index.html')// error - go home
 					}
+					nocache(res)
 					res.send(data)
 				})
 			} else { //AMP is default
@@ -48,6 +54,7 @@ exports.filter = function (req, res, next) {
 						console.log(err)
 						res.redirect('/index.html')// error - go home
 					}
+					nocache(res)
 					res.send(data)
 				})// readfile
 			} //else AMP
