@@ -11,14 +11,15 @@
 
 #### Components
 - Goals / Examples / Inspirations
+- Design / Images
 - Agile 
 - Scrolling and parallax
-- Standard Components
 - BEM
 
 #### Preprocessing and UI
 - Material UI - Sass
-- Statically generated via Pug
+- Statically generated via 
+(shock)
 - Mobile -> AMP
 - CSS only animation
 - SEO / FTS
@@ -27,11 +28,17 @@
 - Dev Env
 - PWA
 - Application Shell & 'slice'
+(not bad)
 - Page init()
-- Build.PhoneGap
+- Data Binding (know)
+- Build.PhoneGap (mobile)
+- Team
 
+###
+- Standard Components
+- Don'topseed
 #### Conclusion 
-- Best practices list
+- Best practices  (master)
 - 9 inspirations <https://www.masons-foundation.org/post/asites/>
 - Onsite 2 day hands on labs $2K
 ### Forum Q/A: https://gitter.im/topseed-demos/Lobby

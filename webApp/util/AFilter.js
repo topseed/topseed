@@ -11,9 +11,7 @@ function endsWithSlash(str ) {
 	return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 function nocache(res) {
-	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
-	res.header('Expires', '-1')
-	res.header('Pragma', 'no-cache')
+	res.header('Cache-Control', 'public, s-maxage=18000, max-age=30, proxy-revalidate')
 }
 
 exports.filter = function (req, res, next) {
