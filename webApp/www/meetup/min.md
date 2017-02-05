@@ -16,7 +16,6 @@
 
 (dev/des. ratio )
 
-
 $ave on
 - ios
 - android 

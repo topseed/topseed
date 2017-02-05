@@ -41,21 +41,7 @@
 - Standard Components
 
 #### Conclusion 
-- Best practices  (master)
-- 9 inspirations <https://www.masons-foundation.org/post/asites/>
+- Best Best  (master)
 - Onsite 2 day hands on labs $2K
 ### Forum Q/A: https://gitter.im/topseed-demos/Lobby
 
-labs:
-
-- warm up: fetch/ms
-- sass /MUI /pre processing
-- spa & app shell
-
-- data binding, on server & browser
-- seo
-- amp 
-
-- app store 
-- web components
-- auth

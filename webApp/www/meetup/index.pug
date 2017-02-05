@@ -82,8 +82,8 @@ html(lang='en', manifest='/meetup/cache.mf')
 
 
 			.section2.section
-				.mui-container-fluid.
-					server.use(express.static('www'))
+				.mui-container-fluid
+					H1 server.use(express.static('www'))
 
 
 			.section3.section
@@ -149,13 +149,13 @@ html(lang='en', manifest='/meetup/cache.mf')
 
 
 			.section2.section
-				.mui-container-fluid.
-					Images & Hierarchy & parallax
+				.mui-container-fluid
+					H1 Images & Hierarchy & parallax
 
 
 			.section2.section
-				.mui-container-fluid.
-					SVG (vs D3.js)
+				.mui-container-fluid
+					H1 SVG (vs D3.js)
 
 
 			.section1.section
@@ -363,12 +363,12 @@ html(lang='en', manifest='/meetup/cache.mf')
 
 			.section2.section
 				.mui-container-fluid
-					img(src='COMP.png', height='95%')
+					img(src='COMP.png', width='100%')
 
 
 			.section1.section
-				.mui-container-fluid.
-					Reuseable / Encapsulated UI Components (BEM)
+				.mui-container-fluid
+					H1 Reuseable / Encapsulated UI Components (BEM)
 
 
 			.section2.section
@@ -378,22 +378,23 @@ html(lang='en', manifest='/meetup/cache.mf')
 
 			.section3.section
 				.mui-container-fluid.
-					iframe#ad1(  width='300', height='250',  style='border: 0; overflow: hidden; background-color: gray;' )
-					script.
-						var ad = document.getElementById('ad1')
-						ad.setAttribute('src', 'https://www.masons-foundation.org/ads/carolla/')
-
-
-			.section3.section
-				.mui-container-fluid
-					.mui-panel
-						include fetch.html
+					h2.
+						iframe#ad1(  width='300', height='250',  style='border: 0; overflow: hidden; background-color: gray;' )
+						script.
+							var ad = document.getElementById('ad1')
+							ad.setAttribute('src', 'https://www.masons-foundation.org/ads/carolla/')
 
 
 			.section3.section
 				.mui-container-fluid
 					.mui-panel
 						include best.html
+
+
+			.section3.section
+				.mui-container-fluid
+					.mui-panel
+						include train.html
 
 			.section3.section
 				.mui-container-fluid
