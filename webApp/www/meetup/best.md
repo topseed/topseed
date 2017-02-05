@@ -22,10 +22,10 @@
 - SEO / FTS / AMP
 - No full stack
 - Save money (DB, IOS)
-- Stadard componets, BEM size or DOM
+- Standard components, BEM size or DOM
 (JS Loader)
 
-Missiing: i18n, accesability, auth
+Missing: i18n, accessibility, integration testing, auth
 
 - Make user base grow
 ### Forum Q/A: https://gitter.im/topseed-demos/Lobby

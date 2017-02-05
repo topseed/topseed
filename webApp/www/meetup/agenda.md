@@ -6,8 +6,9 @@
 - Express & deployment
 - Front route
 - Fetch
-- Databinding (know)
 - CDN
+- Databinding (know)
+
 
 #### Components
 - Goals / Examples / Inspirations
@@ -35,12 +36,13 @@
 - Build.PhoneGap (mobile first)
 - Team
 
-### Misc:
+### More:
 viable
 - (3)
+- SVG
+- Frameworks
 - Standard Components
 - Unit
-- SVG
 - Loader
 
 #### Conclusion 
@@ -52,11 +54,13 @@ viable
 labs:
 
 - warm up: fetch/ms
-- sass /pre processing
-- spa 
+- sass /MUI /pre processing
+- spa & app shell
 
+- data binding, on server & browser
 - seo
 - amp 
-- app store 
 
-- web componets
+- app store 
+- web components
+- auth
