@@ -6,23 +6,24 @@
 - Express & deployment
 - Front route
 - Fetch
-- Databinding
+- Databinding (know)
 - CDN
 
 #### Components
 - Goals / Examples / Inspirations
-- Design / Images
+- Design / Images 
 - Agile 
 - Scrolling and parallax
 - BEM
 
 #### Preprocessing and UI
 - Material UI - Sass
-- Statically generated via 
+- Statically generated  
 (shock)
-- Mobile -> AMP
+- Mobile -> AMP 
 - CSS only animation
 - SEO / FTS
+** twitter
 
 #### SPA
 - Dev Env
@@ -30,15 +31,32 @@
 - Application Shell & 'slice'
 (not bad)
 - Page init()
-- Data Binding (know)
-- Build.PhoneGap (mobile)
+- Perf
+- Build.PhoneGap (mobile first)
 - Team
 
-###
+### Misc:
+viable
+- (3)
 - Standard Components
-- Don'topseed
+- Unit
+- SVG
+- Loader
+
 #### Conclusion 
 - Best practices  (master)
 - 9 inspirations <https://www.masons-foundation.org/post/asites/>
 - Onsite 2 day hands on labs $2K
 ### Forum Q/A: https://gitter.im/topseed-demos/Lobby
+
+labs:
+
+- warm up: fetch/ms
+- sass /pre processing
+- spa 
+
+- seo
+- amp 
+- app store 
+
+- web componets
