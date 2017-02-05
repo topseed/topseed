@@ -21,29 +21,24 @@
 - Pre-pros
 - Mobile 
 - CSS only animation
+- Perf
 
 #### SPA
 - Dev Env
 - PWA
 - Application Shell & 'slice'
-(not bad)
-- Page init()
-- Perf
-- -> AMP 
 - Build.PhoneGap (mobile first)
-- SEO / FTS
-** twitter
 
+#### SEO
+- SEO
+- twitter
+- -> AMP 
 - Team
 
 ### Component Libs:
-viable
-- (3)
-- SVG
 - Frameworks
+- Reuseable / Encapsulated UI Components BEM
 - Standard Components
-- Unit
-- Loader
 
 #### Conclusion 
 - Best practices  (master)
