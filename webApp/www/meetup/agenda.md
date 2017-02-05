@@ -10,21 +10,17 @@
 - Databinding (know)
 
 
-#### Components
+#### Goals
 - Goals / Examples / Inspirations
 - Design / Images 
-- Agile 
 - Scrolling and parallax
-- BEM
 
 #### Preprocessing and UI
 - Material UI - Sass
-- Statically generated  
-(shock)
-- Mobile -> AMP 
+- BEM
+- Pre-pros
+- Mobile 
 - CSS only animation
-- SEO / FTS
-** twitter
 
 #### SPA
 - Dev Env
@@ -33,10 +29,14 @@
 (not bad)
 - Page init()
 - Perf
+- -> AMP 
 - Build.PhoneGap (mobile first)
+- SEO / FTS
+** twitter
+
 - Team
 
-### More:
+### Component Libs:
 viable
 - (3)
 - SVG

@@ -22,7 +22,7 @@
 - SEO / FTS / AMP
 - No full stack
 - Save money (DB, IOS)
-- Standard components, BEM size or DOM
+- Standard components, BEM size: DOM
 (JS Loader)
 
 Missing: i18n, accessibility, integration testing, auth
