@@ -17,8 +17,6 @@ who want to build stunning mobile-first web apps with some of the best technolog
 
 - No magic, you see can how each part works, KISS.
 
-For discussion, comments and Q/A: <https://gitter.im/what-community/Lobby>
-
 Some of the tools we use:
 - <http://github.github.io/fetch>
 - <http://smoothstate.com>
@@ -55,7 +53,7 @@ Also, from time to time, usually one a month, we hold online training and an ann
 Consulting is available, leave a message on the gitter forum.
 Ex feedback: <https://www.meetup.com/HackerDojo/events/235472685/>
 
-For forum: http://gitter.im/topseed-demos/Lobbyy
+For discussion, comments and Q/A: http://gitter.im/topseed-demos/Lobby
 
 
 Other related links:

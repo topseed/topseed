@@ -6,6 +6,7 @@ Best Practice Front End UI Dev:
 - Microservices / API
 - 2 ways to data bind: Server side and in-browser.
 - CDN
+- User Auth/JWT
 
 - Design (
     Interactive; 
@@ -27,6 +28,7 @@ Best Practice Front End UI Dev:
 
 Missing: i18n, accessibility, integration testing, auth
 
+- Fetch from page, not comp
 - Embrace DOM
 - Design principles
 - Don't use magic
