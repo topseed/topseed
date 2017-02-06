@@ -1,31 +1,38 @@
 
-15 Best Practice Front End UI Dev
+Best Practice Front End UI Dev:
 
-- Deploy, ex: Digital Ocean, Google Cloud
-- Designers code / Team player / Agile 
+- Deploy
+- Designers code 
 - Microservices / API
 - 2 ways to data bind: Server side and in-browser.
-
 - CDN
 
-- Design
-    Interactive / designed: ads and sites
-    Scrolling / parallax / SPA transitions / CSS
-    Image sizes
-    Voice UI: 'next'
+- Design (
+    Interactive; 
+    Scrolling / parallax / SPA transitions; 
+    Image sizes; 
+    Voice UI: 'next' )
 
-- Sass / Preprocessing, ex: Pug
+- Sass / Preprocessing, Pug
 - Material UI
-- 2 ways to render: AMP and SPA
-- PhoneGap for Apstore, Andorid & IOS
+- App shell
+- 2 ways to render: AMP and SPA, server and browser
+- PhoneGap for Apstore
 
-- SEO / FTS / AMP
-- No full stack
-- Save money (DB, IOS)
-- Standard components, BEM size: DOM
-(JS Loader)
+- SEO / AMP
+- No full stack Dev
+- Reusable Components
+
+(JS Loader, Folder Org)
 
 Missing: i18n, accessibility, integration testing, auth
 
+- Embrace DOM
+- Design principles
+- Don't use magic
+- Team! Team ratio.
 - Make user base grow
-### Forum Q/A: https://gitter.im/topseed-demos/Lobby
+
+### Forum Q/A: http://gitter.im/topseed-demos/Lobby
+
+

@@ -4,6 +4,11 @@ const express = require('express')
 const server = express()
 //const path = require('path')
 const fs = require('fs')
+const cors = require('cors')
+const compression = require('compression')
+
+server.use(cors())
+server.use(compression())
 
 const jsrender = require('jsrender')
 const AFilter = require('./util/AFilter')

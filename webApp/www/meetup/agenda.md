@@ -1,33 +1,27 @@
 ## What will be Best Practice in 2017 and after?
-##### Audience: 5-10 years of professional experience
-##### and some idea on Sass, LESS or such.
 
 #### Microservices
 - Express & deployment
-- Front route
 - Fetch
 - CDN
 - Databinding (know)
 
-
 #### Goals
 - Goals / Examples / Inspirations
-- Design / Images 
-- Scrolling and parallax
+- Design / Images, Scrolling and parallax
 
 #### Preprocessing and UI
 - Material UI - Sass
 - BEM
 - Pre-pros
 - Mobile 
-- CSS only animation
 - Perf
 
 #### SPA
 - Dev Env
 - PWA
 - Application Shell & 'slice'
-- Build.PhoneGap (mobile first)
+- Build .PhoneGap (mobile first)
 
 #### SEO
 - SEO
@@ -36,12 +30,12 @@
 - Team
 
 ### Component Libs:
-- Frameworks
+- Frameworks, libs comparison
 - Reuseable / Encapsulated UI Components BEM
 - Standard Components
 
 #### Conclusion 
-- Best Best  (master)
-- Onsite 2 day hands on labs $2K
-### Forum Q/A: https://gitter.im/topseed-demos/Lobby
+- Best list  (master)
+- Best onsite hands on instruction 
+### Forum Q/A: http://gitter.im/topseed-demos/Lobby
 

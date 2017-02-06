@@ -1,5 +1,7 @@
 
-### Best Practices Hands On Code
+### Best Practices Hands On Instruction
+
+2 days: 
 
 - warm up: fetch/ms
 - sass /MUI /pre processing
@@ -12,3 +14,7 @@
 - app store 
 - web components
 - auth
+
+$1.5K
+
+vic@eml.cc

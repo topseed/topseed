@@ -1,5 +1,5 @@
 doctype html
-html(lang='en', manifest='/meetup/cache.mf')
+html(lang='en')
 	head
 		meta(http-equiv='cache-control', content='max-age=86400')
 		link(rel='stylesheet', href='//cdn.muicss.com/mui-0.9.6/css/mui.min.css')
@@ -65,11 +65,6 @@ html(lang='en', manifest='/meetup/cache.mf')
 					img(src='gae.png', width='95%')
 
 
-			.section2.section
-				.mui-container-fluid
-					img(src='tst.png', width='95%')
-
-
 			.section3.section
 				.mui-container-fluid
 					.mui-panel
@@ -83,7 +78,9 @@ html(lang='en', manifest='/meetup/cache.mf')
 
 			.section2.section
 				.mui-container-fluid
-					H1 server.use(express.static('www'))
+					.mui-panel
+						code
+							pre server.use(express.static('www'))
 
 
 			.section3.section
@@ -129,6 +126,11 @@ html(lang='en', manifest='/meetup/cache.mf')
 
 			.section3.section
 				.mui-container-fluid
+					img(src='12.jpg', width='95%')
+
+
+			.section3.section
+				.mui-container-fluid
 					img(src='arc.jpg', width='95%')
 
 
@@ -138,11 +140,6 @@ html(lang='en', manifest='/meetup/cache.mf')
 						source(src='arc.mp4', type='video/mp4')
 
 
-			.section2.section
-					.mui-container-fluid
-						img(src='aim.png', width='95%')
-
-
 			.section3.section
 				.mui-container-fluid
 					img(src='gif/yes.gif', width='95%')
@@ -150,12 +147,19 @@ html(lang='en', manifest='/meetup/cache.mf')
 
 			.section2.section
 				.mui-container-fluid
-					H1 Images & Hierarchy & parallax
+					.mui-panel
+						H1 Images & Hierarchy & Parallax & Interactive
+
+
+			.section2.section
+					.mui-container-fluid
+						img(src='aim.png', width='95%')
 
 
 			.section2.section
 				.mui-container-fluid
-					H1 SVG (vs D3.js)
+					.mui-panel
+						H1 SVG (vs D3.js)
 
 
 			.section1.section
@@ -289,17 +293,17 @@ html(lang='en', manifest='/meetup/cache.mf')
 					img(src='phonegap.png', width='95%')
 
 
-			.section3.section
+			.section0.section
 				.mui-container-fluid
 					img(src='gif/good.gif', width='95%')
 
 
-			.section3.section
+			.section2.section
 				.mui-container-fluid
 					img(src='seo.png', width='95%')
 
 
-			.section3.section
+			.section1.section
 				.mui-container-fluid
 					img(src='twitter.png', width='95%')
 
@@ -312,7 +316,7 @@ html(lang='en', manifest='/meetup/cache.mf')
 			.section4.section
 				.mui-container-fluid
 					.mui-panel
-						h1 AMP (is easy / data binding)
+						h1 AMP is easy! ( data binding)
 
 
 			.section1.section //mobile second
@@ -346,6 +350,17 @@ html(lang='en', manifest='/meetup/cache.mf')
 					img(src='fw.png', width='95%')
 
 
+			.section3.section
+				.mui-container-fluid
+					.mui-panel
+						code
+							pre.
+								iframe#ad1(  width='300', height='250',  style='border: 0; overflow: hidden; background-color: gray;' )
+								script.
+									var ad = document.getElementById('ad1')
+									ad.setAttribute('src', 'https://www.masons-foundation.org/ads/carolla/')
+
+
 			.section2.section
 				.mui-container-fluid
 					img(src='web-comp.png', height='95%')
@@ -361,14 +376,25 @@ html(lang='en', manifest='/meetup/cache.mf')
 					img(src='poly.png', height='95%')
 
 
-			.section2.section
+			.section3.section
 				.mui-container-fluid
-					img(src='COMP.png', width='100%')
+					img(src='compLib.png', height='95%')
 
 
 			.section1.section
 				.mui-container-fluid
-					H1 Reuseable / Encapsulated UI Components (BEM)
+					.mui-panel
+						H1 Reuseable / Encapsulated UI Components (BEM size)
+
+
+			.section1.section
+				.mui-container-fluid
+					img(src='compEx.png', height='95%')
+
+
+			.section2.section
+				.mui-container-fluid
+					img(src='COMP.png', width='100%')
 
 
 			.section2.section
@@ -376,13 +402,9 @@ html(lang='en', manifest='/meetup/cache.mf')
 					img(src='react.png', height='95%')
 
 
-			.section3.section
-				.mui-container-fluid.
-					h2.
-						iframe#ad1(  width='300', height='250',  style='border: 0; overflow: hidden; background-color: gray;' )
-						script.
-							var ad = document.getElementById('ad1')
-							ad.setAttribute('src', 'https://www.masons-foundation.org/ads/carolla/')
+			.section2.section
+				.mui-container-fluid
+					img(src='gif/master.gif', height='95%')
 
 
 			.section3.section
@@ -400,3 +422,13 @@ html(lang='en', manifest='/meetup/cache.mf')
 				.mui-container-fluid
 					img(src='design.jpg', width='95%')
 
+
+			.section3.section
+				.mui-container-fluid
+					img(src='hierarchy.png', height='95%')
+
+
+			.section2.section
+				.mui-container-fluid
+					img(src='web-comp.png', height='95%')
+					p Forum Q/A: https://gitter.im/topseed-demos/Lobby

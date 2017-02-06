@@ -1,17 +1,11 @@
 CACHE MANIFEST
-# load stable asset once and freeze on client, even if asset changes, it won't ping
+# load stable 3rd party asset once and freeze on client, even if asset changes, it won't ping
 
 #index assets
-https://www.masons-foundation.org/favicon.ico
-https://www.masons-foundation.org/_js/libJs/head.load.min.js
+
 https://code.jquery.com/jquery-2.2.4.min.js
-https://www.masons-foundation.org/_js/libJs/jquery.smoothState.js
 https://cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js
 
-https://www.masons-foundation.org/_compHost/webcomponentsjs/webcomponents-lite.js
-https://www.masons-foundation.org/_compHost/polymer/polymer.html
-https://www.masons-foundation.org/_compHost/polymer/polymer-mini.html
-https://www.masons-foundation.org/_compHost/polymer/polymer-micro.html
 
 https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en
 https://fonts.googleapis.com/icon?family=Material+Icons
