@@ -9,7 +9,7 @@ var _inAction = false // set to true when user acts; false when effect is done
 // for user actions/'control'
  const _act = new signals.Signal()
 
-/*ex 
+/*ex pg:
 function init() {
 	//
 }
@@ -20,11 +20,6 @@ else {
 		return false
 	})
 }
-
-_act.addOnce(function(arg1, arg2) {
-	console.log(arg1, arg2)
-	return false
-})
 */
 console.log('act setup')
 // <====================================================================

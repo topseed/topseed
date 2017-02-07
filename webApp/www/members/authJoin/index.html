@@ -55,24 +55,53 @@
     </div>
     <div id="content-wrapper">
       <div class="mui-container-fluid">
-        <!-- --- style ----->
-        <style>
-          .block-cont {
-          	display: flex;
-          	flex-wrap: wrap;
-          	justify-content: center;
-          }
-          
-          small-block {
-          	margin: 0;
-          }
-          
-        </style>
-        <!-- --- dom ----->
-        <div class="block-cont"><a href="/post/one/">
-            <small-block id="b1" bkimg="/post/one/index.jpg" titl="Item: One"></small-block></a><a href="/post/two/">
-            <small-block id="b2" bkimg="/post/two/index.jpg" titl="Item: Two"></small-block></a></div>
+        <p><br></p>
+        <div class="mui-row">
+          <div class="mui-col-md-6">
+            <p>Oh hi</p>
+          </div>
+          <div class="mui-col-md-6">
+            <div class="mui-panel">
+              <form class="mui-form" id="frm1">
+                <legend>Join/Log-in</legend>
+                <div class="mui-textfield mui-textfield">
+                  <input type="text" name="data.userEmail">
+                  <label>eMail</label>
+                </div>
+                <div class="mui-textfield mui-textfield">
+                  <input type="password" name="data.password">
+                  <label>Password</label>
+                </div>
+                <button class="mui-btn mui-btn--raised" type="submit" id="join">New/Join</button>
+                <button class="mui-btn mui-btn--raised" type="submit" id="login">Existing/Log-in</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
+      <script>
+        function init() {
+        	console.log('init')
+        	$('#frm1').jsForm()
+        	
+        	$('#join').click(function(e) { 
+        		e.preventDefault()
+        		console.log(JSON.stringify( $('#frm1').jsForm('get') ))
+        	})
+        }
+        
+        if(_loaded) init()
+        else {
+        	_act.addOnce(function(arg1, arg2) {
+        		init()
+        		return false
+        	})
+        }
+        
+        
+        
+        
+      </script>
     </div>
   </div>
   <footer>
