@@ -24,11 +24,11 @@ Best Practice Front End UI Dev:
 - No full stack Dev
 - Reusable Components
 
-(JS Loader, Folder Org)
+(JS Loader, Folder Org for packaging)
 
 Missing: i18n, accessibility, integration testing, auth
 
-- Fetch from page, not comp
+- Fetch from page, not web comp.
 - Embrace DOM
 - Design principles
 - Don't use magic

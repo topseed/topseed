@@ -4,9 +4,8 @@ loadjs([
 	'//code.jquery.com/jquery-2.2.4.min.js'
 	,'/_js/libJs/jquery.smoothState.js'
 	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-
 	,'//cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js'
-	,'//cdn.jsdelivr.net/list.js/1.1.1/list.min.js'
+	
 	//,'//cdn.jsdelivr.net/fetch/0.9.0/fetch.min.js'
 	,'//cdn.jsdelivr.net/jquery.fullpage/2.8.8/jquery.fullpage.min.js'
 	,'//cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css'

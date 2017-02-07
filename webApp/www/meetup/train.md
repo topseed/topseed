@@ -1,20 +1,19 @@
 
-### Best Practices Hands On Instruction
-
-2 days: 
+### Best Practices Hands On Instruction Onsite Private Class:
 
 - warm up: fetch/ms
 - sass /MUI /pre processing
 - spa & app shell
 
-- data binding, on server & browser
+- Data binding, server-side & in-browser
 - seo
 - amp 
 
 - app store 
-- web components
-- auth
+- standard web components
+- Polymer
+- user auth
 
-$1.5K
+$1.6K / 2 days 
 
 vic@eml.cc
