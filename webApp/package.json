@@ -4,7 +4,7 @@
 	"private": true,
 	"engines": 
 		{"node": ">=7.4",
-		 "npm": ">=4.0.4"
+		 "npm": ">=4.1"
 		},
 	"comment_only": "// npm-check-updates -u",
 	"scripts": {
@@ -13,10 +13,12 @@
 	"dependencies": { 
 		"express": ">=4.14"
 		, "cors": ">=2.8"
-		, "compression": ">=1.6.2"
+		, "compression": ">=1.6"
 
 		,"node-fetch": ">=1.6"
-		,"jsrender": ">=0.9.83"
+		,"jsrender": ">=0.9"
+
+		,"jsonwebtoken": ">= 7.2"
 
 	}
 }

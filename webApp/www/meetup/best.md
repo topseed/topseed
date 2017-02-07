@@ -6,7 +6,7 @@ Best Practice Front End UI Dev:
 - Microservices / API
 - 2 ways to data bind: Server side and in-browser.
 - CDN
-- User Auth/JWT
+- User Auth
 
 - Design (
     Interactive; 
@@ -15,7 +15,7 @@ Best Practice Front End UI Dev:
     Voice UI: 'next' )
 
 - Sass / Preprocessing, Pug
-- Material UI
+- Material Sass
 - App shell
 - 2 ways to render: AMP and SPA, server and browser
 - PhoneGap for Apstore
@@ -26,7 +26,7 @@ Best Practice Front End UI Dev:
 
 (JS Loader, Folder Org for packaging)
 
-Missing: i18n, accessibility, integration testing, auth
+Missing: i18n, accessibility, integration testing
 
 - Fetch from page, not web comp.
 - Embrace DOM

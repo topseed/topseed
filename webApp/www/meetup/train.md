@@ -2,7 +2,7 @@
 ### Best Practices Hands On Instruction Onsite Private Class:
 
 - warm up: fetch/ms
-- sass /MUI /pre processing
+- sass /material /pre processing
 - spa & app shell
 
 - Data binding, server-side & in-browser
@@ -11,9 +11,11 @@
 
 - app store 
 - standard web components
-- Polymer
+- + Polymer
 - user auth
+- master / detail (promise)
 
-$1.6K / 2 days 
+2 days 
 
 vic@eml.cc
+IDC: Trainer of the Year
