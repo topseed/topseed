@@ -1,5 +1,5 @@
 
-### Hands On Seminar+Workshop (on Site:
+### Hands On Seminar+Workshop (on Site):
 
 - warm up: fetch/ms
 - sass /material /pre processing

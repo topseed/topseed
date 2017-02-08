@@ -65,11 +65,6 @@ html(lang='en')
 						include back.html
 
 
-			.section1.section
-				.mui-container-fluid
-					img(src='gae.png', width='95%')
-
-
 			.section3.section
 				.mui-container-fluid
 					.mui-panel
@@ -95,7 +90,15 @@ html(lang='en')
 
 			.section1.section
 				.mui-container-fluid
-					img(src='fetch.png', height='95%')
+					.mui-panel
+						code
+							pre.
+								#peopleList
+									ul
+										| {{for people}}
+										li Name: {{:name}}
+										| {{/for}}
+								p That was a list.
 
 
 			.section1.section
@@ -422,19 +425,27 @@ html(lang='en')
 					img(src='react.png', height='95%')
 
 
-			.section1.section
+			.section0.section
 				.mui-container-fluid
-					img(src='gif/master.gif', height='95%')
+					img(src='react2.png', height='95%')
+
 
 
 			.section3.section
 				.mui-container-fluid
-					.mui-panel.
-						loadjs([
-							'//code.jquery.com/jquery-2.2.4.min.js'
-							,'/_js/libJs/jquery.smoothState.js'
-							,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-							,'//cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js'
+					.mui-panel
+						code
+							pre.
+								loadjs([
+									'//code.jquery.com/jquery-2.2.4.min.js'
+									,'/_js/libJs/jquery.smoothState.js'
+									,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
+									,'//cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js'
+
+
+			.section1.section
+				.mui-container-fluid
+					img(src='gif/master.gif', height='95%')
 
 
 			.section3.section
@@ -461,4 +472,5 @@ html(lang='en')
 			.section2.section
 				.mui-container-fluid
 					img(src='web-comp.png', height='95%')
-					p Forum Q/A: https://gitter.im/topseed-demos/Lobby
+					.mui-panel
+						p Forum Q/A: https://gitter.im/topseed-demos/Lobby

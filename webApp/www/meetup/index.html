@@ -130,9 +130,6 @@ function _fakeBackCall() {
           </div>
         </div>
       </div>
-      <div class="section1 section">
-        <div class="mui-container-fluid"><img src="gae.png" width="95%"></div>
-      </div>
       <div class="section3 section">
         <div class="mui-container-fluid">
           <div class="mui-panel"><pre><code>    fetch(&#39;http://jsonplaceholder.typicode.com/comments&#39;, { //1 call
@@ -164,7 +161,17 @@ function _fakeBackCall() {
         <div class="mui-container-fluid"><img src="CDN.png" height="95%"></div>
       </div>
       <div class="section1 section">
-        <div class="mui-container-fluid"><img src="fetch.png" height="95%"></div>
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><code>
+              <pre>#peopleList
+	ul
+		| {{for people}}
+		li Name: {{:name}}
+		| {{/for}}
+p That was a list.
+
+</pre></code></div>
+        </div>
       </div>
       <div class="section1 section">
         <div class="mui-container-fluid"><img src="jsrender.png" height="95%"></div>
@@ -405,7 +412,7 @@ function _fakeBackCall() {
       </div>
       <div class="section2 section">
         <div class="mui-container-fluid">
-          <div class="mui-panel"><h4 id="min-viable-team-strawman">Min. Viable Team Strawman</h4>
+          <div class="mui-panel"><h4 id="min-viable-team-strawman-">Min. Viable Team/strawman:</h4>
 <ol>
 <li>sr interactive designer that codes, to do mobile PWA/SPA/Sass</li>
 <li><p>jr. dev: middleware, data, micro services, app store and user auth</p>
@@ -484,27 +491,30 @@ script.
       <div class="section0 section">
         <div class="mui-container-fluid"><img src="react.png" height="95%"></div>
       </div>
-      <div class="section1 section">
-        <div class="mui-container-fluid"><img src="gif/master.gif" height="95%"></div>
+      <div class="section0 section">
+        <div class="mui-container-fluid"><img src="react2.png" height="95%"></div>
       </div>
       <div class="section3 section">
         <div class="mui-container-fluid">
-          <div class="mui-panel">
-            loadjs([
-            	'//code.jquery.com/jquery-2.2.4.min.js'
-            	,'/_js/libJs/jquery.smoothState.js'
-            	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-            	,'//cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js'
-            
-            
-          </div>
+          <div class="mui-panel"><code>
+              <pre>loadjs([
+	'//code.jquery.com/jquery-2.2.4.min.js'
+	,'/_js/libJs/jquery.smoothState.js'
+	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
+	,'//cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js'
+
+</pre></code></div>
         </div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="gif/master.gif" height="95%"></div>
       </div>
       <div class="section3 section">
         <div class="mui-container-fluid">
           <div class="mui-panel"><p>Best Practice Front End UI Dev:</p>
 <ul>
 <li>Deploy</li>
+<li>Agile</li>
 <li>Designers code </li>
 <li>Microservices/API</li>
 <li>2 ways to data bind: Server side and in-browser.</li>
@@ -527,17 +537,18 @@ script.
 <li><p>SEO/AMP</p>
 </li>
 <li>No full stack Dev</li>
-<li>Reusable Components</li>
+<li>Reusable DOM-Based Interactive BEM Components</li>
+<li>Loosely coupled to architecture</li>
 </ul>
-<p>(JS Loader, Folder Org for packaging)</p>
-<p>Missing: i18n, accessibility, integration testing</p>
+<p>(JS Loader, Folder Org for packaging)
+Missing: i18n, accessibility, integration testing</p>
 <ul>
 <li>Fetch from page, not web comp.</li>
 <li>Embrace DOM</li>
-<li>Design principles</li>
+<li>Design principles (start here)</li>
 <li>Don&#39;t use magic</li>
 <li>Team! Team ratio.</li>
-<li>Make user base grow</li>
+<li>Make user base grow/Awesome</li>
 </ul>
 <h3 id="forum-q-a-http-gitter-im-topseed-demos-lobby">Forum Q/A: <a href="http://gitter.im/topseed-demos/Lobby">http://gitter.im/topseed-demos/Lobby</a></h3>
 
@@ -546,7 +557,7 @@ script.
       </div>
       <div class="section3 section">
         <div class="mui-container-fluid">
-          <div class="mui-panel"><h3 id="hands-on-seminar-workshop-on-site-">Hands On Seminar+Workshop (on Site:</h3>
+          <div class="mui-panel"><h3 id="hands-on-seminar-workshop-on-site-">Hands On Seminar+Workshop (on Site):</h3>
 <ul>
 <li>warm up: fetch/ms</li>
 <li>sass /material /pre processing</li>
@@ -582,7 +593,9 @@ IDC Trainer of the Year</p>
       </div>
       <div class="section2 section">
         <div class="mui-container-fluid"><img src="web-comp.png" height="95%">
-          <p>Forum Q/A: https://gitter.im/topseed-demos/Lobby</p>
+          <div class="mui-panel">
+            <p>Forum Q/A: https://gitter.im/topseed-demos/Lobby</p>
+          </div>
         </div>
       </div>
     </div>

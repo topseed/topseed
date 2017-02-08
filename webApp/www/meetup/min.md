@@ -1,5 +1,5 @@
 
-#### Min. Viable Team Strawman
+#### Min. Viable Team/strawman:
 
 1. sr interactive designer that codes, to do mobile PWA/SPA/Sass
 2. jr. dev: middleware, data, micro services, app store and user auth

@@ -31,7 +31,7 @@ Some of the tools we use:
 
 Examples/Resources that show basic functionality in 'WHAT'
 
-Hello world example source: <https://github.com/struts3/what>
+Hello world example source: <https://github.com/topseed/topseed>
 
 Slides used at meetup: <https://1595566120.rsc.cdn77.org/meetup/>
 
