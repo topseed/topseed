@@ -1,5 +1,5 @@
 
-### Best Practices Hands On Instruction Onsite Private Class:
+### Hands On Seminar+Workshop (on Site:
 
 - warm up: fetch/ms
 - sass /material /pre processing
@@ -18,4 +18,4 @@
 2 days 
 
 vic@eml.cc
-IDC: Trainer of the Year
+IDC Trainer of the Year

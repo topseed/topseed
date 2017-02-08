@@ -7,8 +7,8 @@
 - Databinding (know)
 
 #### Goals
-- Goals / Examples / Inspirations
-- Design / Images, Scrolling and parallax
+- Goals/Examples/Inspirations
+- Design/Images, Scrolling and parallax
 
 #### Preprocessing and UI
 - Material UI - Sass
@@ -21,7 +21,7 @@
 - Dev Env
 - PWA
 - Application Shell & 'slice'
-- Build .PhoneGap (mobile first)
+- Build.PhoneGap (mobile first)
 
 #### SEO
 - SEO
@@ -29,13 +29,12 @@
 - -> AMP 
 - Team
 
-### Component Libs:
+#### Component Libs:
 - Frameworks, libs comparison
-- Reuseable / Encapsulated UI Components BEM
+- Reuseable/Encapsulated UI Components BEM
 - Standard Components
 
 #### Conclusion 
-- Best list  (master)
-- Best onsite hands on instruction 
+- Best list
 ### Forum Q/A: http://gitter.im/topseed-demos/Lobby
 

@@ -3,24 +3,24 @@ Best Practice Front End UI Dev:
 
 - Deploy
 - Designers code 
-- Microservices / API
+- Microservices/API
 - 2 ways to data bind: Server side and in-browser.
 - CDN
 - User Auth
 
 - Design (
     Interactive; 
-    Scrolling / parallax / SPA transitions; 
+    Scrolling/parallax/SPA transitions; 
     Image sizes; 
     Voice UI: 'next' )
 
-- Sass / Preprocessing, Pug
+- Sass/Preprocessing, Pug
 - Material Sass
 - App shell
 - 2 ways to render: AMP and SPA, server and browser
-- PhoneGap for Apstore
+- PhoneGap for Appstore
 
-- SEO / AMP
+- SEO/AMP
 - No full stack Dev
 - Reusable Components
 
