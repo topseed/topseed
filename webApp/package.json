@@ -14,8 +14,10 @@
 		"express": ">=4.14"
 		, "cors": ">=2.8"
 		, "compression": ">=1.6"
+		, "body-parser": ">=1.1"
 
 		,"node-fetch": ">=1.6"
+
 		,"jsrender": ">=0.9"
 
 		,"jsonwebtoken": ">= 7.2"
