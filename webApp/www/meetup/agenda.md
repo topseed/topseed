@@ -1,5 +1,7 @@
 ## What will be Best Practice in 2017 and after?
 
+Content License <http://creativecommons.org/licenses/by-nc-sa/4.0>
+
 #### Microservices
 - Express & deployment
 - Fetch
