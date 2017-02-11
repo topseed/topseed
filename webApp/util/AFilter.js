@@ -14,11 +14,11 @@ function endsWithSlash(str ) {
 function setNone(res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
 }
-function setQuick(res) {//3hr, 1hr
-	res.header('Cache-Control', 'public, s-maxage=10800, max-age=3600, proxy-revalidate')
+function setQuick(res) {//2hr, 45 minutes
+	res.header('Cache-Control', 'public, s-maxage=7200, max-age=2700, proxy-revalidate')
 }
-function setLong(res) {//2days, 3hr
-	res.header('Cache-Control', 'public, s-maxage=172800, max-age=10800')
+function setLong(res) {//20hours, 2hr
+	res.header('Cache-Control', 'public, s-maxage=72000, max-age=7200')
 }
 
 exports.filter = function (req, res, next) {
