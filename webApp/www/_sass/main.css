@@ -1952,3 +1952,9 @@ body {
   transition: -webkit-transform .2s;
   transition: transform .2s;
   transition: transform .2s, -webkit-transform .2s; }
+
+@media (min-width: 600px) {
+  article {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2; } }
