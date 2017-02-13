@@ -1,0 +1,11 @@
+head
+	script(src='//code.jquery.com/jquery-2.2.4.min.js')
+body
+	#here1
+
+	script.
+		$( document.body ).load( 'comp1.html', function() {
+			console.log('loaded')
+			var tmpl = document.getElementById('comp-1')
+			document.body.appendChild(tmpl.content.cloneNode(true))
+		})

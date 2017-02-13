@@ -1,19 +1,22 @@
 
 ### Hands On Seminar+Workshop (on Site):
 
-- warm up: fetch/ms
-- sass /material /pre processing
-- spa & app shell
 
-- Data binding, server-side & in-browser
-- seo
-- amp 
+Intermediate Foundation
+- Lab 0 / warm up: fetch,  form, datatable, in-browser 
+- Lab 1 sass /material /pre processing / pug
+- Lab 2 deploy to DO as node static web. CDN w/ https.
 
-- app store 
-- standard web components
-- + Polymer
-- user auth
-- master / detail (promise)
+Level Up
+- Lab 3 spa, SS & app shell
+- Lab 4 seo / amp
+- Lab 5 Optional Data binding, server-side
+- Lab 6 app store
+
+The Perspectives
+- Lab 7 Optional user auth
+- Lab 8 web components
+
 
 2 days 
 
