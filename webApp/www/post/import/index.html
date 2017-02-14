@@ -3,12 +3,16 @@
   <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
 <body>
-  <div id="here1"></div>
+  <p>?</p>
+  <comp-1></comp-1>
+  <p>!</p>
+  <comp-1></comp-1>
+  <div id="d"></div>
   <script>
-    $( document.body ).load( 'comp1.html', function() {
+    $( '#d' ).load( 'comp-foo.html', function() {
+    	//var tmpl = document.getElementById('comp-1')
+    	//document.body.appendChild(tmpl.content.cloneNode(true))
     	console.log('loaded')
-    	var tmpl = document.getElementById('comp-1')
-    	document.body.appendChild(tmpl.content.cloneNode(true))
     })
   </script>
 </body>

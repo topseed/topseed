@@ -1,0 +1,30 @@
+template#comp-1
+	style.
+		p { color: orange; }
+	p My markup is from template
+
+script.
+	customElements.whenDefined('comp-1').then(function () {
+		console.log('defined')
+	})// ()
+	customElements.define('comp-1', class extends HTMLElement {
+		constructor() {
+			super() // always call super first
+			console.log('ctor')
+			//boiler plate:
+			let shadowRoot = this.attachShadow({mode: 'open'})
+			const t = document.querySelector('#comp-1')
+			const instance = t.content.cloneNode(true)
+			shadowRoot.appendChild(instance)
+
+			this.addEventListener('click', function() {
+				console.log('clicked')
+			})
+
+		}//()
+
+		connectedCallback() { 
+			console.log('conn')
+		}
+	})//
+
