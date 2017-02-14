@@ -1,19 +1,30 @@
 head
 	script(src='//code.jquery.com/jquery-2.2.4.min.js')
 
-body
-	p ?
-	comp-1(data-nam='1')
+	style.
+		comp-1:not(:defined) {
+			display: block;
+			background-color: gray;
+			width: 300px;
+			height: 30px;
+		}
 
-	p !
-	comp-1(data-nam='2')
+body
+	comp-1#c1(data-nam='1')
+		p ?
+
+	comp-1#c2(data-nam='2')
+		p !
 
 	#d
 	script.
+		//if(false)
 		$( '#d' ).load( 'comp-foo.html', function() {
 			//var tmpl = document.getElementById('comp-1')
 			//document.body.appendChild(tmpl.content.cloneNode(true))
 			console.log('loaded')
+			$('#c2').attr({ 'nam':'33'})
+
 		})
 
 

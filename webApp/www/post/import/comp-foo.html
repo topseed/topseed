@@ -1,14 +1,35 @@
 
 <template id="comp-1">
-  <style>p { color: orange; }</style>
+  <style>
+    :host { 
+    	display: block;
+    	contain: content; /* CSS containment */
+    	background-color: yellow;
+    	cursor: pointer;
+    	}
+    
+    p { 
+    	color: orange; 
+    }
+    
+  </style>
   <p>My markup</p>
 </template>
 <script>
   customElements.define('comp-1', class extends HTMLElement {
   
+  	static get observedAttributes() {return ['nam'] }//()
+  
+  	 attributeChangedCallback(name, oldValue, newValue) {
+  
+  		 if (name === 'nam') {
+  			 console.log(newValue)
+  		 }//fi
+  	 }//()
+  
   	connectedCallback() { 
-  		console.log('conn')
-  		console.log(this._compRoot)
+  		//console.log('conn')
+  		//console.log(this._compRoot)
   
   		const nam = this.getAttribute('data-nam')
   		console.log(nam)
@@ -24,7 +45,7 @@
   
   	constructor() {
   		super() // always call super first
-  		console.log('ctor')
+  		//console.log('ctor')
   
   		//boiler plate:
   		this._compRoot = this.attachShadow({mode: 'open'})
