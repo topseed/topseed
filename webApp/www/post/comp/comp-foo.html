@@ -18,30 +18,21 @@
 <script>
   customElements.define('comp-1', class extends HTMLElement {
   
-  	static get observedAttributes() {return ['nam'] }//()
-  
-  	 attributeChangedCallback(name, oldValue, newValue) {
-  
-  		 if (name === 'nam') {
-  			 console.log(newValue)
-  		 }//fi
-  	 }//()
+  	get bla() { return 'a'}
+  	set bla(val) { console.log(val) }
   
   	connectedCallback() { 
-  		//console.log('conn')
   		//console.log(this._compRoot)
   
-  		const nam = this.getAttribute('data-nam')
+  		var nam = this.getAttribute('data-nam')
   		console.log(nam)
   		
   		this.addEventListener('click', function() {
   			console.log('clicked')
   		})
   	}//()
-  	
-  	disconnectedCallback() {
-  		console.log('disco')
-  	}//()
+  	//disconnectedCallback() {console.log('disco') }//()
+  
   
   	constructor() {
   		super() // always call super first
@@ -49,8 +40,8 @@
   
   		//boiler plate:
   		this._compRoot = this.attachShadow({mode: 'open'})
-  		const t = document.querySelector('#comp-1')
-  		const instance = t.content.cloneNode(true)
+  		var t = document.querySelector('#comp-1')
+  		var instance = t.content.cloneNode(true)
   		this._compRoot.appendChild(instance)
   	}//()
   })//

@@ -8,6 +8,7 @@ var _inAction = false // set to true when user acts; false when effect is done
 //> ====================================================================
 // for user actions/'control'
  const _act = new signals.Signal()
+ const _compA = new signals.Signal()
 
 /*ex pg:
 function init() {
