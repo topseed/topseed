@@ -9,10 +9,13 @@ loadjs([
 	,'/zCDN/libJs/jquery.jsForm.min.js'
 	,'/zCDN/libJs/jquery.fullpage.min.js'
 	,'/zCDN/libJs/jsrender.min.js'
-	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
 
+	//,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
 	//'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
 	//,'/zCDN/libJs/zingtouch.min.js'
+
+	,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/js/jquery.dataTables.min.js'
+	,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/css/jquery.dataTables.min.css'
 
 	], { success: function(){
 		console.log('loaded')

@@ -1,0 +1,25 @@
+{
+	"name": "middle4Top",
+	"private": true,
+	"engines":		
+		{"node": ">=7.4",
+		 "npm": ">=4.1"
+		},
+	"comment_only": "// npm-check-updates -u,  jwt simple jwt express, jsonwebtoken",
+	"scripts": {"start": "node index.js"},
+
+	"dependencies": {
+		"express": ">=4.14"
+		, "cors": ">=2.8"
+		, "compression": ">=1.6"
+		, "body-parser": ">=1.1"
+
+		,"node-fetch": ">=1.6"
+
+		, "@google-cloud/datastore": ">=0.6"
+
+		,"jsonwebtoken": ">= 7.2"
+
+	}
+
+}

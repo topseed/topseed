@@ -1,7 +1,12 @@
+extends  ../../_part/_baseShellS
 
-extends  ../../_part/_shell0-base
+block head
+	include ../../_part/_headerS
 
-block content
+block top
+	include ../../_part/_topS
+
+block main
 	.mui-container-fluid
 		p
 			br
@@ -41,4 +46,4 @@ block content
 		}
 
 block footer
-	include  ../../_part/_footer
+	include ../../_part/_footerS

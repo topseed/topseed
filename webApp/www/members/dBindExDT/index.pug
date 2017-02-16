@@ -1,0 +1,31 @@
+
+extends  ../../_part/_baseShell
+
+block head
+	include  ../../_part/_headerS
+
+block content
+	.mui-container-fluid
+		include _common
+
+	script.
+
+		fetch('https://rch-demo.appspot.com/membersPg/mem/', { //1 call
+			method: 'get'
+			}).then(function(response) { //2 promise
+				return (response.json())
+			}).then(function(value) { //3
+				// your code here
+				console.log('back')
+				console.log(JSON.stringify(value))
+				let tmpl = $.templates("#peopleList")
+				let html2 = tmpl.render( value )
+				$('#peopleList').html(html2)
+			}).catch(function(err) {
+				console.log('error')
+				console.log(err)
+		})//fetch()
+		
+block footer
+	include   ../../_part/_footerS
+	
