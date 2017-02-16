@@ -1,16 +1,12 @@
-// Normalizer
-@import
-"normalize-5.0.0";
-
 // Core variables and mixins
 @import
 "mui/colors",
 "mui/variables",
 "mui/mixins";
 
-// CSS Reboot
+// Globals
 @import
-"mui/reboot";
+"mui/globals";
 
 // Components
 @import
@@ -19,18 +15,18 @@
 "mui/checkbox-and-radio",
 "mui/containers",
 "mui/divider",
-//"mui/dropdown",
+"mui/dropdown",
 "mui/form",
 "mui/grid",
 "mui/panel",
-//"mui/select",
-//"mui/table",
+"mui/select",
+"mui/table",
 "mui/tabs",
 "mui/textfield";
 
 // Miscellaneous
 @import
 "mui/helpers",
-//"mui/overlay",
+"mui/overlay",
 "mui/ripple",
 "mui/typography";

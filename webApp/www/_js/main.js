@@ -10,7 +10,6 @@ loadjs([
 	,'/zCDN/libJs/jquery.fullpage.min.js'
 	,'/zCDN/libJs/jsrender.min.js'
 	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-	,'//cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js'
 
 	//'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
 	//,'/zCDN/libJs/zingtouch.min.js'

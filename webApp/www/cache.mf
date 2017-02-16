@@ -2,21 +2,16 @@ CACHE MANIFEST
 # load stable 3rd party asset once and freeze on client, even if asset changes, it won't ping
 
 #index assets
-
 https://code.jquery.com/jquery-2.2.4.min.js
 https://cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js
-
-
 https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en
-https://fonts.googleapis.com/icon?family=Material+Icons
 
-#page assets
-https://cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js
-https://cdn.radiantmediatechs.com/rmp/rr/vgs.json
-https://cdn.radiantmediatechs.com/rmp/v3/latest/css/rmp-s1.min.css
-https://cdn.radiantmediatechs.com/rmp/v3/latest/css/fonts/rmp-font.woff?15ft5d
-https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2
-https://www.gstatic.com/cv/js/sender/v1/cast_sender.js
+https://cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js
+https://cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js
+https://cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js
+
+#page assets:
+
 
 NETWORK:
 *
