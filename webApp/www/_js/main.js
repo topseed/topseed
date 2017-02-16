@@ -2,21 +2,22 @@
 
 loadjs([
 	'//code.jquery.com/jquery-2.2.4.min.js'
-	,'/_js/libJs/jquery.smoothState.js'
+	,'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
+	,'/zCDN/libJs/jquery.smoothState.js'
+	,'/zCDN/libJs/custom-elements.min.js'
+
+	,'/zCDN/libJs/jquery.jsForm.min.js'
+	,'/zCDN/libJs/jquery.fullpage.min.js'
+	,'/zCDN/libJs/jsrender.min.js'
 	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-	,'//cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js'
-	
-	//,'//cdn.jsdelivr.net/fetch/0.9.0/fetch.min.js'
-	,'//cdn.jsdelivr.net/jquery.fullpage/2.8.8/jquery.fullpage.min.js'
-	,'//cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css'
-	,'//cdn.jsdelivr.net/jquery.jsform/1.0.5/jquery.jsForm.min.js'
+	,'//cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js'
 
-	,'//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'
-	,'//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css'
+	//'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
+	//,'/zCDN/libJs/zingtouch.min.js'
 
-	],  { success: function(){
-		_loaded=true
+	], { success: function(){
 		console.log('loaded')
+		_loaded=true
 		_stateA.dispatch(_LOADED, window.location)
 
 		startApp()
@@ -26,8 +27,8 @@ loadjs([
 //====================================================================
 function startApp(){
 	var $body=$('body')
-	$body.fadeTo(75,1)//shell sets it to 0
-	_stateA.dispatch(_stateA, window.location)
+	$body.fadeTo(20,1)//shell sets it to 0
+	_stateA.dispatch(_PAGE, window.location)
 
 	//>===============================================================
 	function toggleSide(){
@@ -36,47 +37,50 @@ function startApp(){
 		$sidedrawer.toggleClass('active')
 	}
 	function initSideDraw() {
+		console.log('initSD')
 		setTimeout(function(){
 			$('#brand').on('click', toggleSide)
-			$('#sidedrawer-brand').on('click', toggleSide)
+			$('#sidedrawer').on('click', toggleSide)
 		}, 200)
 	}
 	initSideDraw()
 
 	//>====================================================================
 	//SS
-	var ssoptions={
+	let ssoptions={
 		debug: true,
 		prefetch: true,
-		cacheLength: 2,
-		repeatDelay: 250,
-		
+		cacheLength: 3,
+		repeatDelay: 450,
+
 		onStart: {
-			duration: 50,
+			duration: 0, 
 			render: function (url, $container)  {
 				_inAction=true
-				console.log('-> ')
+				//console.log('-> ')
 				_stateA.dispatch(_PRE, window.location, $container)//*a
 				$('#content-wrapper').fadeTo(100,.2)
-			}
-		},
+
+			}//r
+		},//onS
 		onReady: {
-			duration: 100,
+			duration: 0,
 			render: function ($container, $newContent) {
-				$container.html($newContent)
 
 				$('#content-wrapper').fadeTo(200,1)
 
-				_stateA.dispatch(_stateA, window.location, $newContent)//*a
-				//re-register page handlers:
-				initSideDraw()
 				_inAction= false
-				console.log('% <-')
-
+				_stateA.dispatch(_stateA, window.location, $newContent)//*a
+				//console.log('% <-')
 			}//ren
 		}//ready()
-	}//
-	var smoothState=$('#ss1').smoothState(ssoptions)
+	}//sso
+	
+	const smoothState= $('#ss1').smoothState(ssoptions)
+
+	
+	let endTime = (new Date()).getTime() - _loadStarted
+	console.log('load time ' + endTime)
 }//startApp()
 
 //====================================================================
