@@ -24,7 +24,7 @@ $mui-appbar-height:              $headerH;
 $mui-appbar-height-xs-portrait:  $headerH;
 $mui-appbar-height-xs-landscape: $headerH;
 
-$mui-base-font-family:    Roboto; // THE font for M.
+$mui-base-font-family:    'Roboto'; // THE font for M.
 $mui-base-font-color:     $primary-text-color;
 $mui-base-font-size:      $base-line-height * .68; // golden ratio as % of line-height
 $mui-base-font-smoothing: true;
@@ -39,7 +39,7 @@ body {
 	height: 100%;
 }
 * {
-	font-family: Roboto, serif;
+	font-family: 'Roboto', serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-shadow:  1px 1px 1px rgba(0,0,0,0.004);
