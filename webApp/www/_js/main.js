@@ -17,7 +17,7 @@ loadjs([
 	],  { success: function(){
 		_loaded=true
 		console.log('loaded')
-		_act.dispatch(_LOADED, window.location)
+		_stateA.dispatch(_LOADED, window.location)
 
 		startApp()
 	}, async: false
@@ -27,7 +27,7 @@ loadjs([
 function startApp(){
 	var $body=$('body')
 	$body.fadeTo(75,1)//shell sets it to 0
-	_act.dispatch(_ACT, window.location)
+	_stateA.dispatch(_stateA, window.location)
 
 	//>===============================================================
 	function toggleSide(){
@@ -56,7 +56,7 @@ function startApp(){
 			render: function (url, $container)  {
 				_inAction=true
 				console.log('-> ')
-				_act.dispatch(_PRE, window.location, $container)//*a
+				_stateA.dispatch(_PRE, window.location, $container)//*a
 				$('#content-wrapper').fadeTo(100,.2)
 			}
 		},
@@ -67,7 +67,7 @@ function startApp(){
 
 				$('#content-wrapper').fadeTo(200,1)
 
-				_act.dispatch(_ACT, window.location, $newContent)//*a
+				_stateA.dispatch(_stateA, window.location, $newContent)//*a
 				//re-register page handlers:
 				initSideDraw()
 				_inAction= false

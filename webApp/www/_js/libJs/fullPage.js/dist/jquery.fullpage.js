@@ -42,7 +42,7 @@
     var SECTION_DEFAULT_SEL =   '.section';
     var SECTION =               'fp-section';
     var SECTION_SEL =           '.' + SECTION;
-    var SECTION_ACTIVE_SEL =    SECTION_SEL + ACTIVE_SEL;
+    var SECTION_stateAIVE_SEL =    SECTION_SEL + ACTIVE_SEL;
     var SECTION_FIRST_SEL =     SECTION_SEL + ':first';
     var SECTION_LAST_SEL =      SECTION_SEL + ':last';
     var TABLE_CELL =            'fp-tableCell';
@@ -57,13 +57,13 @@
     var SECTION_NAV_SEL =       '#' + SECTION_NAV;
     var SECTION_NAV_TOOLTIP =   'fp-tooltip';
     var SECTION_NAV_TOOLTIP_SEL='.'+SECTION_NAV_TOOLTIP;
-    var SHOW_ACTIVE_TOOLTIP =   'fp-show-active';
+    var SHOW_stateAIVE_TOOLTIP =   'fp-show-active';
 
     // slide
     var SLIDE_DEFAULT_SEL =     '.slide';
     var SLIDE =                 'fp-slide';
     var SLIDE_SEL =             '.' + SLIDE;
-    var SLIDE_ACTIVE_SEL =      SLIDE_SEL + ACTIVE_SEL;
+    var SLIDE_stateAIVE_SEL =      SLIDE_SEL + ACTIVE_SEL;
     var SLIDES_WRAPPER =        'fp-slides';
     var SLIDES_WRAPPER_SEL =    '.' + SLIDES_WRAPPER;
     var SLIDES_CONTAINER =      'fp-slidesContainer';
@@ -236,7 +236,7 @@
 
             setVariableState('autoScrolling', value, type);
 
-            var element = $(SECTION_ACTIVE_SEL);
+            var element = $(SECTION_stateAIVE_SEL);
 
             if(options.autoScrolling && !options.scrollBar){
                 $htmlBody.css({
@@ -361,7 +361,7 @@
         * Moves the page up one section.
         */
         function moveSectionUp(){
-            var prev = $(SECTION_ACTIVE_SEL).prev(SECTION_SEL);
+            var prev = $(SECTION_stateAIVE_SEL).prev(SECTION_SEL);
 
             //looping to the bottom if there's no more sections above
             if (!prev.length && (options.loopTop || options.continuousVertical)) {
@@ -377,7 +377,7 @@
         * Moves the page down one section.
         */
         function moveSectionDown(){
-            var next = $(SECTION_ACTIVE_SEL).next(SECTION_SEL);
+            var next = $(SECTION_stateAIVE_SEL).next(SECTION_SEL);
 
             //looping to the top if there's no more sections below
             if(!next.length &&
@@ -464,11 +464,11 @@
 
                 //adjusting the position fo the FULL WIDTH slides...
                 if (slides.length > 1) {
-                    landscapeScroll(slidesWrap, slidesWrap.find(SLIDE_ACTIVE_SEL));
+                    landscapeScroll(slidesWrap, slidesWrap.find(SLIDE_stateAIVE_SEL));
                 }
             });
 
-            var activeSection = $(SECTION_ACTIVE_SEL);
+            var activeSection = $(SECTION_stateAIVE_SEL);
             var sectionIndex = activeSection.index(SECTION_SEL);
 
             //isn't it the first section?
@@ -548,10 +548,10 @@
             setAutoScrolling(options.autoScrolling, 'internal');
 
             //the starting point is a slide?
-            var activeSlide = $(SECTION_ACTIVE_SEL).find(SLIDE_ACTIVE_SEL);
+            var activeSlide = $(SECTION_stateAIVE_SEL).find(SLIDE_stateAIVE_SEL);
 
             //the active section isn't the first one? Is not the first slide of the first section? Then we load that section/slide by default.
-            if( activeSlide.length &&  ($(SECTION_ACTIVE_SEL).index(SECTION_SEL) !== 0 || ($(SECTION_ACTIVE_SEL).index(SECTION_SEL) === 0 && activeSlide.index() !== 0))){
+            if( activeSlide.length &&  ($(SECTION_stateAIVE_SEL).index(SECTION_SEL) !== 0 || ($(SECTION_stateAIVE_SEL).index(SECTION_SEL) === 0 && activeSlide.index() !== 0))){
                 silentLandscapeScroll(activeSlide);
             }
 
@@ -727,11 +727,11 @@
                 }
             });
 
-            var startingSlide = section.find(SLIDE_ACTIVE_SEL);
+            var startingSlide = section.find(SLIDE_stateAIVE_SEL);
 
             //if the slide won't be an starting point, the default will be the first one
             //the active section isn't the first one? Is not the first slide of the first section? Then we load that section/slide by default.
-            if( startingSlide.length &&  ($(SECTION_ACTIVE_SEL).index(SECTION_SEL) !== 0 || ($(SECTION_ACTIVE_SEL).index(SECTION_SEL) === 0 && startingSlide.index() !== 0))){
+            if( startingSlide.length &&  ($(SECTION_stateAIVE_SEL).index(SECTION_SEL) !== 0 || ($(SECTION_stateAIVE_SEL).index(SECTION_SEL) === 0 && startingSlide.index() !== 0))){
                 silentLandscapeScroll(startingSlide);
             }else{
                 slides.eq(0).addClass(ACTIVE);
@@ -743,7 +743,7 @@
         */
         function styleSection(section, index){
             //if no active section is defined, the 1st one will be the default one
-            if(!index && $(SECTION_ACTIVE_SEL).length === 0) {
+            if(!index && $(SECTION_stateAIVE_SEL).length === 0) {
                 section.addClass(ACTIVE);
             }
 
@@ -816,7 +816,7 @@
             var nav = $(SECTION_NAV_SEL);
 
             nav.addClass(function() {
-                return options.showActiveTooltip ? SHOW_ACTIVE_TOOLTIP + ' ' + options.navigationPosition : options.navigationPosition;
+                return options.showActiveTooltip ? SHOW_stateAIVE_TOOLTIP + ' ' + options.navigationPosition : options.navigationPosition;
             });
 
             for (var i = 0; i < $(SECTION_SEL).length; i++) {
@@ -843,7 +843,7 @@
             $(SECTION_NAV_SEL).css('margin-top', '-' + ($(SECTION_NAV_SEL).height()/2) + 'px');
 
             //activating the current active section
-            $(SECTION_NAV_SEL).find('li').eq($(SECTION_ACTIVE_SEL).index(SECTION_SEL)).find('a').addClass(ACTIVE);
+            $(SECTION_NAV_SEL).find('li').eq($(SECTION_stateAIVE_SEL).index(SECTION_SEL)).find('a').addClass(ACTIVE);
         }
 
         /**
@@ -895,7 +895,7 @@
         * Actions and callbacks to fire afterRender
         */
         function afterRenderActions(){
-            var section = $(SECTION_ACTIVE_SEL);
+            var section = $(SECTION_stateAIVE_SEL);
 
             section.addClass(COMPLETELY);
 
@@ -949,8 +949,8 @@
                 }
 
                 if(isCompletelyInViewPort(scrollDirection)){
-                    if(!$(SECTION_ACTIVE_SEL).hasClass(COMPLETELY)){
-                        $(SECTION_ACTIVE_SEL).addClass(COMPLETELY).siblings().removeClass(COMPLETELY);
+                    if(!$(SECTION_stateAIVE_SEL).hasClass(COMPLETELY)){
+                        $(SECTION_stateAIVE_SEL).addClass(COMPLETELY).siblings().removeClass(COMPLETELY);
                     }
                 }
 
@@ -961,12 +961,12 @@
                 //executing only once the first time we reach the section
                 if(!currentSection.hasClass(ACTIVE)){
                     isScrolling = true;
-                    var leavingSection = $(SECTION_ACTIVE_SEL);
+                    var leavingSection = $(SECTION_stateAIVE_SEL);
                     var leavingSectionIndex = leavingSection.index(SECTION_SEL) + 1;
                     var yMovement = getYmovement(currentSection);
                     var anchorLink  = currentSection.data('anchor');
                     var sectionIndex = currentSection.index(SECTION_SEL) + 1;
-                    var activeSlide = currentSection.find(SLIDE_ACTIVE_SEL);
+                    var activeSlide = currentSection.find(SLIDE_stateAIVE_SEL);
                     var slideIndex;
                     var slideAnchorLink;
 
@@ -1010,10 +1010,10 @@
                         if(canScroll && options.fitToSection){
                             //allows to scroll to an active section and
                             //if the section is already active, we prevent firing callbacks
-                            if($(SECTION_ACTIVE_SEL).is(currentSection)){
+                            if($(SECTION_stateAIVE_SEL).is(currentSection)){
                                 isResizing = true;
                             }
-                            scrollPage($(SECTION_ACTIVE_SEL));
+                            scrollPage($(SECTION_stateAIVE_SEL));
 
                             isResizing = false;
                         }
@@ -1026,7 +1026,7 @@
         * Determines whether the active section has seen in its whole or not.
         */
         function isCompletelyInViewPort(movement){
-            var top = $(SECTION_ACTIVE_SEL).position().top;
+            var top = $(SECTION_stateAIVE_SEL).position().top;
             var bottom = top + $window.height();
 
             if(movement == 'up'){
@@ -1244,7 +1244,7 @@
                     e.preventDefault ? e.preventDefault() : e.returnValue = false;
                 }
 
-                var activeSection = $(SECTION_ACTIVE_SEL);
+                var activeSection = $(SECTION_stateAIVE_SEL);
                 var scrollable = options.scrollOverflowHandler.scrollable(activeSection);
 
                 //time difference between the last scroll and the current one
@@ -1290,7 +1290,7 @@
         * Optional `section` param.
         */
         function moveSlide(direction, section){
-            var activeSection = typeof section === 'undefined' ? $(SECTION_ACTIVE_SEL) : section;
+            var activeSection = typeof section === 'undefined' ? $(SECTION_stateAIVE_SEL) : section;
             var slides = activeSection.find(SLIDES_WRAPPER_SEL);
             var numSlides = slides.find(SLIDE_SEL).length;
 
@@ -1299,7 +1299,7 @@
                 return;
             }
 
-            var currentSlide = slides.find(SLIDE_ACTIVE_SEL);
+            var currentSlide = slides.find(SLIDE_stateAIVE_SEL);
             var destiny = null;
 
             if(direction === 'left'){
@@ -1330,7 +1330,7 @@
         * (Because the `scroll` animation might get lost with some actions, such as when using continuousVertical)
         */
         function keepSlidesPosition(){
-            $(SLIDE_ACTIVE_SEL).each(function(){
+            $(SLIDE_stateAIVE_SEL).each(function(){
                 silentLandscapeScroll($(this), 'internal');
             });
         }
@@ -1392,9 +1392,9 @@
                 yMovement: getYmovement(element),
                 anchorLink: element.data('anchor'),
                 sectionIndex: element.index(SECTION_SEL),
-                activeSlide: element.find(SLIDE_ACTIVE_SEL),
-                activeSection: $(SECTION_ACTIVE_SEL),
-                leavingSection: $(SECTION_ACTIVE_SEL).index(SECTION_SEL) + 1,
+                activeSlide: element.find(SLIDE_stateAIVE_SEL),
+                activeSection: $(SECTION_stateAIVE_SEL),
+                leavingSection: $(SECTION_stateAIVE_SEL).index(SECTION_SEL) + 1,
 
                 //caching the value of isResizing at the momment the function is called
                 //because it will be checked later inside a setTimeout and the value might change
@@ -1520,15 +1520,15 @@
             // Scrolling down
             if (!v.isMovementUp) {
                 // Move all previous sections to after the active section
-                $(SECTION_ACTIVE_SEL).after(v.activeSection.prevAll(SECTION_SEL).get().reverse());
+                $(SECTION_stateAIVE_SEL).after(v.activeSection.prevAll(SECTION_SEL).get().reverse());
             }
             else { // Scrolling up
                 // Move all next sections to before the active section
-                $(SECTION_ACTIVE_SEL).before(v.activeSection.nextAll(SECTION_SEL));
+                $(SECTION_stateAIVE_SEL).before(v.activeSection.nextAll(SECTION_SEL));
             }
 
             // Maintain the displayed position (now that we changed the element order)
-            silentScroll($(SECTION_ACTIVE_SEL).position().top);
+            silentScroll($(SECTION_stateAIVE_SEL).position().top);
 
             // Maintain the active slides visible in the viewport
             keepSlidesPosition();
@@ -1560,7 +1560,7 @@
                 $(SECTION_LAST_SEL).after(v.wrapAroundElements);
             }
 
-            silentScroll($(SECTION_ACTIVE_SEL).position().top);
+            silentScroll($(SECTION_stateAIVE_SEL).position().top);
 
             // Maintain the active slides visible in the viewport
             keepSlidesPosition();
@@ -1678,7 +1678,7 @@
         * Gets the active slide (or section) for the given section
         */
         function getSlideOrSection(destiny){
-            var slide = destiny.find(SLIDE_ACTIVE_SEL);
+            var slide = destiny.find(SLIDE_stateAIVE_SEL);
             if( slide.length ) {
                 destiny = $(slide);
             }
@@ -1924,8 +1924,8 @@
                 anchorLink: section.data('anchor'),
                 slidesNav: section.find(SLIDES_NAV_SEL),
                 slideAnchor:  getAnchor(destiny),
-                prevSlide: section.find(SLIDE_ACTIVE_SEL),
-                prevSlideIndex: section.find(SLIDE_ACTIVE_SEL).index(),
+                prevSlide: section.find(SLIDE_stateAIVE_SEL),
+                prevSlideIndex: section.find(SLIDE_stateAIVE_SEL).index(),
 
                 //caching the value of isResizing at the momment the function is called
                 //because it will be checked later inside a setTimeout and the value might change
@@ -2140,7 +2140,7 @@
         * from the current section.
         */
         function getYmovement(destiny){
-            var fromIndex = $(SECTION_ACTIVE_SEL).index(SECTION_SEL);
+            var fromIndex = $(SECTION_stateAIVE_SEL).index(SECTION_SEL);
             var toIndex = destiny.index(SECTION_SEL);
             if( fromIndex == toIndex){
                 return 'none';
@@ -2425,8 +2425,8 @@
         * Sets a class for the body of the page depending on the active section / slide
         */
         function setBodyClass(){
-            var section = $(SECTION_ACTIVE_SEL);
-            var slide = section.find(SLIDE_ACTIVE_SEL);
+            var section = $(SECTION_stateAIVE_SEL);
+            var slide = section.find(SLIDE_stateAIVE_SEL);
 
             var sectionAnchor = getAnchor(section);
             var slideAnchor = getAnchor(slide);
@@ -2914,7 +2914,7 @@
 
         // Enables or disables the mouse wheel for the active section or all slides in it
         toggleWheel: function(value){
-            var scrollable = $(SECTION_ACTIVE_SEL).find(SCROLLABLE_SEL);
+            var scrollable = $(SECTION_stateAIVE_SEL).find(SCROLLABLE_SEL);
             scrollable.each(function(){
                 var iScrollInstance = $(this).data('iscrollInstance');
                 if(typeof iScrollInstance !== 'undefined' && iScrollInstance){
@@ -3010,7 +3010,7 @@
         scrollable: function(activeSection){
             // if there are landscape slides, we check if the scrolling bar is in the current one or not
             if (activeSection.find(SLIDES_WRAPPER_SEL).length) {
-                return activeSection.find(SLIDE_ACTIVE_SEL).find(SCROLLABLE_SEL);
+                return activeSection.find(SLIDE_stateAIVE_SEL).find(SCROLLABLE_SEL);
             }
             return activeSection.find(SCROLLABLE_SEL);
         },
