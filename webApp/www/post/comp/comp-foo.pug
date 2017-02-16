@@ -20,7 +20,6 @@ script.
 		set bla(val) { console.log(val) }
 
 		connectedCallback() { 
-			//console.log(this._compRoot)
 
 			var nam = this.getAttribute('data-nam')
 			console.log(nam)
@@ -28,6 +27,9 @@ script.
 			this.addEventListener('click', function() {
 				console.log('clicked')
 			})
+
+		//console.log(this._compRoot)
+
 		}//()
 		//disconnectedCallback() {console.log('disco') }//()
 
