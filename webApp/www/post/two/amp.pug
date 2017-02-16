@@ -1,15 +1,16 @@
+extends  ../../_part/_baseShellA
 
-extends  ../../_part/_shell0-base
+block head
+	include ../../_part/_headerA
 
-block content
+	link(rel='canonical', href='https://www.FIXME.org/post/amp/')
+
+block top
+	include ../../_part/_topA
+
+block main
 	.mui-container-fluid
-		include ../../con_m/post/two/story2.html
-
-		script.
-			_stateA.addOnce(function(arg1, arg2) {
-				console.log('t'+arg1, arg2)
-				return false
-			})
+		include ../../_share/post/two/story2.html
 
 block footer
-	include  ../../_part/_footer
+	include ../../_part/_footerA
