@@ -15,12 +15,11 @@
 		, "cors": ">=2.8"
 		, "compression": ">=1.6"
 		, "body-parser": ">=1.1"
+		, "node-fetch": ">=1.6"
+		, "jsonwebtoken": ">= 7.2"
+		, "jsrender": ">=0.9"
 
-		,"node-fetch": ">=1.6"
-
-		,"jsrender": ">=0.9"
-
-		,"jsonwebtoken": ">= 7.2"
+		, "mailgun-js": ">=0.8"
 
 	}
 }

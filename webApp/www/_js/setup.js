@@ -1,7 +1,7 @@
 'use strict'
 //globals
 var _PRE = '_pre-action'
-var _PAGE = '_PAGE'
+var _PAGE = '_page'
 var _LOADED = '_loaded'
 var _inAction = false // set to true when user acts; false when effect is done
 var _loaded = false

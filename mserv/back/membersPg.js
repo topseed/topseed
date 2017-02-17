@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 
-const fake = require('./fake')
+const DATA = require('./data')
 const AUTH = require('./auth')
 
 //methods ###################### 
@@ -21,12 +21,12 @@ router.all('/join', function (req, res) {
 })
 
 router.all('/list', function (req, res) {
-	const ret = fake._fakeDW()
+	const ret = DATA.fakeDW()
 	res.status(200).send(JSON.stringify(ret))
 })
 
 router.all('/mem', function (req, res) {
-	const ret = fake._fakeBind()
+	const ret = DATA.fakeRender()
 	res.status(200).send(JSON.stringify(ret))
 })
 

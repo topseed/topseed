@@ -1,13 +1,17 @@
+// http://cloud.google.com/datastore/docs/datastore-api-tutorial
+// http://cloud.google.com/datastore/docs/concepts/entities
+// http://cloud.google.com/datastore/docs/concepts/queries
+
 'use strict'
 
-exports._fakeBind = function() {
+exports.fakeRender = function() {
 
 	let _people = {people: [{name: 'Jim'}, {name: 'Pedro'}] }
 
 	return _people
 }
 
-exports._fakeDW= function() {
+exports.fakeDW= function() {
 	return {
 	"data": [
 		[
