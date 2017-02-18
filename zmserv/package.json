@@ -9,16 +9,16 @@
 	"scripts": {"start": "node index.js"},
 
 	"dependencies": {
-		"express": ">=4.14"
+		"express": ">=4.1"
 		, "cors": ">=2.8"
 		, "compression": ">=1.6"
 		, "body-parser": ">=1.1"
 		, "node-fetch": ">=1.6"
+		, "is_js": ">=0.9"
 		, "jsonwebtoken": ">= 7.2"
 
 		, "mailgun-js": ">=0.8"
 		, "@google-cloud/datastore": ">=0.6"
-
 
 	}
 

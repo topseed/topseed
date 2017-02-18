@@ -26,8 +26,8 @@ var A = {
 				cb()
 				return false
 			})//added once
-		}
-	}
+		}//e
+	}//()
 
 }//
 
@@ -39,8 +39,8 @@ function init() {
 A.onLoaded(init)
 */
 
-
 console.log('act setup')
+
 // load <====================================================================
 function loadNotChrome() {
 	loadjs([
