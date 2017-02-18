@@ -1,4 +1,5 @@
 'use strict'
+
 if(bowser.msie) {
 	console.log('*** you got ie, this site wont work, please use edge or better, or go to AMP/M sub-domain')
 	// redirect to amp.DOMAIN
@@ -12,7 +13,6 @@ var _inAction = false // set to true when user acts; false when effect is done
 var _loaded = false
 
 var _stateA = new signals.Signal()
-var _compA = new signals.Signal()
 //> ====================================================================
 
 /*ex pg:
@@ -42,6 +42,7 @@ function loadNotChrome() {
 	})
 }
 if ( !bowser.blink) {//detect
+	console.log('not new chrome')
 	loadNotChrome()
 } else {
 	console.log('is chrome')
@@ -57,7 +58,6 @@ loadjs([
 		loadjs.done('keyLibs')
 	}, async: false
 })
-
 
 // foo <====================================================================
 function preLImg(arg) {

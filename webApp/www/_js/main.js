@@ -1,37 +1,36 @@
 'use strict'
 
-loadjs([
-	'/zCDN/libJs/shadydom.min.js'
-	,'/zCDN/libJs/custom-elements.min.js'
-	,'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
-	,'//code.jquery.com/jquery-2.2.4.min.js'
-	,'/zCDN/libJs/jquery.smoothState.js'
-	,'/zCDN/libJs/jquery.jsForm.min.js'
+loadjs.ready(['dependencyNotChrome', 'keyLibs'], {// loaded setup libs
+	success: function(){
+	console.log('loading libs')
+	loadjs([
+		//dbind:
+		'/zCDN/libJs/jquery.jsForm.min.js'
+		,'/zCDN/libJs/jsrender.min.js'
 
-	,'/zCDN/libJs/jsrender.min.js'
+		,'/zCDN/libJs/jquery.fullpage.min.js'
+		,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
+		//'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
+		//,'/zCDN/libJs/zingtouch.min.js'
 
-	,'/zCDN/libJs/jquery.fullpage.min.js'
-	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-	,'//cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js'
+		,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/js/jquery.dataTables.min.js'
+		,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/css/jquery.dataTables.min.css'
 
-	//,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-	//'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
-	//,'/zCDN/libJs/zingtouch.min.js'
-
-	,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/js/jquery.dataTables.min.js'
-	,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/css/jquery.dataTables.min.css'
-
-	], { success: function(){
-		console.log('loaded')
-		_loaded=true
-		_stateA.dispatch(_LOADED, window.location)
-
-		startApp()
-	}, async: false
+		], { success: function(){
+			console.log('loaded libs')
+			startApp()
+		}
+	})//loadjs
+	}//suc
 })
 
 //====================================================================
 function startApp(){
+	$('#navPrev').click(function(e) { 
+		console.log('#navPrev')
+		toggleSide()
+	})
+
 	var $body=$('body')
 	$body.fadeTo(20,1)//shell sets it to 0
 	_stateA.dispatch(_PAGE, window.location)
@@ -72,7 +71,6 @@ function startApp(){
 		onReady: {
 			duration: 0,
 			render: function ($container, $newContent) {
-
 				$('#content-wrapper').fadeTo(200,1)
 
 				_inAction= false
@@ -84,9 +82,12 @@ function startApp(){
 	
 	const smoothState= $('#ss1').smoothState(ssoptions)
 
-	
+	//setupFlick()
+	// READY ///////////////////////////////////////////////////////////
+	_loaded=true
+	_stateA.dispatch(_LOADED, window.location)
+
 	let endTime = (new Date()).getTime() - _loadStarted
 	console.log('load time ' + endTime)
 }//startApp()
-
 //====================================================================

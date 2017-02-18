@@ -1,4 +1,5 @@
 const fs = require('fs')
+//const isj = require('is_js')
 
 // ###################### middle filter
 const ROOT = './www'
@@ -22,25 +23,31 @@ function setLong(res) {//23 hours, 1hr
 }
 
 exports.filter = function (req, res, next) {
-	setLong(res)
-	if (req.path.indexOf('.') !=-1) { // hasDot?
+	setLong(res) // default is long, later we set to quick if needed
+
+	if (req.originalUrl.indexOf('.') !=-1) { // hasDot?
 		next() // it is a static asset, ex: .jpg, .css
 	} else { // no dot, it is a path:
 		try {
-			const pgPath = ROOT + req.path
+			res.header('Content-Type', 'text/html')
+
+			//console.log('->')
+			let path = req.originalUrl
+			path = path.replace('undefined/','')
+			path = path.replace('undefined','')
+			const pgPath = ROOT + path
 			let containsWWWW = (req.subdomains.indexOf('www') > -1) //for subdomain
 			if(req.socket.localPort == 8082) containsWWWW = true
 			const isWWWW = (req.query.w == '1') || containsWWWW
 			
 			console.log(pgPath + ' ^ ' + isWWWW)
 
-			if(!endsWithSlash(req.path)) {
-				res.redirect(req.path + '/')
+			if(!endsWithSlash(path)) {
+				res.redirect(path + '/')
 			} else if (fs.existsSync(pgPath + INDEX)) {// this is not compliant to SPA|AMP
-				console.log(pgPath + INDEX)
 				fs.readFile(pgPath + INDEX, 'utf8', function(err, data) {
 					if(err)  {
-						console.log(err)
+						console.log('EX: exi' +err)
 						res.redirect('/index.html')// error - go home
 					}
 					res.send(data)
@@ -48,7 +55,7 @@ exports.filter = function (req, res, next) {
 			} else if(isWWWW) {//is it SPA/www? 
 				fs.readFile(pgPath + SPA, 'utf8', function(err, data) {
 					if(err)  {
-						console.log(err)
+						console.log('EX: w' +err)
 						res.redirect('/index.html')// error - go home
 					}
 					res.send(data)
@@ -57,16 +64,17 @@ exports.filter = function (req, res, next) {
 				setQuick(res)
 				fs.readFile(pgPath + AMP, 'utf8', function(err, data) {
 					if(err)  {
-						console.log(err)
+						console.log('EX a: ' +err)
 						res.redirect('/index.html')// error - go home
 					}
 					res.send(data)
 				})// readfile
 			} //else AMP
 		} catch(err) {
-			console.log(err)
+			console.log('EX f: ' +err)
 			res.redirect('/index.html')// error - go home
 		}
+		//console.log('<-')
 	} // else it is a path
 
 }//()
