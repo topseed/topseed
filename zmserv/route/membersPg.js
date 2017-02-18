@@ -5,8 +5,10 @@ const router = express.Router()
 const DATA = require('./data')
 const AUTH = require('./auth')
 
+// 3 use cases: dt, auth, jrender
+
 //methods ###################### 
-router.all('/join', function (req, res) {
+router.post('/join', function (req, res) { //auth
 	console.log(req.body)
 	const obj = req.body
 
@@ -20,12 +22,12 @@ router.all('/join', function (req, res) {
 	})
 })
 
-router.all('/list', function (req, res) {
+router.post('/list', function (req, res) { //dt
 	const ret = DATA.fakeDW()
 	res.status(200).send(JSON.stringify(ret))
 })
 
-router.all('/mem', function (req, res) {
+router.post('/mem', function (req, res) { // jsrender
 	const ret = DATA.fakeRender()
 	res.status(200).send(JSON.stringify(ret))
 })

@@ -8,14 +8,12 @@ middle.use(cors())
 // ###################### 
 
 //routes ###################### 
-const homePg = require('./back/homePg')
-const membersPg = require('./back/membersPg')
-
+const membersPg = require('./route/membersPg')
 middle.use('/membersPg', membersPg) //front route 1 - match the front end
 
 //###################### 
 // start the service
-const PORT = process.env.PORT || 8080
+const PORT = 8083
 middle.listen(PORT, '0.0.0.0', function() {
 	console.log('App listening on port')
 	console.log('Press Ctrl+C to quit.')
