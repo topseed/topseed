@@ -16,6 +16,7 @@ loadjs.ready(['dependencyNotChrome', 'keyLibs'], {// loaded setup libs
 		//dbind moar:
 		,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/js/jquery.dataTables.min.js'
 		,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/css/jquery.dataTables.min.css'
+		,'/zCDN/libJs/raphael.min.js'
 
 		], { success: function(){
 			console.log('loaded libs')

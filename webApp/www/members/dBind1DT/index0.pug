@@ -189,8 +189,10 @@ block main
 					]
 				]
 
-			console.log('pg init')
 			dtInit()
+			loadMo()
+			console.log('pg init')
+
 		}
 		
 		//could be in a component:
@@ -217,14 +219,16 @@ block main
 
 		A.onLoaded(init)
 
-		if(false) loadjs([
-			'//cdn.jsdelivr.net/morris.js/0.5.1/morris.min.js'
-			,'//cdn.jsdelivr.net/morris.js/0.5.1/morris.css'
-			], { success: function(){
-				console.log('late lodaded Morris lib - could be in a component')
-				//initMorris()
-			}
-		})
+		function loadMo() {
+			loadjs([
+				'//cdn.jsdelivr.net/morris.js/0.5.1/morris.min.js'
+				,'//cdn.jsdelivr.net/morris.js/0.5.1/morris.css'
+				], { success: function(){
+					console.log('late lodaded Morris lib - could be in a component')
+					initMorris()
+				}
+			})
+		}
 
 		function initMorris() { // hoist
 			Morris.Donut({
