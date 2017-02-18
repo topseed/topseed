@@ -34,8 +34,6 @@ Examples/Resources that show basic functionality in 'WHAT'
 
 Hello world example source: <https://github.com/topseed/topseed>
 
-Slides used at meetup: <https://1595566120.rsc.cdn77.org/meetup/>
-
 Fetch (data) article: <http://www.masons-foundation.org/post/fetch/>
 
 Components/Custom elements: <https://www.masons-foundation.org/post/comp/>

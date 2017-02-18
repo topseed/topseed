@@ -5,28 +5,41 @@ if(bowser.msie) {
 	// redirect to amp.DOMAIN
 }
 
-//globals:
-var _PRE = '_pre-action'
-var _PAGE = '_page'
-var _LOADED = '_loaded'
-var _inAction = false // set to true when user acts; false when effect is done
-var _loaded = false
+// page actions
+var A = {
+	stateA : new signals.Signal()
+	,inAction : false // set to true when user acts; false when effect is done
+	,loaded : false
+	,PRE : '_pre-action'
+	,PAGE : '_new-page'
+	,LOADED : '_loaded'
 
-var _stateA = new signals.Signal()
+	,act: function (arg) {
+		A.stateA.dispatch(arg, window.location)
+	}//()
+
+	,onLoaded: function(cb) {
+		if(A.loaded) cb()
+		else {
+			A.stateA.addOnce(function(arg1, arg2) {
+				console.log(arg1)
+				cb()
+				return false
+			})//added once
+		}
+	}
+
+}//
+
 //> ====================================================================
-
 /*ex pg:
 function init() {
 	//
 }
-if(_loaded) init()
-else {
-	_stateA.addOnce(function(arg1, arg2) {
-		init()
-		return false
-	})
-}
+A.onLoaded(init)
 */
+
+
 console.log('act setup')
 // load <====================================================================
 function loadNotChrome() {
