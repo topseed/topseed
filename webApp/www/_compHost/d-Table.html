@@ -14,12 +14,17 @@
   </table>
 </template>
 <script>
-  customElements.define('home-card', class extends HTMLElement {
+  customElements.define('d-Table', class extends HTMLElement {
   
   	//get bla() { return 'a'}
   	//set bla(val) { console.log(val)}
+  	//var _compA = new signals.Signal()
   
-  	function dtInit() {
+  	connectedCallback() { 
+  		try {
+  
+  		var dataSet = this.getAttribute('data-set')
+  
   		console.log(dataSet)
   		$('#dg0').DataTable( {
   			data: dataSet
@@ -37,22 +42,6 @@
   			$('#dg0 tr').removeClass('selected')
   			$(this).toggleClass('selected')
   		} )
-  	}//()
-  
-  	connectedCallback() { 
-  		try {
-  
-  		var ref = this.getAttribute('data-ref')
-  		var a = this._compRoot.querySelector('a')
-  		a.href = ref
-  
-  		var dimg = this.getAttribute('data-img')
-  		var timg = this._compRoot.querySelector('.hc--img')
-  		timg.style.backgroundImage = 'url(" ' + dimg + ' ")' 
-  		
-  		var headline = this.getAttribute('data-headline')
-  		var theadline = this._compRoot.querySelector('.hc--headline')
-  		theadline.innerHTML = headline
   
   		} catch(err) { console.log(err) }
   		//console.log(this._compRoot)
@@ -64,12 +53,10 @@
   
   		//boiler plate:
   		this._compRoot = this.attachShadow({mode: 'open'})
-  		var t = document.querySelector('#home-card')
+  		var t = document.querySelector('#d-Table')
   		var instance = t.content.cloneNode(true)
   		this._compRoot.appendChild(instance)
   	}//()
-  
-  //var _compA = new signals.Signal()
   
   })//
 </script>
