@@ -1,5 +1,10 @@
 'use strict'
-//globals
+if(bowser.msie) {
+	console.log('*** you got ie, this site wont work, please use edge or better, or go to AMP/M sub-domain')
+	// redirect to amp.DOMAIN
+}
+
+//globals:
 var _PRE = '_pre-action'
 var _PAGE = '_page'
 var _LOADED = '_loaded'
@@ -23,8 +28,38 @@ else {
 }
 */
 console.log('act setup')
-// <====================================================================
+// load <====================================================================
+function loadNotChrome() {
+	loadjs([
+		'/zCDN/libJs/shadydom.min.js'
+		,'/zCDN/libJs/custom-elements.min.js'
+		,'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
 
+		], { success: function(){
+			console.log('loaded dependencyNotChrome')
+			loadjs.done('dependencyNotChrome')
+		}
+	})
+}
+if ( !bowser.blink) {//detect
+	loadNotChrome()
+} else {
+	console.log('is chrome')
+	loadjs.done('dependencyNotChrome')
+}
+
+loadjs([
+	'//code.jquery.com/jquery-2.2.4.min.js'
+	,'/zCDN/libJs/jquery.smoothState.js'
+
+	], { success: function(){
+		console.log('key libs')
+		loadjs.done('keyLibs')
+	}, async: false
+})
+
+
+// foo <====================================================================
 function preLImg(arg) {
 	var imag = new Image()
 	imag.src = arg

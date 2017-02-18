@@ -1,14 +1,18 @@
 'use strict'
 
 loadjs([
-	'//code.jquery.com/jquery-2.2.4.min.js'
-	,'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
-	,'/zCDN/libJs/jquery.smoothState.js'
+	'/zCDN/libJs/shadydom.min.js'
 	,'/zCDN/libJs/custom-elements.min.js'
-
+	,'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
+	,'//code.jquery.com/jquery-2.2.4.min.js'
+	,'/zCDN/libJs/jquery.smoothState.js'
 	,'/zCDN/libJs/jquery.jsForm.min.js'
-	,'/zCDN/libJs/jquery.fullpage.min.js'
+
 	,'/zCDN/libJs/jsrender.min.js'
+
+	,'/zCDN/libJs/jquery.fullpage.min.js'
+	,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
+	,'//cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js'
 
 	//,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
 	//'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
