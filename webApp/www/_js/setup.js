@@ -38,7 +38,7 @@ function loadNotChrome() {
 		], { success: function(){
 			console.log('loaded dependencyNotChrome')
 			loadjs.done('dependencyNotChrome')
-		}
+		}, async: false
 	})
 }
 if ( !bowser.blink) {//detect
