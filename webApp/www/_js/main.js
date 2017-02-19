@@ -2,7 +2,7 @@
 
 loadjs.ready(['dependencyNotChrome', 'keyLibs'], {// loaded setup libs
 	success: function(){
-	console.log('loading libs')
+	//console.log('loading libs')
 	loadjs([
 		//dbind:
 		'/zCDN/libJs/jquery.jsForm.min.js'
@@ -33,10 +33,12 @@ function startApp(){
 		console.log('#navPrev')
 		toggleSide()
 	})
+	// READY ///////////////////////////////////////////////////////////
+	A.loaded=true
+	A.act(A.LOADED)
 
 	var $body=$('body')
 	$body.fadeTo(20,1)//shell sets it to 0
-	A.act(A.PAGE)
 
 	//>===============================================================
 	function toggleSide(){
@@ -84,10 +86,6 @@ function startApp(){
 	}//sso
 	
 	const smoothState= $('#ss1').smoothState(ssoptions)
-
-	// READY ///////////////////////////////////////////////////////////
-	A.loaded=true
-	A.act(A.LOADED)
 
 	let endTime = (new Date()).getTime() - _loadStarted
 	console.log('load time ' + endTime)

@@ -54,7 +54,7 @@
         <div class="mui-container-fluid">
           <div class="mui-row">
             <div class="mui-col-md-8">
-              <d-table></d-table>
+              <d-table id="comp1"></d-table>
             </div>
             <div class="mui-col-md-4">
               <div class="mui-panel">
@@ -231,6 +231,8 @@
           
           	$( '#dd' ).load('/_compHost/d-table.html', function() {
           		console.log('loaded comp')
+          		document.getElementById('comp1').ds = dataSet
+          
           	})
           
           	loadMo()

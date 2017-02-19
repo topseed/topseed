@@ -15,17 +15,13 @@ script.
 		//var _compA = new signals.Signal()
 
 		get ds() { return 'a'}
-		set ds(val) { console.log(val)
-		
-		}
+		set ds(dataSet) {
 
-		connectedCallback() { 
-			try {
+			//console.log(dataSet)
+			var $dt= $(this._compRoot).find('#dg0')
+			console.log($dt)
 
-			var dataSet = this.getAttribute('data-set')
-
-			console.log(dataSet)
-			$('#dg0').DataTable( {
+			$($dt).DataTable( {
 				data: dataSet
 				,'searching': false
 				,'info': false
@@ -35,20 +31,25 @@ script.
 				,ordering: true
 			} )
 
-			$('#dg0 tbody').on('click', 'tr', function () {
-				var col = $(this).find('td:nth-child(3)')
-				console.log(col.text())
-				$('#dg0 tr').removeClass('selected')
-				$(this).toggleClass('selected')
-			} )
+		}
+
+		connectedCallback() { 
+			try {
+
+				$('#dg0 tbody').on('click', 'tr', function () {
+					var col = $(this).find('td:nth-child(3)')
+					console.log(col.text())
+					$('#dg0 tr').removeClass('selected')
+					$(this).toggleClass('selected')
+				} )
 
 			} catch(err) { console.log(err) }
-			//console.log(this._compRoot)
+			
 		}//()
 
 		constructor() {
 			super() // always call super first
-			console.log('ctor')
+			//console.log('ctor')
 
 			//boiler plate:
 			this._compRoot = this.attachShadow({mode: 'open'})
