@@ -12,8 +12,8 @@ template#d-table
 				th Salary
 
 script.
+	if(!isRegistered('d-table'))  
 	customElements.define('d-table', class extends HTMLElement {
-
 
 		get compA() {
 			console.log('in comp')
@@ -39,27 +39,26 @@ script.
 		}
 
 		connectedCallback() { 
-			try {
-				this._compA = new signals.Signal()
 
-				var $dtb= $(this._compRoot).find('#dg0')
-				//console.log($dtb)
+			this._compA = new signals.Signal()
 
-				$dtb.on('click', 'tr', function () {
-					var col = $(this).find('td:nth-child(3)')
-					//console.log(col.text())
-					this._compA.dispatch(col.text())
-					$('#dg0 tr').removeClass('selected')
-					$(this).toggleClass('selected')
-				} )
+			var $dtb= $(this._compRoot).find('#dg0')
+			//console.log($dtb)
 
-			} catch(err) { console.log(err) }
+			$dtb.on('click', 'tr', function () {
+				var col = $(this).find('td:nth-child(3)')
+				//console.log(col.text())
+				this._compA.dispatch(col.text())
+				$('#dg0 tr').removeClass('selected')
+				$(this).toggleClass('selected')
+			} )
+
 			
 		}//()
 
 		constructor() {
 			super() // always call super first
-			//console.log('ctor')
+			console.log('ctor')
 
 			//boiler plate:
 			this._compRoot = this.attachShadow({mode: 'open'})

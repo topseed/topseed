@@ -44,9 +44,9 @@ console.log('act setup')
 // load <====================================================================
 function loadNotChrome() {
 	loadjs([
-		'/_js/libJs/shadydom.min.js'
-		,'/_js/libJs/custom-elements.min.js'
-		,'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
+		//'/_js/libJs/shadydom.min.js'
+		//,'/_js/libJs/custom-elements.min.js'
+		'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
 
 		], { success: function(){
 			console.log('loaded dependencyNotChrome')
@@ -65,6 +65,7 @@ if ( !bowser.blink) {//detect
 loadjs([
 	'//code.jquery.com/jquery-2.2.4.min.js'
 	,'/_js/libJs/jquery.smoothState.js'
+	,'/_js/libJs/riotComp.min.js'
 
 	], { success: function(){
 		console.log('key libs')
@@ -73,6 +74,17 @@ loadjs([
 })
 
 // foo <====================================================================
+var _comps = {}
+function isRegistered(comp) {
+	//var val = document.createElement(comp).constructor !== HTMLElement;
+	if(comp in _comps){
+		console.log(comp + ' exists')
+		return true
+	}
+	_comps[comp] = true
+	return false
+}
+
 function preLImg(arg) {
 	var imag = new Image()
 	imag.src = arg
