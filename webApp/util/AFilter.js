@@ -25,6 +25,28 @@ function setLong(res) {//23 hours, 1hr
 	res.header('Cache-Control', 'public, s-maxage=82800, max-age=3600')
 }
 
+
+function ifError(err, msg, res) {
+	if(err)  {
+		console.log(msg+': ' + err)
+		res.redirect('/index.html')// error - go home
+		return true
+	} else return false
+}
+function getPath(req) {
+	let path = req.path
+	path = path.replace('undefined/','')
+	path = path.replace('undefined','')
+	return path
+}
+function isW(req) { // should we serve SPA or mobile/AMP?
+	if(req.path.startsWith('/w/')) return true
+	if(req.subdomains.indexOf('www') > -1)  return true
+	if(req.socket.localPort == 8082) return true
+	if (req.query.w == '1') return true
+	return false
+}
+
 exports.filter = function (req, res, next) {
 	setLong(res) // default is long, later we set to quick if needed
 	//console.log('->')
@@ -39,47 +61,32 @@ exports.filter = function (req, res, next) {
 			console.log(agent.toAgent())
 			res.header('Content-Type', 'text/html')
 
-			let path = req.path
-			path = path.replace('undefined/','')
-			path = path.replace('undefined','')
+			const path = getPath(getPath(req))
 			const pgPath = ROOT + path
-			let containsWWWW = (req.subdomains.indexOf('www') > -1) //for subdomain
-			if(req.socket.localPort == 8082) containsWWWW = true
-			const isWWWW = (req.query.w == '1') || containsWWWW
-			
+			const isWWW = isW(req) 
 			console.log(pgPath + ' ^ ' + isWWWW)
 
 			if(!endsWithSlash(path)) {
 				res.redirect(path + '/')
 			} else if (fs.existsSync(pgPath + INDEX)) {// this is not compliant to SPA|AMP
 				fs.readFile(pgPath + INDEX, 'utf8', function(err, data) {
-					if(err)  {
-						console.log('EX: exi' +err)
-						res.redirect('/index.html')// error - go home
-					}
+					ifError(err, 'index', res)
 					res.send(data)
 				})				
 			} else if(isWWWW) {//is it SPA/www? 
 				fs.readFile(pgPath + SPA, 'utf8', function(err, data) {
-					if(err)  {
-						console.log('EX: w' +err)
-						res.redirect('/index.html')// error - go home
-					}
+					ifError(err, 'spa', res)
 					res.send(data)
 				})
 			} else { //AMP is default
 				setQuick(res)
 				fs.readFile(pgPath + AMP, 'utf8', function(err, data) {
-					if(err)  {
-						console.log('EX a: ' +err)
-						res.redirect('/index.html')// error - go home
-					}
+					ifError(err, 'amp', res)
 					res.send(data)
 				})// readfile
 			} //else AMP
 		} catch(err) {
-			console.log('EX f: ' +err)
-			res.redirect('/index.html')// error - go home
+			ifError(err, 'catch', res)
 		}
 		//console.log('<-')
 	} // else it is a path
