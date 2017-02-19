@@ -1,19 +1,6 @@
-const fs = require('fs')
-const useragent = require('useragent')
-//const isj = require('is_js')
-
-useragent(true)
-
-// ###################### middle filter
-const ROOT = './www'
-const SPA = 'spa.html'
-const AMP = 'amp.html'
-const INDEX = 'index.html'
-
-function endsWithSlash(str ) {
-	let suffix = '/'
-	return str.indexOf(suffix, str.length - suffix.length) !== -1;
-}
+const express = require('express')
+const router = express.Router()
+// /////////////////////////////////////////////////////
 
 function setNone(res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
@@ -25,7 +12,7 @@ function setLong(res) {//23 hours, 1hr
 	res.header('Cache-Control', 'public, s-maxage=82800, max-age=3600')
 }
 
-exports.filter = function (req, res, next) {
+router.post('/contact', function (req, res) {	
 	setLong(res) // default is long, later we set to quick if needed
 	//console.log('->')
 	//console.log(req.originalUrl)
@@ -36,7 +23,7 @@ exports.filter = function (req, res, next) {
 	} else { // no dot, it is a path:
 		try {
 			var agent = useragent.lookup(req.headers['user-agent'])
-			console.log(agent.toAgent())
+			console.log(agent)
 			res.header('Content-Type', 'text/html')
 
 			let path = req.path
@@ -84,5 +71,7 @@ exports.filter = function (req, res, next) {
 		//console.log('<-')
 	} // else it is a path
 
-}//()
+})
 
+//###################### 
+module.exports = router
