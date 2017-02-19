@@ -1,6 +1,6 @@
 const fs = require('fs')
 const useragent = require('useragent')
-//const isj = require('is_js')
+const isj = require('is_js')
 
 useragent(true)
 
@@ -9,11 +9,6 @@ const ROOT = './www'
 const SPA = 'spa.html'
 const AMP = 'amp.html'
 const INDEX = 'index.html'
-
-function endsWithSlash(str ) {
-	let suffix = '/'
-	return str.indexOf(suffix, str.length - suffix.length) !== -1;
-}
 
 function setNone(res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
@@ -25,7 +20,12 @@ function setLong(res) {//23 hours, 1hr
 	res.header('Cache-Control', 'public, s-maxage=82800, max-age=3600')
 }
 
-
+const _slash = '/'
+function endsWithSlash(str ) {
+	if(isj.endWith(str,_slash)) 
+		return str
+	return str+_slash
+}
 function ifError(err, msg, res) {
 	if(err)  {
 		console.log(msg+': ' + err)
@@ -35,18 +35,23 @@ function ifError(err, msg, res) {
 }
 function getPath(req) {
 	let path = req.path
+	if(isj.not.existy(path))
+		return '/'
+
 	path = path.replace('undefined/','')
 	path = path.replace('undefined','')
+	path = endsWithSlash(path)
 	return path
 }
 function isW(req) { // should we serve SPA or mobile/AMP?
 	if(req.path.startsWith('/w/')) return true
 	if(req.subdomains.indexOf('www') > -1)  return true
 	if(req.socket.localPort == 8082) return true
-	if (req.query.w == '1') return true
+	if(req.query.w == '1') return true
 	return false
 }
 
+//**************** */
 exports.filter = function (req, res, next) {
 	setLong(res) // default is long, later we set to quick if needed
 	//console.log('->')
@@ -61,14 +66,12 @@ exports.filter = function (req, res, next) {
 			console.log(agent.toAgent())
 			res.header('Content-Type', 'text/html')
 
-			const path = getPath(getPath(req))
+			const path = getPath(req)
 			const pgPath = ROOT + path
-			const isWWW = isW(req) 
+			const isWWWW = isW(req)
 			console.log(pgPath + ' ^ ' + isWWWW)
 
-			if(!endsWithSlash(path)) {
-				res.redirect(path + '/')
-			} else if (fs.existsSync(pgPath + INDEX)) {// this is not compliant to SPA|AMP
+			if (fs.existsSync(pgPath + INDEX)) {// this is not compliant to SPA|AMP
 				fs.readFile(pgPath + INDEX, 'utf8', function(err, data) {
 					ifError(err, 'index', res)
 					res.send(data)
