@@ -259,7 +259,7 @@
           		,ordering: true
           	} )
           
-          	$('#dg0 tbody').on('click', 'tr', function () {
+          	$('#dg0').on('click', 'tr', function () {
           		var col = $(this).find('td:nth-child(3)')
           		console.log(col.text())
           		$('#dg0 tr').removeClass('selected')
