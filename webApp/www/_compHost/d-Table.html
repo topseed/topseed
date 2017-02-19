@@ -1,5 +1,5 @@
 
-<template id="d-Table">
+<template id="d-table">
   <table class="display" id="dg0" cellspacing="0" width="100%">
     <thead>
       <tr>
@@ -14,11 +14,14 @@
   </table>
 </template>
 <script>
-  customElements.define('d-Table', class extends HTMLElement {
+  customElements.define('d-table', class extends HTMLElement {
   
-  	//get bla() { return 'a'}
-  	//set bla(val) { console.log(val)}
   	//var _compA = new signals.Signal()
+  
+  	get ds() { return 'a'}
+  	set ds(val) { console.log(val)
+  	
+  	}
   
   	connectedCallback() { 
   		try {
@@ -53,7 +56,7 @@
   
   		//boiler plate:
   		this._compRoot = this.attachShadow({mode: 'open'})
-  		var t = document.querySelector('#d-Table')
+  		var t = document.querySelector('#d-table')
   		var instance = t.content.cloneNode(true)
   		this._compRoot.appendChild(instance)
   	}//()

@@ -24,14 +24,16 @@ function setLong(res) {//23 hours, 1hr
 
 exports.filter = function (req, res, next) {
 	setLong(res) // default is long, later we set to quick if needed
-
-	if (req.originalUrl.indexOf('.') !=-1) { // hasDot?
+	//console.log('->')
+	//console.log(req.originalUrl)
+	//console.log(req.path)
+	
+	if (req.originalUrl.indexOf('.') >0 ) { // hasDot?
 		next() // it is a static asset, ex: .jpg, .css
 	} else { // no dot, it is a path:
 		try {
 			res.header('Content-Type', 'text/html')
 
-			//console.log('->')
 			let path = req.originalUrl
 			path = path.replace('undefined/','')
 			path = path.replace('undefined','')
