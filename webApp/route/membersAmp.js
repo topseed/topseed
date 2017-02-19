@@ -1,11 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
+const isj = require('is_js')
+const useragent = require('useragent')
 const fetch = require('node-fetch')
 const jsrender = require('jsrender')
 const fs = require('fs')
+
 // /////////////////////////////////////////////////////
 
+const ROOT = './www'
+const SPA = 'spa.html'
+const AMP = 'amp.html'
+const INDEX = 'index.html'
 
 function setNone(res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
@@ -27,13 +34,14 @@ function ifError(err, msg, res) {
 	if(err)  {
 		console.log(msg+': ' + err)
 		res.redirect('/index.html')// error - go home
+		res.end()
 		return true
 	} else return false
 }
 function getPath(req) {
 	let path = req.path
-	if(isj.not.existy(path))
-		return '/'
+	path = ROOT + req.baseUrl + path//***** */
+	console.log(path)
 
 	path = path.replace('undefined/','')
 	path = path.replace('undefined','')
@@ -49,18 +57,16 @@ function isW(req) { // should we serve SPA or mobile/AMP?
 }
 
 //************** */
-router.post('/dBind0Ren', function (req, res) {	
+router.get('/dBind0Ren', function (req, res) {	
 	setLong(res) // default is long, later we set to quick if needed
 	console.log('->')
-	console.log(req.originalUrl)
-	console.log(req.path)
+
 	try {
 		var agent = useragent.lookup(req.headers['user-agent'])
-		console.log(agent)
+		console.log(agent.toAgent())
 		res.header('Content-Type', 'text/html')
 
-		const path = getPath(req)
-		const pgPath = ROOT + path
+		const pgPath = getPath(req)
 		const isWWWW = isW(req)
 		console.log(pgPath + ' ^ ' + isWWWW)
 
@@ -93,7 +99,7 @@ router.post('/dBind0Ren', function (req, res) {
 
 function bind(data, res) {
 	let tmpl = jsrender.templates(data)
-	console.log(tmpl)
+	console.log('bind')
 	fetch('http://45.55.201.250:8083/membersPg/mem/', { //1 call
 		method: 'post'
 		}).then(function(response) { //2 promise

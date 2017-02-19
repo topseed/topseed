@@ -30,13 +30,15 @@ function ifError(err, msg, res) {
 	if(err)  {
 		console.log(msg+': ' + err)
 		res.redirect('/index.html')// error - go home
+		res.end()
 		return true
 	} else return false
 }
 function getPath(req) {
 	let path = req.path
-	if(isj.not.existy(path))
-		return '/'
+	if(isj.not.existy(path)) path = ''
+	path = ROOT + req.baseUrl + path//***** */
+	//console.log(path)
 
 	path = path.replace('undefined/','')
 	path = path.replace('undefined','')
@@ -55,8 +57,6 @@ function isW(req) { // should we serve SPA or mobile/AMP?
 exports.filter = function (req, res, next) {
 	setLong(res) // default is long, later we set to quick if needed
 	//console.log('->')
-	//console.log(req.originalUrl)
-	//console.log(req.path)
 	
 	if (req.path.indexOf('.') >0 ) { // hasDot?
 		next() // it is a static asset, ex: .jpg, .css
@@ -66,8 +66,7 @@ exports.filter = function (req, res, next) {
 			console.log(agent.toAgent())
 			res.header('Content-Type', 'text/html')
 
-			const path = getPath(req)
-			const pgPath = ROOT + path
+			const pgPath = getPath(req)
 			const isWWWW = isW(req)
 			console.log(pgPath + ' ^ ' + isWWWW)
 
