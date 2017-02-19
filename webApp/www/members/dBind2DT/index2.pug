@@ -184,6 +184,9 @@ block main
 			$( '#dd' ).load('/_compHost/d-table.html', function() {
 				console.log('loaded comp')
 				document.getElementById('comp1').ds = dataSet
+				document.getElementById('comp1').compA.add(function(arg){
+					console.log('pg:'+arg)
+				})
 
 			})
 

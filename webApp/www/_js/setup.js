@@ -44,8 +44,8 @@ console.log('act setup')
 // load <====================================================================
 function loadNotChrome() {
 	loadjs([
-		'/zCDN/libJs/shadydom.min.js'
-		,'/zCDN/libJs/custom-elements.min.js'
+		'/_js/libJs/shadydom.min.js'
+		,'/_js/libJs/custom-elements.min.js'
 		,'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
 
 		], { success: function(){
@@ -64,7 +64,7 @@ if ( !bowser.blink) {//detect
 
 loadjs([
 	'//code.jquery.com/jquery-2.2.4.min.js'
-	,'/zCDN/libJs/jquery.smoothState.js'
+	,'/_js/libJs/jquery.smoothState.js'
 
 	], { success: function(){
 		console.log('key libs')

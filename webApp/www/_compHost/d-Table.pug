@@ -14,9 +14,12 @@ template#d-table
 script.
 	customElements.define('d-table', class extends HTMLElement {
 
-		//var _compA = new signals.Signal()
 
-		get ds() { return 'a'}
+		get compA() {
+			console.log('in comp')
+			return this._compA
+		 }//comp events
+
 		set ds(dataSet) {
 
 			//console.log(dataSet)
@@ -37,12 +40,15 @@ script.
 
 		connectedCallback() { 
 			try {
+				this._compA = new signals.Signal()
+
 				var $dtb= $(this._compRoot).find('#dg0')
 				//console.log($dtb)
 
 				$dtb.on('click', 'tr', function () {
 					var col = $(this).find('td:nth-child(3)')
-					console.log(col.text())
+					//console.log(col.text())
+					this._compA.dispatch(col.text())
 					$('#dg0 tr').removeClass('selected')
 					$(this).toggleClass('selected')
 				} )

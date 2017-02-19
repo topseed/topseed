@@ -1,69 +1,77 @@
 
 <template id="d-table">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.datatables/1.10.10/css/jquery.dataTables.min.css"/>
-  <table class="display" id="dg0" cellspacing="0" width="100%">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Office</th>
-        <th>Extn.</th>
-        <th>Start date</th>
-        <th>Salary</th>
-      </tr>
-    </thead>
-  </table>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.datatables/1.10.10/css/jquery.dataTables.min.css"/>
+	<table class="display" id="dg0" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Extn.</th>
+				<th>Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
 </template>
 <script>
-  customElements.define('d-table', class extends HTMLElement {
-  
-  	//var _compA = new signals.Signal()
-  
-  	get ds() { return 'a'}
-  	set ds(dataSet) {
-  
-  		//console.log(dataSet)
-  		var $dt= $(this._compRoot).find('#dg0')
-  		//console.log($dt)
-  
-  		$dt.DataTable( {
-  			data: dataSet
-  			,'searching': false
-  			,'info': false
-  			,'columnDefs': [ { 'visible': false, 'targets': 2 } ]
-  			,'lengthChange': false
-  			,'paging': false
-  			,ordering: true
-  		} )
-  
-  	}
-  
-  	connectedCallback() { 
-  		try {
-  			var $dtb= $(this._compRoot).find('#dg0')
-  			//console.log($dtb)
-  
-  			$dtb.on('click', 'tr', function () {
-  				var col = $(this).find('td:nth-child(3)')
-  				console.log(col.text())
-  				$('#dg0 tr').removeClass('selected')
-  				$(this).toggleClass('selected')
-  			} )
-  
-  		} catch(err) { console.log(err) }
-  		
-  	}//()
-  
-  	constructor() {
-  		super() // always call super first
-  		//console.log('ctor')
-  
-  		//boiler plate:
-  		this._compRoot = this.attachShadow({mode: 'open'})
-  		var t = document.querySelector('#d-table')
-  		var instance = t.content.cloneNode(true)
-  		this._compRoot.appendChild(instance)
-  	}//()
-  
-  })//
+	customElements.define('d-table', class extends HTMLElement {
+	
+	
+		get compA() {
+			console.log('in comp')
+			return this._compA
+		 }//comp events
+	
+		set ds(dataSet) {
+	
+			//console.log(dataSet)
+			var $dt= $(this._compRoot).find('#dg0')
+			//console.log($dt)
+	
+			$dt.DataTable( {
+				data: dataSet
+				,'searching': false
+				,'info': false
+				,'columnDefs': [ { 'visible': false, 'targets': 2 } ]
+				,'lengthChange': false
+				,'paging': false
+				,ordering: true
+			} )
+	
+		}
+	
+		connectedCallback() { 
+			try {
+	
+				var $dtb= $(this._compRoot).find('#dg0')
+				//console.log($dtb)
+
+				let thiz = this
+				$dtb.on('click', 'tr', function () {
+					var col = $(this).find('td:nth-child(3)')
+					//console.log(col.text())
+					thiz._compA.dispatch(col.text())
+
+					$('#dg0 tr').removeClass('selected')
+					$(this).toggleClass('selected')
+				} )
+	
+			} catch(err) { console.log(err) }
+			
+		}//()
+	
+		constructor() {
+			super() // always call super first
+			//console.log('ctor')
+			this._compA = new signals.Signal()
+
+			//boiler plate:
+			this._compRoot = this.attachShadow({mode: 'open'})
+			var t = document.querySelector('#d-table')
+			var instance = t.content.cloneNode(true)
+			this._compRoot.appendChild(instance)
+		}//()
+	
+	})//
 </script>
