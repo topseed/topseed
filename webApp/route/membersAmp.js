@@ -100,7 +100,7 @@ router.get('/dBind0Ren', function (req, res) {
 function bind(data, res) {
 	let tmpl = jsrender.templates(data)
 	console.log('bind')
-	fetch('http://45.55.201.250:8083/membersPg/mem/', { //1 call
+	fetch('https://middle4top-vgylwtpbxs.now.sh/membersPg/mem/', { //1 call
 		method: 'post'
 		}).then(function(response) { //2 promise
 			return (response.json())

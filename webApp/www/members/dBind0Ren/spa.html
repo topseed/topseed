@@ -28,8 +28,8 @@
             </td>
             <td class="mui--text-right">
               <ul class="mui-list--inline" id="menu">
-                <li><a href="/home/feed/">Feed</a></li>
-                <li><a href="/home/fts/">Search</a></li>
+                <li><a href="/post/one/">One</a></li>
+                <li><a href="/post/two/">Two</a></li>
                 <li>&nbsp;</li>
               </ul>
             </td>
@@ -43,8 +43,8 @@
           </h2>
           <div class="mui-divider"></div>
           <ul class="mui-list--unstyled" id="sidenavstrong">
-            <li><a href="/home/feed/">Feed</a></li>
-            <li><a href="/home/fts/">Search</a></li>
+            <li><a href="/post/one/">One</a></li>
+            <li><a href="/post/two/">Two</a></li>
           </ul>
         </nav>
       </div>
@@ -63,7 +63,7 @@
         <script>
           A.onLoaded(init)
           function init() {
-          	fetch('http://45.55.201.250:8083/membersPg/mem/', { //1 call
+          	fetch('	https://middle4top-vgylwtpbxs.now.sh/membersPg/mem/', { //1 call
           		method: 'post'
           		}).then(function(response) { //2 promise
           			return (response.json())
