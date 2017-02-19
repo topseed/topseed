@@ -1,5 +1,8 @@
 const fs = require('fs')
+const useragent = require('useragent')
 //const isj = require('is_js')
+
+useragent(true)
 
 // ###################### middle filter
 const ROOT = './www'
@@ -28,13 +31,15 @@ exports.filter = function (req, res, next) {
 	//console.log(req.originalUrl)
 	//console.log(req.path)
 	
-	if (req.originalUrl.indexOf('.') >0 ) { // hasDot?
+	if (req.path.indexOf('.') >0 ) { // hasDot?
 		next() // it is a static asset, ex: .jpg, .css
 	} else { // no dot, it is a path:
 		try {
+			var agent = useragent.lookup(req.headers['user-agent'])
+			console.log(agent)
 			res.header('Content-Type', 'text/html')
 
-			let path = req.originalUrl
+			let path = req.path
 			path = path.replace('undefined/','')
 			path = path.replace('undefined','')
 			const pgPath = ROOT + path

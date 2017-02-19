@@ -16,6 +16,7 @@
 		, "node-fetch": ">=1.6"
 		, "is_js": ">=0.9"
 		, "jsonwebtoken": ">= 7.2"
+		, "useragent": ">=2.1"
 
 	}
 }
