@@ -20,16 +20,12 @@ var A = { // page static actions 'object'
 
 	,onLoaded: function(cb) { // on loading + riot compile
 		if(A.loaded) {
-			riot.compile(function(){ // make component, and wait for it
-				cb()
-			})//r
+			cb()
 		} //fi
 		else {
 			A.stateA.addOnce(function(arg1, arg2) {
-				riot.compile(function(){ // make component, and wait for it
-					console.log(arg1)
-					cb()
-				})//r
+				console.log(arg1)
+				cb()
 				return false
 			})//added once
 		}//else
@@ -39,7 +35,9 @@ var A = { // page static actions 'object'
 //> ====================================================================
 /*ex pg:
 function init() {
-	...
+	riot.compile(function(){ // make component, and wait for it
+		...
+	})
 }//()
 A.onLoaded(init)
 */
