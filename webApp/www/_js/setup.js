@@ -1,11 +1,11 @@
 'use strict'
 
-if(bowser.msie) {
-	console.log('*** you got ie, this site wont work, please use edge or better, or go to AMP/M sub-domain')
+/*if(bowser.msie) {
+	console.log('you got ie, please use edge or similar, or go to AMP/M sub-domain')
 	// redirect to amp.DOMAIN
-}
+}*/
 
-console.log ('pgA v17.2a')
+console.log ('pgA v07.2a')
 var A = { // page static actions 'object'
 	stateA : new signals.Signal()
 	,inAction : false // set to true when user acts; false when effect is done
@@ -20,30 +20,27 @@ var A = { // page static actions 'object'
 
 	,onLoaded: function(cb) { // on loading + riot compile
 		if(A.loaded) {
-			//riot.compile(function(){ // make component, and wait for it
+			riot.compile(function(){ // make component, and wait for it
 				cb()
-			//})//r
+			})//r
 		} //fi
 		else {
 			A.stateA.addOnce(function(arg1, arg2) {
-				//riot.compile(function(){ // make component, and wait for it
+				riot.compile(function(){ // make component, and wait for it
 					console.log(arg1)
 					cb()
-					return false
-				//})//r
+				})//r
+				return false
 			})//added once
 		}//else
 	}//()
-
 }//
 
 //> ====================================================================
 /*ex pg:
 function init() {
-	riot.compile(function(){ // make component, and wait for it
-		...
-	})//r
-}
+	...
+}//()
 A.onLoaded(init)
 */
 
@@ -57,6 +54,8 @@ function loadNotChrome() {
 		}, async: false
 	})
 }
+
+/*
 if ( !bowser.blink) {//detect
 	console.log('not new chrome')
 	loadNotChrome()
@@ -64,11 +63,12 @@ if ( !bowser.blink) {//detect
 	console.log('is chrome')
 	loadjs.done('dependencyNotChrome')
 }
+*/
+loadNotChrome()
 
 loadjs([
-	'//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js'
-	,'/_js/libJs/bowser.min.js'
-	,'//code.jquery.com/jquery-2.2.4.min.js'
+	//,'/_js/libJs/bowser.min.js'
+	'//code.jquery.com/jquery-2.2.4.min.js'
 	,'/_js/libJs/jquery.smoothState.js'
 	,'/_js/libJs/riotComp.min.js'
 
