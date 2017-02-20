@@ -5,8 +5,8 @@ if(bowser.msie) {
 	// redirect to amp.DOMAIN
 }
 
-// page actions
-var A = { // v17.2a the page static 'object'
+console.log ('pgA v17.2a')
+var A = { // page static actions 'object'
 	stateA : new signals.Signal()
 	,inAction : false // set to true when user acts; false when effect is done
 	,loaded : false
@@ -20,17 +20,17 @@ var A = { // v17.2a the page static 'object'
 
 	,onLoaded: function(cb) { // on loading + riot compile
 		if(A.loaded) {
-			riot.compile(function(){ // make component, and wait for it
+			//riot.compile(function(){ // make component, and wait for it
 				cb()
-			})//r
+			//})//r
 		} //fi
 		else {
 			A.stateA.addOnce(function(arg1, arg2) {
-				riot.compile(function(){ // make component, and wait for it
+				//riot.compile(function(){ // make component, and wait for it
 					console.log(arg1)
 					cb()
 					return false
-				})//r
+				//})//r
 			})//added once
 		}//else
 	}//()
@@ -40,12 +40,12 @@ var A = { // v17.2a the page static 'object'
 //> ====================================================================
 /*ex pg:
 function init() {
-	//
+	riot.compile(function(){ // make component, and wait for it
+		...
+	})//r
 }
 A.onLoaded(init)
 */
-
-console.log('act setup')
 
 // load <====================================================================
 function loadNotChrome() {
@@ -66,7 +66,9 @@ if ( !bowser.blink) {//detect
 }
 
 loadjs([
-	'//code.jquery.com/jquery-2.2.4.min.js'
+	'//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js'
+	,'/_js/libJs/bowser.min.js'
+	,'//code.jquery.com/jquery-2.2.4.min.js'
 	,'/_js/libJs/jquery.smoothState.js'
 	,'/_js/libJs/riotComp.min.js'
 

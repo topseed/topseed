@@ -1,21 +1,28 @@
 
 <c-1>
-  <p>ok</p><yield/>
-  <script>
-    this.id = 'myId1'
-    
-    console.log(this.opts)
-    
-    this.on('before-unmount', function(){
-    	console.log('u:')
-    })
-    this.on('unmount', function(){
-    	console.log('u:')
-    })
-    
-    this.compA = function() {
-    	console.log('compA()')
-    	return 'someCA'
-    }
-  </script>
+	<p>ok { myVar } </p>
+
+	<yield/>
+
+	<script>
+		//<a href= { myVar } ></a>
+
+		this.myVar = opts.a
+		this.id = 'myId1'
+
+		console.log(this.opts)
+
+		this.on('before-unmount', function(){
+			console.log('u:')
+		})
+		this.on('unmount', function(){
+			console.log('u:')
+		})
+
+		this.compA = function() {
+			console.log('compA()')
+			return 'someCA'
+		}
+	</script>
+
 </c-1>
