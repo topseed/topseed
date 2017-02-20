@@ -1,10 +1,16 @@
 
 <c-1>
-  <p>ok</p>
+  <p>ok</p><yield/>
   <script>
-    this.on('mount', function(){
-    	console.log('m:')
-    	console.log(this.opts)
+    this.id = 'myId1'
+    
+    console.log(this.opts)
+    
+    this.on('before-unmount', function(){
+    	console.log('u:')
+    })
+    this.on('unmount', function(){
+    	console.log('u:')
     })
     
     this.compA = function() {

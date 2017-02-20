@@ -6,7 +6,7 @@ if(bowser.msie) {
 }
 
 // page actions
-var A = {
+var A = { // v17.2a the page static 'object'
 	stateA : new signals.Signal()
 	,inAction : false // set to true when user acts; false when effect is done
 	,loaded : false
@@ -18,15 +18,21 @@ var A = {
 		A.stateA.dispatch(arg, window.location)
 	}//()
 
-	,onLoaded: function(cb) {
-		if(A.loaded) cb()
+	,onLoaded: function(cb) { // on loading + riot compile
+		if(A.loaded) {
+			riot.compile(function(){ // make component, and wait for it
+				cb()
+			})//r
+		} //fi
 		else {
 			A.stateA.addOnce(function(arg1, arg2) {
-				console.log(arg1)
-				cb()
-				return false
+				riot.compile(function(){ // make component, and wait for it
+					console.log(arg1)
+					cb()
+					return false
+				})//r
 			})//added once
-		}//e
+		}//else
 	}//()
 
 }//

@@ -1,11 +1,17 @@
 c-1
 	p ok
+	<yield/>
 
 	script.
+		this.id = 'myId1'
 
-		this.on('mount', function(){
-			console.log('m:')
-			console.log(this.opts)
+		console.log(this.opts)
+
+		this.on('before-unmount', function(){
+			console.log('u:')
+		})
+		this.on('unmount', function(){
+			console.log('u:')
 		})
 
 		this.compA = function() {
