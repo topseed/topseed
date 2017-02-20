@@ -44,10 +44,7 @@ console.log('act setup')
 // load <====================================================================
 function loadNotChrome() {
 	loadjs([
-		//'/_js/libJs/shadydom.min.js'
-		//,'/_js/libJs/custom-elements.min.js'
 		'//cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js'
-
 		], { success: function(){
 			console.log('loaded dependencyNotChrome')
 			loadjs.done('dependencyNotChrome')
@@ -74,16 +71,6 @@ loadjs([
 })
 
 // foo <====================================================================
-var _comps = {}
-function isRegistered(comp) {
-	//var val = document.createElement(comp).constructor !== HTMLElement;
-	if(comp in _comps){
-		console.log(comp + ' exists')
-		return true
-	}
-	_comps[comp] = true
-	return false
-}
 
 function preLImg(arg) {
 	var imag = new Image()

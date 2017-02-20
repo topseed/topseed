@@ -20,8 +20,8 @@
 		, "jsonwebtoken": ">= 7.2"
 		, "useragent": ">=2.1"
 
-		, "jsrender": ">=0.9"
-		, "server-components": ">=0.2"
+		, "riot": ">=3.2"
+		, "useragent": ">=2.1"
 
 		, "mailgun-js": ">=0.8"
 
