@@ -52,7 +52,6 @@ function loadNotChrome() {
 		}, async: false
 	})
 }
-
 /*
 if ( !bowser.blink) {//detect
 	console.log('not new chrome')
@@ -75,7 +74,6 @@ loadjs([
 		loadjs.done('keyLibs')
 	}, async: false
 })
-
 // foo <====================================================================
 
 function preLImg(arg) {
