@@ -10,12 +10,12 @@ block main
 	.mui-container-fluid
 		.mui-row
 			.mui-col-md-8
-				d-table#comp1
+				d-table
 
 			.mui-col-md-4
 				.mui-panel
 					#myfirstchart(style='height: 450px;')
-	p#dd
+
 	script.
 		function init() {
 			dataSet = [
@@ -181,19 +181,19 @@ block main
 					]
 				]
 
-			$( '#dd' ).load('/_compHost/d-table.html', function() {
+			riot.compile(function(){ // make component, and wait for it
 				console.log('loaded comp')
-				document.getElementById('comp1').ds = dataSet
-				document.getElementById('comp1').compA.add(function(arg){
+				var dtable = riot.mount('d-table')[0]
+				console.log(dtable)
+				dtable.ds(dataSet)
+				dtable.compA().add(function(arg){
 					console.log('pg:'+arg)
 				})
 
 			})
 
-			loadMo()
-			console.log('pg init')
+			//loadMo()
 		}
-
 		A.onLoaded(init)
 
 		function loadMo() {

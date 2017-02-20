@@ -15,6 +15,7 @@
     <script>_loadStarted = (new Date()).getTime()</script>
   </head>
   <body>
+    <script type="riot/tag" src="/_uiComps/d-table.html"></script>
     <div id="ss1">
       <script type="text/javascript">
         document.body.style.opacity = '0.7'
@@ -54,7 +55,7 @@
         <div class="mui-container-fluid">
           <div class="mui-row">
             <div class="mui-col-md-8">
-              <d-table id="comp1"></d-table>
+              <d-table></d-table>
             </div>
             <div class="mui-col-md-4">
               <div class="mui-panel">
@@ -63,7 +64,6 @@
             </div>
           </div>
         </div>
-        <p id="dd"></p>
         <script>
           function init() {
           	dataSet = [
@@ -229,19 +229,19 @@
           			]
           		]
           
-          	$( '#dd' ).load('/_compHost/d-table.html', function() {
+          	riot.compile(function(){ // make component, and wait for it
           		console.log('loaded comp')
-          		document.getElementById('comp1').ds = dataSet
-          		document.getElementById('comp1').compA.add(function(arg){
+          		var dtable = riot.mount('d-table')[0]
+          		console.log(dtable)
+          		dtable.ds(dataSet)
+          		dtable.compA().add(function(arg){
           			console.log('pg:'+arg)
           		})
           
           	})
           
-          	loadMo()
-          	console.log('pg init')
+          	//loadMo()
           }
-          
           A.onLoaded(init)
           
           function loadMo() {
