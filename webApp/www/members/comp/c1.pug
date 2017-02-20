@@ -1,0 +1,15 @@
+c-1
+	p ok
+
+	script.
+
+		this.on('mount', function(){
+			console.log('m:')
+			console.log(this.opts)
+		})
+
+		this.compA = function() {
+			console.log('compA()')
+			return 'someCA'
+		}
+

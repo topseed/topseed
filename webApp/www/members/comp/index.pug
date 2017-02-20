@@ -1,0 +1,17 @@
+head
+	script(src='/_js/libJs/riotComp.min.js', type='text/javascript')
+body
+
+	c-1(a='b')
+		p In Comp
+
+	script(type='riot/tag', src='/members/comp/c1.html')
+	script.
+		riot.compile(function(){ // make component, and wait for it
+			console.log('c:')
+			var comps = riot.mount('c-1')
+			console.log(comps)
+
+			var c = comps[0]
+			console.log(c.compA())
+		})//compile
