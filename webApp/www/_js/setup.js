@@ -5,7 +5,7 @@
 	// redirect to amp.DOMAIN
 }*/
 
-console.log ('pgA v07.2a')
+console.log ('pgA v17.2a')
 var A = { // page static actions 'object'
 	stateA : new signals.Signal()
 	,inAction : false // set to true when user acts; false when effect is done

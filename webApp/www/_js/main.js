@@ -2,7 +2,6 @@
 
 loadjs.ready(['dependencyNotChrome', 'keyLibs'], {// loaded setup libs
 	success: function(){
-	//console.log('loading libs')
 	loadjs([
 		//dbind:
 		'/_js/libJs/jquery.jsForm.min.js'
