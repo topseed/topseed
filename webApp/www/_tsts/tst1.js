@@ -1,11 +1,6 @@
 
 QUnit.test( 'asynchronous test: fetch()', function( assert ) {
-	done = assert.async()
-	tstGet()
-})//tst
-
-function tstGet() {
-
+	var done = assert.async()
 	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
 			method: 'post'
 		}).then(function(response) { //2 return a promise
@@ -16,9 +11,6 @@ function tstGet() {
 				console.log(JSON.stringify(value))
 				assert.ok( JSON.stringify(value), 'we got something, check console' )
 				done()
-		}).catch(function(err) {
-			console.log('error')
-			console.log(err)
 	})//fetch()
+})//tst
 
-}//()
