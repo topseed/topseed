@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="//cdn.muicss.com/mui-0.9.6/css/mui.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css">
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.js"></script>
+    <script>
+      $(document).ready(function() {
+      	$('#fullpage').fullpage({
+      		//verticalCentered: false,
+      		css3:false
+      	})//config
+      })
+    </script>
+    <style>
+      .section {
+      	background-size: cover;
+      	background-attachment: fixed;
+      	background-image: url(bg0.jpg);
+      }
+      
+      .section0{
+      	background-image: url(bg1.jpg);
+      }
+      .section2{
+      	background-image: url(bg2.jpg);
+      }
+      .section4{
+      	background-image: url(bg3.jpg);
+      }
+      
+      img {
+      	max-height: 95vh;
+      	max-width:  95vw;
+      
+      	min-height: 50vh;
+      	min-width:  50vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fullpage">
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="restTest.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="restTest2.png" width="95%"></div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><pre><code>fetch(&#39;https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/&#39;, { //1 call
+        method: &#39;post&#39;
+    }).then(function(response) { //2 return a promise
+        return (response.json())
+        }).then(function(value) { // 3 done:
+            // your code here:
+            console.log(&#39;back&#39;)
+            console.log(JSON.stringify(value))
+            assert.ok( JSON.stringify(value), &#39;we got something, check console&#39; )
+            done()
+})//fetch()
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="form.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <H1>Form and Unit Test</H1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

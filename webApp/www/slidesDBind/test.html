@@ -1,0 +1,12 @@
+<pre><code>fetch(&#39;https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/&#39;, { //1 call
+        method: &#39;post&#39;
+    }).then(function(response) { //2 return a promise
+        return (response.json())
+        }).then(function(value) { // 3 done:
+            // your code here:
+            console.log(&#39;back&#39;)
+            console.log(JSON.stringify(value))
+            assert.ok( JSON.stringify(value), &#39;we got something, check console&#39; )
+            done()
+})//fetch()
+</code></pre>
