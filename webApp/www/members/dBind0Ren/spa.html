@@ -18,10 +18,6 @@
     <script type="riot/tag" src="/_uiComps/d-table.html"></script>
     <script type="riot/tag" src="/_uiComps/d-bind.tag"></script>
     <div id="ss1">
-      <script type="text/javascript">
-        document.body.style.opacity = '0.7'
-        
-      </script>
       <nav class="mui-container-fluid mui--no-user-select" id="appbar">
         <table width="100%">
           <tr>
@@ -51,38 +47,39 @@
         </nav>
       </div>
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic&amp;lang=en">
-      <div id="content-wrapper0"> </div>
-      <div id="content-wrapper">
-        <div class="mui-container-fluid">
-          <d-bind></d-bind>
+      <div id="content-wrapper0"> 
+        <div id="content-wrapper">
+          <div class="mui-container-fluid">
+            <d-bind></d-bind>
+          </div>
+          <script>
+            A.onLoaded(init)
+            
+            function init() {
+            
+            	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
+            		method: 'post'
+            		}).then(function(response) { //2 promise
+            			return (response.json())
+            		}).then(function(value) { //3
+            			// your code here
+            			console.log('back')
+            
+            			riot.compile(function(){ // make component, and wait for it
+            				//console.log(JSON.stringify(value))
+            				// pass value
+            				var c = riot.mount('d-bind', {users: value})[0]
+            
+            			})//r
+            
+            		}).catch(function(err) {
+            			console.log('error')
+            			console.log(err)
+            	})//fetch()
+            }//()
+            
+          </script>
         </div>
-        <script>
-          A.onLoaded(init)
-          
-          function init() {
-          
-          	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
-          		method: 'post'
-          		}).then(function(response) { //2 promise
-          			return (response.json())
-          		}).then(function(value) { //3
-          			// your code here
-          			console.log('back')
-          
-          			riot.compile(function(){ // make component, and wait for it
-          				//console.log(JSON.stringify(value))
-          				// pass value
-          				var c = riot.mount('d-bind', {users: value})[0]
-          
-          			})//r
-          
-          		}).catch(function(err) {
-          			console.log('error')
-          			console.log(err)
-          	})//fetch()
-          }//()
-          
-        </script>
       </div>
     </div>
     <p><br></p>
