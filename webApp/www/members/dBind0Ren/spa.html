@@ -71,8 +71,9 @@
           
           			riot.compile(function(){ // make component, and wait for it
           				//console.log(JSON.stringify(value))
-          				var d = riot.mount('d-bind')[0]
-          				d.usr(value)
+          				// pass value
+          				var c = riot.mount('d-bind', {u: value})[0]
+          
           			})//r
           
           		}).catch(function(err) {

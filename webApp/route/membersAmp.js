@@ -7,9 +7,9 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 
 const riot = require('riot')
-const cheerio = require('cheerio')
-
-//const dbindTag = require('../www/_uiComps/d-bind.html')
+const cheerio = require('cheerio') //replaceWith
+//comps
+const dbindComp = require('../www/_uiComps/d-bind.html')
 
 // /////////////////////////////////////////////////////
 
@@ -102,9 +102,7 @@ router.get('/dBind0Ren', function (req, res) {
 })
 
 function bind(data, res) {
-	riot.render(tagName)
-
-	let tmpl = null//jsrender.templates(data)
+	let $ = cheerio.load('data')//page
 
 	console.log('bind')
 	fetch('https://middle4top-vgylwtpbxs.now.sh/membersPg/mem/', { //1 call
@@ -115,9 +113,10 @@ function bind(data, res) {
 			// your code here
 			console.log('back')
 			console.log(JSON.stringify(value))
-			let html2 = tmpl.render( value )
 
-			res.send(html2) //disable for comps
+			const comp = riot.render(dbindComp, {u: value}) // we have a component
+			$('d-bind').replaceWith(comp) //find the tag and replace w/ bind
+			res.send($.html()) 
 
 		}).catch(function(err) {
 			ifError(err, 'catchBind', res)

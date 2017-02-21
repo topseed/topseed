@@ -21,12 +21,9 @@ Some of the tools we use:
 - <http://github.github.io/fetch>
 - <http://smoothstate.com>
 - <http://muicss.com>
-- <http://github.com/BorisMoore/jsrender>
 - <http://getbem.com/naming/>
 - <http://prepros.io>
 - <http://pugjs.org>
-- <http://www.jsviews.com/#jsrapi>
-- <http://www.polymer-project.org>
 - <http://greensock.com/gsap>
 
 
@@ -43,7 +40,9 @@ App-Shell article: <http://www.masons-foundation.org/post/app-shell/>
 
 IDE article: <https://www.masons-foundation.org/post/IDE/>
 
+
 Other sites using 'TopSeed':
+- This demo: https://1595566120.rsc.cdn77.org
 - <http://www.rfidthings.com/>
 
 Advanced examples are also available once you learn how to use the basics.
