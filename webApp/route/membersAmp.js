@@ -6,10 +6,22 @@ const useragent = require('useragent')
 const fetch = require('node-fetch')
 const fs = require('fs')
 
+const riotComp = require('riot-compiler')
 const riot = require('riot')
-const cheerio = require('cheerio') //replaceWith
+const cheerio = require('cheerio') //$ jQ
+
 //comps
-const dbindComp = require('../www/_uiComps/d-bind.html')
+// /////////////////////////////////////////////////////
+var dbindComp
+fs.readFile('./www/_uiComps/d-bind.html', 'utf8', function(err, data) {
+	if(err) {
+		console.log(err)
+		console.log(err)
+		return
+	}
+	dbindComp = riotComp.compile(data)
+	console.log(dbindComp)
+})
 
 // /////////////////////////////////////////////////////
 
@@ -114,8 +126,8 @@ function bind(data, res) {
 			console.log('back')
 			console.log(JSON.stringify(value))
 
-			const comp = riot.render(dbindComp, {u: value}) // we have a component
-			$('d-bind').replaceWith(comp) //find the tag and replace w/ bind
+			const bound = riot.render(dbindComp, {u: value}) // we have a component
+			$('d-bind').replaceWith(bound) //find the tag and replace w/ bound
 			res.send($.html()) 
 
 		}).catch(function(err) {
