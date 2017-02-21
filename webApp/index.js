@@ -5,7 +5,7 @@ const cors = require('cors')
 const compression = require('compression')
 
 const membersAmp = require('./route/membersAmp')
-const AFilter = require('./util/AFilter')
+const Decider = require('./util/Decider')
 
 server.use(cors())
 server.use(compression())
@@ -14,7 +14,7 @@ server.use(compression())
 server.use('/members', membersAmp) 
 
 // ###################### static
-server.use(AFilter.filter)
+server.use(Decider.decide)
 server.use(express.static('www'))
 
 //###################### start the server

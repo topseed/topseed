@@ -17,7 +17,6 @@
 		, "is_js": ">=0.9"
 		, "jsonwebtoken": ">= 7.2"
 
-		, "riot": ">=3.2"
 		, "useragent": ">=2.1"
 
 	}

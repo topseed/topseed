@@ -7,7 +7,9 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 
 const riot = require('riot')
-const riotComp = require('riot-compiler')
+const cheerio = require('cheerio')
+
+//const dbindTag = require('../www/_uiComps/d-bind.html')
 
 // /////////////////////////////////////////////////////
 
@@ -100,6 +102,7 @@ router.get('/dBind0Ren', function (req, res) {
 })
 
 function bind(data, res) {
+	riot.render(tagName)
 
 	let tmpl = null//jsrender.templates(data)
 

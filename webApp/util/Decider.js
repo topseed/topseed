@@ -55,7 +55,7 @@ function isW(req) { // should we serve SPA or mobile/AMP?
 
 //**************** */
 console.log('AF v17.02a')
-exports.filter = function (req, res, next) {
+exports.decide = function (req, res, next) {
 	setLong(res) // default is long, later we set to quick if needed
 	//console.log('->')
 	
