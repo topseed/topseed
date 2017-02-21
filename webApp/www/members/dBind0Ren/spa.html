@@ -27,7 +27,7 @@
             <td class="mui--text-right">
               <ul class="mui-list--inline" id="menu">
                 <li><a href="/post/one/">One</a></li>
-                <li><a href="/post/two/">Two</a></li>
+                <li><a href="/post/two/?w=1">Two</a></li>
                 <li>&nbsp;</li>
               </ul>
             </td>
@@ -42,44 +42,43 @@
           <div class="mui-divider"></div>
           <ul class="mui-list--unstyled" id="sidenavstrong">
             <li><a href="/post/one/">One</a></li>
-            <li><a href="/post/two/">Two</a></li>
+            <li><a href="/post/two/?w=1">Two</a></li>
           </ul>
         </nav>
       </div>
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic&amp;lang=en">
-      <div id="content-wrapper0"> 
-        <div id="content-wrapper">
-          <div class="mui-container-fluid">
-            <d-bind></d-bind>
-          </div>
-          <script>
-            A.onLoaded(init)
-            
-            function init() {
-            
-            	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
-            		method: 'post'
-            		}).then(function(response) { //2 promise
-            			return (response.json())
-            		}).then(function(value) { //3
-            			// your code here
-            			console.log('back')
-            
-            			riot.compile(function(){ // make component, and wait for it
-            				//console.log(JSON.stringify(value))
-            				// pass value
-            				var c = riot.mount('d-bind', {users: value})[0]
-            
-            			})//r
-            
-            		}).catch(function(err) {
-            			console.log('error')
-            			console.log(err)
-            	})//fetch()
-            }//()
-            
-          </script>
+      <div id="content-wrapper0"> </div>
+      <div id="content-wrapper">
+        <div class="mui-container-fluid">
+          <d-bind></d-bind>
         </div>
+        <script>
+          A.onLoaded(init)
+          
+          function init() {
+          
+          	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
+          		method: 'post'
+          		}).then(function(response) { //2 promise
+          			return (response.json())
+          		}).then(function(value) { //3
+          			// your code here
+          			console.log('back')
+          
+          			riot.compile(function(){ // make component, and wait for it
+          				//console.log(JSON.stringify(value))
+          				// pass value
+          				var c = riot.mount('d-bind', {users: value})[0]
+          
+          			})//r
+          
+          		}).catch(function(err) {
+          			console.log('error')
+          			console.log(err)
+          	})//fetch()
+          }//()
+          
+        </script>
       </div>
     </div>
     <p><br></p>

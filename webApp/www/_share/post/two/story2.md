@@ -1,6 +1,4 @@
 
-## Tu fat!
+## SPA and AMP
 
-Dcandidioribus
-sibi pueri non femina bla bla
-8?
+Defaults to mobile/AMP. ?w=1 suffix gets you the SPA version.
