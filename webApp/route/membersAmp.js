@@ -4,7 +4,6 @@ const router = express.Router()
 const isj = require('is_js')
 const useragent = require('useragent')
 const fetch = require('node-fetch')
-const jsrender = require('jsrender')
 const fs = require('fs')
 
 // /////////////////////////////////////////////////////
@@ -98,7 +97,9 @@ router.get('/dBind0Ren', function (req, res) {
 })
 
 function bind(data, res) {
-	let tmpl = jsrender.templates(data)
+
+	let tmpl = null//jsrender.templates(data)
+
 	console.log('bind')
 	fetch('https://middle4top-vgylwtpbxs.now.sh/membersPg/mem/', { //1 call
 		method: 'post'
@@ -110,10 +111,6 @@ function bind(data, res) {
 			console.log(JSON.stringify(value))
 			let html2 = tmpl.render( value )
 
-			let pro = renComps(html2) // optional: scomps
-			pro.then(function(output){
-				//res.send(output) // enable for comps
-			})
 			res.send(html2) //disable for comps
 
 		}).catch(function(err) {
@@ -123,17 +120,3 @@ function bind(data, res) {
 
 //###################### 
 module.exports = router
-
-//***** comp */
-const comps = require('server-components')
-var SComp1 = comps.newElement()
-SComp1.createdCallback = function () {
-	this.innerHTML = 'Hi there'
-}
-comps.registerElement('s-comp1', { prototype: SComp1 })
-function renComps(html) {
-	console.log('comps')
-	let pro =  comps.renderPage(html)
-	return pro
-}
-console.log('comps read')
