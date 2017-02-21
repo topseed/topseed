@@ -20,7 +20,6 @@
 		, "jsonwebtoken": ">= 7.2"
 
 		, "useragent": ">=2.1"
-		, "riot-compiler": ">=3.2"
 		, "riot": ">=3.2"
 		, "cheerio": ">=0.22"
 

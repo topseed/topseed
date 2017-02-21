@@ -6,23 +6,8 @@ const useragent = require('useragent')
 const fetch = require('node-fetch')
 const fs = require('fs')
 
-const riotComp = require('riot-compiler')
 const riot = require('riot')
 const cheerio = require('cheerio') //$ jQ
-
-//comps
-// /////////////////////////////////////////////////////
-var dbindComp
-fs.readFile('./www/_uiComps/d-bind.html', 'utf8', function(err, data) {
-	if(err) {
-		console.log(err)
-		console.log(err)
-		return
-	}
-	dbindComp = riotComp.compile(data)
-	console.log(dbindComp)
-})
-
 // /////////////////////////////////////////////////////
 
 const ROOT = './www'
@@ -113,25 +98,28 @@ router.get('/dBind0Ren', function (req, res) {
 
 })
 
-function bind(data, res) {
-	let $ = cheerio.load('data')//page
+//tags: /////////////////////////////////////////////////////
+const dbindComp = require('../www/_uiComps/d-bind.tag')
 
-	console.log('bind')
-	fetch('https://middle4top-vgylwtpbxs.now.sh/membersPg/mem/', { //1 call
+function bind(data, res) {
+
+	let $ = cheerio.load(data)//page
+
+	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
 		method: 'post'
 		}).then(function(response) { //2 promise
 			return (response.json())
 		}).then(function(value) { //3
 			// your code here
 			console.log('back')
-			console.log(JSON.stringify(value))
+			//console.log(JSON.stringify(value))
 
-			const bound = riot.render(dbindComp, {u: value}) // we have a component
+			const bound = riot.render(dbindComp, {users: value}) // we have a component
 			$('d-bind').replaceWith(bound) //find the tag and replace w/ bound
 			res.send($.html()) 
 
-		}).catch(function(err) {
-			ifError(err, 'catchBind', res)
+		//}).catch(function(err) {
+		//	ifError(err, 'catchBind', res)
 	})//fetch()
 }
 

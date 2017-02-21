@@ -1,12 +1,12 @@
 <d-bind>
 
-	<div each= '{user, key in users}'>
+	<div each= '{user, key in opts.users}'>
 		{key} - {user.name} is {user.age} years old
 	</div>
 
-	<script>
+	<!--script>
 
 	this.users = opts.u
 
-	</script>
+	</script-->
 </d-bind>
