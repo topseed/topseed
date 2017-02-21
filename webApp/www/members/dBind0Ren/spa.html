@@ -16,6 +16,7 @@
   </head>
   <body>
     <script type="riot/tag" src="/_uiComps/d-table.html"></script>
+    <script type="riot/tag" src="/_uiComps/d-bind.html"></script>
     <div id="ss1">
       <script type="text/javascript">
         document.body.style.opacity = '0.7'
@@ -53,32 +54,27 @@
       <div id="content-wrapper0"> </div>
       <div id="content-wrapper">
         <div class="mui-container-fluid">
-          <p>Here is a list:</p>
-          <div id="peopleList">
-            <ul>{{for people}}
-              <li>Name: {{:name}}</li>{{/for}}
-            </ul>
-          </div>
-          <p>That was a list.</p>
+          <d-bind></d-bind>
         </div>
         <script>
           A.onLoaded(init)
-          function setupComp() {
-          	
-          }
           
           function init() {
-          	fetch('	https://middle4top-vgylwtpbxs.now.sh/membersPg/mem/', { //1 call
+          
+          	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
           		method: 'post'
           		}).then(function(response) { //2 promise
           			return (response.json())
           		}).then(function(value) { //3
           			// your code here
           			console.log('back')
-          			console.log(JSON.stringify(value))
-          			let tmpl = $.templates("#peopleList")
-          			let html2 = tmpl.render( value )
-          			$('#peopleList').html(html2)
+          
+          			riot.compile(function(){ // make component, and wait for it
+          				//console.log(JSON.stringify(value))
+          				var d = riot.mount('d-bind')[0]
+          				d.usr(value)
+          			})//r
+          
           		}).catch(function(err) {
           			console.log('error')
           			console.log(err)

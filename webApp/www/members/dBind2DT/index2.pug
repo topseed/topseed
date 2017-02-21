@@ -182,9 +182,8 @@ block main
 				]
 
 			riot.compile(function(){ // make component, and wait for it
-				console.log('loaded comp')
 				var dtable = riot.mount('d-table')[0]
-				console.log(dtable)
+				//console.log(dtable)
 				dtable.ds(dataSet)
 				dtable.compA().add(function(arg){
 					console.log('pg:'+arg)

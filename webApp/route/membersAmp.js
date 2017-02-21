@@ -6,6 +6,9 @@ const useragent = require('useragent')
 const fetch = require('node-fetch')
 const fs = require('fs')
 
+const riot = require('riot')
+const riotComp = require('riot-compiler')
+
 // /////////////////////////////////////////////////////
 
 const ROOT = './www'
