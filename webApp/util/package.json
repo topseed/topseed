@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"engines": 
-		{"node": ">=7.4",
+		{"node": ">=7.6",
 		 "npm": ">=4.1"
 		},
 	"comment_only": "// npm-check-updates -u",

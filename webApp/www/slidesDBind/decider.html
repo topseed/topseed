@@ -1,0 +1,8 @@
+<pre><code>function isW(req) { // should we serve SPA or mobile/AMP?
+    if(req.path.startsWith(&#39;/w/&#39;)) return true
+    if(req.subdomains.indexOf(&#39;www&#39;) &gt; -1)  return true
+    if(req.socket.localPort == 8082) return true
+    if(req.query.w == &#39;1&#39;) return true
+    return false
+}
+</code></pre>

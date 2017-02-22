@@ -44,12 +44,13 @@
       <div class="section1 section">
         <div class="mui-container-fluid">
           <div class="mui-panel">
-            <H1>All @ Data binding</H1>
+            <H3>All @ Data binding</H3>
             <p>tables, lists, forms, etc.</p>
             <p>User Auth</p>
             <p>In-Browser</p>
             <p>Server-Side</p>
             <p>Web Components</p>
+            <p>Mobile</p>
             <p>Working w/ REST and MicroServices</p>
           </div>
         </div>
@@ -141,6 +142,9 @@
         </div>
       </div>
       <div class="section1 section">
+        <div class="mui-container-fluid"><img src="layout.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
         <div class="mui-container-fluid">
           <div class="mui-panel">
             <H1>In Browser vs Server Side</H1>
@@ -148,8 +152,33 @@
           </div>
         </div>
       </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><pre><code>function isW(req) { // should we serve SPA or mobile/AMP?
+    if(req.path.startsWith(&#39;/w/&#39;)) return true
+    if(req.subdomains.indexOf(&#39;www&#39;) &gt; -1)  return true
+    if(req.socket.localPort == 8082) return true
+    if(req.query.w == &#39;1&#39;) return true
+    return false
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
       <div class="section1 section">
-        <div class="mui-container-fluid"><img src="layout.png" width="95%"></div>
+        <div class="mui-container-fluid"><img src="dataTables.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <H3>Lab: Data Tables Component</H3>
+            <p>Page provides data</p>
+            <p>Lab: Type in the mark up in the Component</p>
+            <p>Require: Latest node.js, currently v7.6</p>
+            <p>node -v</p>
+            <p>Glance docs on DataTables.net</p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
