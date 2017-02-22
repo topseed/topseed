@@ -42,10 +42,59 @@
   <body>
     <div id="fullpage">
       <div class="section1 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <H1>All @ Data binding</H1>
+            <p>tables, lists, forms, etc.</p>
+            <p>User Auth</p>
+            <p>In-Browser</p>
+            <p>Server-Side</p>
+            <p>Web Components</p>
+            <p>Working w/ REST and MicroServices</p>
+          </div>
+        </div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <H1>Microservices</H1>
+            <p>resty, match the page</p>
+            <p>Product vs Service</p>
+            <p>Firebase, Mail Gun</p>
+            <p> Azure Table Storage, Google Cloud Datastore</p>
+          </div>
+        </div>
+      </div>
+      <div class="section0 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel"><pre><code>router.post(&#39;/contact&#39;, function (req, res) {
+    const dat = req.body
+    const pro = sendContact(dat.email, dat.msg, dat.phone)
+    setNone(res)
+
+    pro.then(function (data) {// wait for it to be sent then come back
+            var ret = &#39;OK&#39;
+            res.status(200).send(JSON.stringify(ret))
+        }
+    })
+})
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section1 section">
         <div class="mui-container-fluid"><img src="restTest.png" width="95%"></div>
       </div>
       <div class="section1 section">
         <div class="mui-container-fluid"><img src="restTest2.png" width="95%"></div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <H1>JWT</H1>
+            <p>auth</p>
+          </div>
+        </div>
       </div>
       <div class="section0 section">
         <div class="mui-container-fluid">
@@ -75,21 +124,32 @@
         </div>
       </div>
       <div class="section1 section">
-        <div class="mui-container-fluid"><img src="layout.png" width="95%"></div>
-      </div>
-      <div class="section1 section">
         <div class="mui-container-fluid">
           <div class="mui-panel">
             <H1>Web Components</H1>
+            <p>ex: video, iframe, or jQ</p>
           </div>
         </div>
       </div>
       <div class="section1 section">
         <div class="mui-container-fluid">
           <div class="mui-panel">
-            <H1>In Browser binding vs Server Side binding/rendering</H1>
+            <H1>In-browser data binding</H1>
+            <p>w/ and w/o comp</p>
+            <p>+ Action</p>
           </div>
         </div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid">
+          <div class="mui-panel">
+            <H1>In Browser vs Server Side</H1>
+            <p>binding/rendering</p>
+          </div>
+        </div>
+      </div>
+      <div class="section1 section">
+        <div class="mui-container-fluid"><img src="layout.png" width="95%"></div>
       </div>
     </div>
   </body>
