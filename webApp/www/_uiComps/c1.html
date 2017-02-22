@@ -1,27 +1,27 @@
 <c-1>
-	<p>ok { myVar } </p>
+<p>ok { myVar } </p>
 
-	<yield/>
+<yield/>
 
-	<script>
-		//<a href= { myVar } ></a>
+<script>
+//<a href= { myVar } ></a>
 
-		this.myVar = opts.a
-		this.id = 'myId1'
+this.myVar = opts.a
+this.id = 'myId1'
 
-		console.log(this.opts)
+console.log(this.opts)
 
-		this.on('before-unmount', function(){
-			console.log('u:')
-		})
-		this.on('unmount', function(){
-			console.log('u:')
-		})
+this.on('before-unmount', function(){
+	console.log('u:')
+})
+this.on('unmount', function(){
+	console.log('u:')
+})
 
-		this.compA = function() {
-			console.log('compA()')
-			return 'someCA'
-		}
-	</script>
+this.compA = function() {
+	console.log('compA()')
+	return 'someCA'
+}
+</script>
 
 </c-1>
