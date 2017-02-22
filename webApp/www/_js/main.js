@@ -34,8 +34,8 @@ function startApp(){
 	}
 	function initSideDraw() {
 		setTimeout(function(){
-			$('#brand').on('click', toggleSide)
-			$('#sidedrawer').on('click', toggleSide)
+			$('#brand').unbind('click').click(toggleSide)
+			$('#sidedrawer').unbind('click').click(toggleSide)
 			console.log('initSD')
 		}, 200)
 	}
@@ -44,7 +44,7 @@ function startApp(){
 	A.loaded=true
 	A.act(A.LOADED)
 
-	console.log('v17.02a')
+	console.log('v17.021a')
 	//>====================================================================
 	//SS
 	let ssoptions={
