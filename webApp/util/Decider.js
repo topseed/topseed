@@ -11,13 +11,13 @@ const AMP = 'amp.html'
 const INDEX = 'index.html'
 
 function setNone(res) {
-	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+	res.header('Cache-Control', 'private, no-cache, no-store')
 }
 function setQuick(res) {//2 hrs, 2 minutes
-	res.header('Cache-Control', 'public, s-maxage=7200, max-age=120, proxy-revalidate')
+	res.header('Cache-Control', 'public, s-maxage=7200, max-age=120, must-revalidate')
 }
 function setLong(res) {//20 hours,10 minutes
-	res.header('Cache-Control', 'public, s-maxage=72000, max-age=600')
+	res.header('Cache-Control', 'public, s-maxage=72000, max-age=600, must-revalidate')
 }
 
 const _slash = '/'
@@ -54,8 +54,9 @@ function isW(req) { // should we serve SPA or mobile/AMP?
 }
 
 //**************** */
-console.log('AF v17.02a')
+console.log('AF v17.021a')
 exports.decide = function (req, res, next) {
+	res.header('X-TimeSent', Date.now() )
 	setLong(res) // default is long, later we set to quick if needed
 	//console.log('->')
 	
