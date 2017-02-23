@@ -58,7 +58,7 @@ function isW(req) { // should we serve SPA or mobile/AMP?
 }
 
 //************** */
-router.get('/dBind0Ren', function (req, res) {	
+router.get('/dBind', function (req, res) {	
 	setLong(res) // default is long, later we set to quick if needed
 	console.log('->')
 

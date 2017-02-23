@@ -13,11 +13,11 @@ const INDEX = 'index.html'
 function setNone(res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
 }
-function setQuick(res) {//3hr, 10 minutes
-	res.header('Cache-Control', 'public, s-maxage=10800, max-age=600, proxy-revalidate')
+function setQuick(res) {//2 hrs, 2 minutes
+	res.header('Cache-Control', 'public, s-maxage=7200, max-age=120, proxy-revalidate')
 }
-function setLong(res) {//23 hours, 1hr
-	res.header('Cache-Control', 'public, s-maxage=82800, max-age=3600')
+function setLong(res) {//20 hours,10 minutes
+	res.header('Cache-Control', 'public, s-maxage=72000, max-age=600')
 }
 
 const _slash = '/'
