@@ -1,1 +1,25 @@
+<star-rating>
 
+	<link rel='stylesheet' href='/_uiComps/lib/star-rating-svg.css'/>
+	<script src='/_uiComps/lib/star-rating-svg.js'></script>
+
+	.my-rating
+
+<script>
+$('.my-rating').starRating({
+	starSize: 30,
+	totalStars: 4,
+	initialRating: 1,
+	disableAfterRate: false,
+	starShape: 'rounded',
+	callback: function(rating, $el){
+		console.log($el)
+		console.log(rating)
+	}
+})
+setTimeout(function(){
+	$('.my-rating').starRating('setRating', 2.9)
+}, 2000)
+</script>
+
+</star-rating>

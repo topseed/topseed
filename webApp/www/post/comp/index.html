@@ -1,25 +1,19 @@
 
 <head>
   <script src="//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/_uiComps/lib/star-rating-svg.css"/>
 </head>
 <body>
-  <div class="my-rating"></div>
-  <script src="/_uiComps/lib/star-rating-svg.js"></script>
+  <star-rating id="o"></star-rating>
+  <star-rating id="t"></star-rating>
+  <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
   <script>
-    $('.my-rating').starRating({
-    	starSize: 30,
-    	totalStars: 4,
-    	initialRating: 1,
-    	disableAfterRate: false,
-    	starShape: 'rounded',
-    	callback: function(rating, $el){
-    		console.log($el)
-    		console.log(rating)
-    	}
-    })
-    setTimeout(function(){
-    	$('.my-rating').starRating('setRating', 2.9)
-    }, 2000)
+    riot.compile(function(){ // make component, and wait for it
+    	console.log('c:')
+    	var comps = riot.mount('star-rating')
+    	console.log(comps)
+    
+    	var c1 = comps[0]
+    
+    })//compile
   </script>
 </body>

@@ -1,25 +1,21 @@
 head
 	script(src='//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js')
 
-	link(rel='stylesheet', href='/_uiComps/lib/star-rating-svg.css')
-
 body
 
-	.my-rating
+	star-rating#o
+	
+	star-rating#t
 
-	script(src='/_uiComps/lib/star-rating-svg.js')
+	script(type='riot/tag', src='/_uiComps/star-rating.html')
 	script.
-		$('.my-rating').starRating({
-			starSize: 30,
-			totalStars: 4,
-			initialRating: 1,
-			disableAfterRate: false,
-			starShape: 'rounded',
-			callback: function(rating, $el){
-				console.log($el)
-				console.log(rating)
-			}
-		})
-		setTimeout(function(){
-			$('.my-rating').starRating('setRating', 2.9)
-		}, 2000)
+
+		riot.compile(function(){ // make component, and wait for it
+			console.log('c:')
+			var comps = riot.mount('star-rating')
+			console.log(comps)
+
+			var c1 = comps[0]
+
+		})//compile
+
