@@ -1,9 +1,9 @@
 'use strict'
 
-/*if(bowser.msie) {
-	console.log('you got ie, please use edge or similar, or go to AMP/M sub-domain')
-	// redirect to amp.DOMAIN
-}*/
+if(bowser.msie) {
+	console.log('you got ie')
+}
+console.log(bowser.mobile)
 
 console.log ('pgA v17.02a')
 var A = { // page static actions 'object'
@@ -52,7 +52,7 @@ function loadNotChrome() {
 		}, async: false
 	})
 }
-/*
+
 if ( !bowser.blink) {//detect
 	console.log('not new chrome')
 	loadNotChrome()
@@ -60,8 +60,6 @@ if ( !bowser.blink) {//detect
 	console.log('is chrome')
 	loadjs.done('dependencyNotChrome')
 }
-*/
-loadNotChrome()
 
 loadjs([
 	//,'/_js/libJs/bowser.min.js'
