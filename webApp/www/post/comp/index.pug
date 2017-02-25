@@ -1,0 +1,25 @@
+
+head
+
+body
+	h2 HTML5 Web Components
+	h3 w/ Sass
+
+	link#Tcard-rating(rel='import', href='comp/card-rating.html')
+
+	div
+		card-rating#rat1(stars=2) Mr Robot
+		card-rating#rat2(stars=2) Survivor
+
+	button#but1 Click meh.
+
+	script.
+		rat1 = document.getElementById('rat1')
+
+		$('#but1').click(function(){
+			console.log('c')
+			// a binding - implemnted in the imported component
+			rat1.setAttribute('stars', 3)
+		})
+
+	p This is example for article on http://masons-foundation.org

@@ -1,0 +1,23 @@
+
+<head></head>
+<body>
+  <h2>HTML5 Web Components</h2>
+  <h3>w/ Sass</h3>
+  <link id="Tcard-rating" rel="import" href="comp/card-rating.html"/>
+  <div>
+    <card-rating id="rat1" stars="2">Mr Robot</card-rating>
+    <card-rating id="rat2" stars="2">Survivor</card-rating>
+  </div>
+  <button id="but1">Click meh.</button>
+  <script>
+    rat1 = document.getElementById('rat1')
+    
+    $('#but1').click(function(){
+    	console.log('c')
+    	// a binding - implemnted in the imported component
+    	rat1.setAttribute('stars', 3)
+    })
+    
+  </script>
+  <p>This is example for article on http://masons-foundation.org</p>
+</body>

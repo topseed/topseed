@@ -1,0 +1,45 @@
+<card-rating>
+<style>
+	host {
+		color: blue;
+	}
+	.star-icon {
+		color: gray;
+		font-size: 30px;
+		position: relative;
+	}
+	.star-icon.fill:before {
+		color: yellow;
+		content: '\2605'; 
+		font-size: 32px;
+		text-shadow: 5px 2px 2px gray;
+		position: absolute;
+		left: -4px;
+		top: -6px;
+	}
+	.ratings--starts {
+		span#s1.star-icon.fill ☆;
+		span#s2.star-icon ☆;
+		span#s3.star-icon ☆;
+		span#s4.star-icon ☆;
+	}
+	.ratings--date {
+		span Released: ;
+		span#dat 1/1/1 ;
+	}
+	</style>
+
+<script>
+	function stars($compCtx, el) {
+		$compCtx.find('#s'+el).addClass('fill')
+	}
+	
+	function stars(compCtx, el) {
+		var elN = compCtx.elHost.querySelector('#s'+el)
+		//var elN = _mainDoc.querySelector('card-ratings::shadow #s'+el)
+		elN.className += ' fill'
+		return elN
+	}
+</script>
+
+</card-rating>
