@@ -2,11 +2,12 @@
 <head>
   <script src="//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="/_uiComps/lib/star-rating-svg.css"/>
+  <script src="/_uiComps/lib/star-rating-svg.js"></script>
 </head>
 <body>
   <div class="my-rating"></div>
-  <script src="/_uiComps/lib/star-rating-svg.js"></script>
   <script>
+    console.log($('.my-rating'))
     $('.my-rating').starRating({
     	starSize: 30,
     	totalStars: 4,

@@ -65,7 +65,7 @@ loadjs([
 	//,'/_js/libJs/bowser.min.js'
 	'//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js'
 	,'/_js/libJs/jquery.smoothState.js'
-	,'/_js/libJs/riotComp.min.js'
+	,'//cdn.jsdelivr.net/riot/3.3.1/riot+compiler.min.js'
 
 	], { success: function(){
 		console.log('key libs')

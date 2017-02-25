@@ -1,5 +1,7 @@
 head
 	script(src='//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js')
+	script(src='//cdn.jsdelivr.net/riot/3.3.1/riot+compiler.min.js')
+	script(src='/_uiComps/lib/star-rating-svg.js')
 
 body
 
@@ -15,7 +17,10 @@ body
 			var comps = riot.mount('star-rating')
 			console.log(comps)
 
-			var c1 = comps[0]
-
+			setTimeout(function(){
+				var c1 = comps[0]
+				c1.setRating(3)
+			}, 2000)
+			
 		})//compile
 
