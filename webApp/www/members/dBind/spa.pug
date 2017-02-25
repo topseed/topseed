@@ -7,33 +7,29 @@ block top
 	include ../../_part/_topS
 
 block main
+	script(src='//cdn.jsdelivr.net/list.js/1.1.1/list.min.js')
 	.mui-container-fluid
-		d-bind
+		#users
+			ul.list
+				li
+					h3.name Jonas Arnklint
+					p.born 1985
 
 	script.
 		A.onLoaded(init)
 
 		function init() {
+			var options = {
+				valueNames: [ 'name', 'born' ]
+			}
 
-			fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
-				method: 'post'
-				}).then(function(response) { //2 promise
-					return (response.json())
-				}).then(function(value) { //3
-					// your code here
-					console.log('back')
+			var values = [ {
+				name: "Martina Elm",
+				born: 1986
+			}]
 
-					riot.compile(function(){ // make component, and wait for it
-						//console.log(JSON.stringify(value))
-						// pass value
-						var c = riot.mount('d-bind', {users: value})[0]
+			var userList = new List('users', options, values);
 
-					})//r
-
-				}).catch(function(err) {
-					console.log('error')
-					console.log(err)
-			})//fetch()
 		}//()
 
 block footer

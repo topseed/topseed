@@ -1,8 +1,8 @@
 CACHE MANIFEST
-# load stable 3rd party asset once and freeze on client, even if asset changes, it won't ping
+# load stable assets once and freeze on client, even if asset changes, it won't ping
 
 #index assets
-https://code.jquery.com/jquery-2.2.4.min.js
+https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js
 https://cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js
 https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en
 

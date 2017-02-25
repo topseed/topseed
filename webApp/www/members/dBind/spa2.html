@@ -49,32 +49,33 @@
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic&amp;lang=en">
       <div id="content-wrapper0"> </div>
       <div id="content-wrapper">
-        <script src="//cdn.jsdelivr.net/list.js/1.1.1/list.min.js"></script>
         <div class="mui-container-fluid">
-          <div id="users">
-            <ul class="list">
-              <li>
-                <h3 class="name">Jonas Arnklint</h3>
-                <p class="born">1985</p>
-              </li>
-            </ul>
-          </div>
+          <d-bind></d-bind>
         </div>
         <script>
           A.onLoaded(init)
           
           function init() {
-          	var options = {
-          		valueNames: [ 'name', 'born' ]
-          	}
           
-          	var values = [ {
-          		name: "Martina Elm",
-          		born: 1986
-          	}]
+          	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
+          		method: 'post'
+          		}).then(function(response) { //2 promise
+          			return (response.json())
+          		}).then(function(value) { //3
+          			// your code here
+          			console.log('back')
           
-          	var userList = new List('users', options, values);
+          			riot.compile(function(){ // make component, and wait for it
+          				//console.log(JSON.stringify(value))
+          				// pass value
+          				var c = riot.mount('d-bind', {users: value})[0]
           
+          			})//r
+          
+          		}).catch(function(err) {
+          			console.log('error')
+          			console.log(err)
+          	})//fetch()
           }//()
           
         </script>

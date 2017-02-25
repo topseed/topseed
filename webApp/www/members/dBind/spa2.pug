@@ -1,0 +1,41 @@
+extends  ../../_part/_baseShellS
+
+block head
+	include ../../_part/_headerS
+
+block top
+	include ../../_part/_topS
+
+block main
+	.mui-container-fluid
+		d-bind
+
+	script.
+		A.onLoaded(init)
+
+		function init() {
+
+			fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
+				method: 'post'
+				}).then(function(response) { //2 promise
+					return (response.json())
+				}).then(function(value) { //3
+					// your code here
+					console.log('back')
+
+					riot.compile(function(){ // make component, and wait for it
+						//console.log(JSON.stringify(value))
+						// pass value
+						var c = riot.mount('d-bind', {users: value})[0]
+
+					})//r
+
+				}).catch(function(err) {
+					console.log('error')
+					console.log(err)
+			})//fetch()
+		}//()
+
+block footer
+	include   ../../_part/_footerS
+	
