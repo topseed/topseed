@@ -1,38 +1,39 @@
 <star-rating>
 	<link rel='stylesheet' href='/_uiComps/lib/star-rating-svg.css'/>
 
-	<div class='my-rating'></div>
+	<div class='my-rating'> </div>
 
 <script>
-this._compA = new signals.Signal()
-thiz = this
-this.compA = function() {
-	console.log('compA()')
-	return this._compA
-}
 
 this.on('mount', function(){
-	console.log('m')
+	console.log('m' + opts.cc)
 	//console.log($('.my-rating', this.root))
+	thiz = this
+	thiz._compA = new signals.Signal()
+	thiz.compA = function() {
+		console.log('compA()')
+		return thiz._compA
+	}
 
-	$('.my-rating', this.root).starRating({
+	$('.my-rating', this.root).starRating({ 
 		starSize: 30,
 		totalStars: 4,
 		initialRating: 1,
 		disableAfterRate: false,
 		starShape: 'rounded',
 		callback: function(rating, $el){
-			thiz._compA.dispatch(rating, $el)
-			//console.log($el)
-			//console.log(rating)
+			//console.log($el.parent().attr('id') )
+			thiz._compA.dispatch(rating, $el.parent().attr('id'))
 		}
 	})
-
 })
 
 this.setRating = function(rat) {
 	console.log('sr()')
-	$('.my-rating', this.root).starRating('setRating', rat)
+
+	thiz._compA.dispatch(1,1)
+
+	$( '.my-rating', this.root).starRating('setRating', rat) //
 }
 </script>
 

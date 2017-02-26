@@ -1,26 +1,28 @@
 
 <head>
   <script src="//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js"></script>
   <script src="//cdn.jsdelivr.net/riot/3.3.1/riot+compiler.min.js"></script>
+  <script src="//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js"></script>
   <script src="/_uiComps/lib/star-rating-svg.js"></script>
 </head>
 <body>
-  <star-rating id="o"></star-rating>
-  <star-rating id="t"></star-rating>
+  <star-rating id="o" cc="1"></star-rating>
+  <star-rating id="t" cc="2"></star-rating>
   <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
   <script>
     riot.compile(function(){ // make component, and wait for it
     	var comps = riot.mount('star-rating')
-    	var c1 = comps[0]
+    	console.log(comps)
     	
+    	var c1 = comps[0]
+    
     	c1.compA().add(function(arg1, arg2){
     		console.log('pg:'+arg1 + arg2)
+    		return true
     	})
     
-    	setTimeout(function(){
-    		c1.setRating(3)
-    	}, 2000)
+    	c1.setRating(3)
+    
     	
     })//compile
   </script>
