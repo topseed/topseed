@@ -6,7 +6,7 @@ loadjs.ready(['dependencyNotChrome', 'keyLibs'], {// loaded setup libs
 		//dbind:
 		'/_js/libJs/jquery.jsForm.min.js'
 
-		,'/_js/libJs/jquery.fullpage.min.js'
+		//,'/_js/libJs/jquery.fullpage.min.js'
 		,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
 		,'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
 		//,'/zCDN/libJs/zingtouch.min.js'
