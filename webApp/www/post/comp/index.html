@@ -1,6 +1,7 @@
 
 <head>
   <script src="//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js"></script>
   <script src="//cdn.jsdelivr.net/riot/3.3.1/riot+compiler.min.js"></script>
   <script src="/_uiComps/lib/star-rating-svg.js"></script>
 </head>
@@ -10,12 +11,14 @@
   <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
   <script>
     riot.compile(function(){ // make component, and wait for it
-    	console.log('c:')
     	var comps = riot.mount('star-rating')
-    	console.log(comps)
+    	var c1 = comps[0]
+    	
+    	c1.compA().add(function(arg1, arg2){
+    		console.log('pg:'+arg1 + arg2)
+    	})
     
     	setTimeout(function(){
-    		var c1 = comps[0]
     		c1.setRating(3)
     	}, 2000)
     	

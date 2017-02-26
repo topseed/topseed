@@ -4,9 +4,17 @@
 	<div class='my-rating'></div>
 
 <script>
+this._compA = new signals.Signal()
+thiz = this
+this.compA = function() {
+	console.log('compA()')
+	return this._compA
+}
+
 this.on('mount', function(){
 	console.log('m')
-	console.log($('.my-rating', this.root))
+	//console.log($('.my-rating', this.root))
+
 	$('.my-rating', this.root).starRating({
 		starSize: 30,
 		totalStars: 4,
@@ -14,10 +22,12 @@ this.on('mount', function(){
 		disableAfterRate: false,
 		starShape: 'rounded',
 		callback: function(rating, $el){
-			console.log($el)
-			console.log(rating)
+			thiz._compA.dispatch(rating, $el)
+			//console.log($el)
+			//console.log(rating)
 		}
 	})
+
 })
 
 this.setRating = function(rat) {
