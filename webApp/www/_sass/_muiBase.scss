@@ -171,7 +171,7 @@ body {
 	text-decoration: none;
 }
 @media (min-width: 600px) { // cols
-article {
+article, .article {
   -webkit-columns: 2;
 	 -moz-columns: 2;
 		  columns: 2;
