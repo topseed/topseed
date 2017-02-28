@@ -6,9 +6,10 @@ head
 	script(src='/_uiComps/lib/star-rating-svg.js')
 
 body
-	star-rating#o(cc=1)
-	
-	star-rating#t(cc=2)
+	div#d1(style='visibility: hidden;')
+		star-rating#o(cc=1)
+
+		star-rating#t
 
 	script(type='riot/tag', src='/_uiComps/star-rating.html')
 	script.
@@ -16,9 +17,11 @@ body
 		riot.compile(function(){ // make component, and wait for it
 			var comps = riot.mount('star-rating')
 			console.log(comps)
-			
-			var c1 = comps[0]
-			c1.setRating(2)
+			 $('#d1').css({'visibility': 'visible'})
+
+			var c2 = comps[1] // 0 uses attributes, this one is using set
+			c2.setRating(2) 
+
 			c1.compA().add(function(arg1, arg2){
 				console.log('pg:'+arg1 + arg2)
 			})
