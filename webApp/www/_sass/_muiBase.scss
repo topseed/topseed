@@ -170,6 +170,11 @@ body {
 	color: white;
 	text-decoration: none;
 }
+
+.hide {
+	display: none;
+}
+
 @media (min-width: 600px) { // cols
 article, .article {
   -webkit-columns: 2;

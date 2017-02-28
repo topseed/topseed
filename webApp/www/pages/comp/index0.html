@@ -5,8 +5,8 @@
   <script src="/_uiComps/lib/star-rating-svg.js"></script>
 </head>
 <body>
-  <div class="my-rating"></div>
-  <div class="my-rating"></div>
+  <div class="my-rating" id="o"></div>
+  <div class="my-rating" id="t"></div>
   <script>
     console.log($('.my-rating'))
     $('.my-rating').starRating({
@@ -21,7 +21,7 @@
     	}
     })
     setTimeout(function(){
-    	$('.my-rating').starRating('setRating', 3)
+    	$('#t').starRating('setRating', 3) // instead of a button
     }, 2000)
   </script>
 </body>

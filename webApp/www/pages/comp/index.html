@@ -1,29 +1,26 @@
 
 <head>
   <script src="//cdn.jsdelivr.net/riot/3.3.1/riot+compiler.min.js"></script>
-  <script src="//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js"></script>
-  <script src="/_uiComps/lib/star-rating-svg.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/_uiComps/lib/star-rating-svg.js">// can be in container</script>
 </head>
 <body>
-  <div id="d1" style="visibility: hidden;">
-    <star-rating id="o" cc="1"></star-rating>
-    <star-rating id="t"></star-rating>
-  </div>
+  <star-rating id="o" cc="1"></star-rating>
+  <star-rating id="t"></star-rating>
   <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
   <script>
     riot.compile(function(){ // make component, and wait for it
     	var comps = riot.mount('star-rating')
-    	console.log(comps)
-    	 $('#d1').css({'visibility': 'visible'})
+    	//console.log(comps)
     
     	var c2 = comps[1] // 0 uses attributes, this one is using set
     	c2.setRating(2) 
     
-    	c1.compA().add(function(arg1, arg2){
-    		console.log('pg:'+arg1 + arg2)
+    	c2.compA().add(function(arg1, arg2){
+    		console.log('pg:'+arg1 + arg2) // listens to comp
     	})
     
-    })//compile
+    })//compiled
   </script>
 </body>

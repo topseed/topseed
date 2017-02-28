@@ -5,9 +5,9 @@ head
 
 body
 
-	.my-rating
+	.my-rating#o
 
-	.my-rating
+	.my-rating#t
 
 	script.
 		console.log($('.my-rating'))
@@ -23,5 +23,5 @@ body
 			}
 		})
 		setTimeout(function(){
-			$('.my-rating').starRating('setRating', 3)
+			$('#t').starRating('setRating', 3) // instead of a button
 		}, 2000)
