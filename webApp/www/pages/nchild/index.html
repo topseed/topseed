@@ -27,8 +27,8 @@
             </td>
             <td class="mui--text-right">
               <ul class="mui-list--inline" id="menu">
-                <li><a href="/post/one/">One</a></li>
-                <li><a href="/post/two/?w=1">Two</a></li>
+                <li><a href="/pages/one/">One</a></li>
+                <li><a href="/pages/two/?w=1">Two</a></li>
                 <li>&nbsp;</li>
               </ul>
             </td>
@@ -42,21 +42,72 @@
           </h2>
           <div class="mui-divider"></div>
           <ul class="mui-list--unstyled" id="sidenavstrong">
-            <li><a href="/post/one/">One</a></li>
-            <li><a href="/post/two/?w=1">Two</a></li>
+            <li><a href="/pages/one/">One</a></li>
+            <li><a href="/pages/two/?w=1">Two</a></li>
           </ul>
         </nav>
       </div>
+      <style>
+        .cards{
+        	display: inline-block;
+        	background: gray;
+        }
+        .card {
+        	vertical-align: top;
+        	width: 100px;
+        	height: 100px;
+        	background: green;
+        	display: inline-block;
+        }	
+        .more {
+        	margin-top: 100px;
+        	display: none;
+        }
+        input:checked + label.card {
+        	background: yellow;
+        }
+        
+        input:checked + label.card + .more {
+        	display: inline-block;
+        }
+        
+        
+      </style>
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic&amp;lang=en">
       <div id="content-wrapper0"> </div>
       <div id="content-wrapper">
-        <div class="mui-container-fluid"><h2 id="hello-world">Hello World</h2>
-<p>Welcome to the Topseed Hello World webapp!</p>
-<p>Made w/ care.</p>
-
+        <div class="mui-container-fluid">
+          <div class="cards">
+            <input id="o1" type="radio" name="card">
+            <label class="card" for="o1">1</label>
+            <div class="more">OK1</div>
+            <input id="o2" type="radio" name="card">
+            <label class="card" for="o2">2</label>
+            <div class="more">OK2</div>
+            <input id="o3" type="radio" name="card">
+            <label class="card" for="o3">3</label>
+            <div class="more">OK3</div>
+            <input id="o4" type="radio" name="card">
+            <label class="card" for="o4">4</label>
+            <div class="more">OK4</div>
+            <input id="o5" type="radio" name="card">
+            <label class="card" for="o5">5</label>
+            <div class="more">OK5</div>
+            <input id="o6" type="radio" name="card">
+            <label class="card" for="o6">6</label>
+            <div class="more">OK6</div>
+            <input id="o7" type="radio" name="card">
+            <label class="card" for="o7">7</label>
+            <div class="more">OK7</div>
+            <input id="o8" type="radio" name="card">
+            <label class="card" for="o8">8</label>
+            <div class="more">OK8</div>
+          </div>
         </div>
         <script>
           function init() {
+          	console.log('r')
+          	// display: none
           }
           
           A.onLoaded(init)
@@ -64,7 +115,8 @@
         </script>
       </div>
     </div>
-    <p><br></p>
+    <p></p>
+    <p></p>
     <footer id="footer">
       <p></p>
       <div class="mui-panel">

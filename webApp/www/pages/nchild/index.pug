@@ -5,24 +5,68 @@ block head
 
 block top
 	include ../../_part/_topS
+	style.
+		.cards{
+			display: inline-block;
+			background: gray;
+		}
+		.card {
+			vertical-align: top;
+			width: 100px;
+			height: 100px;
+			background: green;
+			display: inline-block;
+		}	
+		.more {
+			margin-top: 100px;
+			display: none;
+		}
+		input:checked + label.card {
+			background: yellow;
+		}
+
+		input:checked + label.card + .more {
+			display: inline-block;
+		}
+
 
 block main
 	.mui-container-fluid
-		span 1
-		span 2
-		span 3
-		span 4
-		span 5
-		span 6
-		span 1
-		span 2
-		span 3
-		span 4
-		span 5
-		span 6
+		.cards
+				input#o1(type='radio', name='card')
+				label.card(for='o1') 1
+				.more OK1
+				input#o2(type='radio', name='card')
+				label.card(for='o2') 2
+				.more OK2
+
+				input#o3(type='radio', name='card')
+				label.card(for='o3') 3
+				.more OK3
+				input#o4(type='radio', name='card')
+				label.card(for='o4') 4
+				.more OK4
+
+				input#o5(type='radio', name='card')
+				label.card(for='o5') 5
+				.more OK5
+				input#o6(type='radio', name='card')
+				label.card(for='o6') 6
+				.more OK6
+
+				input#o7(type='radio', name='card')
+				label.card(for='o7') 7
+				.more OK7
+				input#o8(type='radio', name='card')
+				label.card(for='o8') 8
+				.more OK8
+
+
 
 	script.
 		function init() {
+			console.log('r')
+			// display: none
 		}
 
 		A.onLoaded(init)
