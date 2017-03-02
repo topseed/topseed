@@ -7,34 +7,39 @@ block top
 	include ../../_part/_topS
 	style.
 		.cards {
-			display: inline-block;
+			display: flex;
+			flex-wrap: wrap;
 		}
 		.cards input[type='radio']{
 			visibility:hidden;
 		}
 		.card {
+			margin: 10px;
+		}
+		 .card label{
 			vertical-align: top;
+			margin-left: 0;
 			width: 100px;
 			height: 100px;
 			background: green;
 			display: inline-block;
 		}	
-		input:checked + label.card {
+		input:checked + label {
 			background: yellow;
-			margin-bottom: 60px;
+			margin-bottom: 50px;
 		}
 		.more {
 			display: none;
 			background: gray;
-			margin-top: 105px;
 			position: absolute;
 			z-index: 100;
 			height: 50px;
-			left: 10px;
+			margin-top: -50px;
+			left: 5%;
 			width: 90%;
 		}
 
-		input:checked + label.card + .more {
+		input:checked + label + .more {
 			display: inline-block;
 		}
 
@@ -42,33 +47,41 @@ block top
 block main
 	.mui-container-fluid
 		.cards
-			input#o1(type='radio', name='card')
-			label.card(for='o1') 1
-			.more OK1
-			input#o2(type='radio', name='card')
-			label.card(for='o2') 2
-			.more OK2
+			.card
+				input#o1(type='radio', name='card')
+				label(for='o1') 1
+				.more OK1
+			.card
+				input#o2(type='radio', name='card')
+				label(for='o2') 2
+				.more OK2
 
-			input#o3(type='radio', name='card')
-			label.card(for='o3') 3
-			.more OK3
-			input#o4(type='radio', name='card')
-			label.card(for='o4') 4
-			.more OK4
+			.card
+				input#o3(type='radio', name='card')
+				label(for='o3') 3
+				.more OK3
+			.card
+				input#o4(type='radio', name='card')
+				label(for='o4') 4
+				.more OK4
 
-			input#o5(type='radio', name='card')
-			label.card(for='o5') 5
-			.more OK5
-			input#o6(type='radio', name='card')
-			label.card(for='o6') 6
-			.more OK6
+			.card
+				input#o5(type='radio', name='card')
+				label(for='o5') 5
+				.more OK5
+			.card
+				input#o6(type='radio', name='card')
+				label(for='o6') 6
+				.more OK6
 
-			input#o7(type='radio', name='card')
-			label.card(for='o7') 7
-			.more OK7
-			input#o8(type='radio', name='card')
-			label.card(for='o8') 8
-			.more OK8
+			.card
+				input#o7(type='radio', name='card')
+				label(for='o7') 7
+				.more OK7
+			.card
+				input#o8(type='radio', name='card')
+				label(for='o8') 8
+				.more OK8
 
 
 	script.
