@@ -48,9 +48,11 @@
         </nav>
       </div>
       <style>
-        .cards{
+        .cards {
         	display: inline-block;
-        	background: gray;
+        }
+        .cards input[type='radio']{
+        	visibility:hidden;
         }
         .card {
         	vertical-align: top;
@@ -59,12 +61,19 @@
         	background: green;
         	display: inline-block;
         }	
-        .more {
-        	margin-top: 100px;
-        	display: none;
-        }
         input:checked + label.card {
         	background: yellow;
+        	margin-bottom: 60px;
+        }
+        .more {
+        	display: none;
+        	background: gray;
+        	margin-top: 105px;
+        	position: absolute;
+        	z-index: 100;
+        	height: 50px;
+        	left: 10px;
+        	width: 90%;
         }
         
         input:checked + label.card + .more {

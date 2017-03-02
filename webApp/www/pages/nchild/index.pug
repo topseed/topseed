@@ -6,9 +6,11 @@ block head
 block top
 	include ../../_part/_topS
 	style.
-		.cards{
+		.cards {
 			display: inline-block;
-			background: gray;
+		}
+		.cards input[type='radio']{
+			visibility:hidden;
 		}
 		.card {
 			vertical-align: top;
@@ -17,12 +19,19 @@ block top
 			background: green;
 			display: inline-block;
 		}	
-		.more {
-			margin-top: 100px;
-			display: none;
-		}
 		input:checked + label.card {
 			background: yellow;
+			margin-bottom: 60px;
+		}
+		.more {
+			display: none;
+			background: gray;
+			margin-top: 105px;
+			position: absolute;
+			z-index: 100;
+			height: 50px;
+			left: 10px;
+			width: 90%;
 		}
 
 		input:checked + label.card + .more {
@@ -33,34 +42,33 @@ block top
 block main
 	.mui-container-fluid
 		.cards
-				input#o1(type='radio', name='card')
-				label.card(for='o1') 1
-				.more OK1
-				input#o2(type='radio', name='card')
-				label.card(for='o2') 2
-				.more OK2
+			input#o1(type='radio', name='card')
+			label.card(for='o1') 1
+			.more OK1
+			input#o2(type='radio', name='card')
+			label.card(for='o2') 2
+			.more OK2
 
-				input#o3(type='radio', name='card')
-				label.card(for='o3') 3
-				.more OK3
-				input#o4(type='radio', name='card')
-				label.card(for='o4') 4
-				.more OK4
+			input#o3(type='radio', name='card')
+			label.card(for='o3') 3
+			.more OK3
+			input#o4(type='radio', name='card')
+			label.card(for='o4') 4
+			.more OK4
 
-				input#o5(type='radio', name='card')
-				label.card(for='o5') 5
-				.more OK5
-				input#o6(type='radio', name='card')
-				label.card(for='o6') 6
-				.more OK6
+			input#o5(type='radio', name='card')
+			label.card(for='o5') 5
+			.more OK5
+			input#o6(type='radio', name='card')
+			label.card(for='o6') 6
+			.more OK6
 
-				input#o7(type='radio', name='card')
-				label.card(for='o7') 7
-				.more OK7
-				input#o8(type='radio', name='card')
-				label.card(for='o8') 8
-				.more OK8
-
+			input#o7(type='radio', name='card')
+			label.card(for='o7') 7
+			.more OK7
+			input#o8(type='radio', name='card')
+			label.card(for='o8') 8
+			.more OK8
 
 
 	script.
