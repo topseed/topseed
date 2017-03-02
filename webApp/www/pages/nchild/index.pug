@@ -7,16 +7,15 @@ block top
 	include ../../_part/_topS
 	style.
 		.card {
-			background: gray;
 			margin: 10px;
 			display: inline-block;
+			position: relative;
 		}		
 		.cards input[type='radio']{
 			visibility:hidden;
 		}
 
 		 .card label{
-			vertical-align: top;
 			width: 100px;
 			height: 100px;
 			background: green;
@@ -36,9 +35,10 @@ block top
 			position: absolute;
 			z-index: 100;
 			height: 50px;
-			margin-top: -50px;
 			width: 100vw;
+			bottom: 0;
 			left: 0;
+
 		}
 
 
@@ -86,7 +86,12 @@ block main
 	script.
 		function init() {
 			console.log('r')
-			// display: none
+			$('.card label').click(function(){
+				var LL = $(this).offset().left * -1
+				console.log(LL)
+
+				$('.more').animate({left: LL + 5})
+			})
 		}
 
 		A.onLoaded(init)
