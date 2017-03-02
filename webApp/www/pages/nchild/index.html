@@ -48,19 +48,17 @@
         </nav>
       </div>
       <style>
-        .cards {
-        	display: flex;
-        	flex-wrap: wrap;
-        }
+        .card {
+        	background: gray;
+        	margin: 10px;
+        	display: inline-block;
+        }		
         .cards input[type='radio']{
         	visibility:hidden;
         }
-        .card {
-        	margin: 10px;
-        }
+        
          .card label{
         	vertical-align: top;
-        	margin-left: 0;
         	width: 100px;
         	height: 100px;
         	background: green;
@@ -68,22 +66,23 @@
         }	
         input:checked + label {
         	background: yellow;
-        	margin-bottom: 50px;
+        	margin-bottom: 52px;
         }
+        input:checked + label + .more {
+        	display: inline-block;
+        }
+        
         .more {
         	display: none;
-        	background: gray;
+        	background: red;
         	position: absolute;
         	z-index: 100;
         	height: 50px;
         	margin-top: -50px;
-        	left: 5%;
-        	width: 90%;
+        	width: 100vw;
+        	left: 0;
         }
         
-        input:checked + label + .more {
-        	display: inline-block;
-        }
         
         
       </style>
