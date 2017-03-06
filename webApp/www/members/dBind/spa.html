@@ -65,16 +65,25 @@
           A.onLoaded(init)
           
           function init() {
+          
           	var options = {
           		valueNames: [ 'name', 'born' ]
           	}
           
-          	var values = [ {
-          		name: "Martina Elm",
-          		born: 1986
-          	}]
+          	fetch('https://topseed.now.sh/membersPg/mem/', { //1 call
+          		method: 'post'
+          		}).then(function(response) { //2 promise
+          			return (response.json())
+          		}).then(function(values) { //3
+          			// your code here
+          			console.log('back')
+          			var userList = new List('users', options, values)
           
-          	var userList = new List('users', options, values);
+          		}).catch(function(err) {
+          			console.log('error')
+          			console.log(err)
+          	})//fetch()
+          
           
           }//()
           

@@ -5,7 +5,7 @@ if(bowser.msie) {
 }
 console.log(bowser.mobile)
 
-console.log ('pgA v17.02a')
+console.log ('pgA v17.03b')
 var A = { // page static actions 'object'
 	stateA : new signals.Signal()
 	,inAction : false // set to true when user acts; false when effect is done

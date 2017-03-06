@@ -105,7 +105,7 @@ function bind(data, res) {
 
 	let $ = cheerio.load(data)//page
 
-	fetch('https://middle4top-wngjgwtdbn.now.sh/membersPg/mem/', { //1 call
+	fetch('https://topseed.now.sh/membersPg/mem/', { //1 call
 		method: 'post'
 		}).then(function(response) { //2 promise
 			return (response.json())
