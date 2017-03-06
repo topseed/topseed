@@ -47,7 +47,7 @@ function startApp(){
 	console.log('v17.02a')
 	//>====================================================================
 	//SS
-	let ssoptions={
+	var ssoptions={
 		debug: true,
 		prefetch: true,
 		cacheLength: 3,
@@ -81,7 +81,7 @@ function startApp(){
 	
 	const smoothState= $('#ss1').smoothState(ssoptions)
 
-	let endTime = (new Date()).getTime() - _loadStarted
+	var endTime = (new Date()).getTime() - _loadStarted
 	console.log('load time ' + endTime)
 }//startApp()
 //====================================================================
