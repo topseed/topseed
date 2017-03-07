@@ -79,7 +79,7 @@ function startApp(){
 		}//ready()
 	}//sso
 	
-	const smoothState= $('#ss1').smoothState(ssoptions)
+	var smoothState= $('#ss1').smoothState(ssoptions)
 
 	var endTime = (new Date()).getTime() - _loadStarted
 	console.log('load time ' + endTime)
