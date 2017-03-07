@@ -18,6 +18,7 @@
 		, "node-fetch": ">=1.6"
 		, "is_js": ">=0.9"
 		, "jsonwebtoken": ">= 7.2"
+		, "now-logs": ">=0.0.7"
 
 		, "useragent": ">=2.1"
 		, "riot": ">=3.2"
