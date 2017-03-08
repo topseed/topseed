@@ -8,7 +8,7 @@ loadjs.ready(['dependencyNotChrome', 'keyLibs'], {// loaded setup libs
 
 		//,'/_js/libJs/jquery.fullpage.min.js'
 		,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-		,'//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js'
+		,'https://www.masons-foundation.org/_js/libJs/js.cookie.min.js'
 		//,'/zCDN/libJs/zingtouch.min.js'
 
 		//dbind moar:
