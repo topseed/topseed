@@ -60,11 +60,11 @@
               <div class="mui-panel">
                 <form class="mui-form" id="frm1">
                   <legend>Join/Log-in</legend>
-                  <div class="mui-textfield mui-textfield">
+                  <div class="mui-textfield">
                     <input type="text" name="data.userEmail">
                     <label>eMail</label>
                   </div>
-                  <div class="mui-textfield mui-textfield">
+                  <div class="mui-textfield">
                     <input type="password" name="data.password">
                     <label>Password</label>
                   </div>
@@ -82,6 +82,7 @@
           	
           	$('#join').click(function(e) { 
           		e.preventDefault()
+          		//instead of $('input[name="data.userEmail"]').val()
           		console.log(JSON.stringify( $('#frm1').jsForm('get') ))
           	})
           }

@@ -33,6 +33,7 @@ block main
 			
 			$('#join').click(function(e) { 
 				e.preventDefault()
+				//instead of $('input[name="data.userEmail"]').val()
 				console.log(JSON.stringify( $('#frm1').jsForm('get') ))
 			})
 		}
