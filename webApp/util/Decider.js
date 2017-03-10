@@ -97,3 +97,20 @@ exports.decide = function (req, res, next) {
 
 }//()
 
+function _fetch(ROOT_, url_, data_) {
+	return fetch(ROOT_ + url_ , { //1 call
+			method: 'post'
+			, headers: {
+				'Content-Type': 'application/json'
+			}
+			, body: JSON.stringify(data_)
+		}).then(function(response) { //2 returns a promise
+			console.log('back')
+			if (!response.ok) {
+				console.log('not ok')
+				console.log(response)
+				throw Error(response.statusText)
+			}
+			return (response.json())
+		})
+}//_()
