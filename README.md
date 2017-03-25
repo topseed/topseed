@@ -6,13 +6,13 @@ Topseed aims to be a showcase of best practices and approaches for great looking
 
 Topseed features:
 - DOM centric to be more friendly with team that includes interactive designers that code
-- Page Transitions for a Single Page Application feel that actually works with SEO
-- Can be static, serverless, deployed to CDN edge cache (fetch() microservices)
-- Support for Accelerated Mobile Pages (AMP) in same or separate subdomain that can boost SEO
-- Support for Native Mobile Apps (phonegap/cordova) 
-- Supports component libraries
+- Page Transitions for a Single Page Application feel that works with SEO
+- Can be static (serverless), deployed to CDN edge cache (fetch() microservices)
+- Support for Accelerated Mobile Pages (AMP) that can boost SEO, in same or separate subdomain
+- Support for Native Mobile Apps (Phonegap/Cordova) 
+- Supports component libraries (such as Riot.js, Polymer, HTML 5.1 Standard Web Components)
 - Uses Material Design, SASS, Pug and BEM Standard
-- Reduce bit rot and reduce maintenance costs.
+- Reduces bit rot and maintenance costs.
 
 - No magic, you see can how each part works, KISS.
 
