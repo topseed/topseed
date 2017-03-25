@@ -15,7 +15,7 @@ Some best practices demonstrated:
 - Use Material Design, SASS, and BEM Standard
 - Use Pug to improve reuse and reduce maintenance costs.
 
-- No magic, you see can how each part works, KISS.
+You see can how each part works: KISS.
 
 Hello world example source: <https://github.com/topseed/topseed>
 
