@@ -31,7 +31,7 @@ Some of the tools we use:
 - <http://pugjs.org>
 - <http://greensock.com/gsap>
 
-Other Resources that show functionality in Topseed
+Other resources that show functionality in Topseed:
 
 Fetch (data) article: <http://www.masons-foundation.org/post/fetch/>
 
