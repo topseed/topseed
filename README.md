@@ -4,9 +4,16 @@
 
 Topseed aims to be a showcase of best practices and approaches for developers and designers who want to build stunning mobile-first web apps with some of the best technologies available now.
 
-Some best practices demonstrated:
+What technologies make our cut? Those that let us be the most
+productive and creative. And that we know to be maintainable. And that we expect 
+to be future-safe.
+
+We welcome scrutiny and feedback from anyone who tries to follow our approaches. 
+We also welcome code contributions from seasoned designers and developers.
+
+## Some best practices demonstrated:
 - DOM centric to be more friendly with team that includes interactive designers that code
-- Using Page Transitions for a Single Page Application (SPA) feel that works with SEO
+- Use page transitions for a Single Page Application (SPA) feel that works with SEO
 - Can be static (serverless), deployed to CDN edge cache to scale (fetch() microservices)
 - Accelerated Mobile Pages (AMP) that can boost SEO, in same or separate subdomain
 - Native Mobile Apps (Phonegap/Cordova) 
@@ -14,8 +21,6 @@ Some best practices demonstrated:
 - Use component libraries (such as Riot.js, Polymer, HTML 5.1 Standard Web Components)
 - Use Material Design, SASS, and BEM Standard
 - Use Pug to improve reuse and reduce maintenance costs.
-
-You see can how each part works: KISS.
 
 Hello world example source: <https://github.com/topseed/topseed>
 
