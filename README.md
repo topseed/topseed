@@ -2,17 +2,18 @@
 
 [![Join the chat at https://gitter.im/topseed-demos/Lobby](https://badges.gitter.im/topseed-demos/Lobby.svg)](https://gitter.im/topseed-demos/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Topseed aims to be a showcase of best practices and approaches for great looking webapps for developers and designers who want to build stunning mobile-first web apps with some of the best technologies.
+Topseed aims to be a showcase of best practices and approaches for developers and designers who want to build stunning mobile-first web apps with some of the best technologies available now.
 
-Topseed features:
+Some best practices demonstrated:
 - DOM centric to be more friendly with team that includes interactive designers that code
-- Page Transitions for a Single Page Application feel that works with SEO
-- Can be static (serverless), deployed to CDN edge cache (fetch() microservices)
-- Support for Accelerated Mobile Pages (AMP) that can boost SEO, in same or separate subdomain
-- Support for Native Mobile Apps (Phonegap/Cordova) 
-- Supports component libraries (such as Riot.js, Polymer, HTML 5.1 Standard Web Components)
-- Uses Material Design, SASS, Pug and BEM Standard
-- Reduces bit rot and maintenance costs.
+- Using Page Transitions for a Single Page Application (SPA) feel that works with SEO
+- Can be static (serverless), deployed to CDN edge cache to scale (fetch() microservices)
+- Accelerated Mobile Pages (AMP) that can boost SEO, in same or separate subdomain
+- Native Mobile Apps (Phonegap/Cordova) 
+- Server side data-binding and in-browser data binding
+- Use component libraries (such as Riot.js, Polymer, HTML 5.1 Standard Web Components)
+- Use Material Design, SASS, and BEM Standard
+- Use Pug to improve reuse and reduce maintenance costs.
 
 - No magic, you see can how each part works, KISS.
 
