@@ -1,21 +1,24 @@
-# TopSeed-Demos
+# topseed-demos
 
 [![Join the chat at https://gitter.im/topseed-demos/Lobby](https://badges.gitter.im/topseed-demos/Lobby.svg)](https://gitter.im/topseed-demos/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-TopSeed aims to be a showcase of best practices and approaches for great looking webapps for developers and designers
-who want to build stunning mobile-first web apps with some of the best technologies.
+Topseed aims to be a showcase of best practices and approaches for great looking webapps for developers and designers who want to build stunning mobile-first web apps with some of the best technologies.
 
-'TopSeed' features:
+Topseed features:
 - DOM centric to be more friendly with team that includes interactive designers that code
-- Page Transitions for SPA w/ SEO - all at the same time
-- Static, serverless, deployed to CDN edge cache (fetch() microservices)
-- PWA and AMP at same time, w/ re-use. First page served can be APM, that upgrades to PWA/interactive
+- Page Transitions for a Single Page Application feel that actually works with SEO
+- Can be static, serverless, deployed to CDN edge cache (fetch() microservices)
+- Support for Accelerated Mobile Pages (AMP) in same or separate subdomain that can boost SEO
 - Support for Native Mobile Apps (phonegap/cordova) 
-- Uses HTML5.1 Standard Web Components - others will have to rewrite
-- Material Design Sass/BEM 
+- Supports component libraries
+- Uses Material Design, SASS, Pug and BEM Standard
 - Reduce bit rot and reduce maintenance costs.
 
 - No magic, you see can how each part works, KISS.
+
+Hello world example source: <https://github.com/topseed/topseed>
+
+Kitchen Sink: this project
 
 Some of the tools we use:
 - <http://github.github.io/fetch>
@@ -27,10 +30,7 @@ Some of the tools we use:
 - <http://pugjs.org>
 - <http://greensock.com/gsap>
 
-
-Examples/Resources that show basic functionality in 'WHAT'
-
-Hello world example source: <https://github.com/topseed/topseed>
+Other Resources that show functionality in Topseed
 
 Fetch (data) article: <http://www.masons-foundation.org/post/fetch/>
 
@@ -41,10 +41,10 @@ App-Shell article: <http://www.masons-foundation.org/post/app-shell/>
 
 IDE article: <https://www.masons-foundation.org/post/IDE/>
 
-
-Other sites using 'TopSeed':
+Other sites using Topseed:
 - This demo: https://1595566120.rsc.cdn77.org
-- <http://www.rfidthings.com/>
+- <https://www.rfidthings.com/>
+- <https://www.therapybyjill.com/>
 
 Advanced examples are also available once you learn how to use the basics.
 
