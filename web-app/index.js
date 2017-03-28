@@ -15,7 +15,7 @@ server.use('/members', membersAmp)
 
 // ###################### static
 server.use(Decider.decide)
-server.use(express.static('www'))
+server.use(express.static('webroot'))
 
 //###################### start the server
 const PORT = 8081

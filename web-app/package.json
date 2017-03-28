@@ -22,7 +22,7 @@
 		, "node-fetch": ">=1.6"
 		, "now-logs": ">=0.0.7"
 		, "bugsnag": ">=1.9"
-		, "topseed-util": "=1.0.1"
+		, "topseed-util": "=1.0.3"
 
 		, "node-fetch": ">=1.6"
 		, "jsonwebtoken": ">= 7.2"
