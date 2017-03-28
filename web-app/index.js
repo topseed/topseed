@@ -5,7 +5,7 @@ const cors = require('cors')
 const compression = require('compression')
 
 const membersAmp = require('./route/membersAmp')
-const Decider = require('./util/Decider')
+const Decider = require('./utils/Decider')
 
 server.use(cors())
 server.use(compression())
