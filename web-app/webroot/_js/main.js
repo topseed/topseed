@@ -1,14 +1,15 @@
 'use strict'
 
-loadjs.ready(['dependencyNotChrome', 'keyLibs'], {// loaded setup libs
+loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 	loadjs([
+		'https://cdn.rawgit.com/topseed/topseed-npm/master/browserSide/deps/jquery.smoothState.js',
+
 		//dbind:
 		'/_js/libJs/jquery.jsForm.min.js'
 
 		//,'/_js/libJs/jquery.fullpage.min.js'
 		,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-		,'https://www.masons-foundation.org/_js/libJs/js.cookie.min.js'
 		//,'/zCDN/libJs/zingtouch.min.js'
 
 		//dbind moar:
