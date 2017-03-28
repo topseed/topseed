@@ -7,7 +7,7 @@
 // ============================================================================
 
 .mui--no-transition {
-  transition: none ;
+  transition: none !important;
 }
 
 
@@ -45,16 +45,16 @@
 // ALIGNMENT HELPERS
 // ============================================================================
 
-.mui--text-left           { text-align: left ; }
-.mui--text-right          { text-align: right ; }
-.mui--text-center         { text-align: center ; }
-.mui--text-justify        { text-align: justify ; }
-.mui--text-nowrap         { white-space: nowrap ; }
+.mui--text-left           { text-align: left !important; }
+.mui--text-right          { text-align: right !important; }
+.mui--text-center         { text-align: center !important; }
+.mui--text-justify        { text-align: justify !important; }
+.mui--text-nowrap         { white-space: nowrap !important; }
 
-.mui--align-baseline      { vertical-align: baseline ; }
-.mui--align-top           { vertical-align: top ; }
-.mui--align-middle        { vertical-align: middle ; }
-.mui--align-bottom        { vertical-align: bottom ; }
+.mui--align-baseline      { vertical-align: baseline !important; }
+.mui--align-top           { vertical-align: top !important; }
+.mui--align-middle        { vertical-align: middle !important; }
+.mui--align-bottom        { vertical-align: bottom !important; }
 
 
 
@@ -169,11 +169,11 @@
 }
 
 .mui--pull-right {
-  float: right ;
+  float: right !important;
 }
 
 .mui--pull-left {
-  float: left ;
+  float: left !important;
 }
 
 
@@ -184,11 +184,11 @@
 // ============================================================================
 
 .mui--hide {
-  display: none ;
+  display: none !important;
 }
 
 .mui--show {
-  display: block ;
+  display: block !important;
 }
 
 .mui--invisible {
@@ -196,15 +196,15 @@
 }
 
 .mui--overflow-hidden {
-  overflow: hidden ;
+  overflow: hidden !important;
 }
 
 .mui--overflow-hidden-x {
-  overflow-x: hidden ;
+  overflow-x: hidden !important;
 }
 
 .mui--overflow-hidden-y {
-  overflow-y: hidden ;
+  overflow-y: hidden !important;
 }
 
 
@@ -215,19 +215,19 @@
 
 @mixin x-responsive-visibility($parent) {
   #{$parent} {
-    display: block ;
+    display: block !important;
   }
 
   table#{$parent}  { display: table; }
-  tr#{$parent}     { display: table-row ; }
+  tr#{$parent}     { display: table-row !important; }
   th#{$parent},
-  td#{$parent}     { display: table-cell ; }
+  td#{$parent}     { display: table-cell !important; }
 }
 
 // [converter] $parent hack
 @mixin x-responsive-invisibility($parent) {
   #{$parent} {
-    display: none ;
+    display: none !important;
   }
 }
 
@@ -246,52 +246,52 @@
 .mui--visible-xl-block,
 .mui--visible-xl-inline,
 .mui--visible-xl-inline-block {
-  display: none ;
+  display: none !important;
 }
 
 
 @media (max-width: $mui-screen-xs-max) {
   @include x-responsive-visibility('.mui-visible-xs');
 
-  .mui--visible-xs-block        { display: block ; }
-  .mui--visible-xs-inline       { display: inline ; }
-  .mui--visible-xs-inline-block { display: inline-block ; }
+  .mui--visible-xs-block        { display: block !important; }
+  .mui--visible-xs-inline       { display: inline !important; }
+  .mui--visible-xs-inline-block { display: inline-block !important; }
 }
 
 
 @media (min-width: $mui-screen-sm-min) and (max-width: $mui-screen-sm-max) {
   @include x-responsive-visibility('.mui-visible-sm');
 
-  .mui--visible-sm-block        { display: block ; }
-  .mui--visible-sm-inline       { display: inline ; }
-  .mui--visible-sm-inline-block { display: inline-block ; }
+  .mui--visible-sm-block        { display: block !important; }
+  .mui--visible-sm-inline       { display: inline !important; }
+  .mui--visible-sm-inline-block { display: inline-block !important; }
 }
 
 
 @media (min-width: $mui-screen-md-min) and (max-width: $mui-screen-md-max) {
   @include x-responsive-visibility('.mui-visible-md');
 
-  .mui--visible-md-block        { display: block ; }
-  .mui--visible-md-inline       { display: inline ; }
-  .mui--visible-md-inline-block { display: inline-block ; }
+  .mui--visible-md-block        { display: block !important; }
+  .mui--visible-md-inline       { display: inline !important; }
+  .mui--visible-md-inline-block { display: inline-block !important; }
 }
 
 
 @media (min-width: $mui-screen-lg-min) and (max-width: $mui-screen-lg-max) {
   @include x-responsive-visibility('.mui-visible-lg');
 
-  .mui--visible-lg-block        { display: block ; }
-  .mui--visible-lg-inline       { display: inline ; }
-  .mui--visible-lg-inline-block { display: inline-block ; }
+  .mui--visible-lg-block        { display: block !important; }
+  .mui--visible-lg-inline       { display: inline !important; }
+  .mui--visible-lg-inline-block { display: inline-block !important; }
 }
 
 
 @media (min-width: $mui-screen-xl-min) {
   @include x-responsive-visibility('.mui-visible-xl');
 
-  .mui--visible-xl-block        { display: block ; }
-  .mui--visible-xl-inline       { display: inline ; }
-  .mui--visible-xl-inline-block { display: inline-block ; }
+  .mui--visible-xl-block        { display: block !important; }
+  .mui--visible-xl-inline       { display: inline !important; }
+  .mui--visible-xl-inline-block { display: inline-block !important; }
 }
 
 
@@ -326,9 +326,9 @@
 // ============================================================================
 
 .mui-scrlock--showbar-y {
-  overflow-y: scroll ;
+  overflow-y: scroll !important;
 }
 
 .mui-scrlock--showbar-x {
-  overflow-x: scroll ;
+  overflow-x: scroll !important;
 }
