@@ -28,20 +28,6 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 //====================================================================
 function startApp(){
-
-	function toggleSide(){
-		console.log('tog')
-		$('#sidedrawer').toggleClass('active')
-	}
-	function initSideDraw() {
-		setTimeout(function(){
-			$('#brand').unbind('click').click(toggleSide)
-			$('#sidedrawer').unbind('click').click(toggleSide)
-			console.log('initSD')
-		}, 200)
-	}
-	initSideDraw()
-	// READY ///////////////////////////////////////////////////////////
 	A.loaded=true
 	A.act(A.LOADED)
 
@@ -69,8 +55,7 @@ function startApp(){
 			duration: 0,
 			render: function ($container, $newContent) {
 				$container.html($newContent)
-				$('content-wrapper').fadeTo(1000/30,1)
-				initSideDraw()
+				$('#content-wrapper').fadeTo(1000/30,1)
 
 				A.act(A.PAGE)// main action
 				A.inAction= false
