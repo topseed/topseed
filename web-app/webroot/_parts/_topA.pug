@@ -1,8 +1,9 @@
+
 nav#appbar.mui-container-fluid.mui--no-user-select
 	table(width='100%')
 		tr
 			td
-				#brand X &nbsp;
+				a.navigation(href='#sidedrawer') ☰ &nbsp;
 					span.mui--hidden-xs My APP
 			td.mui--text-right
 				ul#menu.mui-list--inline
@@ -11,3 +12,15 @@ nav#appbar.mui-container-fluid.mui--no-user-select
 					li
 						a(href='/pages/two/?w=1') Two
 					li &nbsp;
+
+#sidedrawer
+	nav#sidenav.mui--no-user-select
+		h2
+			#sidedrawer-brand.mui--text-title ☰ &nbsp; My APP
+		.mui-divider
+		ul.mui-list--unstyled#sidenavstrong
+			li
+				a(href='/pages/one/') One
+			li
+				a(href='/pages/two/?w=1') Two
+
