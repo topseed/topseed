@@ -3,7 +3,7 @@
 loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 	loadjs([
-		'https://cdn.rawgit.com/topseed/topseed-npm/master/browserSide/deps/jquery.smoothState.js',
+		'https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/jquery.smoothState.js',
 
 		//dbind:
 		'/_js/libJs/jquery.jsForm.min.js'
