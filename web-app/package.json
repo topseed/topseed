@@ -17,12 +17,12 @@
 		, "body-parser": ">=1.1"
 		, "is_js": ">=0.9"
 		, "useragent": ">=2.1"
-		, "now-logs": ">=0.0.7"
 		, "bugsnag": ">=1.9"
-		, "topseed-util": "=1.0.3"
 		, "riot": ">=3.2"
 		, "cheerio": ">=0.22"
 		, "node-fetch": ">=1.6"
+		, "now-logs": ">=0.0.7"
+		, "topseed-util": "=1.0.3"
 
 		, "jsonwebtoken": ">= 7.2"
 
