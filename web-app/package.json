@@ -17,7 +17,7 @@
 		, "body-parser": ">=1.1"
 		, "is_js": ">=0.9"
 		, "useragent": ">=2.1"
-		, "riot": ">=3.2"
+		, "riot": ">=3.4"
 		, "cheerio": ">=0.22"
 		, "scribe-js": ">=2.0"
 		, "debug": ">=2.6"
