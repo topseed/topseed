@@ -19,6 +19,7 @@
 		, "useragent": ">=2.1"
 		, "riot": ">=3.4"
 		, "cheerio": ">=0.22"
+		, "moment": ">=2.18"
 		, "scribe-js": ">=2.0"
 		, "debug": ">=2.6"
 		, "bugsnag": ">=1.9"
