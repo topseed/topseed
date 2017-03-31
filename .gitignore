@@ -16,4 +16,6 @@ Icon\r
 **/.cfignore
 
 **/*.log
+**/logs/**
+
 **/node_modules/**
