@@ -1,0 +1,34 @@
+// Overrides for non-AMP (classic)
+// Compatible with IE 11 (IE does not fully support flexbox)
+// For compatibility, /utils/Decider.js serves non-AMP version to IE if available.
+
+// footer is 1 or 2 lines depending on media query below
+$footerH1:  $base-line-height * 1.5 !default;
+$footerH2:  $base-line-height * 2.5 !default;
+
+html {
+	position: relative; // for absolute footer
+}
+
+body {
+	min-height: 1vh;  // resets
+	margin-bottom: $footerH1;
+}
+
+#ss1 {
+	display: block;
+}
+
+#footer {
+	height: $footerH1;
+	position: absolute;
+	left:0;
+	bottom: 0;
+}
+
+// responsive footer height
+@media (max-width: 600px) {
+	body { margin-bottom: $footerH2; }
+	#footer { height: $footerH2; }
+	#footer_div { height: $footerH2; }
+}

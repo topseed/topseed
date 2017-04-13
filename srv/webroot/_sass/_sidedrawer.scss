@@ -1,0 +1,31 @@
+#sidedrawer  {
+	min-height: 100vh;
+	z-index: 50;
+	transition: transform .15s ease;
+}
+
+#sidedrawer:target { // makes it appear when anchor link is clicked
+	transform: translateX(201px)
+}
+
+#sidedrawer a {
+	text-decoration: none;
+}
+
+#sidedrawer--brand {
+	vertical-align: middle;
+	height: $headerH;
+	line-height: $headerH;
+}
+
+#sidedrawer--menu li {
+	overflow: hidden;
+	line-height: $headerH;
+ 	padding-left: 30px;
+	transition: background-color .15s ease; // optional
+}
+
+#sidedrawer--menu li:hover {
+	background-color: $accent-color;
+}
+

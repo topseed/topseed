@@ -1,0 +1,17 @@
+extends  ../../_part/_baseShell
+
+block head
+	title One
+	include ../../_part/_header
+
+block main
+	.mui-container-fluid
+		p oh hi there
+
+	script.
+		function init() {
+		}
+		A.onLoaded(init) 
+
+block footer
+	include ../../_part/_footer

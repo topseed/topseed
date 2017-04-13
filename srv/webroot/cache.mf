@@ -1,7 +1,6 @@
 CACHE MANIFEST
-# load stable assets once and freeze on client, even if asset changes, it won't ping
-
 #index assets
+
 https://cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js
 https://cdn.jsdelivr.net/jquery/3.2.0/jquery.min.js
 https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/bowser.min.js
@@ -10,12 +9,11 @@ https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/js.cookie.min.js
 https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/loadjs.min.js
 https://cdn.rawgit.com/topseed/topseed-npm/master/v1/setup-1.0.2.js
 
-https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&lang=en
+https://cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js
 
+https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&lang=en
 
 #page assets:
 
-
 NETWORK:
 *
-

@@ -1,21 +1,15 @@
 'use strict'
-
 loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 	loadjs([
-		'https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/jquery.smoothState.js',
+		'https://cdn.rawgit.com/topseed/topseed-npm/master/v1.08/deps/jquery.smoothState.js'
 
-		//dbind:
-		'/_js/libJs/jquery.jsForm.min.js'
+		//images
+		,'/_js/libJs/jquery.fullpage.min.css'
+		,'/_js/libJs/jquery.fullpage.min.js'
 
-		//,'/_js/libJs/jquery.fullpage.min.js'
-		,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js'
-		//,'/zCDN/libJs/zingtouch.min.js'
-
-		//dbind moar:
-		,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/js/jquery.dataTables.min.js'
-		//,'//cdn.jsdelivr.net/jquery.datatables/1.10.10/css/jquery.dataTables.min.css'
-		,'/_js/libJs/raphael.min.js'
+		//data
+		,'/_js/libJs/jquery.jsForm.min.js'
 
 		], { success: function(){
 			console.log('loaded libs')
@@ -25,19 +19,16 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	}//suc
 })
 
-
-//====================================================================
 function startApp(){
+	// READY ///////////////////////////////////////////////////////////
 	A.loaded=true
 	A.act(A.LOADED)
 
-	console.log('v17.02a')
-	//>====================================================================
 	//SS
-	var ssoptions={
+	let ssoptions={
 		debug: true,
 		prefetch: true,
-		cacheLength: 3,
+		cacheLength: 2,
 		repeatDelay: 450,
 
 		onStart: {
@@ -65,10 +56,7 @@ function startApp(){
 		}//ready()
 	}//sso
 	
-	var smoothState= $('#ss1').smoothState(ssoptions)
-
-	var endTime = (new Date()).getTime() - _loadStarted
-	console.log('load time ' + endTime)
+	const smoothState= $('#ss1').smoothState(ssoptions)
+	//var endTime = new Date().getTime() - _loadStarted
+	//console.log('load time ' + endTime)
 }//startApp()
-//====================================================================
-
