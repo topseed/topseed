@@ -52,7 +52,7 @@ static fetch(fetch_,ROOT_, url_, data_) {
 }//_()
 
 } // class
-// node, browser and phonegap:
+// browser and phonegap:
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
 	module.exports = CDS //node
 
