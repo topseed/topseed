@@ -2,6 +2,11 @@
 const express = require('express')
 const server = express()
 
+const cors = require('cors')
+const compression = require('compression')
+server.use(cors())
+server.use(compression())
+
 const Decider = require('./utils/Decider')
 // ###################### 
 
