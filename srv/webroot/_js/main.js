@@ -19,20 +19,23 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 function startApp(){
 	// READY ///////////////////////////////////////////////////////////
-	sP.ScontentID ='##content-wrapper'
+	sP.ScontentID ='#content-wrapper'
 	sP.smoothPg.add(function(typ, $new, delta, $html) {
 		console.log(typ)
+
 		if(sP.PRE==typ)  {//start
 			console.log($new)
+			//$('#content-wrapper').fadeTo(1000/60,.2)
+
 		}
 		if(sP.PAGE==typ)  {//ready
 			$(sP.ScontentID).html($new)
+			//$('#content-wrapper').fadeTo(1000/30,1)
+
 		}
+
 	})
 	sP.setupDone()
 
-	//$('#content-wrapper').fadeTo(1000/60,.2)
-
-	//$('#content-wrapper').fadeTo(1000/30,1)
 
 }//startApp()
