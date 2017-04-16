@@ -30,12 +30,12 @@ function startApp(){
 
 		if(sP.PRE==typ)  {//start
 			console.log($new)
-			//$('#content-wrapper').fadeTo(1000/60,.2)
+			//$('#content-wrapper').fadeTo(100,.2)
 
 		}
 		if(sP.PAGE==typ)  {//ready
 			$(sP.ScontentID).html($new)
-			//$('#content-wrapper').fadeTo(1000/30,1)
+			//$('#content-wrapper').fadeTo(100,1)
 
 		}
 
