@@ -54,7 +54,10 @@ block main
 				css3:false
 			})//config
 		}
-		sP.onSetup(init)
-
+		loadjs.ready(['ready'], {// loaded setup libs
+			success: function(){
+				init()
+			}
+		})
 block footer
 	include ../../_part/_footer

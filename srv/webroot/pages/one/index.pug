@@ -13,7 +13,7 @@ block main
 	script.
 		function init() {
 		}
-		sP.onSetup(init)
+				loadjs.ready(['ready'], {// loaded setup libs 			success: function(){ 				init() 			} 		})//init)
 
 block footer
 	include ../../_parts/_footer

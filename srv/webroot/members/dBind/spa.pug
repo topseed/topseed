@@ -16,7 +16,7 @@ block main
 					p.born 1985
 
 	script.
-		sP.onSetup(init)
+				loadjs.ready(['ready'], {// loaded setup libs 			success: function(){ 				init() 			} 		})//init)
 
 		function init() {
 

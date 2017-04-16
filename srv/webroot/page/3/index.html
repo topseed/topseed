@@ -90,8 +90,11 @@
         		css3:false
         	})//config
         }
-        sP.onSetup(init)
-        
+        loadjs.ready(['ready'], {// loaded setup libs
+        	success: function(){
+        		init()
+        	}
+        })
       </script>
     </div>
     <div id="footer">
