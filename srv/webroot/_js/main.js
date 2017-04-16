@@ -1,24 +1,29 @@
 'use strict'
 loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
-	loadjs([
-		//images
-		,'/_js/libJs/jquery.fullpage.min.css'
-		,'/_js/libJs/jquery.fullpage.min.js'
 
-		//data
-		,'/_js/libJs/jquery.jsForm.min.js'
+		loadjs.done('ready') // page ready
 
-		], { success: function(){
-			console.log('loaded libs')
-			startApp()
-		}
+		loadjs([
+			//images
+			,'/_js/libJs/jquery.fullpage.min.css'
+			,'/_js/libJs/jquery.fullpage.min.js'
+
+			//data
+			,'/_js/libJs/jquery.jsForm.min.js'
+
+			], { success: function(){
+				console.log('loaded libs')
+				startApp()
+			}
 	})//loadjs
 	}//suc
 })
 
 function startApp(){
 	// READY ///////////////////////////////////////////////////////////
+	loadjs.done('main')
+
 	sP.ScontentID ='#content-wrapper'
 	sP.smoothPg.add(function(typ, $new, delta, $html) {
 		console.log(typ)
@@ -35,7 +40,6 @@ function startApp(){
 		}
 
 	})
-	sP.setupDone()
 
 
 }//startApp()
