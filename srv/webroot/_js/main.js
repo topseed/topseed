@@ -24,17 +24,17 @@ function startApp(){
 	// READY ///////////////////////////////////////////////////////////
 	loadjs.done('main')
 
-	sP.ScontentID ='#content-wrapper'
-	sP.smoothPg.add(function(typ, $new, delta, $html) {
+	SP.ScontentID ='#content-wrapper'
+	SP.smoothPg.add(function(typ, $new, delta, $html) {
 		console.log(typ)
 
-		if(sP.PRE==typ)  {//start
+		if(SP.PRE==typ)  {//start
 			console.log($new)
 			//$('#content-wrapper').fadeTo(100,.2)
 
 		}
-		if(sP.PAGE==typ)  {//ready
-			$(sP.ScontentID).html($new)
+		if(SP.PAGE==typ)  {//ready
+			$(SP.ScontentID).html($new)
 			//$('#content-wrapper').fadeTo(100,1)
 
 		}
