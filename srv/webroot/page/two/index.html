@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="https://cdn.rawgit.com/topseed/topseed-npm/master/v1.10/deps/loadjs.min.js" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/loadjs.min.js" type="text/javascript"></script>
     <script src="//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js" type="text/javascript"></script>
-    <script src="https://cdn.rawgit.com/topseed/topseed-npm/master/v1.10/setup.js" type="text/javascript"></script>
+    <script src="https://rawgit.com/puppetmaster3/smoothState.js/master/release/sP.new.js" type="text/javascript"></script>
+    <!--https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/release/sP.new.js-->
     <script src="/_js/CDS.js" type="text/javascript"></script>
     <script src="/_js/main.js" async="" type="text/javascript"></script>
     <link rel="stylesheet" href="/_sass/main.css" type="text/css">
@@ -17,43 +18,41 @@
   <body>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
-    <div id="ss1">
-      <div id="appbar"><a href="#sidedrawer" id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></a>
-        <div id="appbar--push"></div>
-        <ul class="mui-list--inline" id="appbar--menu">
-          <li><a href="/page/one/">One</a></li>
-          <li><a href="/page/two/">Two</a></li>
-          <li><a href="/page/3/">3</a></li>
-        </ul>
+    <div id="appbar"><a href="#sidedrawer" id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></a>
+      <div id="appbar--push"></div>
+      <ul class="mui-list--inline" id="appbar--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+        <li><a href="/page/3/">3</a></li>
+      </ul>
+    </div>
+    <div class="mui--z1" id="sidedrawer"><a href="#" id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></a>
+      <div class="mui-divider"></div>
+      <ul class="mui-list--unstyled" id="sidedrawer--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+        <li><a href="/page/3/">3</a></li>
+      </ul>
+    </div>
+    <div id="content-wrapper">
+      <div class="mui-container-fluid"><a>hello again this is a link</a>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
-      <div class="mui--z1" id="sidedrawer"><a href="#" id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></a>
-        <div class="mui-divider"></div>
-        <ul class="mui-list--unstyled" id="sidedrawer--menu">
-          <li><a href="/page/one/">One</a></li>
-          <li><a href="/page/two/">Two</a></li>
-          <li><a href="/page/3/">3</a></li>
-        </ul>
-      </div>
-      <div id="content-wrapper">
-        <div class="mui-container-fluid"><a>hello again this is a link</a>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
-        <script>
-          function init() {
-          }
-          A.onLoaded(init)
-          
-        </script>
-      </div>
-      <div id="footer">
-        <div id="footer_div"><a href="https://gitter.im/topseed-demos/Lobby" target="_blank">Forum </a>
-          <div id="footer_div--push"></div>
-          <div id="footer_div--right"><a href="https://github.com/topseed/topseed-demos" target="_blank">Kitchen Sink</a></div>
-        </div>
+      <script>
+        function init() {
+        }
+        A.onLoaded(init)
+        
+      </script>
+    </div>
+    <div id="footer">
+      <div id="footer_div"><a href="https://gitter.im/topseed-demos/Lobby" target="_blank">Forum </a>
+        <div id="footer_div--push"></div>
+        <div id="footer_div--right"><a href="https://github.com/topseed/topseed-demos" target="_blank">Kitchen Sink</a></div>
       </div>
     </div>
   </body>

@@ -832,8 +832,6 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 
 #appbar--menu a:hover { color: #FFF; }
 
-#ss1 { -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
-
 #content-wrapper { margin-top: 36px; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; width: 100vw; font-family: 'Noto Serif', serif; background-color: white; }
 
 #content-wrapper * { font-family: 'Noto Serif', serif; }
@@ -845,8 +843,6 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 #footer_div--push { -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; }
 
 #footer_div--right { margin-right: 23.4px; }
-
-a { color: #FFF; text-decoration: underline; cursor: pointer; }
 
 html { position: relative; }
 

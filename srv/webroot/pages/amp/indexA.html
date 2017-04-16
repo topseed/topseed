@@ -849,8 +849,6 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 
 #appbar--menu a:hover { color: #FFF; }
 
-#ss1 { -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
-
 #content-wrapper { margin-top: 36px; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; width: 100vw; font-family: 'Noto Serif', serif; background-color: white; }
 
 #content-wrapper * { font-family: 'Noto Serif', serif; }
@@ -863,48 +861,44 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 
 #footer_div--right { margin-right: 23.4px; }
 
-a { color: #FFF; text-decoration: underline; cursor: pointer; }
-
     </style>
     <link rel="canonical" href="/post/amp/">
     <script async="" custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   </head>
   <body>
-    <div id="ss1">
-      <div id="appbar"><a href="#sidedrawer" id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></a>
-        <div id="appbar--push"></div>
-        <ul class="mui-list--inline" id="appbar--menu">
-          <li><a href="/page/one/">One</a></li>
-          <li><a href="/page/two/">Two</a></li>
-          <li><a href="/page/3/">3</a></li>
-        </ul>
-      </div>
-      <div class="mui--z1" id="sidedrawer"><a href="#" id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></a>
-        <div class="mui-divider"></div>
-        <ul class="mui-list--unstyled" id="sidedrawer--menu">
-          <li><a href="/page/one/">One</a></li>
-          <li><a href="/page/two/">Two</a></li>
-          <li><a href="/page/3/">3</a></li>
-        </ul>
-      </div>
-      <div id="content-wrapper">
-        <!-- http://github.com/ampproject/amp-by-example-->
-        <p>Hello</p>
-        <!--
-        One thing to be aware of: the AMP runtime will only show iframes located at the top of a website if they provide a placeholder image. Instead, we use an image of the chart background which stretches well to different widths.
-        A positive side-effect of encapsulating interactive content into
-        iframes is that it makes it easy to embed these on other
-        platforms as well.
-        -->
-        <amp-iframe src="https://www.google.com/trends/embed/US_cu_x1aYQFIBAAANlM_en/fe_geo_chart_f5a4cc96-b49b-4d88-9a3f-74cc902c2f35?forceMobileMode=true" height="565" layout="fixed-height" frameborder="0" sandbox="allow-scripts allow-same-origin">
-          <amp-img src="/post/amp/oscars_placeholder.png" layout="fixed-height" height="565" placeholder=""></amp-img>
-        </amp-iframe>
-      </div>
-      <div id="footer">
-        <div id="footer_div"><a href="https://gitter.im/topseed-demos/Lobby" target="_blank">Forum </a>
-          <div id="footer_div--push"></div>
-          <div id="footer_div--right"><a href="https://github.com/topseed/topseed-demos" target="_blank">Kitchen Sink</a></div>
-        </div>
+    <div id="appbar"><a href="#sidedrawer" id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></a>
+      <div id="appbar--push"></div>
+      <ul class="mui-list--inline" id="appbar--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+        <li><a href="/page/3/">3</a></li>
+      </ul>
+    </div>
+    <div class="mui--z1" id="sidedrawer"><a href="#" id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></a>
+      <div class="mui-divider"></div>
+      <ul class="mui-list--unstyled" id="sidedrawer--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+        <li><a href="/page/3/">3</a></li>
+      </ul>
+    </div>
+    <div id="content-wrapper">
+      <!-- http://github.com/ampproject/amp-by-example-->
+      <p>Hello</p>
+      <!--
+      One thing to be aware of: the AMP runtime will only show iframes located at the top of a website if they provide a placeholder image. Instead, we use an image of the chart background which stretches well to different widths.
+      A positive side-effect of encapsulating interactive content into
+      iframes is that it makes it easy to embed these on other
+      platforms as well.
+      -->
+      <amp-iframe src="https://www.google.com/trends/embed/US_cu_x1aYQFIBAAANlM_en/fe_geo_chart_f5a4cc96-b49b-4d88-9a3f-74cc902c2f35?forceMobileMode=true" height="565" layout="fixed-height" frameborder="0" sandbox="allow-scripts allow-same-origin">
+        <amp-img src="/post/amp/oscars_placeholder.png" layout="fixed-height" height="565" placeholder=""></amp-img>
+      </amp-iframe>
+    </div>
+    <div id="footer">
+      <div id="footer_div"><a href="https://gitter.im/topseed-demos/Lobby" target="_blank">Forum </a>
+        <div id="footer_div--push"></div>
+        <div id="footer_div--right"><a href="https://github.com/topseed/topseed-demos" target="_blank">Kitchen Sink</a></div>
       </div>
     </div>
   </body>
