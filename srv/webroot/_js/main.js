@@ -26,7 +26,6 @@ function startApp(){
 
 	SP.ScontentID ='#content-wrapper'
 	SP.smoothPg.add(function(typ, $new, delta, $html) {
-		console.log(typ)
 
 		if(SP.PRE==typ)  {//start
 			console.log($new)
