@@ -1,0 +1,47 @@
+<x-question>
+<div class="mui-container mui-panel">
+	<form class="mui-form" id="frm1">
+		<legend>{ q }</legend>
+		<div class="mui-radio">
+			<label> 
+				<input type="radio" name="data.c" value="1"/>{ choice1 }
+			</label>
+		</div>
+		<div class="mui-radio">
+			<label>
+				<input type="radio" name="data.c" value="2"/>{ choice2 }
+			</label>
+		</div>
+		<div class="mui-radio">
+			<label>
+				<input type="radio" name="data.c" value="3"/>{ choice3 }
+			</label>
+		</div>
+	</form>
+	<button class="mui-btn mui-btn--raised" id="sub1" type="submit">Answer</button>
+</div>
+
+<script>
+this.qNum = -1;
+
+this.on('mount', function() {
+	console.log('init comp');
+	$('#frm1', this.root).jsForm();
+	var thiz = this;
+	$('#sub1', this.root).click(function(e) {
+		const dat = $('#frm1', thiz.root).jsForm('get');
+		Cookies.set('a'+thiz.qNum, JSON.stringify(dat));
+		readStore()
+	})
+})
+this.setQuestion = function(qNum, q) {
+	console.log(qNum,q);
+	this.q = q;
+	this.qNum = qNum;
+}
+this.setChoice1 = function(choice) {this.choice1 = choice;}
+this.setChoice2 = function(choice) {this.choice2 = choice;}
+this.setChoice3 = function(choice) {this.choice3 = choice;}
+
+</script>
+</x-question>

@@ -1,0 +1,37 @@
+<head>
+	<link href="//cdn.muicss.com/mui-0.9.11/css/mui.min.css" rel="stylesheet" type="text/css"/>
+	<script src="https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/loadjs.min.js" type="text/javascript"></script>
+	<script src="/js/setup.js" type="text/javascript"></script>
+</head>
+<body>
+	<p></p>
+	<div class="mui-container">
+		<H2>Score</H2>
+		<p>Correct: <span id="cor">0</span></p>
+		<p>Incorrect: <span id="incor">0</span></p>
+	</div>
+	<script>
+		function init() {
+			console.log('score init');
+			var correctCount = 0;
+			var incorrectCount = 0;
+			var correct = [3,1,2]; // correct answers, could be another JSON file
+
+			var ans= readStore();
+			for (i = 0; i < correct.length; i++) {
+				var key = 'a'+i;
+				var s = Cookies.get(key);
+				var a = JSON.parse(s);
+				var c = correct[i];
+				console.log(i, a.c,c);
+
+				if(a.c==c) correctCount++;
+					else incorrectCount++;
+			}
+			console.log(correctCount);
+			console.log(incorrectCount);
+			$('#cor').text( correctCount);
+			$('#incor').text( incorrectCount);
+		}
+	</script>
+</body>
