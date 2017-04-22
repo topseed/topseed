@@ -28,13 +28,8 @@ Kitchen Sink: this project
 
 Some of the tools we use:
 - <http://github.github.io/fetch>
-- <http://smoothstate.com>
-- <http://muicss.com>
 - <http://getbem.com/naming/>
-- <http://prepros.io>
 - <http://riotjs.com>
-- <http://pugjs.org>
-- <http://greensock.com/gsap>
 
 Other resources that show functionality in Topseed:
 
@@ -44,8 +39,6 @@ Components/Custom elements: <https://www.masons-foundation.org/post/comp/>
 
 SPA article: <http://www.masons-foundation.org/post/SPA/>
 App-Shell article: <http://www.masons-foundation.org/post/app-shell/>
-
-IDE article: <https://www.masons-foundation.org/post/IDE/>
 
 Other sites using Topseed:
 - This demo: https://1595566120.rsc.cdn77.org
@@ -59,7 +52,3 @@ Consulting is available, leave a message on the gitter forum.
 Ex feedback: <https://www.meetup.com/HackerDojo/events/235472685/>
 
 For discussion, comments and Q/A: http://gitter.im/topseed-demos/Lobby
-
-
-Other related links:
-- Pug https://youtu.be/wzAWI9h3q18
