@@ -1,27 +1,27 @@
-"use strict";
-const jwts = require('jsonwebtoken');
-connect('console.re', '80', 'topseed-mserv');
-const SIK = 'company_secret_code';
+"use strict"
+const jwts = require('jsonwebtoken')
+
+const SIK = 'company_secret_code'
 function insertUser(userEmail, password) {
-	console.log('insert', userEmail);
+	console.log('insert', userEmail)
 }
 function requestCodeValidation(userEmail) {
-	console.log('code', userEmail);
+	console.log('code', userEmail)
 }
 function checkCodeValidation(userEmail, code) {
-	console.log('check', userEmail);
+	console.log('check', userEmail)
 }
 function checkPassword(userEmail, password) {
-	console.log('pswd', userEmail);
+	console.log('pswd', userEmail)
 	const promise = new Promise(function (resolve, reject) {
 		if ('123' == password) {
-			resolve(true);
+			resolve(true)
 		}
 		else {
-			resolve(false);
+			resolve(false)
 		}
-	});
-	return promise;
+	})
+	return promise
 }
 function updatePasswordCodeValidation(userEmail, code, newPassword) {
 }
@@ -31,40 +31,43 @@ function userDetails(pk) {
 }
 function updateUser(pk) {
 }
+
 function authUser(userEmail, password) {
-	const dsCheck = checkPassword(userEmail, password);
+	const dsCheck = checkPassword(userEmail, password)
 	const promise = new Promise(function (resolve, reject) {
 		dsCheck.then(function (dsCheckOK) {
 			if (dsCheckOK) {
 				let auth = {
 					userEmail: userEmail,
 					foo: 'bar'
-				};
-				const token = jwts.sign(auth, SIK);
-				resolve(token);
+				}
+				const token = jwts.sign(auth, SIK)
+				resolve(token)
 			}
 			else {
-				reject('bad username|password');
+				reject('bad username|password')
 			}
-		});
-	});
-	return promise;
+		})
+	})
+	return promise
 }
-exports.authUser = authUser;
+
+exports.authUser = authUser
 function authToken(token) {
 	const promise = new Promise(function (resolve, reject) {
 		jwts.verify(token, SIK, function (err, decoded) {
 			if (err)
-				reject('bad token');
+				reject('bad token')
 			else {
 				let auth = {
 					foo: 'bar'
-				};
-				const token = jwts.sign(auth, SIK);
-				resolve(token);
+				}
+				const token = jwts.sign(auth, SIK)
+				resolve(token)
 			}
-		});
-	});
-	return promise;
+		})
+	})
+	return promise
 }
-exports.authToken = authToken;
+
+exports.authToken = authToken
