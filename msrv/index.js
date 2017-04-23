@@ -15,8 +15,8 @@ middle.get('/', function (req, res) {
 })
 
 // service routes matcch pages //////////////////////////
-const membersPg = require('./sroute/membersPg')
-middle.use('/s/membersPg', membersPg)
+const membersPg = require('./sroute/memPg')
+middle.use('/s/membPg', membersPg)
 
 // /////////////////////////////
 const PORT = 8090

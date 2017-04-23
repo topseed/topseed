@@ -1,16 +1,5 @@
 'use strict'
-function fakeRender() {
-	let _people = [
-		{ name: 'John', age: 20 },
-		{ name: 'Jake', age: 37 },
-		{ name: 'Jayson', age: 18 },
-		{ name: 'Jenny', age: 35 },
-		{ name: 'Jessica', age: 23 }
-	]
-	return _people
-}
-exports.fakeRender = fakeRender
-function fakeDW() {
+function fake() {
 	return {
 		'data': [
 			[
@@ -176,4 +165,4 @@ function fakeDW() {
 		]
 	}
 }
-exports.fakeDW = fakeDW
+exports.fake = fake
