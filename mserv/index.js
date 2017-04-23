@@ -9,7 +9,6 @@ middle.use(compression())
 middle.use(cors())
 
 
-
 middle.get('/', function (req, res) {
 	res.send('nothing to see here')
 })
