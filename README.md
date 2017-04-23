@@ -1,7 +1,5 @@
 # topseed kitchen sink
 
-[![Join the chat at https://gitter.im/topseed-demos/Lobby](https://badges.gitter.im/topseed-demos/Lobby.svg)](https://gitter.im/topseed-demos/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Topseed aims to be a showcase of best practices and approaches for developers and designers who want to build stunning mobile-first web apps with some of the best technologies available now.
 
 What technologies make our cut? Those that let us be the most
@@ -11,14 +9,17 @@ to be future-safe.
 We welcome scrutiny and feedback from anyone who tries to follow our approaches. 
 We also welcome code contributions from seasoned designers and developers.
 
+To install latest version of npm: npm install npm@latest -g
+
 ## Some best practices demonstrated:
 - DOM centric to be more friendly with team that includes interactive designers that code
 - Use page transitions for a Single Page Application (SPA) feel that works with SEO
 - Can be static (serverless), deployed to CDN edge cache to scale (fetch() microservices)
 - Accelerated Mobile Pages (AMP) that can boost SEO, in same or separate subdomain
-- Native Mobile Apps (Phonegap/Cordova) 
-- Server side data-binding and in-browser data binding
-- Use component libraries (such as Riot.js, Polymer, HTML 5.1 Standard Web Components)
+- Native Mobile Apps 
+- Server side data-binding(SSR) and in-browser data binding
+- Use web component libraries: <http://jeffcarp.github.io/frontend-hyperpolyglot>
+
 - Use Material Design, SASS, and BEM Standard
 - Use Pug to improve reuse and reduce maintenance costs.
 
@@ -26,29 +27,27 @@ Hello world example source: <https://github.com/topseed/topseed>
 
 Kitchen Sink: this project
 
-Some of the tools we use:
-- <http://github.github.io/fetch>
-- <http://getbem.com/naming/>
-- <http://riotjs.com>
+
 
 Other resources that show functionality in Topseed:
 
 Fetch (data) article: <http://www.masons-foundation.org/post/fetch/>
-
 Components/Custom elements: <https://www.masons-foundation.org/post/comp/>
-
 SPA article: <http://www.masons-foundation.org/post/SPA/>
 App-Shell article: <http://www.masons-foundation.org/post/app-shell/>
 
-Other sites using Topseed:
-- This demo: https://1595566120.rsc.cdn77.org
-- <https://www.rfidthings.com/>
-- <https://www.therapybyjill.com/>
+Sites using Topseed:
+- This: <http://1595566120.rsc.cdn77.org>
+- <http://www.rfidthings.com>
+- <http://therapybyjill.com>
+- <http://masons-foundation.org>
 
-Advanced examples are also available once you learn how to use the basics.
 
 Also, from time to time, usually one a month, we hold online training and an announcement will be posted in-there, so please join in any case. 
 Consulting is available, leave a message on the gitter forum.
-Ex feedback: <https://www.meetup.com/HackerDojo/events/235472685/>
+Ex feedback: <http://meetup.com/HackerDojo/events/235472685>
+< >
 
 For discussion, comments and Q/A: http://gitter.im/topseed-demos/Lobby
+
+[![Join the chat at https://gitter.im/topseed-demos/Lobby](https://badges.gitter.im/topseed-demos/Lobby.svg)](https://gitter.im/topseed-demos/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
