@@ -1,9 +1,8 @@
-{
-	"engines": 
-		{"node": ">=7.6" },
-	"scripts": {
-		"start": "node index" },
-	"dependencies": { 
+{	"name" : "a"
+	,"version" : "0"
+	, "engines": { "npm" : ">=4.2", "node": ">=7.6" }
+	, "scripts": { "start": "node index" }
+	, "dependencies": { 
 		"express": ">=4.1"
 		, "cors": ">=2.8"
 		, "compression": ">=1.6"
@@ -22,8 +21,8 @@
 
 		, "jsonwebtoken": ">= 7.2"
 		, "mailgun-js": ">=0.8"
-		,"@google-cloud/datastore": ">=0.7"
-		,"node-cache": ">=4.1"
+		, "@google-cloud/datastore": ">=0.7"
+		, "node-cache": ">=4.1"
 
 	}
 }

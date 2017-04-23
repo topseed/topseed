@@ -4,6 +4,7 @@ const router = express.Router()
 const DATA = require('./data')
 const AUTH = require('./auth')
 
+// /////////////////////////////
 router.post('/join', function (req, res) {
 	console.log(req.body)
 	const obj = req.body
@@ -24,4 +25,6 @@ router.post('/mem', function (req, res) {
 	const ret = DATA.fakeRender()
 	res.status(200).send(JSON.stringify(ret))
 })
+
+// /////////////////////////////
 module.exports = router
