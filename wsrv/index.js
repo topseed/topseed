@@ -7,7 +7,9 @@ const compression = require('compression')
 server.use(cors())
 server.use(compression())
 
-const Decider = require('./utils/Decider')
+const C = (require('./config/ServerConfig'))
+global.ServerConfig = new C()
+
 // ###################### 
 
 /* optional:
@@ -18,9 +20,11 @@ server.use('/logs', scribe.webPanel())
 const debug = require('debug')('my-app')
 debug('oh hi')
 */
+const Decider = require('./utils/Decider')
 
-const C = (require('./config/ServerConfig'))
-global.ServerConfig = new C()
+// ###################### static
+const dbAdv = require('./proute/ssrPg')
+server.use('/dBindAdvanced', dbAdv) 
 
 // ###################### static
 server.use(Decider.decide)

@@ -15,13 +15,13 @@ const U = new Util()
 // /////////////////////////////////////////////////////
 
 const ROOT = './webroot'
-const SPA = 'spa.html'
-const AMP = 'amp.html'
+const SPA = 'index.html'
+const AMP = 'indexA.html'
 const INDEX = 'index.html'
 
 
 //************** */
-router.get('/dBind', function (req, res) {	
+router.get('/dBindSSR', function (req, res) {	
 	U.cacheLong(res) // default is long, later we set to quick if needed
 	console.log('->')
 
