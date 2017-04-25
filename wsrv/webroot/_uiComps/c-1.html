@@ -6,7 +6,12 @@
 
 	this.init = function(bus) {
 		console.log('comp1()')
-		
+		setInterval(function() {
+
+			bus.dispatch('event')
+
+		}, 1000)
+
 	}
 </script>
 </c-1>

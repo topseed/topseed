@@ -6,7 +6,9 @@
 
 	this.init = function(bus) {
 		console.log('comp2()')
-		
+		bus.add(function(evt) {
+			console.log('L',evt)
+		})
 	}
 </script>
 </c-2>
