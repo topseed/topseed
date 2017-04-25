@@ -6,31 +6,38 @@ block head
 
 block main
 	.mui-container-fluid
-		p hello
+		p Show how event in c-1 affects c-2
 		c-1
 		c-2
 
 	script.
+		loadjs.ready( ['app-ready'],
+			{ success: function(){ 
+				UIinit() 
+			} 
+		})//ready()
+
 		function UIinit() {
+
 			riot.compile(function(){ // make component, and wait for it
 				var c1 = riot.mount('c-1')
 				var c2 = riot.mount('c-2')
 				console.log(c1)
 				console.log(c2)
 
-				//var c2 = comps[1] // 0 uses attributes, this one is using set
-				//c2.setRating(2)
 				loadjs([ '/comp/compCom/PS.js' ], // now load pg js if needed
-					{ success: function(){ PS.init() } 
+					{ success: function(){ 
+						PS.init() 
+
+						c1.init(PS.pgBus)
+						c2.init(PS.pgBus)
+
+					} 
 				})//load ps.js
 
 			})// compile
-
 		}//UIinit()
 
-		loadjs.ready( ['app-ready'],
-			{ success: function(){ UIinit() } 
-		})//ready()
 
 block footer
 	include ../../_part/_footer
