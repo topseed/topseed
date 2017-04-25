@@ -9,13 +9,18 @@ block main
 		a hello again 
 
 	script.
-		function init() {
+		function UIinit() {
 		}
 		loadjs.ready(['ready'], {// loaded setup libs
 			success: function(){
-				init()
-			}
-		})
+				UIinit()
+				loadjs([ 'PS.js' ] // now load pg js if needed
+					,{ success: function(){
+						PS.init()
+					}//suc
+				})//load pg
+			}// lsuc
+		})//ready()
 
 block footer
 	include ../../_part/_footer

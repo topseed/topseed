@@ -237,29 +237,28 @@
         
         	//loadMo()
         }
-        		loadjs.ready(['ready'], {// loaded setup libs 			success: function(){ 				init() 			} 		})//init)
         
         function loadMo() {
-        	loadjs([
-        		'//cdn.jsdelivr.net/morris.js/0.5.1/morris.min.js'
-        		,'//cdn.jsdelivr.net/morris.js/0.5.1/morris.css'
-        		], { success: function(){
-        			console.log('late lodaded Morris lib - could be in a component')
-        			initMorris()
-        		}
-        	})
-        }
+        		loadjs([
+        			'//cdn.jsdelivr.net/morris.js/0.5.1/morris.min.js'
+        			,'//cdn.jsdelivr.net/morris.js/0.5.1/morris.css'
+        			], { success: function(){
+        				console.log('late lodaded Morris lib - could be in a component')
+        				initMorris()
+        			}
+        		})
+        	}
         
-        function initMorris() { // hoist
-        	Morris.Donut({
-        		element: 'myfirstchart',
-        		data: [
-        			{label: 'Download Sales', value: 12},
-        			{label: 'In-Store Sales', value: 30},
-        			{label: 'Mail-Order Sales', value: 20}
-        		]
-        	})//morris
-        } //init morris
+        	function initMorris() { // hoist
+        		Morris.Donut({
+        			element: 'myfirstchart',
+        			data: [
+        				{label: 'Download Sales', value: 12},
+        				{label: 'In-Store Sales', value: 30},
+        				{label: 'Mail-Order Sales', value: 20}
+        			]
+        		})//morris
+        	} //init morris
         
       </script>
     </div>

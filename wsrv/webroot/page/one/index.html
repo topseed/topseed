@@ -43,14 +43,18 @@
         <p>oh hi there</p>
       </div>
       <script>
-        function init() {
-        
+        function UIinit() {
         }
         loadjs.ready(['ready'], {// loaded setup libs
         	success: function(){
-        		init()
-        	}
-        })
+        		UIinit()
+        		loadjs([ 'PS.js' ] // now load pg js if needed
+        			,{ success: function(){
+        				PS.init()
+        			}//suc
+        		})//load pg
+        	}// lsuc
+        })//ready()
       </script>
     </div>
     <div id="footer">
