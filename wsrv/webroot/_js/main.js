@@ -2,7 +2,7 @@
 loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 
-		loadjs.done('ready') // page ready
+		loadjs.done('app-ready') // page ready
 
 		loadjs([
 			'/_js/libJs/jquery.fullpage.min.css'
