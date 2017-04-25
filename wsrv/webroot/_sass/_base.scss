@@ -1,4 +1,4 @@
-// AMP Flexbox layout
+// AMP & Flexbox layout
 // main.sass also imports _classicFooter.scss overrides for compatibility with IE.
 
 // Default M.ui variables (See muicss.com) ============================================
@@ -9,7 +9,7 @@ $mui-appbar-height:              $headerH;
 $mui-appbar-height-xs-portrait:  $headerH;
 $mui-appbar-height-xs-landscape: $headerH;
 
-$mui-base-font-family:    'Noto Sans', sans-serif !default; // supports i18n 
+$mui-base-font-family:  -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
 $mui-base-font-color:     $primary-text-color;
 $mui-base-font-size:      $base-line-height * .65; // golden ratio as % of line-height
 $mui-base-font-smoothing: true;
@@ -49,6 +49,8 @@ body {
 #sidedrawer  {
 	left: -201px;
 	width: 200px;
+	z-index: 200;
+
 	position: absolute;
 	overflow: hidden;
 	background-color: $primary-color-light;
@@ -74,7 +76,7 @@ body {
 	overflow: hidden;
 	color: $primary-color-light;
 	background-color: $primary-color-dark;
-	z-index: 10;
+	z-index: 100;
 	line-height: $headerH;
 	height: $headerH;
 	box-shadow: $box-shad;
@@ -129,12 +131,12 @@ body {
 	margin-top: $headerH;
 	flex-grow: 1;
 	width: 100vw;
-	font-family: 'Noto Serif', serif;
+	//font-family: 'Noto Serif', serif;
 	background-color: white;
 }
 
 #content-wrapper * {
-	font-family: 'Noto Serif', serif;
+	//font-family: 'Noto Serif', serif;
 }
 
 
@@ -146,6 +148,8 @@ body {
 	color: $primary-text-color;
 	background-color: $primary-color;
 	overflow: hidden;
+	z-index: 50;
+
 }
 
 #footer_div {

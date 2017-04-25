@@ -4,8 +4,9 @@ html
 		block head
 
 	body
-		link(href='https://fonts.googleapis.com/css?family=Noto+Sans',  rel='stylesheet')
-		link(href='https://fonts.googleapis.com/css?family=Noto+Serif', rel='stylesheet')
+		<!--[if !IE]> -->
+			link(rel='stylesheet', href='/_sass/main.css', type='text/css', lazyload="1")
+		<!-- <![endif]-->
 
 		include _top
 
