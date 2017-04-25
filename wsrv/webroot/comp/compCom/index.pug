@@ -26,9 +26,11 @@ block main
 					} //
 				)//load ps.js
 
-		})// compile
+			})// compile
 
-		loadjs.ready(['app-ready']
+		}//UIinit()
+
+		loadjs.ready( ['app-ready']
 			,{
 				success: function(){ UIinit() } 
 			}

@@ -2,8 +2,6 @@
 loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 
-		loadjs.done('app-ready') // page ready
-
 		loadjs([
 			'/_js/libJs/jquery.fullpage.min.css'
 			,'/_js/libJs/jquery.fullpage.min.js'
@@ -23,7 +21,8 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 function startApp(){
 	// READY ///////////////////////////////////////////////////////////
-	loadjs.done('main')
+	loadjs.done('app-ready') // page ready
+
 	setupDrawer()
 
 	SP.ScontentID ='#content-wrapper'
