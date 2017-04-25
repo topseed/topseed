@@ -1,5 +1,5 @@
 head
-	script(src='https://www.masons-foundation.org/_js/libJs/riotComp.min.js', type='text/javascript')
+	script(src='https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/riot_compiler.min.js', type='text/javascript')
 body
 
 	c-1(a='b')
@@ -7,7 +7,7 @@ body
 
 	c-1(a='d')
 
-	script(type='riot/tag', src='https://www.masons-foundation.org/_uiComps/c1.html')
+	script(type='riot/tag', src='/_uiComps/c1.html')
 	script.
 		riot.compile(function(){ // make component, and wait for it
 			console.log('c:')

@@ -1,0 +1,21 @@
+extends  ../../_part/_baseShell
+
+block head
+	title Page Two
+	include ../../_part/_header
+
+block main
+	.mui-container-fluid
+		a hello again 
+
+	script.
+		function init() {
+		}
+		loadjs.ready(['ready'], {// loaded setup libs
+			success: function(){
+				init()
+			}
+		})
+
+block footer
+	include ../../_part/_footer
