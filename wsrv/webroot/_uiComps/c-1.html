@@ -1,26 +1,12 @@
 <c-1>
-<p>ok { myVar } </p>
-
-<yield/>
+<p>One </p>
 
 <script>
+	this.id = 'myId1'
 
-this.myVar = opts.a
-this.id = 'myId1'
-
-console.log(this.opts)
-
-this.on('before-unmount', function(){
-	console.log('u:')
-})
-this.on('unmount', function(){
-	console.log('u:')
-})
-
-this.compA = function() {
-	console.log('compA()')
-	return 'someCA'
-}
+	this.init = function(bus) {
+		console.log('comp1()')
+		
+	}
 </script>
-
 </c-1>

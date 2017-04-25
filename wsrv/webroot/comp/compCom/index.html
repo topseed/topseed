@@ -51,16 +51,14 @@
         
         function UIinit() {
         
-        	riot.compile(function(){ // make component, and wait for it
-        		var c1 = riot.mount('c-1')
-        		var c2 = riot.mount('c-2')
-        		console.log(c1)
-        		console.log(c2)
+        	riot.compile(function(){ // wait for a comp
+        		var c1 = riot.mount('c-1')[0]
+        		var c2 = riot.mount('c-2')[0]
         
-        		loadjs([ '/comp/compCom/PS.js' ], // now load pg js if needed
+        		loadjs([ '/comp/compCom/PS.js' ], // now load ps
         			{ success: function(){ 
         				PS.init() 
-        
+        				//comps now have access to the pg event bus
         				c1.init(PS.pgBus)
         				c2.init(PS.pgBus)
         
