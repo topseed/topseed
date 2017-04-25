@@ -12,6 +12,15 @@ block main
 
 	script.
 		function UIinit() {
+			riot.compile(function(){ // make component, and wait for it
+				var c1 = riot.mount('c-1')
+				var c2 = riot.mount('c-2')
+				console.log(c1)
+				console.log(c2)
+
+				//var c2 = comps[1] // 0 uses attributes, this one is using set
+				//c2.setRating(2) 
+			}
 		}
 		loadjs.ready(['ready'], {// loaded setup libs
 			success: function(){
