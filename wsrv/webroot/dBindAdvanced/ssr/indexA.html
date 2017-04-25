@@ -1,4 +1,21 @@
-@charset "UTF-8";
+<!DOCTYPE html>
+<html ⚡="">
+  <head>
+    <!-- AMP boilerplate:-->
+    <meta charset="utf-8">
+    <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript>
+      <style amp-boilerplate="">
+        body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
+        
+      </style>
+    </noscript>
+    <!--end AMP-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <style amp-custom="">@charset "UTF-8";
 /** MUI Colors module */
 /** MUI Globals */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -799,7 +816,7 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 
 #sidedrawer { left: -201px; width: 200px; z-index: 200; position: absolute; overflow: hidden; background-color: #C5CAE9; }
 
-#sidedrawer { min-height: 100vh; transition: -webkit-transform .15s ease; transition: transform .15s ease; transition: transform .15s ease, -webkit-transform .15s ease; }
+#sidedrawer { min-height: 100vh; z-index: 50; transition: -webkit-transform .15s ease; transition: transform .15s ease; transition: transform .15s ease, -webkit-transform .15s ease; }
 
 #sidedrawer:target { -webkit-transform: translateX(201px); -ms-transform: translateX(201px); transform: translateX(201px); }
 
@@ -842,3 +859,39 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 #footer_div--push { -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; }
 
 #footer_div--right { margin-right: 23.4px; }
+
+    </style>
+  </head>
+  <body>
+    <div id="appbar"><a href="#sidedrawer" id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></a>
+      <div id="appbar--push"></div>
+      <ul class="mui-list--inline" id="appbar--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+        <li><a href="/page/3/">3</a></li>
+      </ul>
+    </div>
+    <div id="sidedrawer"><a href="#" id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></a>
+      <div class="mui-divider"></div>
+      <ul class="mui-list--unstyled" id="sidedrawer--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+        <li><a href="/page/3/">3</a></li>
+      </ul>
+    </div>
+    <div id="content-wrapper">
+      <div class="mui-container-fluid">
+        <p></p>
+        <d-bind></d-bind>
+        <p></p>
+        <s-comp1></s-comp1>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer_div"><a href="https://gitter.im/topseed-demos/Lobby" target="_blank">Forum </a>
+        <div id="footer_div--push"></div>
+        <div id="footer_div--right"><a href="https://github.com/topseed/topseed-demos" target="_blank">Kitchen Sink</a></div>
+      </div>
+    </div>
+  </body>
+</html>

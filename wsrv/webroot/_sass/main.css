@@ -799,7 +799,7 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 
 #sidedrawer { left: -201px; width: 200px; z-index: 200; position: absolute; overflow: hidden; background-color: #C5CAE9; }
 
-#sidedrawer { min-height: 100vh; z-index: 50; transition: -webkit-transform .15s ease; transition: transform .15s ease; transition: transform .15s ease, -webkit-transform .15s ease; }
+#sidedrawer { min-height: 100vh; transition: -webkit-transform .15s ease; transition: transform .15s ease; transition: transform .15s ease, -webkit-transform .15s ease; }
 
 #sidedrawer:target { -webkit-transform: translateX(201px); -ms-transform: translateX(201px); transform: translateX(201px); }
 

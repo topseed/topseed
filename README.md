@@ -11,6 +11,8 @@ We also welcome code contributions from seasoned designers and developers.
 
 To install latest version of npm: npm install npm@latest -g
 
+TopSeed is 2 tier, for commercial grade: UI and UI services
+
 ## Some best practices demonstrated:
 - DOM centric to be more friendly with team that includes interactive designers that code
 - Use page transitions for a Single Page Application (SPA) feel that works with SEO
@@ -24,9 +26,6 @@ To install latest version of npm: npm install npm@latest -g
 - Use Pug to improve reuse and reduce maintenance costs.
 
 Hello world example source: <https://github.com/topseed/topseed>
-
-Kitchen Sink: this project
-
 
 
 Other resources that show functionality in Topseed:

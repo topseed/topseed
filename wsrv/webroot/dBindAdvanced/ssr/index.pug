@@ -1,17 +1,24 @@
-extends  ../../_part/_baseShellS
+extends  ../../_part/_baseShell
 
 block head
-	include ../../_part/_headerS
-
-block top
-	include ../../_part/_topS
+	include ../../_part/_header
 
 block main
 	.mui-container-fluid
 		d-bind
 
 	script.
-				loadjs.ready(['ready'], {// loaded setup libs 			success: function(){ 				init() 			} 		})//init)
+	script.
+		loadjs.ready(['ready'], {// loaded setup libs
+			success: function(){
+				init()
+				loadjs([ 'PS.js' ] // now load pg js if needed
+					,{ success: function(){
+						PS.init()
+					}//suc
+				})//load pg
+			}// lsuc
+		})//ready()
 
 		function init() {
 
@@ -37,5 +44,5 @@ block main
 		}//()
 
 block footer
-	include   ../../_part/_footerS
+	include   ../../_part/_footer
 	

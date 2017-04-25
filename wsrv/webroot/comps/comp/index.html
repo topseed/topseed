@@ -1,21 +1,40 @@
 
 <head>
-  <script src="https://www.masons-foundation.org/_js/libJs/riotComp.min.js" type="text/javascript"></script>
+  <script src="//cdn.jsdelivr.net/riot/3.3.1/riot+compiler.min.js"></script>
+  <script src="//cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/_uiComps/lib/star-rating-svg.js">// can be in container</script>
 </head>
 <body>
-  <c-1 a="b">
-    <p id="{id}">In Comp</p>
-  </c-1>
-  <c-1 a="d"></c-1>
-  <script type="riot/tag" src="https://www.masons-foundation.org/_uiComps/c1.html"></script>
+  <star-rating id="o" cc="1"></star-rating>
+  <star-rating id="t"></star-rating>
+  <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
   <script>
     riot.compile(function(){ // make component, and wait for it
-    	console.log('c:')
-    	var comps = riot.mount('c-1')
-    	console.log(comps)
+    	var comps = riot.mount('star-rating')
+    	//console.log(comps)
     
-    	var c = comps[0]
-    	console.log(c.compA())
-    })//compile
+    	var c2 = comps[1] // 0 uses attributes, this one is using set
+    	c2.setRating(2) 
+    
+    	c2.compA().add(function(arg1, arg2){
+    		console.log('pg:'+arg1 + arg2) // listens to comp
+    	})
+    
+    })//compiled
+  </script>
+  <script>
+    function init() {
+    }
+    loadjs.ready(['ready'], {// loaded setup libs
+    	success: function(){
+    		init()
+    		loadjs([ 'PS.js' ] // now load pg js if needed
+    			,{ success: function(){
+    				PS.init()
+    			}//suc
+    		})//load pg
+    	}// lsuc
+    })//ready()
   </script>
 </body>

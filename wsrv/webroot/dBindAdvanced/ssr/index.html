@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Page 3</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -33,69 +32,45 @@
       </ul>
     </div>
     <div id="content-wrapper">
-      <style>
-        .section {
-        	background-size: cover;
-        	background-attachment: fixed;
-        	background-image: url(res/beach768.jpg);
-        }
-        
-        .section1{
-        	background-image: url(res/beach768.jpg);
-        }
-        .section2{
-        	background-image: url(res/city768.jpg);
-        }
-        .section3{
-        	background-image: url(res/light768.jpg);
-        }
-        .section4{
-        	background-image: url(res/road768.jpg);
-        }
-        
-      </style>
-      <div id="fullpage">
-        <div class="section1 section">
-          <div class="mui-container-fluid">
-            <div class="mui-panel">
-              <H3>Oh Hi 1</H3>
-            </div>
-          </div>
-        </div>
-        <div class="section2 section">
-          <div class="mui-container-fluid">
-            <div class="mui-panel">
-              <H3>Oh Hi 2</H3>
-            </div>
-          </div>
-        </div>
-        <div class="section3 section">
-          <div class="mui-container-fluid">
-            <div class="mui-panel">
-              <H3>Oh Hi 3</H3>
-            </div>
-          </div>
-        </div>
-        <div class="section4 section">
-          <div class="mui-container-fluid">
-            <div class="mui-panel">
-              <H3>Oh Hi 4</H3>
-            </div>
-          </div>
-        </div>
+      <div class="mui-container-fluid">
+        <d-bind></d-bind>
       </div>
+      <script></script>
       <script>
-        function init() {
-        	$('#fullpage').fullpage({
-        		//verticalCentered: false,
-        		css3:false
-        	})//config
-        }
         loadjs.ready(['ready'], {// loaded setup libs
         	success: function(){
         		init()
-        	}
-        })
+        		loadjs([ 'PS.js' ] // now load pg js if needed
+        			,{ success: function(){
+        				PS.init()
+        			}//suc
+        		})//load pg
+        	}// lsuc
+        })//ready()
+        
+        function init() {
+        
+        	fetch('https://topseed.now.sh/membersPg/mem/', { //1 call
+        		method: 'post'
+        		}).then(function(response) { //2 promise
+        			return (response.json())
+        		}).then(function(value) { //3
+        			// your code here
+        			console.log('back')
+        
+        			riot.compile(function(){ // make component, and wait for it
+        				//console.log(JSON.stringify(value))
+        				// pass value
+        				var c = riot.mount('d-bind', {users: value})[0]
+        
+        			})//r
+        
+        		}).catch(function(err) {
+        			console.log('error')
+        			console.log(err)
+        	})//fetch()
+        }//()
+        
       </script>
     </div>
     <div id="footer">
