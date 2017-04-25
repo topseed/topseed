@@ -52,21 +52,17 @@
         
         		//var c2 = comps[1] // 0 uses attributes, this one is using set
         		//c2.setRating(2)
-        		loadjs([ 'PS.js' ] // now load pg js if needed
-        			,{ 
-        				success: function(){ PS.init() } 
-        			} //
-        		)//load ps.js
+        		loadjs([ '/comp/compCom/PS.js' ], // now load pg js if needed
+        			{ success: function(){ PS.init() } 
+        		})//load ps.js
         
         	})// compile
         
         }//UIinit()
         
-        loadjs.ready( ['app-ready']
-        	,{
-        		success: function(){ UIinit() } 
-        	}
-        )//ready()
+        loadjs.ready( ['app-ready'],
+        	{ success: function(){ UIinit() } 
+        })//ready()
         
       </script>
     </div>
