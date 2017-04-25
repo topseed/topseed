@@ -11,7 +11,7 @@ We also welcome code contributions from seasoned designers and developers.
 
 To install latest version of npm: npm install npm@latest -g
 
-TopSeed is 2 tier, for commercial grade: UI and UI services
+Best practice is to be frame work agnostic, and to notice that only 2 tiers matter: UI and UI services.
 
 ## Some best practices demonstrated:
 - DOM centric to be more friendly with team that includes interactive designers that code
