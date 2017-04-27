@@ -23,7 +23,8 @@ block main
 			var up   = $('#up').asEventStream('click');
 			var down = $('#down').asEventStream('click');
 
-			var counter = up.map(1).merge(down.map(-1)).scan(0, function(x,y) { return x + y });
+			var counter = up.map(1).merge(down.map(-1))
+				.scan(0, function(x,y) { return x + y });
 
 			// assign observable value to jQuery property text
 			counter.assign($('#counter'), 'text');
