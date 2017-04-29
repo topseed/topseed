@@ -2,16 +2,22 @@
 <p>One </p>
 
 <script>
-	this.id = 'myId1'
+this.id = 'myId1'
 
-	this.init = function(bus) {
-		console.log('comp1()')
-		setInterval(function() {
+this.on('mount', function(){
+	console.log('on mount')
+	$('p', this.root)
 
-			bus.dispatch('event')
+})
 
-		}, 1000)
+this.init = function(bus) {
+	console.log('comp1()')
+	setInterval(function() {
 
-	}
+		bus.dispatch('event')
+
+	}, 1000)
+
+}
 </script>
 </c-1>
