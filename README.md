@@ -25,16 +25,9 @@ Best practice is to be frame work agnostic, and to notice that only 2 tiers matt
 - Use Material Design, SASS, and BEM Standard
 - Use Pug to improve reuse and reduce maintenance costs.
 
+Topseed showcases things that a front developer does, that a full stack developer struggles with. 
+
 Hello world example source: <https://github.com/topseed/topseed>
-
-
-Other resources that show functionality in Topseed:
-
-Fetch (data) article: <http://www.masons-foundation.org/post/fetch/>
-Components/Custom elements: <https://www.masons-foundation.org/post/comp/>
-SPA article: <http://www.masons-foundation.org/post/SPA/>
-App-Shell article: <http://www.masons-foundation.org/post/app-shell/>
-
 Sites using Topseed:
 - This: <http://1595566120.rsc.cdn77.org>
 - <http://www.rfidthings.com>

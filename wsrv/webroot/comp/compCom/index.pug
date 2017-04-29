@@ -6,6 +6,11 @@ block head
 
 block main
 	.mui-container-fluid
+
+		button#up  Up 
+		button#down  Down 
+		span#counter  0 
+
 		p Show how event in c-1 affects c-2
 
 		c-1
@@ -14,6 +19,17 @@ block main
 
 
 	script.
+		function foo() {
+			var up   = $('#up').asEventStream('click');
+			var down = $('#down').asEventStream('click');
+
+			var counter = up.map(1).merge(down.map(-1))
+				.scan(0, function(x,y) { return x + y });
+
+			// assign observable value to jQuery property text
+			counter.assign($('#counter'), 'text');
+		}
+
 		loadjs.ready( ['app-ready'],
 			{ success: function(){ 
 				UIinit() 
@@ -21,7 +37,7 @@ block main
 		})//ready()
 
 		function UIinit() {
-
+			foo()
 			riot.compile(function(){ // wait for a comp
 				var c1 = riot.mount('c-1')[0]
 				var c2 = riot.mount('c-2')[0]

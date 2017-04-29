@@ -3,7 +3,9 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 
 		loadjs([
-			'/_js/libJs/jquery.fullpage.min.css'
+			'//cdn.jsdelivr.net/bacon.js/0.7.1/Bacon.min.js'
+
+			,'/_js/libJs/jquery.fullpage.min.css'
 			,'/_js/libJs/jquery.fullpage.min.js'
 
 			,'https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/riot_compiler.min.js'
