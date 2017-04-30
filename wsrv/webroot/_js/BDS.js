@@ -25,7 +25,8 @@ class BDS {
 	}//_()
 
 } // class
-// browser and native:
+
+// for node:
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
 	module.exports = BDS //node
 

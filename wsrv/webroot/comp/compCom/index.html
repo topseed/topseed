@@ -53,12 +53,11 @@
         		var c1 = riot.mount('c-1')[0]
         		var c2 = riot.mount('c-2')[0]
         
-        		loadNX('/comp/compCom/PS.js', function() { //loadN eXecute
-        				PS.init() 
-        				//comps now have access to the pg event bus
-        				c1.init(PS.pgBus)
-        				c2.init(PS.pgBus)
-        		})//load PS
+        		const ps = new BPS()
+        		ps.init() 
+        		//comps now have access to the pg event bus so wire
+        		c1.init(ps.pgBus)
+        		c2.init(ps.pgBus)
         
         	})// compile
         

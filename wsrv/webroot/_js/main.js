@@ -13,6 +13,8 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			//data
 			,'/_js/libJs/jquery.jsForm.min.js'
 
+			,'/_js/BPS.js'
+
 			], { success: function(){
 				console.log('loaded libs')
 				startApp()
