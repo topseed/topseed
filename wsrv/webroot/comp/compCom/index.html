@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
     <script src="https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/loadjs.min.js" type="text/javascript"></script>
-    <script src="https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/setup/setup-1.18.js" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/setup/setup-1.19.js" type="text/javascript"></script>
     <script src="/_js/BDS.js" type="text/javascript"></script>
     <script src="/_js/main.js" async="" type="text/javascript"></script><!--[if IE]> -->
     <link rel="stylesheet" href="/_sass/main.css" type="text/css"><!-- <![endif]-->
@@ -43,11 +43,9 @@
         <c-2></c-2>
       </div>
       <script>
-        loadjs.ready( ['app-ready'],
-        	{ success: function(){ 
-        		UIinit() 
-        	} 
-        })//ready()
+        onAppReady(UIinit)
+        
+        //classs
         
         function UIinit() {
         
@@ -55,17 +53,15 @@
         		var c1 = riot.mount('c-1')[0]
         		var c2 = riot.mount('c-2')[0]
         
-        		loadjs([ '/comp/compCom/PS.js' ], // now load ps
-        			{ success: function(){ 
+        		loadNX('/comp/compCom/PS.js', function() { //loadN eXecute
         				PS.init() 
         				//comps now have access to the pg event bus
         				c1.init(PS.pgBus)
         				c2.init(PS.pgBus)
-        
-        			} 
-        		})//load ps.js
+        		})//load PS
         
         	})// compile
+        
         }//UIinit()
         
         

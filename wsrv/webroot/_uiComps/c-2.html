@@ -6,7 +6,10 @@
 this.init = function(bus_) {
 	console.log('comp2()')
 
-	bus_.log()
+	//bus_.log()
+	bus_.subscribe(function(e) {
+		console.log(e.valueInternal)
+	})
 
 }
 </script>

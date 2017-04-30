@@ -1,6 +1,6 @@
 <c-1>
 <p>One </p>
-<button id="but1"> Up </button>
+<button id="but1"> But1 </button>
 
 <script>
  
@@ -14,10 +14,6 @@ this.init = function(bus) {
 	const but = $but.asEventStream('click') //use
 
 	bus.plug(but) // stream
-
-	setInterval(function() {
-		//bus.push('event') //event
-	}, 1000)
 
 }
 </script>

@@ -3,7 +3,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 
 		loadjs([
-			'//cdn.jsdelivr.net/bacon.js/0.7.1/Bacon.js'
+			'https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/Bacon.min.js'
 
 			,'/_js/libJs/jquery.fullpage.min.css'
 			,'/_js/libJs/jquery.fullpage.min.js'
