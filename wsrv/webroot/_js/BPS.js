@@ -1,4 +1,4 @@
-class BPS  { //testable pg services class for pg component com, ds/fetch, non UI and such
+class BPS  { //testable pg services class for pg component com, ds/fetch and such
 
 constructor() {
 	this._pgBus= new Bacon.Bus() 	//loosely coupled
