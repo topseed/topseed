@@ -25,7 +25,7 @@ block main
 				var c1 = riot.mount('c-1')[0]
 				var c2 = riot.mount('c-2')[0]
 
-				const ps = new BPS()
+				const ps = new BPS() // can / should have folder local class
 				ps.init() 
 				//comps now have access to the pg event bus so wire
 				c1.init(ps.pgBus)
