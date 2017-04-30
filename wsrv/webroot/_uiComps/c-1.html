@@ -1,24 +1,22 @@
 <c-1>
 <p>One </p>
+<button id="but1"> Up </button>
 
 <script>
-<<<<<<< HEAD
-this.id = 'myId1'
-=======
->>>>>>> origin/master
-
+ 
 this.on('mount', function(){
 	console.log('on mount')
-	$('p', this.root)
-
 })
 
 this.init = function(bus) {
 	console.log('comp1()')
+	const $but = $('#but1', this.root) //reg
+	const but = $but.asEventStream('click') //use
+
+	bus.plug(but) // stream
+
 	setInterval(function() {
-
-		bus.dispatch('event')
-
+		//bus.push('event') //event
 	}, 1000)
 
 }

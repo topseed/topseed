@@ -38,24 +38,11 @@
     </div>
     <div id="content-wrapper">
       <div class="mui-container-fluid">
-        <button id="up"> Up </button>
-        <button id="down"> Down </button><span id="counter"> 0 </span>
         <p>Show how event in c-1 affects c-2</p>
         <c-1></c-1>
         <c-2></c-2>
       </div>
       <script>
-        function foo() {
-        	var up   = $('#up').asEventStream('click');
-        	var down = $('#down').asEventStream('click');
-        
-        	var counter = up.map(1).merge(down.map(-1))
-        		.scan(0, function(x,y) { return x + y });
-        
-        	// assign observable value to jQuery property text
-        	counter.assign($('#counter'), 'text');
-        }
-        
         loadjs.ready( ['app-ready'],
         	{ success: function(){ 
         		UIinit() 
@@ -63,7 +50,7 @@
         })//ready()
         
         function UIinit() {
-        	foo()
+        
         	riot.compile(function(){ // wait for a comp
         		var c1 = riot.mount('c-1')[0]
         		var c2 = riot.mount('c-2')[0]
