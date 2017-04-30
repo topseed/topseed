@@ -9,17 +9,9 @@ block main
 		p oh hi there
 
 	script.
+		onAppReady(UIinit)
 		function UIinit() {
 		}
-		loadjs.ready(['app-ready'], {// loaded setup libs
-			success: function(){
-				UIinit()
-				loadjs([ 'PS.js' ] // now load pg js if needed
-					,{ success: function(){
-						PS.init()
-					}//suc
-				})//load pg
-			}// lsuc
-		})//ready()
+
 block footer
 	include ../../_part/_footer

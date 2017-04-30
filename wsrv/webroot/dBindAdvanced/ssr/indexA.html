@@ -816,7 +816,7 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
 
 #sidedrawer { left: -201px; width: 200px; z-index: 200; position: absolute; overflow: hidden; background-color: #C5CAE9; }
 
-#sidedrawer { min-height: 100vh; z-index: 50; transition: -webkit-transform .15s ease; transition: transform .15s ease; transition: transform .15s ease, -webkit-transform .15s ease; }
+#sidedrawer { min-height: 100vh; transition: -webkit-transform .15s ease; transition: transform .15s ease; transition: transform .15s ease, -webkit-transform .15s ease; }
 
 #sidedrawer:target { -webkit-transform: translateX(201px); -ms-transform: translateX(201px); transform: translateX(201px); }
 
@@ -868,7 +868,6 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
       <ul class="mui-list--inline" id="appbar--menu">
         <li><a href="/page/one/">One</a></li>
         <li><a href="/page/two/">Two</a></li>
-        <li><a href="/page/3/">3</a></li>
       </ul>
     </div>
     <div id="sidedrawer"><a href="#" id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></a>
@@ -876,7 +875,6 @@ body { min-height: 100vh; color: #000; background-color: white; overflow-y: auto
       <ul class="mui-list--unstyled" id="sidedrawer--menu">
         <li><a href="/page/one/">One</a></li>
         <li><a href="/page/two/">Two</a></li>
-        <li><a href="/page/3/">3</a></li>
       </ul>
     </div>
     <div id="content-wrapper">

@@ -22,14 +22,16 @@
     <script type="riot/tag" src="/_uiComps/d-bind.tag"></script>
     <script type="riot/tag" src="/_uiComps/d-table.html"></script>
     <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
-    <div id="appbar"><a href="#sidedrawer" id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></a>
+    <div id="appbar">
+      <div id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></div>
       <div id="appbar--push"></div>
       <ul class="mui-list--inline" id="appbar--menu">
         <li><a href="/page/one/">One</a></li>
         <li><a href="/page/two/">Two</a></li>
       </ul>
     </div>
-    <div id="sidedrawer"><a href="#" id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></a>
+    <div id="sidedrawer">
+      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></div>
       <div class="mui-divider"></div>
       <ul class="mui-list--unstyled" id="sidedrawer--menu">
         <li><a href="/page/one/">One</a></li>
@@ -46,18 +48,9 @@
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
       <script>
+        onAppReady(UIinit)
         function UIinit() {
         }
-        loadjs.ready(['app-ready'], {// loaded setup libs
-        	success: function(){
-        		UIinit()
-        		loadjs([ 'PS.js' ] // now load pg js if needed
-        			,{ success: function(){
-        				PS.init()
-        			}//suc
-        		})//load pg
-        	}// lsuc
-        })//ready()
         
       </script>
     </div>

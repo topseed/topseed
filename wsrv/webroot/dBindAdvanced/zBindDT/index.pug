@@ -14,17 +14,9 @@ block main
 					#myfirstchart(style='height: 450px;')
 
 	script.
-		loadjs.ready(['app-ready'], {// loaded setup libs
-			success: function(){
-				init()
-				loadjs([ 'PS.js' ] // now load pg js if needed
-					,{ success: function(){
-						PS.init()
-					}//suc
-				})//load pg
-			}// lsuc
-		})//ready()
-		function init() {
+		onAppReady(UIinit)
+		function UIinit() {
+	
 			dataSet = [
 					[
 						"Cedric Kelly",

@@ -23,18 +23,4 @@
     
     })//compiled
   </script>
-  <script>
-    function init() {
-    }
-    loadjs.ready(['app-ready'], {// loaded setup libs
-    	success: function(){
-    		init()
-    		loadjs([ 'PS.js' ] // now load pg js if needed
-    			,{ success: function(){
-    				PS.init()
-    			}//suc
-    		})//load pg
-    	}// lsuc
-    })//ready()
-  </script>
 </body>
