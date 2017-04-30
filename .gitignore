@@ -11,6 +11,7 @@ Icon\r
 **/*.config
 
 .csscomb.json
+tsconfig.json
 
 ###################### Other
 **/.project
