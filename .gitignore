@@ -10,6 +10,7 @@ Icon\r
 **/.vscode/
 **/*.config
 
+.csscomb.json
 
 ###################### Other
 **/.project
