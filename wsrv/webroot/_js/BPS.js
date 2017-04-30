@@ -1,4 +1,4 @@
-class BPS  { //testable pg services class for pg component com, ds/fetch and such
+class BPS  { //testable pg services class for pg component com, ds/fetch, state machine and such. like RxJS, cycle.js
 
 constructor() {
 	this._pgBus= new Bacon.Bus() 	//loosely coupled
