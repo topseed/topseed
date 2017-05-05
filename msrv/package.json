@@ -19,6 +19,7 @@
 		, "markdown-it": ">=8.3"
 		, "topseed-util": "=1.0.7"
 
+		,"firebase": ">=3.9"
 		, "jsonwebtoken": ">= 7.2"
 		, "mailgun-js": ">=0.8"
 		, "@google-cloud/datastore": ">=0.7"
