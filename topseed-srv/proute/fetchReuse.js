@@ -1,7 +1,7 @@
 
 //demo only
 var fetch = require('node-fetch')
-const BDS = require('./webroot/_js/BDS')
+const BDS = require('./' + ServerConfig.WEBROOT + '/_js/BDS')
 
 const ROOT = 'http://jsonplaceholder.typicode.com/'
 class Page1BDS extends BDS {

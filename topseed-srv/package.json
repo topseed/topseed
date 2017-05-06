@@ -1,6 +1,9 @@
-{	"name" : "a"
-	,"version" : "1.0.0"
-	, "engines": { "npm" : ">=4.2", "node": ">=7.6" }
+{	"name" : "topseed"
+	, "version": "1.0.0"
+	, "description": "Best Practices for Mobile-first Web Apps - Kitchen Sink"
+	, "repository": { "type": "git", "url" : "https://github.com/topseed/topseed.git"}
+	, "license": "MIT"
+	, "engines": { "npm": ">=4.2", "node": ">=7.6" }
 	, "scripts": { "start": "node index" }
 	, "dependencies": { 
 		"express": ">=4.1"

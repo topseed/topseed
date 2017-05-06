@@ -14,7 +14,7 @@ const Util = require('topseed-util')
 const U = new Util() 
 // /////////////////////////////////////////////////////
 
-const ROOT = './webroot'
+const ROOT = './' + ServerConfig.WEBROOT
 const SPA = 'index.html'
 const AMP = 'indexA.html'
 const INDEX = 'index.html'
@@ -62,7 +62,7 @@ router.get('/dBindSSR', function (req, res) {
 })
 
 //tags: /////////////////////////////////////////////////////
-const dbindComp = require('../webroot/_uiComps/d-bind.tag')
+const dbindComp = require('../' + ServerConfig.WEBROOT + '/_uiComps/d-bind.tag')
 
 function bind(data, res) {
 

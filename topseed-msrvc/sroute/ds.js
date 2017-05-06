@@ -1,5 +1,5 @@
 'use strict'
-function fake() {
+function dummyData() {
 	return {
 		'data': [
 			[
@@ -165,4 +165,4 @@ function fake() {
 		]
 	}
 }
-exports.fake = fake
+exports.dummyData = dummyData

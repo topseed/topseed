@@ -1,4 +1,4 @@
-{	"name" : "a"
+{	"name" : "topseed-dsrv"
 	,"version" : "1.0.0"
 	, "engines": { "npm" : ">=4.2", "node": ">=7.6" }
 	, "scripts": { "start": "node index" }
