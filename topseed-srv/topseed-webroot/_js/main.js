@@ -3,7 +3,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 
 		loadjs([
-			'https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/Bacon.min.js'
+			'//cdn.jsdelivr.net/kefir/3.7.1/kefir.min.js'
 
 			,'/_js/libJs/jquery.fullpage.min.css'
 			,'/_js/libJs/jquery.fullpage.min.js'
