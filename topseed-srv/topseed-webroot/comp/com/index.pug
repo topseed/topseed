@@ -7,29 +7,29 @@ block head
 block main
 	.mui-container-fluid
 
-		p Show how event in c-1 affects c-2
+		p Show how event in c-1 affects c-2.
 
 		c-1
 
 		c-2
 
 	script.
-
+		console.log('r')
 		onAppReady(UIinit)
 
 		//classs
 
 		function UIinit() {
-
+			console.log('init')
 			riot.compile(function(){ // wait for a comp
 				var c1 = riot.mount('c-1')[0]
 				var c2 = riot.mount('c-2')[0]
 
 				const ps = new BPS() // can / should have folder local class
-				ps.init() 
+				//ps.init() 
 				//comps now have access to the pg event bus so wire
-				c1.init(ps.pgBus)
-				c2.init(ps.pgBus)
+				//c1.init(ps.pgBus)
+				//c2.init(ps.pgBus)
 
 			})// compile
 

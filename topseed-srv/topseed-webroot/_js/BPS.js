@@ -1,15 +1,19 @@
-class BPS  { //testable pg services class for pg component com, ds/fetch, state machine and such. like RxJS, cycle.js
+class BPS  { //testable pg services class for pg component com, ds/fetch, state machine and such. base page services 'middle api layer'
 
 constructor() {
-	this._pgBus= new Bacon.Bus() 	//loosely coupled
+	this._streams= {} 	//loosely coupled
 }
 
-get pgBus() {
-	return this._pgBus
+regStream(key, strm)  {
+	this._streams[key]=str
+}
+
+stream(key) {//get
+	return this._streams[key]
 }
 
 init( ) {
-	console.log('ps')
+	console.log('bps')
 }
 
 }//class

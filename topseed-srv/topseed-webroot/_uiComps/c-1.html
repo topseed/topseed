@@ -8,12 +8,15 @@ this.on('mount', function(){
 	console.log('on mount')
 })
 
-this.init = function(bus) {
+this.init = function(ps) {
 	console.log('comp1()')
-	const $but = $('#but1', this.root) //reg
-	const but = $but.asEventStream('click') //use
+	const clicks = flyd.stream()
+	const $but = $('#but1', this.root)
+	const but = $but.addEventListener('click', clicks)
 
-	bus.plug(but) // stream
+	flyd.on(function(e) { console.log(e); }, clicks)
+
+	ps.regStream('c1', clicks)
 
 }
 </script>

@@ -3,7 +3,9 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	success: function(){
 
 		loadjs([
-			'//cdn.jsdelivr.net/kefir/3.7.1/kefir.min.js'
+			//frp:
+			'//cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/loadjs.min.js'
+			,'/_js/BPS.js'
 
 			,'/_js/libJs/jquery.fullpage.min.css'
 			,'/_js/libJs/jquery.fullpage.min.js'
@@ -13,7 +15,6 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			//data
 			,'/_js/libJs/jquery.jsForm.min.js'
 
-			,'/_js/BPS.js'
 
 			], { success: function(){
 				console.log('loaded libs')
