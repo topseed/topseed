@@ -15,9 +15,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			//data
 			,'/_js/libJs/jquery.jsForm.min.js'
 
-
 			], { success: function(){
-				console.log('loaded libs')
 				startApp()
 			}
 	})//loadjs
@@ -27,8 +25,9 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 function startApp(){
 	// READY ///////////////////////////////////////////////////////////
 	loadjs.done('app-ready') // page ready
+	loadjs.done('app-ready') // page ready
 
-	setupDrawer()
+	console.log('main js ready')
 
 	SP.ScontentID ='#content-wrapper'
 	SP.smoothPg.add(function(typ, $new, delta, $html) {
@@ -53,15 +52,3 @@ function preLImg(arg) { // helper function start loading an image so browser has
 	var imag = new Image()
 	imag.src = arg
 }
-// sidedrawer ////////////////////////////////////////////////
-function setupDrawer() {
-	$('#sidedrawer').on('click', drawerClose)
-	$('#appbar--brand').on('click', drawerOpen)
-	console.log('d set')
-}//()
-function drawerOpen(px, e) {
-	$( '#sidedrawer').css('transform', 'translateX(201px)')
-}//()
-function drawerClose(e) {
-	$( '#sidedrawer').css('transform', 'translateX(0px)')
-}//()
