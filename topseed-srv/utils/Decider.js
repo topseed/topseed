@@ -61,7 +61,7 @@ function serveAmp(req) {
 //**************** */
 exports.decide = function (req, res, next) {
 	res.header('X-TimeSent', U.getDt() )
-	//U.cacheLong(res) // default is long, later we set to quick if needed
+	U.cacheLong(res) // default is long, later we set to quick if needed
 	//console.log('Decider ->')
 	
 	if (req.path.indexOf('.') > 0 ) { // hasDot?
@@ -75,7 +75,7 @@ exports.decide = function (req, res, next) {
 			const fallbackResource = pgPath + (returnAmp?SPA:AMP);
 
 			res.header('Content-Type', 'text/html')
-			//U.cacheQuick(res)
+			U.cacheQuick(res)
 			
 			//attempt to get the requested version, show the other version if not exists
 			if (fs.existsSync(requestedResource)) { 
@@ -92,7 +92,7 @@ exports.decide = function (req, res, next) {
 			}
 
 		} catch(err) {
-			U.ifError(err, 'catch', res)
+			ifError(err, 'catch', res)
 		}
 	}
 
