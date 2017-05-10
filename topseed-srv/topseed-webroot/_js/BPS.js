@@ -1,4 +1,4 @@
-class BPS  { //testable pg services class for pg component com, ds/fetch, state machine and such. base page services 'middle api layer'
+class BPS  { //testable pg services class for pg component com, ds/fetch, FRP and such. base page services / 'middle layer'
 
 constructor() {
 	this._streams= {} 	//loosely coupled

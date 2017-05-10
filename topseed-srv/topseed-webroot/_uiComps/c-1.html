@@ -10,11 +10,13 @@ this.on('mount', function(){
 
 this.init = function(ps) {
 	console.log('comp1()')
-	const clicks = flyd.stream()
 	const $but = $('#but1', this.root)
-	const but = $but.on('click', clicks)
 
+	const clicks = flyd.stream()
+	const but = $but.on('click', clicks)
 	ps.regStream('c1', clicks)
+
+
 
 }
 </script>

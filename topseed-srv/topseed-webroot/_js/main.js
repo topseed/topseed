@@ -4,8 +4,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 		loadjs([
 			//frp:
-			'//cdn.jsdelivr.net/kefir/3.7.1/kefir.min.js'
-			,'https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/flyd.min.js'
+			'https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/flyd.min.js'
 			,'/_js/BPS.js'
 			,'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 

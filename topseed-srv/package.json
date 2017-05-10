@@ -14,7 +14,6 @@
 		, "riot": ">=3.4"
 		, "cheerio": ">=0.2"
 		, "moment": ">=2.1"
-		, "lodash": ">=4.1"
 		, "scribe-js": ">=2.0"
 		, "debug": ">=2.6"
 		, "bugsnag": ">=1.9"
