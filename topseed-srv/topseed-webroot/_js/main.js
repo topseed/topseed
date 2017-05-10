@@ -27,16 +27,16 @@ function startApp(){
 
 	console.log('main js ready')
 
-	SP.ScontentID ='#content-wrapper'
-	SP.smoothPg.add(function(typ, $new, delta, $html) {
+	TT.ScontentID ='#content-wrapper'
+	TT.smoothPg.add(function(typ, $new, delta, $html) {
 
-		if(SP.PRE==typ)  {//start
+		if(TT.PRE==typ)  {//start
 			console.log($new)
 			//$('#content-wrapper').fadeTo(100,.2)
 
 		}
-		if(SP.PAGE==typ)  {//ready
-			$(SP.ScontentID).html($new)
+		if(TT.PAGE==typ)  {//ready
+			$(TT.ScontentID).html($new)
 			//$('#content-wrapper').fadeTo(100,1)
 
 		}
