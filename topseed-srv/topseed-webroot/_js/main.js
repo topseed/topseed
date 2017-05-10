@@ -4,8 +4,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 		loadjs([
 			//frp:
-			'https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/flyd.min.js'
-			,'/_js/BPS.js'
+			'/_js/BPS.js'
 			,'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 
 			//data
