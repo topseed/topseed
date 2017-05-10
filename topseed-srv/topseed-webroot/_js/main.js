@@ -4,16 +4,15 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 		loadjs([
 			//frp:
-			'//cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/loadjs.min.js'
+			'//cdn.jsdelivr.net/kefir/3.7.1/kefir.min.js'
 			,'/_js/BPS.js'
-
-			,'/_js/libJs/jquery.fullpage.min.css'
-			,'/_js/libJs/jquery.fullpage.min.js'
-
-			,'https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/riot_compiler.min.js'
+			,'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 
 			//data
 			,'/_js/libJs/jquery.jsForm.min.js'
+
+			,'/_js/libJs/jquery.fullpage.min.css'
+			,'/_js/libJs/jquery.fullpage.min.js'
 
 			], { success: function(){
 				startApp()
@@ -24,8 +23,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 function startApp(){
 	// READY ///////////////////////////////////////////////////////////
-	loadjs.done('app-ready') // page ready
-	loadjs.done('app-ready') // page ready
+	signalAppReady()
 
 	console.log('main js ready')
 
