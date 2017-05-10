@@ -4,8 +4,8 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 		loadjs([
 			//frp:
-			'/_js/BPS.js'
-			,'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
+			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
+			,'/_js/BPS.js'
 
 			//data
 			,'/_js/libJs/jquery.jsForm.min.js'
@@ -22,7 +22,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 function startApp(){
 	// READY ///////////////////////////////////////////////////////////
-	signalAppReady()
+	csignalAppReady()
 
 	console.log('main js ready')
 
