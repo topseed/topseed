@@ -4,8 +4,8 @@ constructor() {
 	this._streams= {} 	//loosely coupled
 }
 
-regStream(key, strm)  {
-	this._streams[key]=str
+regStream(key, stm)  {
+	this._streams[key]=stm
 }
 
 stream(key) {//get

@@ -3,13 +3,10 @@
 
 <script>
 
-this.init = function(bus_) {
+this.init = function(ps) {
 	console.log('comp2()')
 
-	//bus_.log()
-	bus_.subscribe(function(e) {
-		console.log(e.valueInternal)
-	})
+	flyd.on(function(e) { console.log(e); }, ps.stream('c1'))
 
 }
 </script>
