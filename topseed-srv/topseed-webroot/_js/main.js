@@ -6,14 +6,9 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			//frp:
 			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 			,'/_js/BPS.js'
-<<<<<<< HEAD
 
 			//data
 			,'/_js/vendor/jquery.jsForm.min.js'
-=======
-			,'/_js/libJs/jquery.jsForm.min.js'
->>>>>>> branch 'master' of https://github.com/topseed/topseed.git
-
 			,'/_js/vendor/jquery.fullpage.min.css'
 			,'/_js/vendor/jquery.fullpage.min.js'
 

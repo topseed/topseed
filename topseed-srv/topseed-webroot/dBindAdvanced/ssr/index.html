@@ -1,24 +1,84 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link rel="icon" href="/favicon.ico"><meta http-equiv="X-UA-Compatible" content="IE=edge"><script src="//code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script><script src="https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/deps/loadjs.min.js" type="text/javascript"></script><script src="https://cdn.rawgit.com/puppetmaster3/smoothState.js/master/setup/setup-1.20.js" type="text/javascript"></script><script src="/_js/main.js" async="" type="text/javascript"></script><!--[if IE]> --><link rel="stylesheet" href="/_sass/main.css" type="text/css"><!-- <![endif]--><meta name="description" content=""></head><body><!--[if !IE]> --><link rel="stylesheet" href="/_sass/main.css" type="text/css" lazyload="1"><!-- <![endif]--><!-- list all comps. in production these can be loaded .js files--><script type="riot/tag" src="/_uiComps/c-1.html"></script><script type="riot/tag" src="/_uiComps/c-2.html"></script><script type="riot/tag" src="/_uiComps/d-bind.tag"></script><script type="riot/tag" src="/_uiComps/d-table.html"></script><script type="riot/tag" src="/_uiComps/star-rating.html"></script><div id="appbar"><div id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></div><div id="appbar--push"></div><ul class="mui-list--inline" id="appbar--menu"><li><a href="/page/one/">One</a></li><li><a href="/page/two/">Two</a></li></ul></div><div id="sidedrawer"><div id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></div><div class="mui-divider"></div><ul class="mui-list--unstyled" id="sidedrawer--menu"><li><a href="/page/one/">One</a></li><li><a href="/page/two/">Two</a></li></ul></div><div id="content-wrapper"><div class="mui-container-fluid"><d-bind></d-bind></div><script></script><script>onAppReady(UIinit)
-function UIinit() {
-
-	fetch('https://topseed.now.sh/membersPg/mem/', { //1 call
-		method: 'post'
-		}).then(function(response) { //2 promise
-			return (response.json())
-		}).then(function(value) { //3
-			// your code here
-			console.log('back')
-
-			riot.compile(function(){ // make component, and wait for it
-				//console.log(JSON.stringify(value))
-				// pass value
-				var c = riot.mount('d-bind', {users: value})[0]
-
-			})//r
-
-		}).catch(function(err) {
-			console.log('error')
-			console.log(err)
-	})//fetch()
-}//()
-</script></div><div id="footer"><div id="footer_div"><a href="https://gitter.im/topseed-demos/Lobby" target="_blank">Forum </a><div id="footer_div--push"></div><div id="footer_div--right"><a href="https://github.com/topseed/topseed-demos" target="_blank">Kitchen Sink</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="icon" href="/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/loadjs.min.js"></script>
+    <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-2.1.js"></script>
+    <script src="/_js/main.js" async=""></script><!--[if IE]> -->
+    <link href="/_sass/main.css" rel="stylesheet"><!-- <![endif]-->
+    <meta name="description" content="">
+  </head>
+  <body><!--[if !IE]> -->
+    <link rel="stylesheet" href="/_sass/main.css" lazyload="1"><!-- <![endif]-->
+    <!-- list all comps. In production these can be loaded .js files-->
+    <script type="riot/tag" src="/_uiComps/c-1.html"></script>
+    <script type="riot/tag" src="/_uiComps/c-2.html"></script>
+    <script type="riot/tag" src="/_uiComps/d-bind.tag"></script>
+    <script type="riot/tag" src="/_uiComps/d-table.html"></script>
+    <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
+    <div id="appbar">
+      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade;</span></div>
+      <ul class="mui-list--inline" id="appbar--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+      </ul>
+    </div>
+    <div id="sidedrawer" onclick="closeDrawer()">
+      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade;</div>
+      <div class="mui-divider"></div>
+      <ul class="mui-list--unstyled" id="sidedrawer--menu">
+        <li><a href="/page/one/">One</a></li>
+        <li><a href="/page/two/">Two</a></li>
+      </ul>
+    </div>
+    <script>
+      function openDrawer(px, e) {
+      	$('#sidedrawer').css('transform', 'translateX(201px)')
+      }
+      function closeDrawer(e) {
+      	$('#sidedrawer').css('transform', 'translateX(0px)')
+      }			
+    </script>
+    <div id="content-wrapper">
+      <div class="mui-container-fluid">
+        <d-bind></d-bind>
+      </div>
+      <script></script>
+      <script>
+        onAppReady(UIinit)
+        function UIinit() {
+        
+        	fetch('https://topseed.now.sh/membersPg/mem/', { //1 call
+        		method: 'post'
+        		}).then(function(response) { //2 promise
+        			return (response.json())
+        		}).then(function(value) { //3
+        			// your code here
+        			console.log('back')
+        
+        			riot.compile(function(){ // make component, and wait for it
+        				//console.log(JSON.stringify(value))
+        				// pass value
+        				var c = riot.mount('d-bind', {users: value})[0]
+        
+        			})//r
+        
+        		}).catch(function(err) {
+        			console.log('error')
+        			console.log(err)
+        	})//fetch()
+        }//()
+        
+      </script>
+    </div>
+    <div id="footer">
+      <div id="footer_div"><a href="https://gitter.im/topseed/Lobby" target="_blank">Forum </a>
+        <div id="footer_div--right"><a href="https://github.com/topseed/topseed" target="_blank">Github</a></div>
+      </div>
+    </div>
+  </body>
+</html>
