@@ -22,14 +22,14 @@
     <script type="riot/tag" src="/_uiComps/d-table.html"></script>
     <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
     <div id="appbar">
-      <div id="appbar--brand">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></div>
+      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Nav Example <span>&trade;</span></span></div>
       <div id="appbar--push"></div>
       <ul class="mui-list--inline" id="appbar--menu">
         <li><a href="/page/one/">One</a></li>
         <li><a href="/page/two/">Two</a></li>
       </ul>
     </div>
-    <div id="sidedrawer">
+    <div id="sidedrawer" onclick="closeDrawer()">
       <div id="sidedrawer--brand">&nbsp; ☰ &nbsp;<span>Nav Example<span>&trade;</span></span></div>
       <div class="mui-divider"></div>
       <ul class="mui-list--unstyled" id="sidedrawer--menu">
@@ -37,6 +37,14 @@
         <li><a href="/page/two/">Two</a></li>
       </ul>
     </div>
+    <script>
+      function openDrawer(px, e) {
+      	$('#sidedrawer').css('transform', 'translateX(201px)')
+      }
+      function closeDrawer(e) {
+      	$('#sidedrawer').css('transform', 'translateX(0px)')
+      }
+    </script>
     <div id="content-wrapper">
       <div class="mui-container-fluid">
         <p>oh hi there</p>

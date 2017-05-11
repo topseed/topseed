@@ -1,5 +1,5 @@
 #appbar
-	#appbar--brand &nbsp; ☰ &nbsp;
+	#appbar--brand(onclick='openDrawer()') &nbsp; ☰ &nbsp;
 		span.mui--hidden-xs Nav Example 
 			span &trade;
 	#appbar--push
@@ -9,7 +9,7 @@
 		li
 			a(href='/page/two/') Two
 
-#sidedrawer
+#sidedrawer(onclick='closeDrawer()')
 	#sidedrawer--brand &nbsp; ☰ &nbsp;
 		span Nav Example
 			span &trade;
@@ -19,3 +19,11 @@
 			a(href='/page/one/') One
 		li
 			a(href='/page/two/') Two
+
+script.
+	function openDrawer(px, e) {
+		$('#sidedrawer').css('transform', 'translateX(201px)')
+	}
+	function closeDrawer(e) {
+		$('#sidedrawer').css('transform', 'translateX(0px)')
+	}
