@@ -6,8 +6,6 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			//frp:
 			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 			,'/_js/BPS.js'
-
-			//data
 			,'/_js/libJs/jquery.jsForm.min.js'
 
 			,'/_js/libJs/jquery.fullpage.min.css'
