@@ -1,0 +1,42 @@
+// Compatible with IE 11 (IE does not fully support flexbox)
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+
+	// footer is 1 or 2 lines depending on media query below
+	$footerH1: $base-line-height * 2 !default;
+	$footerH2: $base-line-height * 2 !default; //increase for taller footer on smaller devices
+
+	html {
+		position: relative; // for absolute footer
+	}
+
+	body {
+		margin-bottom: $footerH1;
+		min-height: 1vh;  // resets
+	}
+
+	#ss1 {
+		display: block;
+	}
+
+	#footer {
+		bottom: 0;
+		height: $footerH1;
+		left: 0;
+		position: absolute;
+	}
+
+	// responsive footer height
+	@media (max-width: 600px) {
+		body {
+			margin-bottom: $footerH2;
+		}
+		#footer {
+			height: $footerH2;
+		}
+		#footer_div {
+			height: $footerH2;
+		}
+	}
+}	

@@ -8,10 +8,10 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			,'/_js/BPS.js'
 
 			//data
-			,'/_js/libJs/jquery.jsForm.min.js'
+			,'/_js/vendor/jquery.jsForm.min.js'
 
-			,'/_js/libJs/jquery.fullpage.min.css'
-			,'/_js/libJs/jquery.fullpage.min.js'
+			,'/_js/vendor/jquery.fullpage.min.css'
+			,'/_js/vendor/jquery.fullpage.min.js'
 
 			], { success: function(){
 				startApp()
@@ -32,14 +32,11 @@ function startApp(){
 		if(TT.PRE==typ)  {//start
 			console.log($new)
 			//$('#content-wrapper').fadeTo(100,.2)
-
 		}
 		if(TT.PAGE==typ)  {//ready
 			$(TT.ScontentID).html($new)
 			//$('#content-wrapper').fadeTo(100,1)
-
 		}
-
 	})
 
 }//startApp()

@@ -5,11 +5,11 @@
 		xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 	<url>
-		<loc>https://amp.FIXME.org/home/</loc>
+		<loc>https:/demo.topseed.io/page/one/</loc>
 	</url>
 
 	<url>
-		<loc>https://amp.FIXME.org/two/</loc>
+		<loc>https://demo.topseed.io/page/two/</loc>
 	</url>
 
 </urlset>

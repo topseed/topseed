@@ -1,23 +1,18 @@
 // AMP & Flexbox layout
-// main.sass also imports _classicFooter.scss overrides for compatibility with IE.
+// main.sass may also import _classicFooter.scss overrides for compatibility with IE.
 
 // Default M.ui variables (See muicss.com) ============================================
 $base-line-height: 24px !default; // This is your web-app's vertical rhythm. KEY!
-$headerH:  $base-line-height * 1.5 !default;
-
-$mui-appbar-height:              $headerH;
-$mui-appbar-height-xs-portrait:  $headerH;
+$headerH: $base-line-height * 1.5 !default;
+$mui-appbar-height: $headerH;
+$mui-appbar-height-xs-portrait: $headerH;
 $mui-appbar-height-xs-landscape: $headerH;
-
-$mui-base-font-family:  -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
-$mui-base-font-color:     $primary-text-color;
-$mui-base-font-size:      $base-line-height * .65; // golden ratio as % of line-height
+$mui-base-font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+$mui-base-font-color: $primary-text-color;
+$mui-base-font-size: $base-line-height * .65; // golden ratio as % of line-height
 $mui-base-font-smoothing: true;
 
-$box-shad     : 0 2px 3px rgba(0,0,0,0.4);
-$box-shad__hov: 0 3px 4px rgba(0,0,0,0.7);
-
-@import 'sass/mui';
+@import '_imports/mui';
 
 * {
 	font-family: $mui-base-font-family;
@@ -29,95 +24,88 @@ html {
 }
 
 body {
-	min-height: 100vh;
-	color: $primary-text-color;
-	background-color: white;
-	overflow-y: auto;
-	overflow-x: hidden;
-	animation:none;
-	margin: 0;	
 	display: flex;
 	flex-direction: column;
+	background-color: $primary-color-text;
+	color: $primary-text-color;
+	min-height: 100vh;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	animation: none;
 }
 
 // Shell with menu bar and navigation  ================================================
 #appbar, #sidedrawer {
 	position: fixed;
+	overflow: hidden;
 	top: 0;
 }
 
-#sidedrawer  {
+#sidedrawer {
+	background-color: $primary-color-light;
 	left: -201px;
 	width: 200px;
-	z-index: 200;
-
-	position: absolute;
-	overflow: hidden;
-	background-color: $primary-color-light;
 }
 
 // We keep most of sidedrawer in _sidedrawer.scss to make this file easier to read.
 @import '_sidedrawer';
 
-// brand
-#sidedrawer--brand, #appbar--brand  { 
+#appbar--brand {
 	text-decoration: none;
+	color: $primary-color-light;
 }
 
-#sidedrawer--brand:hover, #appbar--brand:hover  {
+#appbar--brand:hover {
 	cursor: pointer;
 }
 
 #appbar {
-	vertical-align: middle;
-	left: 0;
-	max-width: 100vw;
-	min-width: 100vw;	
-	overflow: hidden;
-	color: $primary-color-light;
-	background-color: $primary-color-dark;
-	z-index: 100;
-	line-height: $headerH;
-	height: $headerH;
-	box-shadow: $box-shad;
+	@extend .mui--z1;
 	display: flex;
 	flex-direction: row;
-	align-content: space-between;
+	justify-content: space-between;
+	background-color: $primary-color-dark;
+	color: $primary-color-light;
+	height: $headerH;
+	line-height: $headerH;
+	left: 0;
+	max-width: 100vw;
+	min-width: 100vw;
+	overflow: hidden;
+	z-index: 100;
 }
 
 #appbar a {
 	color: $primary-color-light;
-	text-decoration: none;		
+	text-decoration: none;
+	outline: 0;
 }
 
-#appbar--menu, #appbar--brand, #sidebar--brand {
-	vertical-align: middle;
-	line-height: $headerH;
+#appbar--menu,
+#appbar--brand {
+	border: 0;
 	height: $headerH;
+	line-height: $headerH;
 	margin: 0;
 	padding: 0;
-	border: 0;
-}
-
-#appbar--push {
-	flex-grow: 1;
+	vertical-align: middle;
 }
 
 #appbar--menu {
-	margin-right: $mui-base-font-size *1.5;
-}
-
-#appbar--menu li { 
-	transition: background-color .2s ease; // optional
+	@extend .mui-list--inline;
+	color: $primary-color-text;
+	margin-right: $mui-base-font-size *1.3;
 }
 
 #appbar--menu li:hover {
 	background-color: $accent-color;
+	color: $primary-color-light;
 	cursor: pointer;
 	line-height: $headerH;
 }
 
-#appbar--menu a { 
+#appbar--menu a {
 	transition: color .2s ease-in; // optional
 }
 
@@ -125,46 +113,42 @@ body {
 	color: $primary-color-text;
 }
 
-
 // Shell Content ======================================================================
 #content-wrapper {
-	margin-top: $headerH;
 	flex-grow: 1;
+	background-color: $primary-color-text;
+	margin-top: $headerH;
 	width: 100vw;
-	//font-family: 'Noto Serif', serif;
-	background-color: white;
 }
 
 #content-wrapper * {
-	//font-family: 'Noto Serif', serif;
+	font-family: $mui-base-font-family;
 }
-
 
 // Footer, sticky but not fixed (scrolls out of view when body is tall) ===============================================
 #footer {
-	max-width: 100vw;
-	min-width: 100vw;
-	min-height: 1.5 * $base-line-height;
-	color: $primary-text-color;
 	background-color: $primary-color;
+	color: $primary-text-color;
+	max-width: 100vw;
+	min-height: $headerH; //1.5 * $base-line-height;
+	line-height: $headerH;
+	min-width: 100vw;
 	overflow: hidden;
 	z-index: 50;
-
 }
 
 #footer_div {
 	display: flex;
 	flex-direction: row;
-	align-content: space-between;
-	padding-top: $base-line-height *.25;
-	padding-left: $base-line-height *.5;
-	padding-right: $base-line-height *.85;
-}
-
-#footer_div--push {
-	flex-grow: 1;
+	justify-content: space-between;
+	margin-left: $mui-base-font-size * .8; 
+	margin-right: $mui-base-font-size * 1.3;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: $mui-base-font-size * .4;
+	padding-bottom: $mui-base-font-size * .4;
 }
 
 #footer_div--right {
-	margin-right: $mui-base-font-size *1.5;
+	padding-right: 5px; //same as .mui-list--inline li in appbar
 }

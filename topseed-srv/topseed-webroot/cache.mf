@@ -3,13 +3,11 @@ CACHE MANIFEST
 
 https://cdn.jsdelivr.net/js-signals/1.0.0/signals.min.js
 https://cdn.jsdelivr.net/jquery/3.2.0/jquery.min.js
-https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/bowser.min.js
-https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/jquery.smoothState.js
-https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/js.cookie.min.js
-https://cdn.rawgit.com/topseed/topseed-npm/master/v1/deps/loadjs.min.js
-https://cdn.rawgit.com/topseed/topseed-npm/master/v1/setup-1.0.2.js
 
+https://cdn.rawgit.com/topseed/topseed-setup/master/vendor/loadjs.min.js
+https://cdn.rawgit.com/topseed/topseed-setup/master/release/topseed-setup-2.0.js'
 https://cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js
+https://cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js
 
 https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&lang=en
 

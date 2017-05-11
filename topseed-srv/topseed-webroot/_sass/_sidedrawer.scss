@@ -1,29 +1,50 @@
-#sidedrawer  {
+#sidedrawer {
+	@extend .mui--z1;
+	z-index: 200;
 	min-height: 100vh;
 	transition: transform .15s ease;
 }
 
-#sidedrawer:target { // makes it appear when anchor link is clicked
-	transform: translateX(201px)
+#sidedrawer:target { // makes it appear when anchor link is clicked, AMP version
+	transform: translateX(201px);
 }
 
 #sidedrawer a {
+	color: $primary-text-color;
 	text-decoration: none;
+	outline: 0;
 }
 
 #sidedrawer--brand {
-	vertical-align: middle;
+	color: $primary-text-color;
 	height: $headerH;
 	line-height: $headerH;
+	vertical-align: middle;
+}
+
+#sidedrawer--brand:hover {
+	cursor: pointer;
+}
+
+#sidedrawer--menu {
+	@extend .mui-list--unstyled;
 }
 
 #sidedrawer--menu li {
-	overflow: hidden;
 	line-height: $headerH;
- 	padding-left: 30px;
+	overflow: hidden;
 }
 
 #sidedrawer--menu li:hover {
 	background-color: $accent-color;
 }
 
+#sidedrawer--menu li a {
+	display: block;
+	padding-left: 28px;
+	transition: color .2s ease-in; // optional
+}
+
+#sidedrawer--menu li a:hover {
+	color: $primary-color-text;
+}
