@@ -20,8 +20,11 @@
 		, "bugsnag": ">=1.9"
 		, "node-fetch": ">=1.6"
 		, "markdown-it": ">=8.3"
+		, "flyd": ">=0.2.4"
 		, "topseed-util": "=1.2.1"
 
+
+		,"firebase": ">=3.9"
 		, "jsonwebtoken": ">= 7.2"
 		, "mailgun-js": ">=0.8"
 		, "@google-cloud/datastore": ">=0.7"

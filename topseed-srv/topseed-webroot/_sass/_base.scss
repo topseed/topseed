@@ -105,10 +105,6 @@ body {
 	line-height: $headerH;
 }
 
-#appbar--menu a {
-	transition: color .2s ease-in; // optional
-}
-
 #appbar--menu a:hover {
 	color: $primary-color-text;
 }

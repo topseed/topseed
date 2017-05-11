@@ -16,7 +16,8 @@
 		, "bugsnag": ">=1.9"
 		, "node-fetch": ">=1.6"
 		, "markdown-it": ">=8.3"
-		, "topseed-util": "=1.0.7"
+		, "flyd": ">=0.2.4"
+		, "topseed-util": "=1.2.1"
 
 		,"firebase": ">=3.9"
 		, "jsonwebtoken": ">= 7.2"
