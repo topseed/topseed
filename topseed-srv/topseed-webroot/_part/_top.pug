@@ -1,6 +1,10 @@
 #appbar
 	#appbar--brand(onclick='openDrawer()') &nbsp; ☰ &nbsp;
+<<<<<<< HEAD
 		span.mui--hidden-xs Topseed&trade;
+=======
+		span.mui--hidden-xs Nav Example 
+>>>>>>> branch 'master' of https://github.com/topseed/topseed.git
 			span &trade;
 	ul#appbar--menu.mui-list--inline
 		li
@@ -8,8 +12,15 @@
 		li
 			a(href='/page/two/') Two
 
+<<<<<<< HEAD
 #sidedrawer
 	#sidedrawer--brand &nbsp; ☰ &nbsp; Topseed&trade;
+=======
+#sidedrawer(onclick='closeDrawer()')
+	#sidedrawer--brand &nbsp; ☰ &nbsp;
+		span Nav Example
+			span &trade;
+>>>>>>> branch 'master' of https://github.com/topseed/topseed.git
 	.mui-divider
 	ul#sidedrawer--menu.mui-list--unstyled
 		li
@@ -23,4 +34,8 @@ script.
 	}
 	function closeDrawer(e) {
 		$('#sidedrawer').css('transform', 'translateX(0px)')
+<<<<<<< HEAD
 	}			
+=======
+	}
+>>>>>>> branch 'master' of https://github.com/topseed/topseed.git

@@ -6,9 +6,13 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			//frp:
 			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 			,'/_js/BPS.js'
+<<<<<<< HEAD
 
 			//data
 			,'/_js/vendor/jquery.jsForm.min.js'
+=======
+			,'/_js/libJs/jquery.jsForm.min.js'
+>>>>>>> branch 'master' of https://github.com/topseed/topseed.git
 
 			,'/_js/vendor/jquery.fullpage.min.css'
 			,'/_js/vendor/jquery.fullpage.min.js'
@@ -20,21 +24,29 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 	}//suc
 })
 
+var TTObj2 = {
+  typ: null
+, $new: null
+, delta: null
+, $html: null
+, err: null
+}
+
 function startApp(){
 	// READY ///////////////////////////////////////////////////////////
-	csignalAppReady()
+	ST.signalAppReady()
 
 	console.log('main js ready')
 
 	TT.ScontentID ='#content-wrapper'
-	TT.smoothPg.add(function(typ, $new, delta, $html) {
-
-		if(TT.PRE==typ)  {//start
-			console.log($new)
+	TT.handle(function(evt) {
+		console.log(':')
+		if(TT.PRE==evt.typ)  {//start
+			console.log(evt.$new)
 			//$('#content-wrapper').fadeTo(100,.2)
 		}
-		if(TT.PAGE==typ)  {//ready
-			$(TT.ScontentID).html($new)
+		if(TT.PAGE==evt.typ)  {//new pg loaded
+			$(TT.ScontentID).html(evt.$new)
 			//$('#content-wrapper').fadeTo(100,1)
 		}
 	})
