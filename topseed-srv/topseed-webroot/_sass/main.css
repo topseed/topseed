@@ -1858,8 +1858,7 @@ body {
 
 #sidedrawer--menu li a {
   display: block;
-  padding-left: 28px;
-  transition: color .2s ease-in; }
+  padding-left: 28px; }
 
 #sidedrawer--menu li a:hover {
   color: #ffffff; }
@@ -1914,9 +1913,6 @@ body {
   color: #c5cae9;
   cursor: pointer;
   line-height: 36px; }
-
-#appbar--menu a {
-  transition: color .2s ease-in; }
 
 #appbar--menu a:hover {
   color: #ffffff; }
