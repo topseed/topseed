@@ -1,0 +1,12 @@
+{	"name" : "aa"
+	,"version" : "1.0.0"
+	, "engines": { "npm" : ">=4.5", "node": ">=7.6" }
+	, "dependencies": { 
+
+		"express": ">=4.1"
+		, "topseed-util": "=1.2.1"
+
+		,"firebase-admin": ">=4.2"
+
+	}
+}
