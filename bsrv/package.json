@@ -1,12 +1,20 @@
-{	"name" : "aa"
-	,"version" : "1.0.0"
-	, "engines": { "npm" : ">=4.5", "node": ">=7.6" }
-	, "dependencies": { 
+{
+	"name": "aa",
+	"version": "1.0.0",
+	"engines": {
+		"npm": ">=4.5",
+		"node": ">=7.6"
+	},
+	"dependencies": {
+		"express": ">=4.1",
+		"body-parser": "^1.17.1",
+		"compression": "^1.6.2",
+		"cors": "^2.8.3",
 
-		"express": ">=4.1"
-		, "topseed-util": "=1.2.1"
-
-		,"firebase-admin": ">=4.2"
+		"topseed-util": "^1.2.1",		
+		"firebase-admin": "^4.2.1",
+		"scribe-js": "^2.0.4",
+		"debug": "^2.6.6"
 
 	}
 }

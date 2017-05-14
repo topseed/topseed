@@ -1,27 +1,28 @@
 'use strict'
 const express = require('express')
-const server = express()
+const bsrv = express()
 const cors = require('cors')
 const compression = require('compression')
 const bodyParser = require('body-parser')
 
-const C = (require('./config/ServerConfig'))
-global.ServerConfig = new C()
+const C = (require('./config/Config'))
+global.bsrvConfig = new C()
 
-server.use(compression())
-server.use(bodyParser.json())
-server.use(cors())
+bsrv.use(compression())
+bsrv.use(bodyParser.json())
+bsrv.use(cors())
 
 //######################## sroute
-const LP = require('./scode/route/LinksPg') 
-server.use('/links', LP) 
-const AP = require('./scode/route/AdminPg') 
-server.use('/admin', AP) 
+bsrv.use('/memPg', require('./scode/example/memPg'))// for dt
 
+//linkBlg 
+bsrv.use('/linksPg', require('./scode/route/LinksPg')) 
+bsrv.use('/adminPg', require('./scode/route/AdminPg')) 
+bsrv.use('/loginPg', require('./scode/route/LoginPg')) 
 
-//###################### start the server
-server.listen(ServerConfig.PORT, '0.0.0.0', function() {
-	console.log('App listening on port '+ServerConfig.PORT)
+//###################### start the bsrv
+bsrv.listen(bsrvConfig.PORT, '0.0.0.0', function() {
+	console.log('App listening on port '+bsrvConfig.PORT)
 	console.log('Press Ctrl+C to quit.')
 })
 

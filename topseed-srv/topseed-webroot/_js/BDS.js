@@ -2,14 +2,16 @@
 console.log('BDS')
 class BDS {
 
-	static fetch(fetch_,ROOT_, url_, data_) {
-		//var xjt_ = Cookies.get(BDS.XJT)
-		//var xb_  = Cookies.get(BDS.XBASIC)
-		console.log('fetching ', url_)
+	static fetch(fetch_,ROOT_, url_, data_, jtoken ) {
+		console.log('fetching ', url_, data_)
 		return fetch_(ROOT_ + url_ , { //1 call
 				method: 'post'
 				, headers: {
-					'Content-Type': 'application/json',
+					'Content-Type': 'application/json'
+					,'X-JToken' : JSON.stringify(jtoken)
+					,'Accept':'application/json'
+					, credentials: 'same-origin' //res.cookie returned
+
 				}
 				, body: JSON.stringify(data_)
 			}).then(function(response) { //2 returns a promise
