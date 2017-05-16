@@ -3,7 +3,7 @@ console.log('BDS')
 class BDS {
 
 	static fetch(fetch_,ROOT_, url_, data_, jtoken ) {
-		console.log('fetching ', url_, data_)
+		console.log('fetching ', url_, data_, jtoken)
 		return fetch_(ROOT_ + url_ , { //1 call
 				method: 'post'
 				, headers: {

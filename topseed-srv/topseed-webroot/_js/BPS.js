@@ -1,20 +1,22 @@
 class BPS  { //testable pg services class for pg component com, ds/fetch, FRP and such. base page services / 'middle layer'
 
-constructor() {
-	this._streams= {} 	//loosely coupled
-}
+	constructor(ds) {
+		this._ds = ds
+		this._streams= {} 	//loosely coupled
+		this.regStream('TT',TT.smoothPg)//page stream
+	}
 
-regStream(key, stm)  {
-	this._streams[key]=stm
-}
+	regStream(key, stm)  {
+		this._streams[key]=stm
+	}
 
-stream(key) {//get
-	return this._streams[key]
-}
+	stream(key) {//get
+		return this._streams[key]
+	}
 
-init( ) {
-	console.log('bps')
-}
+	init( ) {
+		console.log('bps')
+	}
 
 }//class
 
