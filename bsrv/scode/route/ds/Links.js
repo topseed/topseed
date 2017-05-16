@@ -6,7 +6,7 @@ const U = new Util()
 class Links extends BaseFB {
 	constructor() {
 		super()
-		this.table = 'links2'
+		this.table = 'links10'
 		this.ref = this.fdb.ref(this.table)
 	}
 
