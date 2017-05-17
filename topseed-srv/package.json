@@ -1,5 +1,5 @@
 {	"name" : "topseed"
-	, "version": "1.0.0"
+	, "version": "1.0.1"
 	, "description": "Best Practices for Mobile-first Web Apps - Kitchen Sink"
 	, "repository": { "type": "git", "url" : "https://github.com/topseed/topseed.git"}
 	, "license": "MIT"
@@ -22,7 +22,6 @@
 		, "markdown-it": ">=8.3"
 		, "flyd": ">=0.2.4"
 		, "topseed-util": "=1.2.1"
-
 
 		,"firebase": ">=3.9"
 		, "jsonwebtoken": ">= 7.2"

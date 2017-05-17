@@ -65,6 +65,10 @@ exports.decide = function (req, res, next) {
 	//console.log('Decider ->')
 	
 	if (req.path.indexOf('.') > 0 ) { // hasDot?
+
+		if (req.path.indexOf('.mf') > 0)
+			U.cacheNone(res);
+
 		next() // it is a static asset, ex: .jpg, .css
 	} else { // no dot, it is a path:
 		try {

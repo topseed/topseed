@@ -3,10 +3,12 @@ extends  ../../_part/_baseShellA
 block head
 	title One
 	include ../../_part/_headerA
+	link(rel='canonical', href='/page/one/index.html')
 
 block main
 	.mui-container-fluid
-		p oh hi there 
+		p
+		include _hello.html
 
 block footer
-	include ../../_part/_footerA
+	include ../../_part/_footer

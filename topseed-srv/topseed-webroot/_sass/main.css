@@ -417,7 +417,7 @@ body {
   font-size: 15.6px;
   font-weight: 400;
   line-height: 1.429;
-  color: #000000;
+  color: #000;
   background-color: #FFF; }
 
 a {
@@ -516,7 +516,7 @@ textarea {
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
-  color: #000000;
+  color: #000;
   background-color: #FFF;
   transition: all 0.2s ease-in-out;
   display: inline-block;
@@ -543,24 +543,24 @@ textarea {
   position: relative;
   overflow: hidden; }
   .mui-btn:hover, .mui-btn:focus, .mui-btn:active {
-    color: #000000;
+    color: #000;
     background-color: white; }
   .mui-btn[disabled]:hover, .mui-btn[disabled]:focus, .mui-btn[disabled]:active {
-    color: #000000;
+    color: #000;
     background-color: #FFF; }
   .mui-btn.mui-btn--flat {
-    color: #000000;
+    color: #000;
     background-color: transparent; }
     .mui-btn.mui-btn--flat:hover, .mui-btn.mui-btn--flat:focus, .mui-btn.mui-btn--flat:active {
-      color: #000000;
+      color: #000;
       background-color: #f2f2f2; }
     .mui-btn.mui-btn--flat[disabled]:hover, .mui-btn.mui-btn--flat[disabled]:focus, .mui-btn.mui-btn--flat[disabled]:active {
-      color: #000000;
+      color: #000;
       background-color: transparent; }
   .mui-btn:hover, .mui-btn:focus, .mui-btn:active {
     outline: 0;
     text-decoration: none;
-    color: #000000; }
+    color: #000; }
   .mui-btn:hover, .mui-btn:focus {
     box-shadow: 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2); }
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -845,7 +845,7 @@ textarea {
   padding: 0;
   margin-bottom: 11px;
   font-size: 23.4px;
-  color: #000000;
+  color: #000;
   line-height: inherit;
   border: 0; }
 
@@ -1313,7 +1313,7 @@ textarea {
   box-sizing: border-box;
   display: block;
   background-color: transparent;
-  color: #000000;
+  color: #000;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.26);
   outline: none;
@@ -1804,8 +1804,8 @@ body {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #FFF;
+  color: #000;
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
@@ -1819,7 +1819,7 @@ body {
   top: 0; }
 
 #sidedrawer {
-  background-color: #c5cae9;
+  background-color: #C5CAE9;
   left: -201px;
   width: 200px; }
 
@@ -1836,12 +1836,12 @@ body {
   transform: translateX(201px); }
 
 #sidedrawer a {
-  color: #000000;
+  color: #000;
   text-decoration: none;
   outline: 0; }
 
 #sidedrawer--brand {
-  color: #000000;
+  color: #000;
   height: 36px;
   line-height: 36px;
   vertical-align: middle; }
@@ -1854,18 +1854,18 @@ body {
   overflow: hidden; }
 
 #sidedrawer--menu li:hover {
-  background-color: #ff5722; }
+  background-color: #FF5722; }
 
 #sidedrawer--menu li a {
   display: block;
   padding-left: 28px; }
 
 #sidedrawer--menu li a:hover {
-  color: #ffffff; }
+  color: #FFF; }
 
 #appbar--brand {
   text-decoration: none;
-  color: #c5cae9; }
+  color: #C5CAE9; }
 
 #appbar--brand:hover {
   cursor: pointer; }
@@ -1880,8 +1880,8 @@ body {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: #303f9f;
-  color: #c5cae9;
+  background-color: #303F9F;
+  color: #C5CAE9;
   height: 36px;
   line-height: 36px;
   left: 0;
@@ -1891,7 +1891,7 @@ body {
   z-index: 100; }
 
 #appbar a {
-  color: #c5cae9;
+  color: #C5CAE9;
   text-decoration: none;
   outline: 0; }
 
@@ -1905,23 +1905,23 @@ body {
   vertical-align: middle; }
 
 #appbar--menu {
-  color: #ffffff;
+  color: #FFF;
   margin-right: 20.28px; }
 
 #appbar--menu li:hover {
-  background-color: #ff5722;
-  color: #c5cae9;
+  background-color: #FF5722;
+  color: #C5CAE9;
   cursor: pointer;
   line-height: 36px; }
 
 #appbar--menu a:hover {
-  color: #ffffff; }
+  color: #FFF; }
 
 #content-wrapper {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  background-color: #ffffff;
+  background-color: #FFF;
   margin-top: 36px;
   width: 100vw; }
 
@@ -1929,8 +1929,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif; }
 
 #footer {
-  background-color: #3f51b5;
-  color: #000000;
+  background-color: #3F51B5;
+  color: #000;
   max-width: 100vw;
   min-height: 36px;
   line-height: 36px;

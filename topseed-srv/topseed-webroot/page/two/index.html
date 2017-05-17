@@ -10,7 +10,7 @@
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/loadjs.min.js"></script>
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-2.3.js"></script>
     <script src="/_js/main.js" async=""></script><!--[if IE]> -->
-    <link href="/_sass/main.css" rel="stylesheet"><!-- <![endif]-->
+    <link rel="stylesheet" href="/_sass/main.css"><!-- <![endif]-->
     <meta name="description" content="">
   </head>
   <body><!--[if !IE]> -->
@@ -23,7 +23,7 @@
     <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
     <div id="appbar">
       <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade;</span></div>
-      <ul class="mui-list--inline" id="appbar--menu">
+      <ul id="appbar--menu">
         <li><a href="/page/one/">One</a></li>
         <li><a href="/page/two/">Two</a></li>
       </ul>
@@ -31,7 +31,7 @@
     <div id="sidedrawer" onclick="closeDrawer()">
       <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade;</div>
       <div class="mui-divider"></div>
-      <ul class="mui-list--unstyled" id="sidedrawer--menu">
+      <ul id="sidedrawer--menu">
         <li><a href="/page/one/">One</a></li>
         <li><a href="/page/two/">Two</a></li>
       </ul>
@@ -46,17 +46,20 @@
     </script>
     <div id="content-wrapper">
       <div class="mui-container-fluid">
-        <p>hello again</p>
+        <p></p>
+        <P>Page Two!</P>
+        <p></p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <div class="mui--text-left"><a class="mui-btn mui-btn--raised" href="/page/one/">Goto Page One</a><a class="mui-btn" href="/page/two/">Goto Page Two</a></div>
       </div>
       <script>
-        ST.onAppReady(UIinit)
+        TS.onAppReady(UIinit)
         function UIinit() {
-        	console.log('t')
+        	console.log('Page Two onAppReady')
         }
         
       </script>

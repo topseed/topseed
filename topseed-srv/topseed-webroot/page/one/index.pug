@@ -6,12 +6,13 @@ block head
 
 block main
 	.mui-container-fluid
-		p oh hi there
+		p
+		include _hello.html
 
 	script.
-		ST.onAppReady(UIinit)
+		TS.onAppReady(UIinit) 
 		function UIinit() {
-			console.log('o')
+			console.log('Page One onAppReady')
 		}
 
 block footer
