@@ -7,13 +7,14 @@ block head
 block main
     .mui-container-fluid
         form#form1.mui-form
+            input(name='data.pk', type='hidden')
+            
             h2.mui--pull-left News Item Detail
             h2.mui--pull-right
                 button.mui-btn.mui-btn--raised(type='submit') Save
                 a.mui-btn.mui-btn--raised(href='./list.html') Cancel
             span.mui--clearfix
-            //-form#form1.mui-form(onsubmit='return false')
-            input(name='data.pk', type='hidden')
+           
             .mui-textfield
                 input(name='data.ts', type='text', required='')
                 label Date
@@ -34,7 +35,7 @@ block main
             //if there is an id param, it's an edit, populate
             ps.detail('#form1', BPS.getIdParam()) //before: init
 
-            $('form#form1').submit(ps.save); //add on submit handler
+            $('#form1').submit(ps.save); //onSubmit handler
             //$('#save').on('click', ps.stream('ad'))
             
             /*flyd.on(function(e) {

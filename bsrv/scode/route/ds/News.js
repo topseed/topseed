@@ -12,7 +12,10 @@ class News extends BaseFB {
 
 	update(row) { // insert or update automatic, if key included. Return a promise
 		
-		if (row.pk == null) //obtain new pk
+ 		//console.log('update.pk:'+row.pk)
+		//console.log('update.url:'+row.url) 
+
+		if (!row.pk) //empty, obtain new pk for insert
 		{
 			console.log('News update, no pk, is insert')
 			const pk = this.fdb.ref().child(this.table).push().key
@@ -21,16 +24,9 @@ class News extends BaseFB {
 			row.ts = ut
 		}
 		
-		console.log('pk:'+row.pk)
-
 		return this.fdb.ref(this.table+'/'+ row.pk).update(row).then(function(a,b){
 			return row.pk
 		})
-		
-		//insert or update
-		//return this.fdb.ref(this.table+'/'+ pk).setWithPriority(row, 0 - ut).then(function(a,b){
-		//	return pk
-		//})
 	}//()
 
 	selectList() {//returns all rows sorted backwards by date
