@@ -147,8 +147,7 @@ function NewsService( ) {// 'closure|module'-iso.
 	}//class
 
 	const ps = new PS()
-	ps.newsDS = new NewsDS(urlSpec); //allows us to have multiple datasources in one module
-	//BUT all DS could be static? And we may not need to couple them at all
+	ps.newsDS = new NewsDS(urlSpec); //we can have more than one DataSource in a Service
 
 	//not sure what triggers cleanup and what the cleanup is for
 	flyd.on(cleanUp, ps.stream('TT'))
