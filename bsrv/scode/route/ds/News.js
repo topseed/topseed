@@ -24,14 +24,20 @@ class News extends BaseFB {
 		return this.ref.once('value').then(function(res){
 				//.orderByChild('commentator')
 				const row = res.val()
-				const rows= BaseFB.toArray(row)
+				const rows = BaseFB.toArray(row)
 				//console.log(JSON.stringify(rows))
-				console.log('bak')
+				console.log('select list res')
 				return rows
 		})
 	}//()
 
 	select(pk) {
+		return this.ref.child(pk).once('value').then(function(res){
+				const row = res.val()
+				console.log(JSON.stringify(row))
+				console.log('select res')
+				return row
+		})		
 	}//()
 
 	delete(pk) {

@@ -18,10 +18,12 @@ function NewsService( ) {// 'closure|module'-iso.
 		//set up the detail/edit/add page and form
 		detail(formId, idParam) {
 
-			console.log('NewsService detail');
+			console.log('NewsService detail:'+idParam);
 			// if idParam is not blank, query and fill existing data
 			if (idParam != null)
 			{
+				
+				
 				const _dataPromise = this.newsDS.select({pk:idParam}, Cookies.get('auth'))
 				_dataPromise.then(function(values) {
 

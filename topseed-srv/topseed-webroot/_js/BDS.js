@@ -17,6 +17,7 @@ class BDS {
 
 	
 	select(data, token) {
+		console.log('BDS select()')
 		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.select, data, token)
 			.then(function(value) { 
 				console.log(JSON.stringify(value))
@@ -70,6 +71,7 @@ class BDS {
 		var queryString = BDS.objectToQueryString(payload)
 		if (queryString != '')
 			url = url + '?' +queryString 
+		console.log('url'+url)	
 
 		return fetch_(url , { //1: call
 				method: 'get'
