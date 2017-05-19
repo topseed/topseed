@@ -1,9 +1,10 @@
-extends  ../../_part/_baseShellAdmin
+extends  ../../_part/_baseShellAdmin 
 
 block head
 	title News Admin
-	include ../../_part/_header
-	link(rel='stylesheet', href='https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')
+	include ../../_part/_headerAdmin 
+	//- ff style gets lost after navigation. We import it in admin.sass. Alternative: load in main.js
+	//-link(rel='stylesheet', href='https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')
 
 block main
 	.mui-container-fluid
