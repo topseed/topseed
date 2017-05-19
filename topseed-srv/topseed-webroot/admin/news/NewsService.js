@@ -67,12 +67,8 @@ function NewsService( ) {// 'closure|module'-iso.
 
 			//e.currentTarget works when it's a form.submit event
 			const formData = $(e.currentTarget).jsForm('get') //form data, 
-
-			console.log('formData==BEGIN=================')
-			console.log(JSON.stringify(formData))
-			console.log('formData==END===================')
-
-			//this. refers to event here, so using ps
+			
+			//use ps.
 			const _updatePromise = ps.newsDS.update(formData, Cookies.get('auth'))
 			_updatePromise.then(function(val) {
 				//thiz.nav(val) //page nav
@@ -99,7 +95,7 @@ function NewsService( ) {// 'closure|module'-iso.
 		delete(pk) {
 			const _deletePromise = ps.newsDS.delete({pk:pk}, Cookies.get('auth'))
 			_deletePromise.then(function(val) {
-				//BETTER: reload grid
+				//BETTER: reload grid, how?
 				TT.loadPg('/admin/news/list.html') //navigate to list
 			})
 		}
@@ -107,7 +103,6 @@ function NewsService( ) {// 'closure|module'-iso.
 		list(listId) {
 
 			console.log('NewsService list');
-
 			const _listPromise = ps.newsDS.selectList()  
             this.renderList(listId, _listPromise)
 

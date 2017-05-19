@@ -49,7 +49,7 @@
         TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
         //TS.onAppReady(UIinit) 
         
-        var ns; //collision not a problem?
+        var ns; //collision not a problem as long as we don't have instance variables inside
         
         function UIinit() {
         	ns = NewsService()
