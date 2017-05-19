@@ -5,8 +5,11 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 		loadjs([
 			//frp:
 			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
-			//,'/_js/BPS.js'
-			//,'/_js/BDS.js'
+			,'/_js/BPS.js'
+			,'/_js/BDS.js'
+			,'//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js'
+			,'//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css',
+			//,'//cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'
 			//,'//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js'
 
 			,'/_js/vendor/jquery.jsForm.min.js'

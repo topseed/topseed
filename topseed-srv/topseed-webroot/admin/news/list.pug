@@ -1,9 +1,9 @@
-extends  ../../_part/_baseShellAdmin 
+extends  ../../_part/admin/_baseShell
 
 block head
 	title News Admin
-	include ../../_part/_headerAdmin 
-	//- ff style gets lost after navigation. We import it in admin.sass. Alternative: load in main.js
+	include ../../_part/admin/_header
+	//- ff style gets lost after navigation. It seems the only reliable way to load it is in main.js (here: admin.js)
 	//-link(rel='stylesheet', href='https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')
 
 block main
