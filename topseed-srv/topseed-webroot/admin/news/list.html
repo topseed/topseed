@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>News Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -11,6 +12,7 @@
     <script src="/_js/main.js" async=""></script><!--[if IE]> -->
     <link rel="stylesheet" href="/_sass/main.css"><!-- <![endif]-->
     <meta name="description" content="">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
   </head>
   <body><!--[if !IE]> -->
     <link href="/_sass/main.css" lazyload="1"><!-- <![endif]-->
@@ -21,20 +23,18 @@
     <script type="riot/tag" src="/_uiComps/d-table.html"></script>
     <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
     <div id="appbar">
-      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade;</span></div>
+      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
       <ul id="appbar--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/">Login			</a></li>
+        <li><a href="/admin/news/list.html">News</a></li>
+        <li><a href="/page/one/#">Logout			</a></li>
       </ul>
     </div>
     <div id="sidedrawer" onclick="closeDrawer()">
-      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade;</div>
+      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
       <div class="mui-divider"></div>
       <ul id="sidedrawer--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/">Login</a></li>
+        <li><a href="/admin/news/list.html">News</a></li>
+        <li><a href="/page/one/#">Logout</a></li>
       </ul>
     </div>
     <script>
@@ -46,8 +46,21 @@
       }			
     </script>
     <div id="content-wrapper">
-      <p>Hello.</p>
-      <iframe src="https://www.google.com/trends/embed/US_cu_x1aYQFIBAAANlM_en/fe_geo_chart_f5a4cc96-b49b-4d88-9a3f-74cc902c2f35?forceMobileMode=true" height="565" layout="fixed-height" frameborder="0" sandbox="allow-scripts allow-same-origin"><img src="/post/amp/oscars_placeholder.png" layout="fixed-height" height="565" placeholder=""></iframe>
+      <div class="mui-container-fluid">
+        <h2 class="mui--pull-left">News Item List</h2>
+        <h2 class="mui--pull-right"><a class="mui-btn mui-btn--raised" href="./detail.html">Add	Item    </a></h2><span class="mui--clearfix"></span>
+        <table class="display" id="grid" width="100%" cellspacing="0"></table>
+      </div>
+      <script>
+        //TS.onAppReady(UIinit) 
+        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
+        
+        function UIinit() {
+        	const ps = NewsService()
+        	ps.list('#grid') //any useful parameter, here it's the div ID
+        }
+        
+      </script>
     </div>
     <div id="footer">
       <div id="footer_div"><a href="https://gitter.im/topseed/Lobby" target="_blank">Forum </a>

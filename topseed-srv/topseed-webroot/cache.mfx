@@ -13,6 +13,9 @@ https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&lang=en
 https://cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js
 https://cdn.jsdelivr.net/es6-promise-polyfill/1.2.0/promise.min.js
 
+#admin module
+https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css 
+
 #page assets:
 
 NETWORK:

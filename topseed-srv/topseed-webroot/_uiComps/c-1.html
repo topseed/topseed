@@ -13,7 +13,7 @@ this.init = function(ps) {
 	const $but = $('#but1', this.root)
 
 	const clicks = flyd.stream()
-	const but = $but.on('click', clicks)
+	$but.on('click', clicks)
 	ps.regStream('c1', clicks)
 
 

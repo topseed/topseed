@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Admin Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -21,20 +22,18 @@
     <script type="riot/tag" src="/_uiComps/d-table.html"></script>
     <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
     <div id="appbar">
-      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade;</span></div>
+      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
       <ul id="appbar--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/">Login			</a></li>
+        <li><a href="/admin/news/list.html">News</a></li>
+        <li><a href="/page/one/#">Logout			</a></li>
       </ul>
     </div>
     <div id="sidedrawer" onclick="closeDrawer()">
-      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade;</div>
+      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
       <div class="mui-divider"></div>
       <ul id="sidedrawer--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/">Login</a></li>
+        <li><a href="/admin/news/list.html">News</a></li>
+        <li><a href="/page/one/#">Logout</a></li>
       </ul>
     </div>
     <script>
@@ -46,8 +45,18 @@
       }			
     </script>
     <div id="content-wrapper">
-      <p>Hello.</p>
-      <iframe src="https://www.google.com/trends/embed/US_cu_x1aYQFIBAAANlM_en/fe_geo_chart_f5a4cc96-b49b-4d88-9a3f-74cc902c2f35?forceMobileMode=true" height="565" layout="fixed-height" frameborder="0" sandbox="allow-scripts allow-same-origin"><img src="/post/amp/oscars_placeholder.png" layout="fixed-height" height="565" placeholder=""></iframe>
+      <div class="mui-container-fluid">
+        <p> </p>
+        <p>Welcome to the Admin Module!</p>
+        <p>Select 'News'' from the Menu to administer Corporate News entries.</p>
+      </div>
+      <script>
+        TS.onAppReady(UIinit) 
+        function UIinit() {
+        	console.log('Blog Admin Home onAppReady')
+        }
+        
+      </script>
     </div>
     <div id="footer">
       <div id="footer_div"><a href="https://gitter.im/topseed/Lobby" target="_blank">Forum </a>

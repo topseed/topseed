@@ -17,6 +17,7 @@ router.post('/login', function (req, res) {
 		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
 		return
 	}
+	//console.log('')
 
 	res.status(200).send(JSON.stringify(MyAuth.clientsKey))
 

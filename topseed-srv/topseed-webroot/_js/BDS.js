@@ -2,19 +2,56 @@
 console.log('BDS')
 class BDS {
 
-	static fetch(fetch_,ROOT_, url_, data_, jtoken ) {
-		console.log('fetching ', url_, data_, jtoken)
-		return fetch_(ROOT_ + url_ , { //1 call
+	constructor(_urlSpec) {
+		console.log('BDS constructor')
+		this.urlSpec = _urlSpec
+	}
+
+	selectList(data, token) {
+		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.selectList, data, token)
+			.then(function(value) { 
+				console.log(JSON.stringify(value))
+				return value
+		})//BDS
+	}//selectList
+
+	
+	select(data, token) {
+		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.select, data, token)
+			.then(function(value) { 
+				console.log(JSON.stringify(value))
+				return value
+		})//BDS
+	}//select
+
+	update(data, token) { //insertOrUpdate
+		return BDS.post(window.fetch, this.urlSpec.root, this.urlSpec.update, data, token)
+			.then(function(value) { 
+				console.log(JSON.stringify(value))
+				return value
+		})//BDS
+	}//update
+
+	delete(data, token) { //delete
+		return BDS.post(window.fetch, this.urlSpec.root, this.urlSpec.delete, data, token)
+			.then(function(value) { 
+				console.log(JSON.stringify(value))
+				return value
+		})//BDS
+	}//delete
+
+	static post(fetch_, ROOT_, url_, payload, jtoken ) {
+		console.log('fetching ', url_, payload, jtoken)
+		return fetch_(ROOT_ + url_ , { //1: call
 				method: 'post'
 				, headers: {
 					'Content-Type': 'application/json'
 					,'X-JToken' : JSON.stringify(jtoken)
 					,'Accept':'application/json'
 					, credentials: 'same-origin' //res.cookie returned
-
 				}
-				, body: JSON.stringify(data_)
-			}).then(function(response) { //2 returns a promise
+				, body: JSON.stringify(payload)
+			}).then(function(response) { //2: returns a promise
 				//console.log(response.headers)
 
 				if (!response.ok) {
@@ -25,6 +62,45 @@ class BDS {
 				return (response.json())
 			})
 	}//_()
+
+	static get(fetch_, ROOT_, url_, payload, jtoken ) {
+		console.log('fetching ', url_, payload, jtoken)
+		//convert payload to query string	
+		var url = ROOT_ + url_;
+		var queryString = BDS.objectToQueryString(payload)
+		if (queryString != '')
+			url = url + '?' +queryString 
+
+		return fetch_(url , { //1: call
+				method: 'get'
+				, headers: {
+					'Content-Type': 'application/json'
+					,'X-JToken' : JSON.stringify(jtoken)
+					,'Accept':'application/json'
+					, credentials: 'same-origin' //res.cookie returned
+				}
+				//no body for get
+			}).then(function(response) { //2: returns a promise
+				//console.log(response.headers)
+
+				if (!response.ok) {
+					console.log('not ok')
+					console.log(response)
+					throw Error(response.statusText)
+				}
+				return (response.json())
+			})
+	}//_()
+
+	static objectToQueryString(obj){
+		var params = [];
+		for (var p in obj) {
+			if (obj.hasOwnProperty(p)) {
+				params.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+			}
+		}
+		return params.join("&");
+	}
 
 } // class
 

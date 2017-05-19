@@ -1,0 +1,46 @@
+extends  ../../_part/_baseShellAdmin
+
+block head
+    title News Admin
+    include ../../_part/_header
+
+block main
+    .mui-container-fluid
+        h2.mui--pull-left News Item Detail
+        h2.mui--pull-right
+            button.mui-btn.mui-btn--raised(type='submit')#save Save
+            a.mui-btn.mui-btn--raised(href='./list.html') Cancel
+        span.mui--clearfix
+        form#form1.mui-form(onsubmit='return false')
+            .mui-textfield
+                input(name='data.ts', type='text', required='')
+                label Date
+            .mui-textfield
+                input(name='data.head_line', type='text', required='')
+                label Headline
+            .mui-textarea
+                textarea(name='data.url', type='text', required='')
+                label Content
+
+    script.
+        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
+
+        function UIinit() {
+            console.log('News Detail onAppReady')
+            const ps = NewsService()
+  
+            //if there is an id param, it's an edit, populate
+            ps.detail('#form1', BPS.getIdParam()) //before: init
+
+            $('#save').on('click', ps.save);
+            //$('#save').on('click', ps.stream('ad'))
+            
+            /*flyd.on(function(e) {
+                console.log('NAV', e)
+                TT.loadPg('/admin/news/list.html')
+            }, ps.nav)*/
+        }
+
+block footer
+    include ../../_part/_footer
+

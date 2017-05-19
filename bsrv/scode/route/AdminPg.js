@@ -22,7 +22,7 @@ router.post('/add', function (req, res) {
 	const dat = req.body
 	const pro = links.add(dat)
 	pro.then(function(data){
-		console.log(data)
+		console.log('AdminPg.data:'+data)
 		res.status(200).send(JSON.stringify('OK'))
 	}).catch(function (er) {
 		U.err(er,res)

@@ -1,0 +1,22 @@
+extends  ../../_part/_baseShellAdmin
+
+block head
+	title Admin Home
+	include ../../_part/_header
+
+block main
+	.mui-container-fluid
+		p 
+		p Welcome to the Admin Module!
+		p Select 'News'' from the Menu to administer Corporate News entries.
+		//-include _hello.html 
+
+	script.
+		TS.onAppReady(UIinit) 
+		function UIinit() {
+			console.log('Blog Admin Home onAppReady')
+		}
+
+block footer
+	include ../../_part/_footer
+

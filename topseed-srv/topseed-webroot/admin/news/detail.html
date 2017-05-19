@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>News Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -21,20 +22,18 @@
     <script type="riot/tag" src="/_uiComps/d-table.html"></script>
     <script type="riot/tag" src="/_uiComps/star-rating.html"></script>
     <div id="appbar">
-      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade;</span></div>
+      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
       <ul id="appbar--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/">Login			</a></li>
+        <li><a href="/admin/news/list.html">News</a></li>
+        <li><a href="/page/one/#">Logout			</a></li>
       </ul>
     </div>
     <div id="sidedrawer" onclick="closeDrawer()">
-      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade;</div>
+      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
       <div class="mui-divider"></div>
       <ul id="sidedrawer--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/">Login</a></li>
+        <li><a href="/admin/news/list.html">News</a></li>
+        <li><a href="/page/one/#">Logout</a></li>
       </ul>
     </div>
     <script>
@@ -47,33 +46,43 @@
     </script>
     <div id="content-wrapper">
       <div class="mui-container-fluid">
-        <d-bind></d-bind>
+        <h2 class="mui--pull-left">News Item Detail</h2>
+        <h2 class="mui--pull-right">
+          <button class="mui-btn mui-btn--raised" type="submit" id="save">Save</button><a class="mui-btn mui-btn--raised" href="./list.html">Cancel</a>
+        </h2><span class="mui--clearfix"></span>
+        <form class="mui-form" id="form1" onsubmit="return false">
+          <div class="mui-textfield">
+            <input name="data.ts" type="text" required="">
+            <label>Date</label>
+          </div>
+          <div class="mui-textfield">
+            <input name="data.head_line" type="text" required="">
+            <label>Headline</label>
+          </div>
+          <div class="mui-textarea">
+            <textarea name="data.url" type="text" required=""></textarea>
+            <label>Content</label>
+          </div>
+        </form>
       </div>
-      <script></script>
       <script>
-        onAppReady(UIinit)
+        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
+        
         function UIinit() {
+            console.log('News Detail onAppReady')
+            const ps = NewsService()
         
-        	fetch('https://topseed.now.sh/membersPg/mem/', { //1 call
-        		method: 'post'
-        		}).then(function(response) { //2 promise
-        			return (response.json())
-        		}).then(function(value) { //3
-        			// your code here
-        			console.log('back')
+            //if there is an id param, it's an edit, populate
+            ps.detail('#form1', BPS.getIdParam()) //before: init
         
-        			riot.compile(function(){ // make component, and wait for it
-        				//console.log(JSON.stringify(value))
-        				// pass value
-        				var c = riot.mount('d-bind', {users: value})[0]
-        
-        			})//r
-        
-        		}).catch(function(err) {
-        			console.log('error')
-        			console.log(err)
-        	})//fetch()
-        }//()
+            $('#save').on('click', ps.save);
+            //$('#save').on('click', ps.stream('ad'))
+            
+            /*flyd.on(function(e) {
+                console.log('NAV', e)
+                TT.loadPg('/admin/news/list.html')
+            }, ps.nav)*/
+        }
         
       </script>
     </div>
