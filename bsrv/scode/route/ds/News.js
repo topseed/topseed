@@ -11,22 +11,34 @@ class News extends BaseFB {
 	}
 
 	update(row) { // insert or update automatic, if key included. Return a promise
-		const pk = this.fdb.ref().child(this.table).push().key
-		row['pk'] = pk
-		const ut = Date.now()
-		row['ts'] = ut
-		return this.fdb.ref(this.table+'/'+ pk).setWithPriority(row, 0- ut).then(function(a,b){
-			return pk
+		
+		if (row.pk == null) //obtain new pk
+		{
+			console.log('News update, no pk, is insert')
+			const pk = this.fdb.ref().child(this.table).push().key
+			row.pk = pk
+			const ut = Date.now() //set the date to current, better: do in UI
+			row.ts = ut
+		}
+		
+		console.log('pk:'+row.pk)
+
+		return this.fdb.ref(this.table+'/'+ row.pk).update(row).then(function(a,b){
+			return row.pk
 		})
+		
+		//insert or update
+		//return this.fdb.ref(this.table+'/'+ pk).setWithPriority(row, 0 - ut).then(function(a,b){
+		//	return pk
+		//})
 	}//()
 
 	selectList() {//returns all rows sorted backwards by date
 		return this.ref.once('value').then(function(res){
-				//.orderByChild('commentator')
 				const row = res.val()
 				const rows = BaseFB.toArray(row)
 				//console.log(JSON.stringify(rows))
-				console.log('select list res')
+				//console.log('select list res')
 				return rows
 		})
 	}//()
@@ -34,8 +46,8 @@ class News extends BaseFB {
 	select(pk) {
 		return this.ref.child(pk).once('value').then(function(res){
 				const row = res.val()
-				console.log(JSON.stringify(row))
-				console.log('select res')
+				//console.log(JSON.stringify(row))
+				//console.log('select res')
 				return row
 		})		
 	}//()
@@ -43,8 +55,8 @@ class News extends BaseFB {
 	delete(pk) {
 	}//()
 
-	update(pk, changes) {
-	}//()
+	//update(pk, changes) {
+	//}//()
 
 
 }//class

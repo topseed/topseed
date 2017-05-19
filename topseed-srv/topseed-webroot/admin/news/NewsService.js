@@ -22,9 +22,7 @@ function NewsService( ) {// 'closure|module'-iso.
 			// if idParam is not blank, query and fill existing data
 			if (idParam != null)
 			{
-				
-				
-				const _dataPromise = this.newsDS.select({pk:idParam}, Cookies.get('auth'))
+				const _dataPromise = ps.newsDS.select({pk:idParam}, Cookies.get('auth'))
 				_dataPromise.then(function(values) {
 
 					//This seems to accumulate tokens?
@@ -62,16 +60,20 @@ function NewsService( ) {// 'closure|module'-iso.
 			console.log('init ')
 		}//() */
 
-		//triggered from click, how to avoid double-submit?
-		save(formId) {
+		//triggered from submit, how to avoid double-submit?
+		save(e) {
+			e.preventDefault()
+			//console.log('NewsService save form.target '+e.currentTarget)
 
-			console.log('NewsService save');
+			//e.currentTarget works when it's a form.submit event
+			const formData = $(e.currentTarget).jsForm('get') //form data, 
 
-			const formData = $(formId).jsForm('get') //form data
-			
+			console.log('formData==BEGIN=================')
 			console.log(JSON.stringify(formData))
-			
-			const _updatePromise = this.newsDS.update(formData, Cookies.get('auth'))
+			console.log('formData==END===================')
+
+			//this. refers to event here, so using ps
+			const _updatePromise = ps.newsDS.update(formData, Cookies.get('auth'))
 			_updatePromise.then(function(val) {
 				//thiz.nav(val) //page nav
 				TT.loadPg('/admin/news/list.html') //navigate to list
@@ -98,7 +100,7 @@ function NewsService( ) {// 'closure|module'-iso.
 
 			console.log('NewsService list');
 
-			const _listPromise = this.newsDS.selectList()  
+			const _listPromise = ps.newsDS.selectList()  
             this.renderList(listId, _listPromise)
 
 			//I understand this but thiz looks funky.
@@ -147,8 +149,10 @@ function NewsService( ) {// 'closure|module'-iso.
         }
 	}//class
 
+	console.log('new PS');
 	const ps = new PS()
 	ps.newsDS = new NewsDS(urlSpec); //we can have more than one DataSource in a Service
+	console.log('set ps.newsDS');
 
 	//not sure what triggers cleanup and what the cleanup is for
 	flyd.on(cleanUp, ps.stream('TT'))

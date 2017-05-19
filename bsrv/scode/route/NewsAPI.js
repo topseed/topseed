@@ -7,17 +7,20 @@ const U = new Util()
 const News = require('./ds/News')
 const news = new News()
 
+//const MyAuth = require('./ds/MyAuth')
+
 //###################### 
 router.get('/', function (req, res) {	
-	const dat = req.body
 	
-	console.log('NewsAPI req.query.pk'+req.query.pk)
-	//console.log('NewsAPI req.queryString'+req.queryString)
-	
+	/*const jt = MyAuth.getJToken(req)
+	if( !MyAuth.auth(jt)) {
+		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+		return
+	}*/
 
 	if (req.query.pk != null)
 	{
-		console.log('NewsAPI select')
+		//console.log('NewsAPI select')
 		const _rowPromise = news.select(req.query.pk)
 		_rowPromise.then(function(row){
 			res.status(200).send(JSON.stringify(row))
@@ -27,7 +30,7 @@ router.get('/', function (req, res) {
 	}
 	else
 	{
-		console.log('NewsAPI selectList')
+		//console.log('NewsAPI selectList')
 		const _listPromise = news.selectList()
 		_listPromise.then(function(rows){
 			res.status(200).send(JSON.stringify(rows))
@@ -39,11 +42,11 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {	
 	
-	const jt = MyAuth.getJToken(req)
+	/*const jt = MyAuth.getJToken(req)
 	if( !MyAuth.auth(jt)) {
 		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
 		return
-	}
+	}*/
 
 	const row = req.body
 	const _promise = news.update(row)

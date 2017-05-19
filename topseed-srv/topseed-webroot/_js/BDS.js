@@ -42,7 +42,7 @@ class BDS {
 	}//delete
 
 	static post(fetch_, ROOT_, url_, payload, jtoken ) {
-		console.log('fetching ', url_, payload, jtoken)
+		console.log('posting ', url_, JSON.stringify(payload), jtoken)
 		return fetch_(ROOT_ + url_ , { //1: call
 				method: 'post'
 				, headers: {
