@@ -18,19 +18,18 @@ block main
 
 	script.
 		//TS.onAppReady(UIinit) 
+		//TODO: make this into one TS.loadOnAppReady
 		TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
 		
-		var ps;
+		var ns; //collision not a problem?
 
 		function UIinit() {
-			ps = NewsService()
-			ps.list('#grid') //any useful parameter, here it's the div ID
+			ns = NewsService()
+			ns.list('#grid') //any useful parameter, here it's the div ID
 		}
 
 		function doDelete(pk){
-			console.log('doDelete')
-			ps.delete(pk);
-			console.log('doDelete')
+			ns.delete(pk);
 		}
 
 block footer

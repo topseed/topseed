@@ -21,7 +21,7 @@ block main
             .mui-textfield
                 input(name='data.head_line', type='text', required='')
                 label Headline
-            .mui-textarea
+            .mui-textfield
                 textarea(name='data.url', type='text', required='')
                 label Content
 
@@ -33,7 +33,7 @@ block main
             const ps = NewsService()
   
             //if there is a URL id param, it's an edit, populate
-            ps.detail('#form1', BPS.getIdParam()) //before: init
+            ps.detail('#form1') //before: init
 
             $('#form1').submit(ps.save); //onSubmit handler
             //$('#save').on('click', ps.stream('ad'))

@@ -16,8 +16,9 @@ function NewsService( ) {// 'closure|module'-iso.
 		//get nav() { return this._nav }
 
 		//set up the detail/edit/add page and form
-		detail(formId, idParam) {
+		detail(formId) {
 
+			const idParam = BPS.getIdParam(); //URL parameter: id
 			console.log('NewsService detail:'+idParam);
 			// if idParam is not blank, query and fill existing data
 			if (idParam != null)
@@ -25,18 +26,17 @@ function NewsService( ) {// 'closure|module'-iso.
 				const _dataPromise = ps.newsDS.select({pk:idParam}, Cookies.get('auth'))
 				_dataPromise.then(function(values) {
 
-					//This seems to accumulate tokens?
+					//Data seems to accumulate tokens?
 					console.log('data on detail:'+JSON.stringify(values));
 
 					//fill the form with the data
-					//doesn't work yet
 					$(formId).jsForm({data: values, prefix: 'data'})
-					//TODO: hidden field with the pk/id
+					//note that there's a hidden field with the pk
 
 				}) //TODO: handle failure
 			}
 			else //else we assume it's an insert
-				$(formId).jsForm()
+				$(formId).jsForm({data: {ts: moment().format('MM/DD/YYYY')}, prefix: 'data'})
 		}	
 
 		//I don't see the added value in using streams for navigation
@@ -131,10 +131,10 @@ function NewsService( ) {// 'closure|module'-iso.
 
 				   //column definition
 				   var columns = [
-						{title:'Date', data:'ts'},
+						{title:'Date', data:'ts', sClass:'dateCol'},
 						{title:'Story Name', data:'url', defaultContent:''},
 						{title:'Abstract', data:'head_line', defaultContent:''},
-						{title:'', sClass:'actions', orderable:false}
+						{title:'', sClass:'actionCol', orderable:false}
 					]
 
 					//render first column as link	
@@ -142,7 +142,10 @@ function NewsService( ) {// 'closure|module'-iso.
 					columns[3].render = function(data, type, row, meta) { return doDel(data, row) }; 
 					
 					function doLink(data, row) {
-						return '<a href="/admin/news/detail.html?id='+row.pk+'">'+row.ts +'</a>';
+						var m = moment.utc(row.ts).utcOffset(moment().format('ZZ'));
+						var dt = m.format('MM/DD/YYYY');	
+
+						return '<a href="/admin/news/detail.html?id='+row.pk+'">'+dt +'</a>';
 					}
 					function doDel(data, row) {
 						return '<a href="#" onclick="doDelete(\''+row.pk+'\')">[Delete]</a>';
@@ -154,7 +157,8 @@ function NewsService( ) {// 'closure|module'-iso.
 						data: values
 					});	
 
-					$(listId+' td.actions').css('text-align', 'right');
+					$(listId+' td.dateCol').css('text-align', 'center');
+					$(listId+' td.actionCol').css('text-align', 'right');
                 }
                 // TODO: handle errors by adding promise failure callback
             );

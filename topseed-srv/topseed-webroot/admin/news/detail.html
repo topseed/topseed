@@ -53,7 +53,7 @@
             <input name="data.head_line" type="text" required="">
             <label>Headline</label>
           </div>
-          <div class="mui-textarea">
+          <div class="mui-textfield">
             <textarea name="data.url" type="text" required=""></textarea>
             <label>Content</label>
           </div>
@@ -67,7 +67,7 @@
             const ps = NewsService()
         
             //if there is a URL id param, it's an edit, populate
-            ps.detail('#form1', BPS.getIdParam()) //before: init
+            ps.detail('#form1') //before: init
         
             $('#form1').submit(ps.save); //onSubmit handler
             //$('#save').on('click', ps.stream('ad'))

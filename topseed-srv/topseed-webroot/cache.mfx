@@ -14,7 +14,10 @@ https://cdn.jsdelivr.net/fetch/2.0.1/fetch.min.js
 https://cdn.jsdelivr.net/es6-promise-polyfill/1.2.0/promise.min.js
 
 #admin module
-https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css 
+https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js
+https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css
+https://cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js
+
 
 #page assets:
 

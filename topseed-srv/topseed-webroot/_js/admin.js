@@ -9,6 +9,7 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 			,'/_js/BDS.js'
 			,'//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js'
 			,'//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css',
+			,'//cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js',
 			//,'//cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'
 			//,'//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js'
 
