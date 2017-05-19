@@ -28,14 +28,17 @@ block main
     script.
         TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
 
+        var ns;
+
         function UIinit() {
             
-            const ps = NewsService()
+            ns = NewsService()
   
-            //if there is a URL id param, it's an edit, populate
-            ps.detail('#form1') //before: init
+            //if there is a URL id param, it's an edit, populate, else blank form with defaults
+            ns.detail('#form1') 
 
-            $('#form1').submit(ps.save); //onSubmit handler
+            //set onSubmit handler
+            $('#form1').submit(ns.save); 
             //$('#save').on('click', ps.stream('ad'))
             
             /*flyd.on(function(e) {
