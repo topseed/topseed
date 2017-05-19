@@ -29,10 +29,10 @@ block main
         TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
 
         function UIinit() {
-            console.log('News Detail onAppReady')
+            
             const ps = NewsService()
   
-            //if there is an id param, it's an edit, populate
+            //if there is a URL id param, it's an edit, populate
             ps.detail('#form1', BPS.getIdParam()) //before: init
 
             $('#form1').submit(ps.save); //onSubmit handler

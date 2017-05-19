@@ -13,15 +13,25 @@ block main
 			a.mui-btn.mui-btn--raised(href='./detail.html') Add	Item    
 		span.mui--clearfix
 
-		table#grid.display(width='100%', cellspacing='0')
+		table#grid.display(width='100%')
+		//-(width='100%', cellspacing='0')
+		p
 
 	script.
 		//TS.onAppReady(UIinit) 
 		TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
 		
+		var ps;
+
 		function UIinit() {
-			const ps = NewsService()
+			ps = NewsService()
 			ps.list('#grid') //any useful parameter, here it's the div ID
+		}
+
+		function doDelete(pk){
+			console.log('doDelete')
+			ps.delete(pk);
+			console.log('doDelete')
 		}
 
 block footer

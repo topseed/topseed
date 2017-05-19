@@ -4,6 +4,7 @@ const Util = require('topseed-util')
 const U = new Util() 
 
 class News extends BaseFB {
+
 	constructor() {
 		super()
 		this.table = 'links10'
@@ -48,12 +49,16 @@ class News extends BaseFB {
 		})		
 	}//()
 
-	delete(pk) {
+	delete(row) {
+		console.log('News delete pk:'+row.pk);
+		if (!row.pk)
+			return 0;
+
+		return this.ref.child(row.pk).remove().then(function(res){
+				console.log('item deleted')
+				return 1;
+		})
 	}//()
-
-	//update(pk, changes) {
-	//}//()
-
 
 }//class
 module.exports = News

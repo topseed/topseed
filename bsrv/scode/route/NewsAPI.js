@@ -58,5 +58,23 @@ router.post('/', function (req, res) {
 	})//c
 })
 
+router.delete('/', function (req, res) {	
+	
+	/*const jt = MyAuth.getJToken(req)
+	if( !MyAuth.auth(jt)) {
+		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+		return
+	}*/
+
+	const row = req.body
+	const _deletePromise = news.delete(row)
+	_deletePromise.then(function(data){
+		console.log('NewsAPI.data:'+ data)
+		res.status(200).send(JSON.stringify('OK'))
+	}).catch(function (er) {
+		U.err(er,res)
+	})//c
+})
+
 //###################### 
 module.exports = router

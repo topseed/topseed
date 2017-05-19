@@ -96,6 +96,14 @@ function NewsService( ) {// 'closure|module'-iso.
 			})//c
 		}//() */
 
+		delete(pk) {
+			const _deletePromise = ps.newsDS.delete({pk:pk}, Cookies.get('auth'))
+			_deletePromise.then(function(val) {
+				//BETTER: reload grid
+				TT.loadPg('/admin/news/list.html') //navigate to list
+			})
+		}
+
 		list(listId) {
 
 			console.log('NewsService list');
@@ -119,30 +127,34 @@ function NewsService( ) {// 'closure|module'-iso.
 
 		   console.log('NewsService renderList');
 
-            // Always assume `_listPromise` is a promise... cuts down on the code
-            // `then` returns a promise, so let's use that instead of creating our own
-            return _listPromise.then( //we return so we can chain more stuff
-                // Success callback
-                function(values) {
+           return _listPromise.then(function(values) {
 
 				   //column definition
 				   var columns = [
 						{title:'Date', data:'ts'},
 						{title:'Story Name', data:'url', defaultContent:''},
-						{title:'Abstract', data:'head_line', defaultContent:''}]
+						{title:'Abstract', data:'head_line', defaultContent:''},
+						{title:'', sClass:'actions', orderable:false}
+					]
 
 					//render first column as link	
 					columns[0].render = function(data, type, row, meta) { return doLink(data, row) }; 
+					columns[3].render = function(data, type, row, meta) { return doDel(data, row) }; 
 					
 					function doLink(data, row) {
 						return '<a href="/admin/news/detail.html?id='+row.pk+'">'+row.ts +'</a>';
 					}
+					function doDel(data, row) {
+						return '<a href="#" onclick="doDelete(\''+row.pk+'\')">[Delete]</a>';
+					}
 
-				    //we do know that DataTable has its own json loader, but we like our security module
+				    //we know that DataTable has its own json loader, but we like our security module
 					$(listId).DataTable({	
 						columns: columns,
 						data: values
 					});	
+
+					$(listId+' td.actions').css('text-align', 'right');
                 }
                 // TODO: handle errors by adding promise failure callback
             );

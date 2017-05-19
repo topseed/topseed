@@ -9,9 +9,9 @@ class BDS {
 
 	selectList(data, token) {
 		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.selectList, data, token)
-			.then(function(value) { 
-				console.log(JSON.stringify(value))
-				return value
+			.then(function(values) { 
+				//console.log(JSON.stringify(value))
+				return values
 		})//BDS
 	}//selectList
 
@@ -34,7 +34,7 @@ class BDS {
 	}//update
 
 	delete(data, token) { //delete
-		return BDS.post(window.fetch, this.urlSpec.root, this.urlSpec.delete, data, token)
+		return BDS.delete(window.fetch, this.urlSpec.root, this.urlSpec.delete, data, token)
 			.then(function(value) { 
 				console.log(JSON.stringify(value))
 				return value
@@ -45,6 +45,29 @@ class BDS {
 		console.log('posting ', url_, JSON.stringify(payload), jtoken)
 		return fetch_(ROOT_ + url_ , { //1: call
 				method: 'post'
+				, headers: {
+					'Content-Type': 'application/json'
+					,'X-JToken' : JSON.stringify(jtoken)
+					,'Accept':'application/json'
+					, credentials: 'same-origin' //res.cookie returned
+				}
+				, body: JSON.stringify(payload)
+			}).then(function(response) { //2: returns a promise
+				//console.log(response.headers)
+
+				if (!response.ok) {
+					console.log('not ok')
+					console.log(response)
+					throw Error(response.statusText)
+				}
+				return (response.json())
+			})
+	}//_()
+
+	static delete(fetch_, ROOT_, url_, payload, jtoken ) {
+		console.log('deleting ', url_, JSON.stringify(payload), jtoken)
+		return fetch_(ROOT_ + url_ , { //1: call
+				method: 'delete'
 				, headers: {
 					'Content-Type': 'application/json'
 					,'X-JToken' : JSON.stringify(jtoken)
