@@ -17,7 +17,6 @@ function NewsService( ) {// 'closure|module'-iso.
 
 		//set up the detail/edit/add page and form
 		detail(formId, idParam) {
-			$(formId).jsForm()
 
 			console.log('NewsService detail');
 			// if idParam is not blank, query and fill existing data
