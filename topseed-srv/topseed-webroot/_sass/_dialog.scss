@@ -1,0 +1,28 @@
+/* Dialog-polyfill adapted from https://github.com/GoogleChrome/dialog-polyfill */ 
+
+dialog {
+  position: absolute; 
+  left: 0; right: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  border: 0;
+  padding: 0;
+  transform: translate(0, -50%);
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+dialog + .backdrop {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+._dialog_overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+

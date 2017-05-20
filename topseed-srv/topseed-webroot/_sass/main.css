@@ -1542,7 +1542,7 @@ textarea {
 .mui--z1, #sidedrawer, #appbar {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
-.mui--z2 {
+.mui--z2, dialog {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .mui--z3 {
@@ -1957,6 +1957,21 @@ body {
 
 #footer_div--right {
   padding-right: 5px; }
+
+dialog {
+  top: 40%; }
+
+dialog::-webkit-backdrop {
+  background-color: rgba(0, 0, 0, 0.4); }
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4); }
+
+dialog + .backdrop {
+  background-color: rgba(0, 0, 0, 0.4); }
+
+dialog > .mui-panel {
+  margin-bottom: 0; }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */

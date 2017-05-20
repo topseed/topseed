@@ -148,3 +148,21 @@ body {
 #footer_div--right {
 	padding-right: 5px; //same as .mui-list--inline li in appbar
 }
+
+dialog {
+  @extend .mui--z2;	
+  top: 40%;
+}
+
+dialog::backdrop  {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+dialog + .backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+dialog > .mui-panel {
+	margin-bottom: 0;
+}
+

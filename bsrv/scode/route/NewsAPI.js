@@ -7,16 +7,20 @@ const U = new Util()
 const News = require('./ds/News')
 const news = new News()
 
-//const MyAuth = require('./ds/MyAuth')
+const MyAuth = require('./ds/MyAuth')
 
 //###################### 
 router.get('/', function (req, res) {	
 	
-	/*const jt = MyAuth.getJToken(req)
-	if( !MyAuth.auth(jt)) {
-		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
-		return
-	}*/
+	if (ApiConfig.REQUIRE_AUTH.news.includes('read')) {
+
+		const jt = MyAuth.getJToken(req)
+		if( !MyAuth.auth(jt)) {
+			console.log('Auth failed on select')
+			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+			return
+		}
+	}
 
 	if (req.query.pk != null)
 	{
@@ -42,11 +46,15 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {	
 	
-	/*const jt = MyAuth.getJToken(req)
-	if( !MyAuth.auth(jt)) {
-		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
-		return
-	}*/
+	if (ApiConfig.REQUIRE_AUTH.news.includes('write')) {
+
+		const jt = MyAuth.getJToken(req)
+		if( !MyAuth.auth(jt)) {
+			console.log('Auth failed on update')
+			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+			return
+		}
+	}
 
 	const row = req.body
 	const _promise = news.update(row)
@@ -60,11 +68,15 @@ router.post('/', function (req, res) {
 
 router.delete('/', function (req, res) {	
 	
-	/*const jt = MyAuth.getJToken(req)
-	if( !MyAuth.auth(jt)) {
-		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
-		return
-	}*/
+	if (ApiConfig.REQUIRE_AUTH.news.includes('write')) {
+
+		const jt = MyAuth.getJToken(req)
+		if( !MyAuth.auth(jt)) {
+			console.log('Auth failed on delete')
+			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+			return
+		}
+	}
 
 	const row = req.body
 	const _deletePromise = news.delete(row)

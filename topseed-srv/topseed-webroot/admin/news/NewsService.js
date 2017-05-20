@@ -160,10 +160,10 @@ function NewsService( ) {// 'closure|module'-iso.
         }
 	}//class
 
-	console.log('new PS');
+	//console.log('new PS');
 	const ps = new PS()
 	ps.newsDS = new NewsDS(urlSpec); //we can have more than one DataSource in a Service
-	console.log('set ps.newsDS');
+	//console.log('set ps.newsDS');
 
 	//not sure what triggers cleanup and what the cleanup is for
 	flyd.on(cleanUp, ps.stream('TT'))

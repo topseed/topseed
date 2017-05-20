@@ -1,3 +1,39 @@
+/* Dialog-polyfill adapted from https://github.com/GoogleChrome/dialog-polyfill */
+dialog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  border: 0;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%); }
+
+dialog:not([open]) {
+  display: none; }
+
+dialog + .backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3); }
+
+._dialog_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
 /**
  * MUI Colors module
  */
@@ -1542,7 +1578,7 @@ textarea {
 .mui--z1, #sidedrawer, #appbar {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
-.mui--z2 {
+.mui--z2, dialog {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .mui--z3 {
@@ -1957,3 +1993,21 @@ body {
 
 #footer_div--right {
   padding-right: 5px; }
+
+dialog {
+  top: 40%; }
+
+dialog::-webkit-backdrop {
+  background-color: rgba(0, 0, 0, 0.4); }
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4); }
+
+dialog + .backdrop {
+  background-color: rgba(0, 0, 0, 0.4); }
+
+dialog > .mui-panel {
+  margin-bottom: 0; }
+
+#loginpopup {
+  max-width: 250px; }

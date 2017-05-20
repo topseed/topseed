@@ -25,7 +25,9 @@
 // To reduce the size of the generated CSS, we commented out some 
 // unused components in /_imports/mui/mui.scss 
 @import './_colors'
+@import './dialog' 
 @import './_base'
+
 //@import ./_imports/dataTables.jqueryui.scss
 //@import './_ieFooter' //use to support IE 
 
@@ -38,3 +40,6 @@
 
 
 //Page specific styles ff =========================================================
+
+#loginpopup 
+	max-width: 250px /* needed for Edge to center the popup */

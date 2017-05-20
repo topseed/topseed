@@ -4,7 +4,7 @@ const serviceAccount = require("./serviceKey.json");
 
 const fb = firebase.initializeApp({
 	credential: firebase.credential.cert(serviceAccount),
-	databaseURL: bsrvConfig.DB_URL
+	databaseURL: ApiConfig.DB_URL
 })
 //var fAuth = fb.auth()
 

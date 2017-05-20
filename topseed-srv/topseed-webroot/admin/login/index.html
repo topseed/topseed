@@ -38,46 +38,52 @@
       }			
     </script>
     <div id="content-wrapper">
-      <div class="mui-container-fluid">
-        <form class="mui-form" id="form1" onsubmit="return false">
-          <input name="data.pk" type="hidden">
-          <h2 class="mui--pull-left">News Item Detail</h2>
-          <h2 class="mui--pull-right">
-            <button class="mui-btn mui-btn--raised" type="submit">Save</button><a class="mui-btn mui-btn--raised" href="./list.html">Cancel</a>
-          </h2><span class="mui--clearfix"></span>
-          <div class="mui-textfield">
-            <input name="data.ts" type="text" required="">
-            <label>Date</label>
-          </div>
-          <div class="mui-textfield">
-            <input name="data.head_line" type="text" required="">
-            <label>Headline</label>
-          </div>
-          <div class="mui-textfield">
-            <textarea name="data.url" type="text" required=""></textarea>
-            <label>Content</label>
-          </div>
-        </form>
-      </div>
+      <dialog id="loginpopup">
+        <div class="mui-panel">
+          <form class="mui-form" id="form1" onsubmit="return false">
+            <legend>Login</legend>
+            <div class="mui-textfield">
+              <input name="data.user" type="text" required="" autofocus="autofocus">
+              <label>Username/Email</label>
+            </div>
+            <div class="mui-textfield">
+              <input name="data.password" type="password" required="">
+              <label>Password</label>
+            </div>
+            <button class="mui-btn mui-btn--raised" type="submit">Login</button><a class="mui-btn mui-btn--raised" href="page/one/#">Cancel</a>
+          </form>
+        </div>
+      </dialog>
       <script>
-        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
-        
-        var ns;
+        TS.onAppReady(function(){TS.loadNX('/admin/login/LoginBusiness.js', UIinit)}) 
         
         function UIinit() {
+        
+            Cookies.remove('auth')// logout
+        
+            var dialog = document.querySelector('dialog');
+            dialogPolyfill.registerDialog(dialog);
+            dialog.addEventListener('cancel', function() { event.preventDefault(); });
+            dialog.showModal();
             
-            ns = NewsService()
+            const sb = LoginBusiness()
         
-            //if there is a URL id param, it's an edit, populate, else blank form with defaults
-            ns.detail('#form1') 
+            //bind blank form
+             $('#form1').jsForm()
+            //sb.detail('#form1') 
         
-            //set onSubmit handler
-            $('#form1').submit(ns.save); 
-            //$('#save').on('click', ps.stream('ad'))
+            //set onSubmit handler, include any cookie
+            $('#form1').submit({auth: Cookies.get('auth')}, sb.login); 
+            //BETTER: $('#form1').submit(sb.stream('ll'))
             
             /*flyd.on(function(e) {
                 console.log('NAV', e)
-                TT.loadPg('/admin/news/list.html')
+                Cookies.set('auth',e)
+                console.log(Cookies.get('auth'))
+        
+                setTimeout(function() {
+                    TT.loadPg('/linkBlog/admin/')// let the cookie write
+                },50)
             }, ps.nav)*/
         }
         
