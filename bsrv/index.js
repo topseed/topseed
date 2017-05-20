@@ -16,8 +16,8 @@ bsrv.use(cors())
 bsrv.use('/memPg', require('./scode/example/memPg'))// for dt
 
 //linkBlg 
-bsrv.use('/me/news', require('./scode/route/NewsAPI')) 
-bsrv.use('/me/login', require('./scode/route/LoginAPI')) 
+bsrv.use('/me/news', require('./scode/route/NewsMS')) 
+bsrv.use('/me/login', require('./scode/route/LoginMS')) 
 
 bsrv.use('/linksPg', require('./scode/route/LinksPg')) 
 bsrv.use('/adminPg', require('./scode/route/AdminPg')) 

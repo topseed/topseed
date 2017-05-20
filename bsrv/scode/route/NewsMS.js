@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
 	if (ApiConfig.REQUIRE_AUTH.news.includes('read')) {
 
 		const jt = MyAuth.getJToken(req)
-		if( !MyAuth.auth(jt)) {
+		if( !MyAuth.isTokenValid(jt)) {
 			console.log('Auth failed on select')
 			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
 			return
@@ -49,7 +49,7 @@ router.post('/', function (req, res) {
 	if (ApiConfig.REQUIRE_AUTH.news.includes('write')) {
 
 		const jt = MyAuth.getJToken(req)
-		if( !MyAuth.auth(jt)) {
+		if( !MyAuth.isTokenValid(jt)) {
 			console.log('Auth failed on update')
 			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
 			return
@@ -59,7 +59,7 @@ router.post('/', function (req, res) {
 	const row = req.body
 	const _promise = news.update(row)
 	_promise.then(function(data){
-		console.log('NewsAPI.data:'+ data)
+		console.log('NewsMS.data:'+ data)
 		res.status(200).send(JSON.stringify('OK'))
 	}).catch(function (er) {
 		U.err(er,res)
@@ -71,7 +71,8 @@ router.delete('/', function (req, res) {
 	if (ApiConfig.REQUIRE_AUTH.news.includes('write')) {
 
 		const jt = MyAuth.getJToken(req)
-		if( !MyAuth.auth(jt)) {
+		console.log('NewsMS.delete jt from req'+jt)
+		if( !MyAuth.isTokenValid(jt)) {
 			console.log('Auth failed on delete')
 			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
 			return
@@ -81,7 +82,7 @@ router.delete('/', function (req, res) {
 	const row = req.body
 	const _deletePromise = news.delete(row)
 	_deletePromise.then(function(data){
-		console.log('NewsAPI.data:'+ data)
+		console.log('NewsMS.data:'+ data)
 		res.status(200).send(JSON.stringify('OK'))
 	}).catch(function (er) {
 		U.err(er,res)

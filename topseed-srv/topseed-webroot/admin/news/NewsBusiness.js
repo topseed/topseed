@@ -1,17 +1,16 @@
-function NewsService( ) {// 'closure|module'-iso.
-	console.log('in NewsService')
+function NewsBusiness( ) {// 'closure|module'-iso.
+	console.log('in NewsBusiness')
 
-	//const ROOT = 'http://localhost:8081' 
 	//TODO: load from serverside config file
 	const urlSpec = {root:'http://localhost:8081', select: '/me/news', selectList: '/me/news', update: '/me/news', delete:'/me/news'}
 
 	//generic select, selectList, update and delete are in BDS
 	//urlSpec is passed in constructor
-	class NewsDS extends BDS { /* additional functions here */} 
+	class NewsDao extends BDS { /* additional functions here */} 
 
-	class PS extends BPS {
+	class SimpleBusiness extends BPS {
 
-        //the idea is to use NewsService across the News Admin module, different pages call different functions
+        //We use NewsBusiness across the News Admin module, different pages call different functions
 
 		//get nav() { return this._nav }
 
@@ -19,11 +18,11 @@ function NewsService( ) {// 'closure|module'-iso.
 		detail(formId) {
 
 			const idParam = BPS.getIdParam(); //URL parameter: id
-			console.log('NewsService detail:'+idParam);
+			console.log('NewsBusiness detail:'+idParam);
 			// if idParam is not blank, query and fill existing data
 			if (idParam != null)
 			{
-				const _dataPromise = ps.newsDS.select({pk:idParam}, Cookies.get('auth'))
+				const _dataPromise = sb.newsDao.select({pk:idParam}, Cookies.get('auth'))
 				_dataPromise.then(function(values) {
 
 					//Data seems to accumulate tokens?
@@ -62,14 +61,15 @@ function NewsService( ) {// 'closure|module'-iso.
 
 		//triggered from submit, how to avoid double-submit?
 		save(e) {
-			e.preventDefault()
-			//console.log('NewsService save form.target '+e.currentTarget)
+			
+			//e.preventDefault()
+			//console.log('NewsBusiness save form.target '+e.currentTarget)
 
 			//e.currentTarget works when it's a form.submit event
 			const formData = $(e.currentTarget).jsForm('get') //form data, 
 			
-			//use ps.
-			const _updatePromise = ps.newsDS.update(formData, Cookies.get('auth'))
+			//use sb.
+			const _updatePromise = sb.newsDao.update(formData, e.data.auth)
 			_updatePromise.then(function(val) {
 				//thiz.nav(val) //page nav
 				TT.loadPg('/admin/news/list.html') //navigate to list
@@ -92,18 +92,18 @@ function NewsService( ) {// 'closure|module'-iso.
 			})//c
 		}//() */
 
-		delete(pk) {
-			const _deletePromise = ps.newsDS.delete({pk:pk}, Cookies.get('auth'))
+		delete(pk, auth) {
+			console.log('NewsBusiness delete, cookie val:'+auth)
+			const _deletePromise = sb.newsDao.delete({pk:pk}, auth)
 			_deletePromise.then(function(val) {
-				//BETTER: reload grid, how?
 				TT.loadPg('/admin/news/list.html') //navigate to list
 			})
 		}
 
 		list(listId) {
 
-			console.log('NewsService list');
-			const _listPromise = ps.newsDS.selectList()  
+			console.log('NewsBusiness list');
+			const _listPromise = sb.newsDao.selectList()  
             this.renderList(listId, _listPromise)
 
 			//I understand this but thiz looks funky.
@@ -120,7 +120,7 @@ function NewsService( ) {// 'closure|module'-iso.
 
        renderList(listId, _listPromise) {
 
-		   console.log('NewsService renderList');
+		   console.log('NewsBusiness renderList');
 
            return _listPromise.then(function(values) {
 
@@ -161,16 +161,16 @@ function NewsService( ) {// 'closure|module'-iso.
 	}//class
 
 	//console.log('new PS');
-	const ps = new PS()
-	ps.newsDS = new NewsDS(urlSpec); //we can have more than one DataSource in a Service
-	//console.log('set ps.newsDS');
+	const sb = new SimpleBusiness()
+	sb.newsDao = new NewsDao(urlSpec); //we can have more than one DataSource in a Service
+	//console.log('set sb.newsDao');
 
 	//not sure what triggers cleanup and what the cleanup is for
-	flyd.on(cleanUp, ps.stream('TT'))
+	flyd.on(cleanUp, sb.stream('TT'))
 
 	function cleanUp() {
-		console.log('NewsService cleanUP, TT')
+		console.log('NewsBusiness cleanUP, TT')
 	}//()
 
-	return ps //instance to page 
+	return sb //instance to page 
 }

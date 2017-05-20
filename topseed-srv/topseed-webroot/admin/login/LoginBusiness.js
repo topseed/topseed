@@ -24,16 +24,17 @@ function LoginBusiness( ) {// 'closure|module'-iso.
 		//triggered from submit, how to avoid double-submit?
 		login(e) {
 			
-			console.log('LoginBusiness e.data.auth '+e.data.auth)
+			//console.log('LoginBusiness e.data.auth '+e.data.auth)
 
 			//e.currentTarget works when it's a form.submit event
 			const formData = $(e.currentTarget).jsForm('get') //form data, 
 			
-			const _loginPromise = sb.dao.login(formData, e.data.auth)
+			const _loginPromise = sb.dao.login(formData)
 			_loginPromise.then(function(value) {
                 console.log('login ret:'+JSON.stringify(value))
                 //set as session cookie
                 Cookies.set('auth', value)
+                console.log('done set cookie:'+value)
 				//thiz.nav(val) //page nav
 				TT.loadPg('/admin/home/') //navigate to admin home
 			})

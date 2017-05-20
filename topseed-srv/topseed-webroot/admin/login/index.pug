@@ -24,12 +24,12 @@ block main
 
         function UIinit() {
 
-            Cookies.remove('auth')// logout
+            Cookies.remove('auth')// ensure logout
 
-            var dialog = document.querySelector('dialog');
-            dialogPolyfill.registerDialog(dialog);
-            dialog.addEventListener('cancel', function() { event.preventDefault(); });
-            dialog.showModal();
+            var dialog = document.querySelector('dialog')
+            dialogPolyfill.registerDialog(dialog)
+            dialog.addEventListener('cancel', function() { event.preventDefault() }) //on ESC key
+            dialog.showModal()
             
             const sb = LoginBusiness()
   
@@ -37,8 +37,8 @@ block main
              $('#form1').jsForm()
             //sb.detail('#form1') 
 
-            //set onSubmit handler, include any cookie
-            $('#form1').submit({auth: Cookies.get('auth')}, sb.login); 
+            //set onSubmit handler
+            $('#form1').submit(sb.login); 
             //BETTER: $('#form1').submit(sb.stream('ll'))
             
             /*flyd.on(function(e) {

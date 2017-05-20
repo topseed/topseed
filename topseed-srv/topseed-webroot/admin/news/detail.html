@@ -60,19 +60,19 @@
         </form>
       </div>
       <script>
-        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
+        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsBusiness.js', UIinit)}) 
         
-        var ns;
+        var sb;
         
         function UIinit() {
             
-            ns = NewsService()
+            sb = NewsBusiness()
         
             //if there is a URL id param, it's an edit, populate, else blank form with defaults
-            ns.detail('#form1') 
+            sb.detail('#form1') 
         
             //set onSubmit handler
-            $('#form1').submit(ns.save); 
+            $('#form1').submit({auth: Cookies.get('auth')}, sb.save); 
             //$('#save').on('click', ps.stream('ad'))
             
             /*flyd.on(function(e) {

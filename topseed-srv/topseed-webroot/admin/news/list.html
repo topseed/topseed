@@ -46,18 +46,18 @@
       </div>
       <script>
         //TODO: make this into one TS.loadOnAppReady
-        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsService.js', UIinit)}) 
+        TS.onAppReady(function(){TS.loadNX('/admin/news/NewsBusiness.js', UIinit)}) 
         //TS.onAppReady(UIinit) 
         
-        var ns; //collision not a problem as long as we don't have instance variables inside
+        var sb; //collision not a problem as long as we don't have instance variables in NewsBusiness
         
         function UIinit() {
-        	ns = NewsService()
-        	ns.list('#grid') //any useful parameter, here it's the div ID
+        	sb = NewsBusiness()
+        	sb.list('#grid') //any useful parameter, here it's the div ID
         }
         
         function doDelete(pk){
-        	ns.delete(pk);
+        	sb.delete(pk, Cookies.get('auth'));
         }
         
       </script>

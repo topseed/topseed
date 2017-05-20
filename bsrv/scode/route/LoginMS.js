@@ -8,14 +8,15 @@ const MyAuth = require('./ds/MyAuth')
 
 //###################### 
 router.post('/', function (req, res) {	
-	console.log('LoginAPI login')
+	console.log('LoginMS login')
 	const dat = req.body
 
 	if( !MyAuth.auth(dat)) {
 		res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
 		return
 	}
-	//console.log('')
+
+	connsole.log('LoginMS authenticated, return token in JSON format'+JSON.stringify(MyAuth.clientsKey))
 
 	res.status(200).send(JSON.stringify(MyAuth.clientsKey))
 })

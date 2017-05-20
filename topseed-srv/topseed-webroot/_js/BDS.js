@@ -66,17 +66,18 @@ class BDS {
 
 	static delete(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('deleting ', url_, JSON.stringify(payload), jtoken)
+		console.log('token:'+jtoken)
 		return fetch_(ROOT_ + url_ , { //1: call
 				method: 'delete'
 				, headers: {
 					'Content-Type': 'application/json'
-					,'X-JToken' : JSON.stringify(jtoken)
+					,'X-JToken' : jtoken //JSON.stringify(jtoken)
 					,'Accept':'application/json'
 					, credentials: 'same-origin' //res.cookie returned
 				}
 				, body: JSON.stringify(payload)
 			}).then(function(response) { //2: returns a promise
-				//console.log(response.headers)
+				console.log(response.headers)
 
 				if (!response.ok) {
 					console.log('not ok')
