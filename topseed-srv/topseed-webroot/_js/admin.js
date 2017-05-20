@@ -16,10 +16,6 @@ loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
 
 			,'/_js/vendor/jquery.jsForm.min.js',
 
-
-			////,'/_js/vendor/jquery.fullpage.min.css'
-			////,'/_js/vendor/jquery.fullpage.min.js'
-
 			], { success: function(){
 				startApp()
 			}
