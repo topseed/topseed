@@ -29,6 +29,18 @@ class BPS  { //testable pg services class for pg component com, ds/fetch, FRP an
        return null;
    }
 
+   static convert(data, rules){
+	   for (name in rules)
+	   {
+		   if (data[name])
+		   {
+		   		//try { 
+					   rules[name](data)
+				//} catch(e) {console.log(e)}	 //e.g. null or malformed data  
+		   }	   
+	   }
+   }
+
 }//class
 
 // for node:

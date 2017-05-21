@@ -16,7 +16,7 @@ router.post('/', function (req, res) {
 		return
 	}
 
-	connsole.log('LoginMS authenticated, return token in JSON format'+JSON.stringify(MyAuth.clientsKey))
+	console.log('LoginMS authenticated, return token in JSON format just for fun:'+JSON.stringify(MyAuth.clientsKey))
 
 	res.status(200).send(JSON.stringify(MyAuth.clientsKey))
 })

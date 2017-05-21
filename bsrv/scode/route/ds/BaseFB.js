@@ -31,8 +31,8 @@ class BaseFB {
 			console.log('News update, no pk, is insert')
 			const pk = this.fdb.ref().child(this.table).push().key
 			row.pk = pk
-			const ut = Date.now() //set the date to current, better: do in UI
-			row.ts = ut
+			//const ut = Date.now() //set the date to current, better: do in UI
+			//row.ts = ut
 		}
 		
 		return this.fdb.ref(this.table+'/'+ row.pk).update(row).then(function(a,b){

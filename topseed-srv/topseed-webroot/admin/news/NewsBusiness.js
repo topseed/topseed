@@ -18,7 +18,7 @@ function NewsBusiness( ) {// 'closure|module'-iso.
 		detail(formId) {
 
 			const idParam = BPS.getIdParam(); //URL parameter: id
-			console.log('NewsBusiness detail:'+idParam);
+			console.log('NewsBusiness detail: '+idParam);
 			// if idParam is not blank, query and fill existing data
 			if (idParam != null)
 			{
@@ -26,7 +26,13 @@ function NewsBusiness( ) {// 'closure|module'-iso.
 				_dataPromise.then(function(values) {
 
 					//Data seems to accumulate tokens?
-					console.log('data on detail:'+JSON.stringify(values));
+					console.log('data on detail:'+JSON.stringify(values))
+
+					//convert timestamp to dateStr
+					function tsIn(data) {
+						data.dateStr = moment(data.ts).format('MM/DD/YYYY') //dateStr used in UI
+					}
+					BPS.convert(values, {ts: tsIn}) //add more pairs with ', '
 
 					//fill the form with the data
 					$(formId).jsForm({data: values, prefix: 'data'})
@@ -34,8 +40,10 @@ function NewsBusiness( ) {// 'closure|module'-iso.
 
 				}) //TODO: handle failure
 			}
-			else //else we assume it's an insert
-				$(formId).jsForm({data: {ts: moment().format('MM/DD/YYYY')}, prefix: 'data'})
+			else { //else we assume it's an insert
+				var dateStr = moment().format('MM/DD/YYYY') //today
+				$(formId).jsForm({data: {dateStr: dateStr}, prefix: 'data'})
+			}	
 		}	
 
 		//I don't see the added value in using streams for navigation
@@ -67,6 +75,12 @@ function NewsBusiness( ) {// 'closure|module'-iso.
 
 			//e.currentTarget works when it's a form.submit event
 			const formData = $(e.currentTarget).jsForm('get') //form data, 
+
+			//convert dateStr to timestamp
+			function dateStrOut(data) {
+				data.ts = moment(data.dateStr, 'MM/DD/YYYY').valueOf();
+			}
+			BPS.convert(formData, {dateStr: dateStrOut}) //add more pairs with ', '
 			
 			//use sb.
 			const _updatePromise = sb.newsDao.update(formData, e.data.auth)
@@ -133,27 +147,25 @@ function NewsBusiness( ) {// 'closure|module'-iso.
 					]
 
 					//render first column as link	
-					columns[0].render = function(data, type, row, meta) { return doLink(data, row) }; 
-					columns[3].render = function(data, type, row, meta) { return doDel(data, row) }; 
+					columns[0].render = function(data, type, row, meta) { return doLink(data, row) }
+					columns[3].render = function(data, type, row, meta) { return doDel(data, row) }
 					
 					function doLink(data, row) {
-						var m = moment.utc(row.ts).utcOffset(moment().format('ZZ'));
-						var dt = m.format('MM/DD/YYYY');	
-
-						return '<a href="/admin/news/detail.html?id='+row.pk+'">'+dt +'</a>';
+						var dateStr = moment(row.ts).format('MM/DD/YYYY')
+						return '<a href="/admin/news/detail.html?id='+row.pk+'">'+dateStr +'</a>'
 					}
 					function doDel(data, row) {
-						return '<a href="#" onclick="doDelete(\''+row.pk+'\')">[Delete]</a>';
+						return '<a href="#" onclick="doDelete(\''+row.pk+'\')">[Delete]</a>'
 					}
 
 				    //we know that DataTable has its own json loader, but we like our security module
 					$(listId).DataTable({	
 						columns: columns,
 						data: values
-					});	
+					})
 
-					$(listId+' td.dateCol').css('text-align', 'center');
-					$(listId+' td.actionCol').css('text-align', 'right');
+					$(listId+' td.dateCol').css('text-align', 'center')
+					$(listId+' td.actionCol').css('text-align', 'right')
                 }
                 // TODO: handle errors by adding promise failure callback
             );
