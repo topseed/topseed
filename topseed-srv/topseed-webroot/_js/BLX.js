@@ -1,4 +1,4 @@
-class BPS  { //testable pg services class for pg component com, ds/fetch, FRP and such. base page services / 'middle layer'
+class BLX  { //testable pg services class for pg component com, ds/fetch, FRP and such. base page services / 'middle layer'
 
 	constructor(ds) {
 		this._ds = ds
@@ -45,4 +45,4 @@ class BPS  { //testable pg services class for pg component com, ds/fetch, FRP an
 
 // for node:
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
-	module.exports = BPS //node
+	module.exports = BLX //node

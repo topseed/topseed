@@ -22,10 +22,6 @@ debug('oh hi')
 const Decider = require('./utils/Decider')
 
 // ###################### static
-const dbAdv = require('./proute/ssrPg')
-server.use('/dBindAdvanced', dbAdv) 
-
-// ###################### static
 server.use(Decider.decide)
 server.use(express.static(ServerConfig.WEBROOT))
 

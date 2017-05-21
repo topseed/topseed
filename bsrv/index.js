@@ -15,15 +15,6 @@ bsrv.use(cors())
 //######################## sroute
 bsrv.use('/memPg', require('./scode/example/memPg'))// for dt
 
-//linkBlg 
-bsrv.use('/me/news', require('./scode/route/NewsMS')) 
-bsrv.use('/me/login', require('./scode/route/LoginMS')) 
-
-bsrv.use('/linksPg', require('./scode/route/LinksPg')) 
-bsrv.use('/adminPg', require('./scode/route/AdminPg')) 
-bsrv.use('/loginPg', require('./scode/route/LoginPg')) 
-
-
 
 //###################### start the bsrv
 bsrv.listen(ApiConfig.PORT, '0.0.0.0', function() {

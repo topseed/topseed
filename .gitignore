@@ -17,6 +17,8 @@ tsconfig.json
 
 **/serviceKey.json
 
+.nojekyll
+
 ###################### Other
 **/.project
 **/.cfignore
