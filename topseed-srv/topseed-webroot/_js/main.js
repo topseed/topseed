@@ -1,13 +1,11 @@
 'use strict'
-loadjs.ready(['dependencyIE', 'keyLibs'], {// loaded setup libs
+loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 	success: function(){
+		console.log('main loading')
 
 		loadjs([
-			//frp:
-			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 			//,'/_js/BPS.js'
 			//,'/_js/BDS.js'
-			//,'//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js'
 
 			,'/_js/vendor/jquery.jsForm.min.js'
 			//,'/_js/vendor/jquery.fullpage.min.css'
