@@ -1,45 +1,42 @@
-class BLX  { //testable pg services class for pg component com, ds/fetch, FRP and such. base page services / 'middle layer'
+class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and such. base page services / 'middle layer'
 
 	constructor(ds) {
 		this._ds = ds
 		this._streams= {} 	//loosely coupled
-		this.regStream('TT', TT.smoothPg)//page stream
+		this.regObserver('TT', TT.smoothPg)//page stream
 	}
 
-	regStream(key, stm)  {
+	regObserver(key, stm)	{
 		this._streams[key] = stm
 	}
 
-	stream(key) {//get
+	observer(key) {//get
 		return this._streams[key]
 	}
 
-	init( ) {
-		console.log('bps')
-	}
 
-	static getIdParam() {
-       var vars = [],
-           hash;
-       var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-       for (var i = 0; i < hashes.length; i++) {
-           hash = hashes[i].split('=');
-		   if (hash[0]=='id') return hash[1];
-       }
-       return null;
-   }
+	static _getIdParam() {
+		 var vars = [],
+			 hash;
+		 var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		 for (var i = 0; i < hashes.length; i++) {
+			 hash = hashes[i].split('=');
+			 if (hash[0]=='id') return hash[1];
+		 }
+		 return null;
+	 }
 
-   static convert(data, rules){
-	   for (name in rules)
-	   {
-		   if (data[name])
-		   {
-		   		//try { 
-					   rules[name](data)
-				//} catch(e) {console.log(e)}	 //e.g. null or malformed data  
-		   }	   
-	   }
-   }
+	 static _convert(data, rules){ // needs a better name
+		 for (name in rules)
+		 {
+			 if (data[name])
+			 {
+			 		//try {
+						 rules[name](data)
+				//} catch(e) {console.log(e)}	 //e.g. null or malformed data
+			 }
+		 }
+	 }
 
 }//class
 

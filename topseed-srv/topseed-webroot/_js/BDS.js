@@ -5,9 +5,33 @@ class BDS {
 	constructor(_urlSpec) {
 		console.log('BDS constructor')
 		this.urlSpec = _urlSpec
+		this.fetch_ = window.fetch // Bsr - browser side
 	}
 
-	selectList(data, token) {
+	static _fetch(fetch_,ROOT_, url_, data_) {
+		//var xjt_ = Cookies.get(BDS.XJT)
+		//var xb_  = Cookies.get(BDS.XBASIC)
+		console.log('fetching ', url_)
+		return fetch_(ROOT_ + url_ , { //1 call
+				method: 'post'
+				, headers: {
+					'Content-Type': 'application/json',
+				}
+				, body: JSON.stringify(data_)
+			}).then(function(response) { //2 returns a promise
+				//console.log(response.headers)
+
+				if (!response.ok) {
+					console.log('not ok')
+					console.log(response)
+					throw Error(response.statusText)
+				}
+				return (response.json())
+			})
+	}//_()
+
+
+	_selectList(data, token) {
 		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.selectList, data, token)
 			.then(function(values) { 
 				//console.log(JSON.stringify(value))
@@ -16,7 +40,7 @@ class BDS {
 	}//selectList
 
 	
-	select(data, token) {
+	_select(data, token) {
 		console.log('BDS select()')
 		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.select, data, token)
 			.then(function(value) { 
@@ -25,7 +49,7 @@ class BDS {
 		})//BDS
 	}//select
 
-	update(data, token) { //insertOrUpdate
+	_update(data, token) { //insertOrUpdate
 		return BDS.post(window.fetch, this.urlSpec.root, this.urlSpec.update, data, token)
 			.then(function(value) { 
 				console.log(JSON.stringify(value))
@@ -33,7 +57,7 @@ class BDS {
 		})//BDS
 	}//update
 
-	delete(data, token) { //delete
+	_delete(data, token) { //delete
 		return BDS.delete(window.fetch, this.urlSpec.root, this.urlSpec.delete, data, token)
 			.then(function(value) { 
 				console.log(JSON.stringify(value))
@@ -41,7 +65,7 @@ class BDS {
 		})//BDS
 	}//delete
 
-	static post(fetch_, ROOT_, url_, payload, jtoken ) {
+	static __post(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('posting ', url_, JSON.stringify(payload), jtoken)
 		return fetch_(ROOT_ + url_ , { //1: call
 				method: 'post'
@@ -64,7 +88,7 @@ class BDS {
 			})
 	}//_()
 
-	static delete(fetch_, ROOT_, url_, payload, jtoken ) {
+	static _delete(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('deleting ', url_, JSON.stringify(payload), jtoken)
 		console.log('token:'+jtoken)
 		return fetch_(ROOT_ + url_ , { //1: call
@@ -88,7 +112,7 @@ class BDS {
 			})
 	}//_()
 
-	static get(fetch_, ROOT_, url_, payload, jtoken ) {
+	static __get(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('fetching ', url_, payload, jtoken)
 		//convert payload to query string	
 		var url = ROOT_ + url_;
@@ -118,7 +142,7 @@ class BDS {
 			})
 	}//_()
 
-	static objectToQueryString(obj){
+	static __objectToQueryString(obj){
 		var params = [];
 		for (var p in obj) {
 			if (obj.hasOwnProperty(p)) {

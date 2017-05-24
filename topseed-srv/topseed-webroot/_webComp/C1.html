@@ -1,0 +1,27 @@
+
+<template id="xc1-el">
+  <style>p { color: orange; }</style>
+  <p>One</p>
+</template>
+<script>
+  class C1El extends HTMLElement {
+  	constructor() {
+  		super()
+  		let shadowRoot = this.attachShadow({mode: 'open'})
+  		const t = document.querySelector('#xc1-el')// add the dom above
+  		const instance = t.content.cloneNode(true)
+  		shadowRoot.appendChild(instance)
+  
+  
+  	}//()
+  
+  	init(blx) {
+  		console.log('comp1()')
+  		const $but = $('#but1', this.root)
+  		const clicks = flyd.stream()
+  		$but.on('click', clicks)
+  		blx.regobserver('c1', clicks)
+  	}
+  
+  }//class
+</script>

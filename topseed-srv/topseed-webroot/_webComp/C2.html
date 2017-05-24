@@ -1,0 +1,23 @@
+
+<template id="xc2-el">
+  <style>p { color: orange; }</style>
+  <p>Two</p>
+</template>
+<script>
+  class C2El extends HTMLElement {
+  	constructor() {
+  		super()
+  		let shadowRoot = this.attachShadow({mode: 'open'})
+  		const t = document.querySelector('#xc2-el')// add the dom above
+  		const instance = t.content.cloneNode(true)
+  		shadowRoot.appendChild(instance)
+  
+  	}//()
+  
+  	init(blx) {
+  		console.log('comp2()')
+  		flyd.on(function(e) { console.log(e); }, ps.observer('c1'))
+  	}
+  
+  }//class
+</script>

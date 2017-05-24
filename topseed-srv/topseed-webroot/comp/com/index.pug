@@ -15,22 +15,35 @@ block main
 
 	script.
 		TS.onAppReady(UIinit)
-
+		
+		let _blx
+		
 		function UIinit() {
 			console.log('pg')
-			riot.compile(function(){ // wait for a comp
-				var c1 = riot.mount('c-1')[0]
-				var c2 = riot.mount('c-2')[0]
 
-				const ps = new BPS() // can / should have folder local class
-				ps.init() 
-				//comps now have access to the pg event bus so wire
-				c1.init(ps)
-				c2.init(ps)
+			_blx = new BLX(null) // can / should have folder local class
 
-			})// compile
+			TS.loadComp($('#comps'),'/_webComp/first.html', UIComp1Init)
+			TS.loadComp($('#comps'),'/_webComp/first.html', UIComp2Init)
+		}
 
-		}//UIinit()
+		function UIComp1Init() {//this does not execute yet
+			var el = customElements.get('c-1')
+			if(!el) // if it is not defined, define:
+				customElements.define('c-1', C1El)// loaded w/ template
+
+			let m = document.querySelector('c-1')
+			m.ini(_blx) // talk to it
+		}
+
+		function UIComp2Init() {//this does not execute yet
+			var el = customElements.get('c-2')
+			if(!el) // if it is not defined, define:
+				customElements.define('c-2', C2El)// loaded w/ template
+
+			let m = document.querySelector('c-2')
+			m.ini(_blx) // talk to it
+		}
 
 
 block footer
