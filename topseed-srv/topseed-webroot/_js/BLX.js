@@ -7,10 +7,12 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 	}
 
 	regObserver(key, stm)	{
+		console.log('set')
 		this._streams[key] = stm
 	}
 
 	observer(key) {//get
+		console.log('get')
 		return this._streams[key]
 	}
 

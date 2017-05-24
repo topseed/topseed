@@ -8,17 +8,18 @@ script.
 	class C1El extends HTMLElement {
 		constructor() {
 			super()
-			let shadowRoot = this.attachShadow({mode: 'open'})
+			this._shadowRoot = this.attachShadow({mode: 'open'})
 			const t = document.querySelector('#xc1-el')// add the dom above
 			const instance = t.content.cloneNode(true)
-			shadowRoot.appendChild(instance)
+			this._shadowRoot.appendChild(instance)
 
 
 		}//()
 
 		init(blx) {
 			console.log('comp1()')
-			const $but = $('#but1', this.root)
+			const $but = $('#but1', this._shadowRoot)
+			console.log($but)
 			const clicks = flyd.stream()
 			$but.on('click', clicks)
 			blx.regObserver('c1', clicks)

@@ -16,6 +16,7 @@
   
   	init(blx) {
   		console.log('comp2()')
+  		console.log( blx.observer('c1') )
   		flyd.on(function(e) { console.log(e); }, blx.observer('c1'))
   	}
   
