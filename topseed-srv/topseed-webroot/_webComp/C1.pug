@@ -2,6 +2,7 @@ template#xc1-el
 	style.
 		p { color: orange; }
 	p One
+	button#but1  But1 
 
 script.
 	class C1El extends HTMLElement {
@@ -20,7 +21,7 @@ script.
 			const $but = $('#but1', this.root)
 			const clicks = flyd.stream()
 			$but.on('click', clicks)
-			blx.regobserver('c1', clicks)
+			blx.regObserver('c1', clicks)
 		}
 
 	}//class

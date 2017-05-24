@@ -23,8 +23,8 @@ block main
 
 			_blx = new BLX(null) // can / should have folder local class
 
-			TS.loadComp($('#comps'),'/_webComp/first.html', UIComp1Init)
-			TS.loadComp($('#comps'),'/_webComp/first.html', UIComp2Init)
+			TS.loadComp($('#comps'),'/_webComp/C1.html', UIComp1Init)
+			TS.loadComp($('#comps'),'/_webComp/C2.html', UIComp2Init)
 		}
 
 		function UIComp1Init() {//this does not execute yet
@@ -33,7 +33,8 @@ block main
 				customElements.define('c-1', C1El)// loaded w/ template
 
 			let m = document.querySelector('c-1')
-			m.ini(_blx) // talk to it
+			console.log(_blx)
+			m.init(_blx) // talk to it
 		}
 
 		function UIComp2Init() {//this does not execute yet
@@ -42,7 +43,8 @@ block main
 				customElements.define('c-2', C2El)// loaded w/ template
 
 			let m = document.querySelector('c-2')
-			m.ini(_blx) // talk to it
+			console.log(_blx)
+			m.init(_blx) // talk to it
 		}
 
 

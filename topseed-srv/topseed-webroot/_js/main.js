@@ -5,7 +5,7 @@ loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 
 		loadjs([
 			'https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/system-production.js'
-			,'/_js/BPS.js'
+			,'/_js/BDS.js'
 			,'/_js/BLX.js'
 			//,'/_js/vendor/jquery.jsForm.min.js'
 
