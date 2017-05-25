@@ -1,6 +1,6 @@
 'use strict'
 console.log('BDS')
-class BDS {
+class BDS { //TODO: Move this method to day 3. Come up w/ a simpler base
 
 	constructor(_urlSpec) {
 		console.log('BDS constructor')
@@ -31,6 +31,7 @@ class BDS {
 	}//_()
 
 
+	/*
 	_selectList(data, token) {
 		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.selectList, data, token)
 			.then(function(values) { 
@@ -38,8 +39,8 @@ class BDS {
 				return values
 		})//BDS
 	}//selectList
+	*/
 
-	
 	_select(data, token) {
 		console.log('BDS select()')
 		return BDS.get(window.fetch, this.urlSpec.root, this.urlSpec.select, data, token)
@@ -65,6 +66,7 @@ class BDS {
 		})//BDS
 	}//delete
 
+	/*
 	static __post(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('posting ', url_, JSON.stringify(payload), jtoken)
 		return fetch_(ROOT_ + url_ , { //1: call
@@ -87,6 +89,7 @@ class BDS {
 				return (response.json())
 			})
 	}//_()
+	*/
 
 	static _delete(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('deleting ', url_, JSON.stringify(payload), jtoken)
@@ -112,6 +115,7 @@ class BDS {
 			})
 	}//_()
 
+	/*
 	static __get(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('fetching ', url_, payload, jtoken)
 		//convert payload to query string	
@@ -151,6 +155,7 @@ class BDS {
 		}
 		return params.join("&");
 	}
+	*/
 
 } // class
 
