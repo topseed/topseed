@@ -1,0 +1,10 @@
+
+<c-3>
+  <p>Two </p>
+  <script>
+    this.init = function(bl) {
+    	console.log('comp2()')
+    	flyd.on(function(e) { console.log(e); }, bl.observer('c1'))
+    }
+  </script>
+</c-3>

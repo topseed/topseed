@@ -66,31 +66,6 @@ class BDS { //TODO: Move this method to day 3. Come up w/ a simpler base
 		})//BDS
 	}//delete
 
-	/*
-	static __post(fetch_, ROOT_, url_, payload, jtoken ) {
-		console.log('posting ', url_, JSON.stringify(payload), jtoken)
-		return fetch_(ROOT_ + url_ , { //1: call
-				method: 'post'
-				, headers: {
-					'Content-Type': 'application/json'
-					,'X-JToken' : JSON.stringify(jtoken)
-					,'Accept':'application/json'
-					, credentials: 'same-origin' //res.cookie returned
-				}
-				, body: JSON.stringify(payload)
-			}).then(function(response) { //2: returns a promise
-				//console.log(response.headers)
-
-				if (!response.ok) {
-					console.log('not ok')
-					console.log(response)
-					throw Error(response.statusText)
-				}
-				return (response.json())
-			})
-	}//_()
-	*/
-
 	static _delete(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('deleting ', url_, JSON.stringify(payload), jtoken)
 		console.log('token:'+jtoken)
@@ -114,48 +89,6 @@ class BDS { //TODO: Move this method to day 3. Come up w/ a simpler base
 				return (response.json())
 			})
 	}//_()
-
-	/*
-	static __get(fetch_, ROOT_, url_, payload, jtoken ) {
-		console.log('fetching ', url_, payload, jtoken)
-		//convert payload to query string	
-		var url = ROOT_ + url_;
-		var queryString = BDS.objectToQueryString(payload)
-		if (queryString != '')
-			url = url + '?' +queryString 
-		console.log('url'+url)	
-
-		return fetch_(url , { //1: call
-				method: 'get'
-				, headers: {
-					'Content-Type': 'application/json'
-					,'X-JToken' : JSON.stringify(jtoken)
-					,'Accept':'application/json'
-					, credentials: 'same-origin' //res.cookie returned
-				}
-				//no body for get
-			}).then(function(response) { //2: returns a promise
-				//console.log(response.headers)
-
-				if (!response.ok) {
-					console.log('not ok')
-					console.log(response)
-					throw Error(response.statusText)
-				}
-				return (response.json())
-			})
-	}//_()
-
-	static __objectToQueryString(obj){
-		var params = [];
-		for (var p in obj) {
-			if (obj.hasOwnProperty(p)) {
-				params.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-			}
-		}
-		return params.join("&");
-	}
-	*/
 
 } // class
 

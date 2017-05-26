@@ -17,6 +17,7 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 	}
 
 
+/*
 	static _getIdParam() {
 		 var vars = [],
 			 hash;
@@ -39,6 +40,7 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 			 }
 		 }
 	 }
+*/
 
 }//class
 

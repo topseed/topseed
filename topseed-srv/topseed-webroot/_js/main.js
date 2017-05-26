@@ -9,6 +9,7 @@ loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 			,'/_js/BLX.js'
 			//,'/_js/vendor/jquery.jsForm.min.js'
 
+			,'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 
 			], { success: function(){
 				startApp()
