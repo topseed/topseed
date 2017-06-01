@@ -58,24 +58,20 @@
         	TS.loadComp($('#comps'),'/_webComp/C2.html', UIComp2Init)
         }
         
-        function UIComp1Init() {//this does not execute yet
-        	var el = customElements.get('c-1')
-        	if(!el) // if it is not defined, define:
-        		customElements.define('c-1', C1El)// loaded w/ template
-        
-        	let m = document.querySelector('c-1')
-        	console.log(_blx)
+        function UIComp1Init() {
+        	let m = defineEl('c-1', C1El)
         	m.init(_blx) // talk to it
         }
         
-        function UIComp2Init() {//this does not execute yet
-        	var el = customElements.get('c-2')
-        	if(!el) // if it is not defined, define:
-        		customElements.define('c-2', C2El)// loaded w/ template
-        
-        	let m = document.querySelector('c-2')
-        	console.log(_blx)
+        function UIComp2Init() {
+        	let m = defineEl('c-2', C2El)
         	m.init(_blx) // talk to it
+        }
+        function defineEl(elId, Klass) { //define and get element
+        	var el = customElements.get(elId)
+        	if(!el) // if it is not defined, define:
+        		customElements.define(elId, Klass)
+        	return document.querySelector(elId)
         }
         
         
