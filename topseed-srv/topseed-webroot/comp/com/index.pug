@@ -27,7 +27,7 @@ block main
 			TS.loadComp($('#comps'),'/_webComp/C2.html', UIComp2Init)
 		}
 
-		function UIComp1Init() {//this does not execute yet
+		function UIComp1Init() {
 			var el = customElements.get('c-1')
 			if(!el) // if it is not defined, define:
 				customElements.define('c-1', C1El)// loaded w/ template
@@ -37,7 +37,7 @@ block main
 			m.init(_blx) // talk to it
 		}
 
-		function UIComp2Init() {//this does not execute yet
+		function UIComp2Init() {
 			var el = customElements.get('c-2')
 			if(!el) // if it is not defined, define:
 				customElements.define('c-2', C2El)// loaded w/ template
