@@ -3,7 +3,7 @@
 var fetch = require('node-fetch')
 const BDS = require('./' + ServerConfig.WEBROOT + '/_js/BDS')
 
-const ROOT = 'http://jsonplaceholder.typicode.com/'
+let ROOT = 'http://jsonplaceholder.typicode.com/'
 class Page1BDS extends BDS {
 	doFetch() {
 		return BDS.fetch(fetch, ROOT, 'comments')

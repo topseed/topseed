@@ -1,5 +1,8 @@
 'use strict'
 console.log('BDS')
+
+let ROOT = 'http://localhost:8081/'
+
 class BDS { //TODO: Move this method to day 3. Come up w/ a simpler base
 
 	constructor(_urlSpec) {

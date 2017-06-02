@@ -14,7 +14,7 @@ const Util = require('topseed-util')
 const U = new Util() 
 // /////////////////////////////////////////////////////
 
-const ROOT = './' + ServerConfig.WEBROOT
+let ROOT = './' + ServerConfig.WEBROOT
 const SPA = 'index.html'
 const AMP = 'indexA.html'
 const INDEX = 'index.html'
