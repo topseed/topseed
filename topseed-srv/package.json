@@ -3,7 +3,7 @@
 	, "description": "Best Practices for Mobile-first Web Apps - Kitchen Sink"
 	, "repository": { "type": "git", "url" : "https://github.com/topseed/topseed.git"}
 	, "license": "MIT"
-	, "engines": { "npm": ">=4.5", "node": ">=7.6" }
+	, "engines": { "npm": ">=5", "node": ">=8" }
 	, "scripts": { "start": "node index" }
 	, "dependencies": { 
 		"express": ">=4.1"
