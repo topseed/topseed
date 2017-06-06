@@ -24,18 +24,6 @@ function getQueryString(req) {
 	return queryString;
 }
 
-function getPath(req) {
-	let path = req.path
-	if (isj.not.existy(path)) path = ''
-	path = ROOT + req.baseUrl + path
-	//console.log(path)
-
-	path = path.replace('undefined/','')
-	path = path.replace('undefined','')
-	path = endsWithSlash(path)
-	return path
-}
-
 
 function ifError(err, msg, res) {
 	if (err)  {
