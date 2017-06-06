@@ -4,9 +4,8 @@ html
 		block head 
 
 	body
-		<!--[if !IE]> -->
-			link( href='/_sass/main.css', lazyload="1")
-		<!-- <![endif]-->
+		//- move this link to _header to support IE <= 10 
+		link(rel='stylesheet', href='/_sass/main.css', lazyload="1")
 
 		include _top
 
