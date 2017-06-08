@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 
 const isj = require('is_js')
-const useragent = require('useragent')
 const fetch = require('node-fetch')
 const fs = require('fs')
 const riot = require('riot')
@@ -26,7 +25,6 @@ router.get('/dBindSSR', function (req, res) {
 	console.log('->')
 
 	try {
-		var agent = useragent.lookup(req.headers['user-agent'])
 		console.log(agent.toAgent())
 		res.header('Content-Type', 'text/html')
 
