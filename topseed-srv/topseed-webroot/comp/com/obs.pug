@@ -17,7 +17,7 @@ block main
 			console.log('pg')
 			_blx = new BLX(null) 
 
-			//create observer in 3 steps, and in our case register w/ event bus/registry
+			//create observer in 3 steps; and in our case register w/ event bus/registry
 			// in init of BLX
 			var obs = flyd.stream()
 			_blx.regObserver('t', obs)
@@ -28,7 +28,7 @@ block main
 			flyd.on(function(data) { console.log(data) }, handl)
 
 			// dispatch event in view, page or comp
-			$('#but1').on('click', function(ce){ // ce is the clicked event, what button got clicked
+			$('#but1').on('click', function(ce){ // ce is the clicked event, what  got clicked
 				//console.log('clicked', ce)
 				var data = 'get form data or anything'
 				var disp = _blx.observer('t')
