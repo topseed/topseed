@@ -36,8 +36,8 @@ function ifError(err, msg, res) {
 
 
 function serveAmp(req) { 
-	if (req.socket.localPort == ServerConfig.WWW_PORT) return true
-	if (req.socket.localPort == ServerConfig.AMP_PORT) return false
+	if (req.socket.localPort == ServerConfig.WWW_PORT) return false
+	if (req.socket.localPort == ServerConfig.AMP_PORT) return true
 
 	if (req.subdomains.indexOf(ServerConfig.WWW_SUBDOMAIN) > -1)  return ServerConfig.AMP_IS_DEFAULT
 	if (req.subdomains.indexOf(ServerConfig.AMP_SUBDOMAIN) > -1)  return true
@@ -62,9 +62,12 @@ exports.decide = function (req, res, next) {
 		try {
 			const pgPath = U.getPath(ROOT,req)
 			const returnAmp = serveAmp(req)
-			console.log('requested:'+pgPath + ' ^ serve amp:' + returnAmp)
+			//console.log('requested:'+pgPath + ' ^ serve amp:' + returnAmp)
 			const requestedResource = pgPath + (returnAmp?AMP:SPA);
 			const fallbackResource = pgPath + (returnAmp?SPA:AMP);
+
+			console.log('requestedResource:' + requestedResource)
+			
 
 			res.header('Content-Type', 'text/html')
 			U.cacheQuick(res)

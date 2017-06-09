@@ -1,0 +1,32 @@
+extends  ../../_part/admin/_baseShell
+
+block head
+	title Linkblog Admin
+	include ../../_part/admin/_header
+	//- ff style appears to get lost after navigation. Loading it in main.js (here: admin.js) seems to fix the problem
+	//-link(rel='stylesheet', href='https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')
+
+block main
+	.mui-container-fluid
+		h2.mui--pull-left Linkblog Item List
+		h2.mui--pull-right
+			a.mui-btn.mui-btn--raised(href='./detail.html') Add	Item    
+		span.mui--clearfix
+
+		table#grid.display(width='100%', cellspacing='0')
+		p
+
+	script.
+		//TODO: make this into one TS.loadOnAppReady
+		TS.onAppReady(function(){TS.loadNX('/admin/linkblog/LinkblogBusiness.js', UIinit)}) 
+		//TS.onAppReady(UIinit) 
+		
+		function UIinit() {
+			const sb = LinkblogBusiness()
+			sb.list('#grid') //any useful parameter, here it's the div ID
+		}
+
+		
+
+block footer
+	include ../../_part/_footer

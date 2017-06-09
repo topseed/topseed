@@ -4,6 +4,24 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 		this._ds = ds
 		this._streams= {} 	//loosely coupled
 		this.regObserver('TT', TT.smoothPg)//page stream
+		this._redirectFoo = TT.loadPg // for SSR it would be different
+	}
+
+	reg(key) {
+		this._streams[key] = flyd.stream()
+	}
+
+	on(key, func)
+	{
+		if (!this._streams[key])
+			this.reg(key)
+		flyd.on(func, this._streams[key]) //bind	
+	}
+
+	call(key, data) {
+		if (!this._streams[key])
+			this.reg(key)
+		this._streams[key](data) //exec
 	}
 
 	regObserver(key, stm)	{
@@ -27,9 +45,13 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 			 if (hash[0]=='id') return hash[1];
 		 }
 		 return null;
+	 } */
+
+	 _redirect(url) { // go to another page
+		this._redirectFoo(url)
 	 }
 
-	 static _convert(data, rules){ // needs a better name
+	 static convert(data, rules){ // needs a better name
 		 for (name in rules)
 		 {
 			 if (data[name])
@@ -40,7 +62,6 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 			 }
 		 }
 	 }
-*/
 
 }//class
 

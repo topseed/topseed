@@ -7,18 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/loadjs.min.js"></script>
-    <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-2.5.js"></script>
-    <script src="/_js/main.js" async=""></script><!--[if IE]> -->
-    <link rel="stylesheet" href="/_sass/main.css"><!-- <![endif]-->
+    <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-2.10.js"></script>
+    <script src="/_js/main.js" async=""></script>
     <meta name="description" content="">
   </head>
-  <body><!--[if !IE]> -->
-    <link href="/_sass/main.css" lazyload="1"><!-- <![endif]-->
+  <body>
+    <link rel="stylesheet" href="/_sass/main.css" lazyload="1">
     <div id="appbar">
       <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade;</span></div>
       <ul id="appbar--menu">
         <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two		</a></li>
+        <li><a href="/page/two/">Two</a></li>
+        <li><a href="/admin/home/#">Admin				</a></li>
       </ul>
     </div>
     <div id="sidedrawer" onclick="closeDrawer()">
@@ -27,6 +27,7 @@
       <ul id="sidedrawer--menu">
         <li><a href="/page/one/">One</a></li>
         <li><a href="/page/two/">Two</a></li>
+        <li><a href="/admin/home/#">Admin</a></li>
       </ul>
     </div>
     <script>

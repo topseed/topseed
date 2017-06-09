@@ -24,8 +24,13 @@ block main
 
 			// create listener function to handdle the event
 			// in BLX
+			//ff is optional when using short versions below
 			var handl = _blx.observer('t')
 			flyd.on(function(data) { console.log(data) }, handl)
+			
+			//short version
+			//var func = function(data){console.log(data)}
+			//_blx.on('t', func)
 
 			// dispatch event in view, page or comp
 			$('#but1').on('click', function(ce){ // ce is the clicked event, what  got clicked
@@ -34,6 +39,12 @@ block main
 				var disp = _blx.observer('t')
 				disp(data) //emit
 			})
+
+			//short version
+			//$('#but1').on('click', function(ce){
+			//	var data = 'get form data or anything'
+			//	_blx.emit('t', data)
+			//})	
 
 		}
 

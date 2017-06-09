@@ -1,0 +1,51 @@
+extends  ../../_part/admin/_baseShell
+
+block head
+    title Linkblog Admin
+    include ../../_part/admin/_header
+
+block main
+    .mui-container-fluid
+        form#form1.mui-form(onsubmit='return false')
+            //-input(name='data.pk', type='hidden')
+            
+            h2.mui--pull-left Add Linkblog Item
+            h2.mui--pull-right
+                button.mui-btn.mui-btn--raised(type='submit') Save
+                a.mui-btn.mui-btn--raised(href='./') Cancel
+            span.mui--clearfix
+           
+            .mui-textfield
+                input(name='data.url', type='text', required='')
+                label URL
+            .mui-textfield
+                input(name='data.head_line', type='text', required='')
+                label Description
+            .mui-textfield
+                input(name='data.dateStr', type='text', required='')
+                label Date
+ 
+    script.
+        TS.onAppReady(function(){TS.loadNX('/admin/linkblog/LinkblogBusiness.js', UIinit)}) 
+
+        function UIinit() {
+
+            var sb = LinkblogBusiness()
+
+            //blank form with defaults
+            sb.detail('#form1') 
+
+            //version without observer
+            //$('#form1').submit({auth: Cookies.get('auth')}, sb.save); 
+
+            //emit 'save' command on submit            
+            $('#form1').on('submit', function(e){
+                e.data = {auth: Cookies.get('auth')}
+                sb.call('save', e)
+            })
+            //register listener to 'save' command. this could be automatic on constructor
+            sb.on('save', sb.save)
+        }
+
+block footer
+    include ../../_part/_footer

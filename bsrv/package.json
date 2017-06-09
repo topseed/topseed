@@ -1,0 +1,25 @@
+{
+	"name": "topseed-firebase-api-example",
+	"version": "1.0.1",
+	"description": "Best Practices for Mobile-first Web Apps ",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/topseed/topseed.git"
+	},
+	"license": "MIT",
+	"engines": {
+		"npm": ">=5",
+		"node": ">=8"
+	},
+	"scripts": {
+		"start": "node index"
+	},
+	"dependencies": {
+		"express": ">=4.1",
+		"body-parser": "^1.17.1",
+		"compression": "^1.6.2",
+		"cors": "^2.8.3",
+		"topseed-util": "^1.2.1",
+		"firebase-admin": "^4.2.1"
+	}
+}

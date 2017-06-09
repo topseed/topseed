@@ -1,0 +1,23 @@
+doctype html
+html
+	head
+		block head
+
+	body
+		//- move this link to _header to support IE <= 10 
+		link(rel='stylesheet', href='/_sass/admin.css', lazyload="1")
+
+		//- list all comps. In production these can be loaded .js files
+		//-script(type='riot/tag', src='/_uiComps/c-1.html')
+		//-script(type='riot/tag', src='/_uiComps/c-2.html')
+
+		//-script(type='riot/tag', src='/_uiComps/d-bind.tag')
+		//-script(type='riot/tag', src='/_uiComps/d-table.html')
+		//-script(type='riot/tag', src='/_uiComps/star-rating.html')
+
+		include _top
+
+		#content-wrapper
+			block main
+
+		block footer

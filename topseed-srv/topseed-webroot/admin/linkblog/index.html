@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>One</title>
+    <title>Linkblog Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -9,26 +9,24 @@
     <script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/loadjs.min.js"></script>
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-2.10.js"></script>
-    <script src="/_js/main.js" async=""></script>
+    <script src="/_js/admin.js" async=""></script>
     <meta name="description" content="">
   </head>
   <body>
-    <link rel="stylesheet" href="/_sass/main.css" lazyload="1">
+    <link rel="stylesheet" href="/_sass/admin.css" lazyload="1">
     <div id="appbar">
-      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade;</span></div>
+      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
       <ul id="appbar--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/#">Admin				</a></li>
+        <li><a href="/admin/linkblog/">Linkblog</a></li>
+        <li><a href="/page/one/#">Logout			</a></li>
       </ul>
     </div>
     <div id="sidedrawer" onclick="closeDrawer()">
-      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade;</div>
+      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
       <div class="mui-divider"></div>
       <ul id="sidedrawer--menu">
-        <li><a href="/page/one/">One</a></li>
-        <li><a href="/page/two/">Two</a></li>
-        <li><a href="/admin/home/#">Admin</a></li>
+        <li><a href="/admin/linkblog/">Linkblog</a></li>
+        <li><a href="/page/one/#">Logout</a></li>
       </ul>
     </div>
     <script>
@@ -37,19 +35,26 @@
       }
       function closeDrawer(e) {
       	$('#sidedrawer').css('transform', 'translateX(0px)')
-      }			
+      }	
     </script>
     <div id="content-wrapper">
       <div class="mui-container-fluid">
-        <p></p><p>Page One! </p>
-
+        <h2 class="mui--pull-left">Linkblog Item List</h2>
+        <h2 class="mui--pull-right"><a class="mui-btn mui-btn--raised" href="./detail.html">Add	Item    </a></h2><span class="mui--clearfix"></span>
+        <table class="display" id="grid" width="100%" cellspacing="0"></table>
+        <p></p>
       </div>
       <script>
-        console.log('in page')
-        TS.onAppReady(UIinit) 
+        //TODO: make this into one TS.loadOnAppReady
+        TS.onAppReady(function(){TS.loadNX('/admin/linkblog/LinkblogBusiness.js', UIinit)}) 
+        //TS.onAppReady(UIinit) 
+        
         function UIinit() {
-        	console.log('Page One onAppReady')
+        	const sb = LinkblogBusiness()
+        	sb.list('#grid') //any useful parameter, here it's the div ID
         }
+        
+        
         
       </script>
     </div>

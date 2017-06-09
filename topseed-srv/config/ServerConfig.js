@@ -6,5 +6,5 @@ class ServerConfig {
 	get AMP_PORT() {return 8092}
 	get WEB_SUBDOMAIN() {return 'www'}
 	get AMP_SUBDOMAIN() {return 'm'} 
-	get AMP_IS_DEFAULT() {return true}
+	get AMP_IS_DEFAULT() {return false}
 } module.exports = ServerConfig
