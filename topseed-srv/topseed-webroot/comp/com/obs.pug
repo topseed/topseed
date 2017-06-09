@@ -19,7 +19,7 @@ block main
 
 			//create observer in 3 steps; and in our case register w/ event bus/registry
 			// in init of BLX
-			var obs = flyd.stream()
+			var obs = flyd.stream() //make new stram
 			_blx.regObserver('t', obs)
 
 			// create listener function to handdle the event
