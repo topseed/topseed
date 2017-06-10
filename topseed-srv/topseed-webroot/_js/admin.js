@@ -5,8 +5,8 @@ loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 		loadjs([
 			//frp:
 			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
-			,'/_js/BLX.js'
-			,'/_js/BDS.js'
+			,'/_js/BLX2.js'
+			,'/_js/BDS2.js'
 			,'//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js'
 			,'//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css'
 			//,'//cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'

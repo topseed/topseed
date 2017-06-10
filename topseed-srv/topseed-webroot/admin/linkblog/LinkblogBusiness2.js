@@ -1,28 +1,28 @@
 function LinkblogBusiness() {// 'closure|module'-iso.
 
 	//when loading from static file:
-	//const urlSpec = {root:'http://localhost:8091', selectList: '/linkblog/dummy.json'}
+	const urlSpec = {root:'http://localhost:8091', selectList: '/linkblog/dummy.json'}
 	//when loading from API:
-	const urlSpec = {root:'http://localhost:8081', selectList: '/linkblog', update: '/linkblog'}
+	//const urlSpec = {root:'http://localhost:8081', selectList: '/linkblog', update: '/linkblog'}
 
-	//Data Access Object 'class', IE11 compatible, see LinkblogBusiness2 for future
-	var LinkblogDao = BDS.extend({ /* additional functions here */}) 
+	//Data Access Object class
+	class LinkblogDao extends BDS { /* additional functions here */} 
 	//urlSpec is passed in constructor; BDS has generic select and insert
 
-	//Business logic and message bus for page, IE11 compatible, see LinkblogBusiness2 for future
-	var SimpleBusiness = BLX.extend({
+	//Business logic and message bus for page
+	class SimpleBusiness extends BLX {
 
         //We use (separate instances of) LinkblogBusiness across the Linkblog Admin module.
 		//Different pages call different functions.
 
 		//set up the detail/add page and form
-		detail: function(formId) {
+		detail(formId) {
 			var dateStr = moment().format('MM/DD/YYYY') //today
 			$(formId).jsForm({data: {dateStr: dateStr}, prefix: 'data'})
 		}	
 
 		//save what was entered on the detail/add page from
-		, save: function(e) {
+		save(e) {
 			
 			console.log('LinkblogBusiness save form.target '+e.currentTarget)
 			
@@ -34,7 +34,7 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 				data.ts = moment(data.dateStr, 'MM/DD/YYYY').valueOf();
 			}
 			//Converter, use when display format does not match DB format
-			BLX._convert(formData, {dateStr: dateStrOut /*,param:func*/}) 
+			BLX.convert(formData, {dateStr: dateStrOut /*,param:func*/}) 
 			
 			const _updatePromise = sb.linkblogDao.update(formData, e.data.auth)
 			_updatePromise.then(function(val) {
@@ -45,7 +45,7 @@ function LinkblogBusiness() {// 'closure|module'-iso.
             
 		}
 
-		, list: function(listId) {
+		list(listId) {
 
 			console.log('LinkblogBusiness list');
 			
@@ -58,24 +58,20 @@ function LinkblogBusiness() {// 'closure|module'-iso.
             this.renderList(listId, _listPromise)
 		}
 
-		, renderList: function(listId, _listPromise) {
+       renderList(listId, _listPromise) {
 
 		   console.log('LinkblogBusiness renderList');
 
            return _listPromise.then(function(values) {
 	
 					//Build DataTable 'component'
-					console.log('list 1')
 					
 					//Column definitions
 					var columns = [
-						{title:'URL'}
+						{title:'URL', defaultContent:''}
 						,{title:'Description', data:'head_line', defaultContent:''}
-						,{title:'Creation Date', data:'dateStr', sClass:'dateCol'}
+						,{title:'Creation Date', data:'dateStr', sClass:'dateCol', defaultContent:''}
 					]
-
-					console.log('list 2')
-					
 
 					//Render first column as link	
 					columns[0].render = function(data, type, row, meta) { return doLink(row) }
@@ -84,27 +80,30 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 						return '<a href="'+row.url+'" target="_blank">'+row.url +'</a>'
 					}
 
+					values = [
+    {
+        "dateStr": "06/07/2017",
+        "head_line": "Topseed Hello World",
+        "url": "https://github.com/topseed/topseed-helloworld"
+    }
+]
+
+
 					//We know that DataTable has its own json loader, but we want to use our own API calls
 					$(listId).DataTable({	
 						columns: columns,
 						data: values
 					})
 
-					console.log('list 4')
-					
-
 					//Center date column
 					$(listId+' td.dateCol').css('text-align', 'center') 
-
-					console.log('list 5')
-					
 
                 }).catch(function(error) {
 			  		console.log('LinkblogBusiness.selectList error: '+error.message);
 				}
             );
         }
-	})//'class'
+	}//class
 
 	//Instantiate Business
 	const sb = new SimpleBusiness()

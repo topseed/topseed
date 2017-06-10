@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/loadjs.min.js"></script>
-    <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-2.11.1.js"></script>
+    <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-3.1.2.js"></script>
     <script src="/_js/admin.js" async=""></script>
     <meta name="description" content="">
   </head>
@@ -45,7 +45,9 @@
         <p></p>
       </div>
       <script>
-        TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
+        //TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness2.js', UIinit) 
+        TS.onAppReady(function(){TS.loadNX('/admin/linkblog/LinkblogBusiness2.js', UIinit)}) 
+        
         //TS.onAppReady(UIinit) //for basic pages without business logic
         
         function UIinit() {

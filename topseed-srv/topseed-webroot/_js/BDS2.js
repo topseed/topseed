@@ -1,24 +1,24 @@
 'use strict'
 console.log('BDS')
-var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 
-	init: function(_urlSpec) {
-		console.log('BDS init')
+class BDS { 
+
+	constructor(_urlSpec) {
 		this.urlSpec = _urlSpec
 		this.fetch_ = window.fetch // Bsr - browser side
 	}
 	
-	, selectList: function(data, token) {
+	selectList(data, token) {
 		return BDS._get(window.fetch, this.urlSpec.root, this.urlSpec.selectList, data, token)
 			.then(function(values) { 
-				console.log(JSON.stringify(values))
+				//console.log(JSON.stringify(values))
 				return values
 		}).catch(function(error) {
 			console.log('selectList error: '+error.message);
 		})//BDS
 	}//selectList
 
-	, update: function(data, token) { //insertOrUpdate
+	update(data, token) { //insertOrUpdate
 		if (!this.urlSpec.update) throw 'urlspec.update not defined'
 		return BDS._post(window.fetch, this.urlSpec.root, this.urlSpec.update, data, token)
 			.then(function(value) { 
@@ -29,11 +29,11 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 		})//BDS
 	}//update
 
-	, _get: function(fetch_, ROOT_, url_, payload, jtoken ) {
+	static _get(fetch_, ROOT_, url_, payload, jtoken ) {
 		console.log('fetching ', url_, payload, jtoken)
 		//convert payload to query string	
 		var url = ROOT_ + url_;
-		var queryString = BDS._objectToQueryString(payload)
+		var queryString = BDS.objectToQueryString(payload)
 		if (queryString != '')
 			url = url + '?' +queryString 
 		//console.log('url'+url)	
@@ -48,7 +48,7 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 				}
 				//no body for get
 			}).then(function(response) { //2: returns a promise
-				console.log(response.headers)
+				//console.log(response.headers)
 
 				if (!response.ok) {
 					console.log('not ok')
@@ -59,7 +59,7 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 			})
 	}//_()
 
-	, _objectToQueryString: function(obj){ //static
+	static objectToQueryString(obj){
 		var params = [];
 		for (var p in obj) {
 			if (obj.hasOwnProperty(p)) {
@@ -69,7 +69,7 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 		return params.join("&");
 	}
 
-	, _post: function(fetch_,ROOT_, url_, data_) { //static
+	static _post(fetch_,ROOT_, url_, data_) {
 		//var xjt_ = Cookies.get(BDS.XJT)
 		//var xb_  = Cookies.get(BDS.XBASIC)
 		console.log('fetching ', url_)
@@ -90,7 +90,9 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 				return (response.json())
 			})
 	}//_()
-}) //'class'
+
+
+} // class
 
 // for node:
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
