@@ -68,8 +68,8 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 					
 					//Column definitions
 					var columns = [
-						{title:'URL', defaultContent:''}
-						,{title:'Description', data:'head_line', defaultContent:''}
+						{title:'URL', }
+						,{title:'Description', data:'head_line'}
 						,{title:'Creation Date', data:'dateStr', sClass:'dateCol', defaultContent:''}
 					]
 
@@ -79,15 +79,6 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 					function doLink(row) {
 						return '<a href="'+row.url+'" target="_blank">'+row.url +'</a>'
 					}
-
-					values = [
-    {
-        "dateStr": "06/07/2017",
-        "head_line": "Topseed Hello World",
-        "url": "https://github.com/topseed/topseed-helloworld"
-    }
-]
-
 
 					//We know that DataTable has its own json loader, but we want to use our own API calls
 					$(listId).DataTable({	
@@ -99,6 +90,7 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 					$(listId+' td.dateCol').css('text-align', 'center') 
 
                 }).catch(function(error) {
+					console.log(error)
 			  		console.log('LinkblogBusiness.selectList error: '+error.message);
 				}
             );

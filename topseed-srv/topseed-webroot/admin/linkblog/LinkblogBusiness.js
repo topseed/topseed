@@ -1,9 +1,9 @@
 function LinkblogBusiness() {// 'closure|module'-iso.
 
 	//when loading from static file:
-	//const urlSpec = {root:'http://localhost:8091', selectList: '/linkblog/dummy.json'}
+	const urlSpec = {root:'http://localhost:8091', selectList: '/linkblog/dummy.json'}
 	//when loading from API:
-	const urlSpec = {root:'http://localhost:8081', selectList: '/linkblog', update: '/linkblog'}
+	//const urlSpec = {root:'http://localhost:8081', selectList: '/linkblog', update: '/linkblog'}
 
 	//Data Access Object 'class', IE11 compatible, see LinkblogBusiness2 for future
 	var LinkblogDao = BDS.extend({ /* additional functions here */}) 
@@ -25,6 +25,11 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 		, save: function(e) {
 			
 			console.log('LinkblogBusiness save form.target '+e.currentTarget)
+
+			if (!urlSpec.update)
+			{
+				alert('Configure data loading from API to enable saving data.')
+			}
 			
 			//e.currentTarget refers to form element on a form.submit event
 			const formData = $(e.currentTarget).jsForm('get') //form data
@@ -64,8 +69,7 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 
            return _listPromise.then(function(values) {
 	
-					//Build DataTable 'component'
-					console.log('list 1')
+					//Build DataTables.net 'component'
 					
 					//Column definitions
 					var columns = [
@@ -74,9 +78,6 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 						,{title:'Creation Date', data:'dateStr', sClass:'dateCol'}
 					]
 
-					console.log('list 2')
-					
-
 					//Render first column as link	
 					columns[0].render = function(data, type, row, meta) { return doLink(row) }
 					//Define the link output	
@@ -84,20 +85,14 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 						return '<a href="'+row.url+'" target="_blank">'+row.url +'</a>'
 					}
 
-					//We know that DataTable has its own json loader, but we want to use our own API calls
+					//DataTable has its own json loader, but we want to use our own API calls
 					$(listId).DataTable({	
 						columns: columns,
 						data: values
 					})
 
-					console.log('list 4')
-					
-
 					//Center date column
 					$(listId+' td.dateCol').css('text-align', 'center') 
-
-					console.log('list 5')
-					
 
                 }).catch(function(error) {
 			  		console.log('LinkblogBusiness.selectList error: '+error.message);
