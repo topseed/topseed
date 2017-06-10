@@ -10,23 +10,20 @@ block main
 	.mui-container-fluid
 		h2.mui--pull-left Linkblog Item List
 		h2.mui--pull-right
-			a.mui-btn.mui-btn--raised(href='./detail.html') Add	Item    
+			a#addButton.mui-btn.mui-btn--raised.mui--hide(href='./detail.html') Add Item    
 		span.mui--clearfix
 
 		table#grid.display(width='100%', cellspacing='0')
 		p
 
 	script.
-		//TODO: make this into one TS.loadOnAppReady
-		TS.onAppReady(function(){TS.loadNX('/admin/linkblog/LinkblogBusiness.js', UIinit)}) 
-		//TS.onAppReady(UIinit) 
+		TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
+		//TS.onAppReady(UIinit) //for basic pages without business logic
 		
 		function UIinit() {
 			const sb = LinkblogBusiness()
-			sb.list('#grid') //any useful parameter, here it's the div ID
+			sb.list('#grid') //Pass any useful parameter, here it's the div ID
 		}
-
-		
 
 block footer
 	include ../../_part/_footer

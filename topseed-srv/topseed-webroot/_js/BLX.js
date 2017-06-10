@@ -47,7 +47,7 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 		 return null;
 	 } */
 
-	 _redirect(url) { // go to another page
+	 redirect(url) { //Go to another page
 		this._redirectFoo(url)
 	 }
 
