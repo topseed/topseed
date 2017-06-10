@@ -5,11 +5,11 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 	//when loading from API:
 	//const urlSpec = {root:'http://localhost:8081', selectList: '/linkblog', update: '/linkblog'}
 
-	//Data Access Object
-	//urlSpec is passed in constructor; BDS has generic select and insert
+	//Data Access Object class
 	class LinkblogDao extends BDS { /* additional functions here */} 
+	//urlSpec is passed in constructor; BDS has generic select and insert
 
-	//Business logic and message 'bus' for page
+	//Business logic and message bus for page
 	class SimpleBusiness extends BLX {
 
         //We use (separate instances of) LinkblogBusiness across the Linkblog Admin module.
@@ -29,17 +29,20 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 			//e.currentTarget refers to form element on a form.submit event
 			const formData = $(e.currentTarget).jsForm('get') //form data
 
-			//convert dateStr to timestamp
+			//Function to obtain timestamp from  dateStr
 			function dateStrOut(data) {
 				data.ts = moment(data.dateStr, 'MM/DD/YYYY').valueOf();
 			}
-			BLX.convert(formData, {dateStr: dateStrOut}) //add more pairs with ', '
+			//Converter, use when display format does not match DB format
+			BLX.convert(formData, {dateStr: dateStrOut /*,param:func*/}) 
 			
 			const _updatePromise = sb.linkblogDao.update(formData, e.data.auth)
 			_updatePromise.then(function(val) {
-				sb.redirect('/admin/linkblog/') 
+				sb.redirect('/admin/linkblog/') //Return to list
+			}).catch(function(error) {
+				alert('update error: '+error.message); //Remain on page
 			})
-            //TODO: remain on page on error, display error
+            
 		}
 
 		list(listId) {

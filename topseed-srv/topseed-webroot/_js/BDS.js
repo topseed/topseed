@@ -19,6 +19,7 @@ class BDS {
 	}//selectList
 
 	update(data, token) { //insertOrUpdate
+		if (!this.urlSpec.update) throw 'urlspec.update not defined'
 		return BDS._post(window.fetch, this.urlSpec.root, this.urlSpec.update, data, token)
 			.then(function(value) { 
 				console.log(JSON.stringify(value))

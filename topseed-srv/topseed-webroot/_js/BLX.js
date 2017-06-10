@@ -1,4 +1,4 @@
-class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and such. base page services / 'middle layer'
+class BLX	{ //testable 'middle layer' Page Business class for component communication, ds/fetch, FRP and such. 
 
 	constructor(ds) {
 		this._ds = ds
@@ -51,7 +51,7 @@ class BLX	{ //testable pg services class for pg component com, ds/fetch, FRP and
 		this._redirectFoo(url)
 	 }
 
-	 static convert(data, rules){ // needs a better name
+	 static convert(data, rules){ //Converter, use when display format does not match DB format
 		 for (name in rules)
 		 {
 			 if (data[name])
