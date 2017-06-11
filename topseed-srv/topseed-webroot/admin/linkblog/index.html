@@ -45,10 +45,7 @@
         <p></p>
       </div>
       <script>
-        //TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness2.js', UIinit) 
-        TS.onAppReady(function(){TS.loadNX('/admin/linkblog/LinkblogBusiness.js', UIinit)}) 
-        
-        //TS.onAppReady(UIinit) //for basic pages without business logic
+        TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
         
         function UIinit() {
         	const sb = LinkblogBusiness()

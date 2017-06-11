@@ -53,14 +53,10 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 		, list: function(listId) {
 
 			console.log('LinkblogBusiness list');
-			
-			//Show the 'Add' button when using live data (insert enabled)
-			if (urlSpec.update)
-				$('#addButton').removeClass('mui--hide') //jQuery
 
 			//Query for the list data		
 			const _listPromise = sb.linkblogDao.selectList()  
-            this.renderList(listId, _listPromise)
+            sb.renderList(listId, _listPromise) //or this.
 		}
 
 		, renderList: function(listId, _listPromise) {
@@ -103,7 +99,7 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 
 	//Instantiate Business
 	const sb = new SimpleBusiness()
-	sb.linkblogDao = new LinkblogDao(urlSpec); //Add DAO to Business
+	sb.linkblogDao = new LinkblogDao(urlSpec) //Add DAO to Business
 	
 	return sb //Return instance to page 
 }

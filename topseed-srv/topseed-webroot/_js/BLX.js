@@ -51,7 +51,7 @@ var BLX = Class.extend({ //IE11-compatible testable 'middle layer' Page Business
 		this._redirectFoo(url)
 	 }
 
-	 , convert: function(data, rules){ //static. Converter, use when display format does not match DB format
+	 , _convert: function(data, rules){ //static. Converter, use when display format does not match DB format
 		 for (name in rules)
 		 {
 			 if (data[name])

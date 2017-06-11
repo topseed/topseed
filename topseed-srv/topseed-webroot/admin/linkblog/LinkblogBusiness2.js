@@ -99,7 +99,7 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 
 	//Instantiate Business
 	const sb = new SimpleBusiness()
-	sb.linkblogDao = new LinkblogDao(urlSpec); //Add DAO to Business
+	sb.linkblogDao = new LinkblogDao(urlSpec) //Add DAO to Business
 	
 	return sb //Return instance to page 
 }
