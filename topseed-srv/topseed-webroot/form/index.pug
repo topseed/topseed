@@ -1,0 +1,33 @@
+extends  ../_part/_baseShell
+
+block head
+	include ../_part/_header
+
+block main
+	.mui-container-fluid
+		p
+			br
+		form.mui-form#frm1(onsubmit='return false')
+			legend Add link
+			.mui-textfield
+				input(type='text', name='data.url')
+				label Url
+			.mui-textfield
+				input(type='text', name='data.head_line')
+				label Headline
+			button.mui-btn.mui-btn--raised(type='submit')#add Add
+
+	script.
+		TS.onAppReady(UIinit)
+		function UIinit() {
+			console.log('x')
+
+			$('#add').on('click', function(){
+				const obj = $('#frm1').jsForm('get') 
+				console.log(JSON.stringify( obj))
+			})  // ad inited from here
+
+		}//()
+	
+block footer
+	include ../_part/_footer
