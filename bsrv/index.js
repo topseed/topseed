@@ -17,6 +17,6 @@ server.use('/linkblog', require('./scode/route/LinkblogService'))
 
 //###################### start the server
 server.listen(ApiConfig.PORT, '0.0.0.0', function() {
-	console.log('App listening at http://localhost:'+ApiConfig.PORT)
+	console.log('API server listening at http://localhost:'+ApiConfig.PORT)
 	console.log('Press Ctrl+C to quit.')
 })
