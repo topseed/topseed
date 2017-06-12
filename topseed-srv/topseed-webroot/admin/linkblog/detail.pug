@@ -41,7 +41,7 @@ block main
             /* version with observer: 'save' command on submit            
             $('#form1').on('submit', function(e){
                 e.data = {auth: Cookies.get('auth')}
-                sb.call('save', e)
+                sb.emit('save', e)
             })
             //register observer to 'save' command. 
             sb.on('save', sb.save) */

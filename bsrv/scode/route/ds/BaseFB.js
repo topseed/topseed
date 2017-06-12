@@ -1,6 +1,7 @@
 'use strict'
-const firebase = require("firebase-admin");
-const serviceAccount = require("./serviceKey.json");
+const firebase = require("firebase-admin")
+//const serviceAccount = require("./serviceKey.json")
+const serviceAccount = require("./mydb1-7b77e-firebase-adminsdk-8swi6-f46e592e60.json")
 const fb = firebase.initializeApp({
 	credential: firebase.credential.cert(serviceAccount),
 	databaseURL: ApiConfig.DB_URL

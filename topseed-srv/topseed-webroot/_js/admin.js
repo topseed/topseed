@@ -12,9 +12,9 @@ loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 			//,'//cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'
 			//,'//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js'
 			,'//cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js'
+			,'/_js/vendor/jquery.jsForm.min.js'
 			,'//cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.7/dialog-polyfill.min.js' //login dialog
 
-			,'/_js/vendor/jquery.jsForm.min.js',
 
 			], { success: function(){
 				console.log('loaded admin/data tables')

@@ -1,9 +1,9 @@
 function LinkblogBusiness() {// 'closure|module'-iso.
 
 	//when loading from static file:
-	const urlSpec = {root:'http://localhost:8091', selectList: '/linkblog/dummy.json'}
+	//const urlSpec = {root:'http://localhost:8091', selectList: '/linkblog/dummy.json'}
 	//when loading from API:
-	//const urlSpec = {root:'http://localhost:8081', selectList: '/linkblog', update: '/linkblog'}
+	const urlSpec = {root:'http://localhost:8081', selectList: '/linkblog', update: '/linkblog'}
 
 	//Data Access Object 'class', IE11 compatible, see LinkblogBusiness2 for future
 	var LinkblogDao = BDS.extend({ /* additional functions here */}) 
@@ -35,15 +35,15 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 			const formData = $(e.currentTarget).jsForm('get') //form data
 
 			//Function to obtain timestamp from  dateStr
-			function dateStrOut(data) {
-				data.ts = moment(data.dateStr, 'MM/DD/YYYY').valueOf();
-			}
+			//function dateStrOut(data) {
+			//	data.ts = moment(data.dateStr, 'MM/DD/YYYY').valueOf();
+			//}
 			//Converter, use when display format does not match DB format
-			BLX._convert(formData, {dateStr: dateStrOut /*,param:func*/}) 
+			//BLX._convert(formData, {dateStr: dateStrOut /*,param:func*/})
 			
 			const _updatePromise = sb.linkblogDao.update(formData, e.data.auth)
 			_updatePromise.then(function(val) {
-				sb.redirect('/admin/linkblog/') //Return to list
+				sb.redirect('/admin/linkblog/'); //Return to list
 			}).catch(function(error) {
 				alert('update error: '+error.message); //Remain on page
 			})

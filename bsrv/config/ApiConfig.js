@@ -2,7 +2,7 @@
 
 class ApiConfig {
     get PORT() { return 8081 }
-	get DB_URL() { return 'https://topseed0-d5e0b.firebaseio.com' }
+	get DB_URL() { return 'https://mydb1-7b77e.firebaseio.com' }
 	get WEBROOT() { return 'webroot'}
 	get REQUIRE_AUTH() { return { linkblog: [/*'read', 'write'*/],
 								  other: ['read','write']} } 
