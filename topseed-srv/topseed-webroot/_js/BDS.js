@@ -13,9 +13,7 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 			.then(function(values) { 
 				console.log(JSON.stringify(values))
 				return values
-		}).catch(function(error) {
-			console.log('selectList error: '+error.message);
-		})//BDS
+		})
 	}//selectList
 
 	, update: function(data, token) { //insertOrUpdate
@@ -24,9 +22,7 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 			.then(function(value) { 
 				console.log(JSON.stringify(value))
 				return value
-		}).catch(function(error) {
-			console.log('update error: '+error.message);
-		})//BDS
+		})
 	}//update
 
 	, _get: function(fetch_, ROOT_, url_, payload, jtoken ) {
@@ -81,7 +77,10 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 				}
 				, body: JSON.stringify(data_)
 			}).then(function(response) { //2 returns a promise
-				//console.log(response.headers)
+				
+				console.log('received post response,headers:')
+
+				console.log(response.headers)
 
 				if (!response.ok) {
 					console.log('not ok')

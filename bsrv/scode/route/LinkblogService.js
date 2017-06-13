@@ -12,16 +12,28 @@ const TokenAuth = require('./ds/TokenAuth')
 //###################### 
 router.get('/', function (req, res) {	
 	
-	/*if (ApiConfig.REQUIRE_AUTH.linkblog.includes('read')) {
-
+	if (ApiConfig.REQUIRE_AUTH.linkblog.includes('read')) {
+		
 		const jt = TokenAuth.getJToken(req)
-		if( !TokenAuth.isTokenValid(jt)) {
-			console.log('Auth failed on select')
+		
+		//Check if token is valid
+		TokenAuth.isTokenValidPromise(jt).then(function (result){
+			handleGet(req, res) //Valid, proceed
+		}).catch(function (err){
+			console.log('Auth failed on read')
 			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+			console.log('Returned 403')
 			return
-		}
-	}*/
+		})
+	}
+	else {
+		handleGet(req, res)
+	}
 
+	
+})
+
+function handleGet(req, res) {
 	if (req.query.pk != null)
 	{
 		console.log('LinkblogService select')
@@ -42,29 +54,33 @@ router.get('/', function (req, res) {
 			U.err(er,res)
 		})//c
 	}
-})
+}
 
 router.post('/', function (req, res) {
 
     console.log('LinkblogService insert via post')
 
 	if (ApiConfig.REQUIRE_AUTH.linkblog.includes('write')) {
+		
 		const jt = TokenAuth.getJToken(req)
 		
+		//Check if token is valid
 		TokenAuth.isTokenValidPromise(jt).then(function (result){
-			//valid, let processing continue
+			handlePost(req, res) //Valid, proceed
 		}).catch(function (err){
 			console.log('Auth failed on write')
 			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+			console.log('Returned 403')
 			return
 		})
-		/*if (!TokenAuth.isTokenValid(jt)) {
-			console.log('Auth failed on update')
-			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
-			return
-		}*/
 	}
+	else {
+		handlePost(req, res)
+	}
+	
+})
 
+function handlePost(req, res) {
 	const row = req.body
 	const _promise = linkblog.update(row)
 	_promise.then(function(data){
@@ -73,7 +89,8 @@ router.post('/', function (req, res) {
 	}).catch(function (er) {
 		U.err(er,res)
 	})//c
-})
+}
+
 
 //###################### 
 module.exports = router

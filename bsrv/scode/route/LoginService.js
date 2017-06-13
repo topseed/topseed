@@ -13,7 +13,7 @@ router.post('/', function (req, res) {
 	TokenAuth.authPromise(credential).then(function (result){
 		//On success, return a generated unique clientsKey
 		//here it's simply 'abc'
-		res.status(200).send(TokenAuth.ClientsKey)
+		res.status(200).send(TokenAuth.ClientsKey).end()
 		return
 	}).catch(function (err){
 		res.status(403).send(JSON.stringify(err.message)).end()

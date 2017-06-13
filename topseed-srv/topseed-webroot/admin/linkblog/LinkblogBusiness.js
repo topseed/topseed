@@ -45,7 +45,17 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 			_updatePromise.then(function(val) {
 				sb.redirect('/admin/linkblog/'); //Return to list
 			}).catch(function(error) {
-				alert('update error: '+error.message); //Remain on page
+				//Replace with nice modal popup or error div
+				if ('Forbidden'==error.message)
+				{
+					alert('Token expired, please log in again')
+					sb.redirect('/admin/login/'); 
+					
+				}
+				else 
+				{ 
+					alert('Update error: '+error.message); //Remain on page
+				}	
 			})
             
 		}
@@ -100,6 +110,7 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 			console.log(':', auth)
 			// if no cookie, go to login 
 			if (!auth) sb.redirect('/admin/login/')
+			//Better: add the target page as URL parameter
 		}
 	})//'class'
 

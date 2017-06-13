@@ -9,7 +9,8 @@ class TokenAuth {
 			credential = credential_
 		}
 
-		//Match to ApiConfig.TOKEN_AUTH_USER. Replace with call to DB etc.
+		//In real life, we might do an asynchronous call to an authentication service or database
+		//Here we just match to ApiConfig.TOKEN_AUTH_USER. 
 		return new Promise(function (resolve, reject){
 			if (!credential_)
 				reject(new Error('Credentials incomplete'))
@@ -25,7 +26,9 @@ class TokenAuth {
 		return JSON.stringify('abc')
 	}
 
-	//Match to "abc". Replace with more advanced token (e.g. JWT, OAuth2 etc)
+	//In real life, tokens would likely be more advanced.
+	//Encoded, expiring, and checked in relation to individual user credentials.
+	//Here we just show the flow, and simply match to "abc". 
 	static isTokenValidPromise(token) {
 		return new Promise(function (resolve, reject){
 			if (TokenAuth.ClientsKey == token)
