@@ -14,53 +14,55 @@
   </head>
   <body>
     <link rel="stylesheet" href="/_sass/admin.css" lazyload="1">
-    <div id="appbar">
-      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
-      <ul id="appbar--menu">
-        <li><a href="/admin/linkblog/">Linkblog</a></li>
-        <li><a href="/admin/logout/">Logout			</a></li>
-      </ul>
-    </div>
-    <div id="sidedrawer" onclick="closeDrawer()">
-      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
-      <div class="mui-divider"></div>
-      <ul id="sidedrawer--menu">
-        <li><a href="/admin/linkblog/">Linkblog</a></li>
-        <li><a href="/admin/logout/">Logout</a></li>
-      </ul>
-    </div>
-    <script>
-      function openDrawer(px, e) {
-      	$('#sidedrawer').css('transform', 'translateX(201px)')
-      }
-      function closeDrawer(e) {
-      	$('#sidedrawer').css('transform', 'translateX(0px)')
-      }	
-    </script>
-    <div id="content-wrapper">
-      <div class="mui-container-fluid">
-        <h2 class="mui--pull-left">Linkblog Item List</h2>
-        <h2 class="mui--pull-right"><a class="mui-btn mui-btn--raised" href="./detail.html">Add Item    </a></h2><span class="mui--clearfix"></span>
-        <table class="display" id="grid" width="100%" cellspacing="0"></table>
-        <p></p>
+    <div id="admin">
+      <div id="appbar">
+        <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
+        <ul id="appbar--menu">
+          <li><a href="/admin/linkblog/">Linkblog</a></li>
+          <li><a href="/admin/logout/">Logout			</a></li>
+        </ul>
+      </div>
+      <div id="sidedrawer" onclick="closeDrawer()">
+        <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
+        <div class="mui-divider"></div>
+        <ul id="sidedrawer--menu">
+          <li><a href="/admin/linkblog/">Linkblog</a></li>
+          <li><a href="/admin/logout/">Logout</a></li>
+        </ul>
       </div>
       <script>
-        TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
-        
-        function UIinit() {
-        	const sb = LinkblogBusiness()
-        	//sb.ensureLogin(Cookies.get('auth'))
-        
-        	sb.list('#grid') //Pass any useful parameter, here it's the div ID
+        function openDrawer(px, e) {
+        	$('#sidedrawer').css('transform', 'translateX(201px)')
         }
-        
+        function closeDrawer(e) {
+        	$('#sidedrawer').css('transform', 'translateX(0px)')
+        }	
       </script>
-    </div>
-    <div id="footer">
-      <div id="footer_div"><a href="https://gitter.im/topseed/Lobby" target="_blank">Forum </a>
-        <div id="footer_div--right"><a href="https://github.com/topseed/topseed" target="_blank">Github</a></div>
+      <div id="content-wrapper">
+        <div class="mui-container-fluid">
+          <h2 class="mui--pull-left">Linkblog Item List</h2>
+          <h2 class="mui--pull-right"><a class="mui-btn mui-btn--raised" href="./detail.html">Add Item    </a></h2><span class="mui--clearfix"></span>
+          <table class="display" id="grid" width="100%" cellspacing="0"></table>
+          <p></p>
+        </div>
+        <script>
+          TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
+          
+          function UIinit() {
+          	const sb = LinkblogBusiness()
+          	//sb.ensureLogin(Cookies.get('auth'))
+          
+          	sb.list('#grid') //Pass any useful parameter(s), here it's the div ID
+          }
+          
+        </script>
       </div>
-      <div id="comps"></div>
+      <div id="footer">
+        <div id="footer_div"><a href="https://gitter.im/topseed/Lobby" target="_blank">Forum </a>
+          <div id="footer_div--right"><a href="https://github.com/topseed/topseed" target="_blank">Github</a></div>
+        </div>
+        <div id="comps"></div>
+      </div>
     </div>
   </body>
 </html>

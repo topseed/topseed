@@ -45,15 +45,11 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 			_updatePromise.then(function(val) {
 				sb.redirect('/admin/linkblog/'); //Return to list
 			}).catch(function(error) {
-				//Replace with nice modal popup or error div
-				if ('Forbidden'==error.message)
-				{
+				//Replace with nice modal popup (or error div)
+				if ('Forbidden'==error.message) {
 					alert('Token expired, please log in again')
 					sb.redirect('/admin/login/'); 
-					
-				}
-				else 
-				{ 
+				} else {
 					alert('Update error: '+error.message); //Remain on page
 				}	
 			})

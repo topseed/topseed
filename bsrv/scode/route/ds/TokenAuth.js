@@ -9,6 +9,8 @@ class TokenAuth {
 			credential = credential_
 		}
 
+		console.log('')	
+
 		//In real life, we might do an asynchronous call to an authentication service or database
 		//Here we just match to ApiConfig.TOKEN_AUTH_USER. 
 		return new Promise(function (resolve, reject){

@@ -14,73 +14,75 @@
   </head>
   <body>
     <link rel="stylesheet" href="/_sass/admin.css" lazyload="1">
-    <div id="appbar">
-      <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
-      <ul id="appbar--menu">
-        <li><a href="/admin/linkblog/">Linkblog</a></li>
-        <li><a href="/admin/logout/">Logout			</a></li>
-      </ul>
-    </div>
-    <div id="sidedrawer" onclick="closeDrawer()">
-      <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
-      <div class="mui-divider"></div>
-      <ul id="sidedrawer--menu">
-        <li><a href="/admin/linkblog/">Linkblog</a></li>
-        <li><a href="/admin/logout/">Logout</a></li>
-      </ul>
-    </div>
-    <script>
-      function openDrawer(px, e) {
-      	$('#sidedrawer').css('transform', 'translateX(201px)')
-      }
-      function closeDrawer(e) {
-      	$('#sidedrawer').css('transform', 'translateX(0px)')
-      }	
-    </script>
-    <div id="content-wrapper">
-      <div class="mui-container-fluid">
-        <form class="mui-form" id="form1" onsubmit="return false">
-          <h2 class="mui--pull-left">Add Linkblog Item</h2>
-          <h2 class="mui--pull-right">
-            <button class="mui-btn mui-btn--raised" type="submit">Save</button><a class="mui-btn mui-btn--raised" href="./">Cancel</a>
-          </h2><span class="mui--clearfix"></span>
-          <div class="mui-textfield">
-            <input name="data.url" type="text" required="" autofocus="autofocus">
-            <label>URL</label>
-          </div>
-          <div class="mui-textfield">
-            <input name="data.head_line" type="text" required="">
-            <label>Description</label>
-          </div>
-          <div class="mui-textfield">
-            <input name="data.dateStr" type="text" required="">
-            <label>Date</label>
-          </div>
-        </form>
+    <div id="admin">
+      <div id="appbar">
+        <div id="appbar--brand" onclick="openDrawer()">&nbsp; ☰ &nbsp;<span class="mui--hidden-xs">Topseed&trade; Admin Console</span></div>
+        <ul id="appbar--menu">
+          <li><a href="/admin/linkblog/">Linkblog</a></li>
+          <li><a href="/admin/logout/">Logout			</a></li>
+        </ul>
+      </div>
+      <div id="sidedrawer" onclick="closeDrawer()">
+        <div id="sidedrawer--brand">&nbsp; ☰ &nbsp; Topseed&trade; Admin</div>
+        <div class="mui-divider"></div>
+        <ul id="sidedrawer--menu">
+          <li><a href="/admin/linkblog/">Linkblog</a></li>
+          <li><a href="/admin/logout/">Logout</a></li>
+        </ul>
       </div>
       <script>
-        TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
-        
-        function UIinit() {
-        
-            var sb = LinkblogBusiness()
-            //sb.ensureLogin(Cookies.get('auth')) //redirect to login if necessary
-        
-            //blank form with defaults
-            sb.detail('#form1') 
-        
-            //register form submit
-            $('#form1').submit({auth: Cookies.get('auth')}, sb.save); 
-        
+        function openDrawer(px, e) {
+        	$('#sidedrawer').css('transform', 'translateX(201px)')
         }
-        
+        function closeDrawer(e) {
+        	$('#sidedrawer').css('transform', 'translateX(0px)')
+        }	
       </script>
-    </div>
-    <div id="footer">
-      <div id="footer_div"><a href="https://gitter.im/topseed/Lobby" target="_blank">Forum </a>
-        <div id="footer_div--right"><a href="https://github.com/topseed/topseed" target="_blank">Github</a></div>
+      <div id="content-wrapper">
+        <div class="mui-container-fluid">
+          <form class="mui-form" id="form1" onsubmit="return false">
+            <h2 class="mui--pull-left">Add Linkblog Item</h2>
+            <h2 class="mui--pull-right">
+              <button class="mui-btn mui-btn--raised" type="submit">Save</button><a class="mui-btn mui-btn--raised" href="./">Cancel</a>
+            </h2><span class="mui--clearfix"></span>
+            <div class="mui-textfield">
+              <input name="data.url" type="text" required="" autofocus="autofocus">
+              <label>URL</label>
+            </div>
+            <div class="mui-textfield">
+              <input name="data.head_line" type="text" required="">
+              <label>Description</label>
+            </div>
+            <div class="mui-textfield">
+              <input name="data.dateStr" type="text" required="">
+              <label>Date</label>
+            </div>
+          </form>
+        </div>
+        <script>
+          TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
+          
+          function UIinit() {
+          
+              var sb = LinkblogBusiness()
+              //sb.ensureLogin(Cookies.get('auth')) //redirect to login if necessary
+          
+              //blank form with defaults
+              sb.detail('#form1') 
+          
+              //register form submit
+              $('#form1').submit({auth: Cookies.get('auth')}, sb.save)
+          
+          }
+          
+        </script>
       </div>
-      <div id="comps"></div>
+      <div id="footer">
+        <div id="footer_div"><a href="https://gitter.im/topseed/Lobby" target="_blank">Forum </a>
+          <div id="footer_div--right"><a href="https://github.com/topseed/topseed" target="_blank">Github</a></div>
+        </div>
+        <div id="comps"></div>
+      </div>
     </div>
   </body>
 </html>
