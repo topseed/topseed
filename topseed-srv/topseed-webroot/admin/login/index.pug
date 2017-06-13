@@ -25,17 +25,18 @@ block main
 
         function UIinit() {
 
+            const sb = LoginBusiness()
+            sb.redirect('/admin/home/') //bypass login screen until Login Security Lab
+
             var dialog = document.querySelector('dialog')
             dialogPolyfill.registerDialog(dialog)
             dialog.addEventListener('cancel', function() { event.preventDefault() }) //on ESC key
             dialog.showModal()
-            
-            const sb = LoginBusiness()
   
-             $('#form1').jsForm() //bind blank form
+            $('#form1').jsForm() //bind blank form
             //sb.detail('#form1') 
 
-             $('#error').text('') //Clear error display
+            // $('#error').text('') //Clear error display
 
             //set onSubmit handler
             $('#form1').submit(sb.login); 
