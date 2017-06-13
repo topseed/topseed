@@ -2062,6 +2062,9 @@ dialog + .backdrop {
 dialog > .mui-panel {
   margin-bottom: 0; }
 
+body {
+  opacity: 1 !important; }
+
 #loginpopup {
   max-width: 250px; }
 
