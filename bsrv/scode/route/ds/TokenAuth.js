@@ -1,29 +1,43 @@
-class TokenAuth { //should return promise
-	static auth(jtoken) {// is json
-		let token = {}
+class TokenAuth { 
+
+	static authPromise(credential_){
+
+		let credential = {}
 		try {
-		 	token = JSON.parse(jtoken)
+		 	credential = JSON.parse(credential_)
 		} catch(err) {
-			token = jtoken
+			credential = credential_
 		}
-		console.log('auth:/'+token+'/')
-		if (!token)
-			return false;
-		if (ApiConfig.BASIC_AUTH_USER.username == token.user && ApiConfig.BASIC_AUTH_USER.password == token.password)
-			return true
-		return false
+
+		//Match to ApiConfig.TOKEN_AUTH_USER. Replace with call to DB etc.
+		return new Promise(function (resolve, reject){
+			if (!credential_)
+				reject(new Error('Credentials incomplete'))
+			else if (ApiConfig.TOKEN_AUTH_USER.username == credential.user 
+				  && ApiConfig.TOKEN_AUTH_USER.password == credential.password)
+				resolve(JSON.stringify('OK'))
+			else	
+				reject(new Error('Unable to authenticate'))
+		})	
 	}
 
-	static get clientsKey() {//could be encoded, or ignore first char on use
-		return 'abc'
+	static get ClientsKey() {//could be encoded, or ignore first char on use
+		return JSON.stringify('abc')
 	}
 
-	static isTokenValid(token) {
-		return (TokenAuth.getClientsKey == token);
+	//Match to "abc". Replace with more advanced token (e.g. JWT, OAuth2 etc)
+	static isTokenValidPromise(token) {
+		return new Promise(function (resolve, reject){
+			if (TokenAuth.ClientsKey == token)
+				resolve(JSON.stringify('OK'))
+			else	
+				reject(new Error('Invalid token'))
+		})	
 	}
 
 	static getJToken(req) { // get the token from client's fetch
-		return req.get('X-JToken')
+		const jtoken = req.get('X-JToken')
+		return jtoken
 	}
 }
 module.exports = TokenAuth 

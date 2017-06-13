@@ -14,6 +14,7 @@ server.use(cors())
 
 //server.use(express.static(ApiConfig.WEBROOT)) for API response
 server.use('/linkblog', require('./scode/route/LinkblogService')) 
+server.use('/login', require('./scode/route/LoginService')) 
 
 //###################### start the server
 server.listen(ApiConfig.PORT, '0.0.0.0', function() {

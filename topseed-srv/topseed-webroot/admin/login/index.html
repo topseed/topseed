@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Linkblog Admin</title>
+    <title>News Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -38,41 +38,44 @@
       }	
     </script>
     <div id="content-wrapper">
-      <div class="mui-container-fluid">
-        <form class="mui-form" id="form1" onsubmit="return false">
-          <h2 class="mui--pull-left">Add Linkblog Item</h2>
-          <h2 class="mui--pull-right">
-            <button class="mui-btn mui-btn--raised" type="submit">Save</button><a class="mui-btn mui-btn--raised" href="./">Cancel</a>
-          </h2><span class="mui--clearfix"></span>
-          <div class="mui-textfield">
-            <input name="data.url" type="text" required="" autofocus="autofocus">
-            <label>URL</label>
-          </div>
-          <div class="mui-textfield">
-            <input name="data.head_line" type="text" required="">
-            <label>Description</label>
-          </div>
-          <div class="mui-textfield">
-            <input name="data.dateStr" type="text" required="">
-            <label>Date</label>
-          </div>
-        </form>
-      </div>
+      <dialog id="loginpopup">
+        <div class="mui-panel">
+          <form class="mui-form" id="form1" onsubmit="return false">
+            <legend>Login</legend>
+            <div id="error"></div>
+            <p></p>
+            <div class="mui-textfield">
+              <input name="data.user" type="text" required="" autofocus="autofocus">
+              <label>Username/Email</label>
+            </div>
+            <div class="mui-textfield">
+              <input name="data.password" type="password" required="">
+              <label>Password</label>
+            </div>
+            <button class="mui-btn mui-btn--raised" type="submit">Login</button><a class="mui-btn mui-btn--raised" href="page/one/#">Cancel</a>
+          </form>
+        </div>
+      </dialog>
       <script>
-        TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
+        TS.loadOnAppReady('/admin/login/LoginBusiness.js', UIinit) 
         
         function UIinit() {
         
-            var sb = LinkblogBusiness()
+            var dialog = document.querySelector('dialog')
+            dialogPolyfill.registerDialog(dialog)
+            dialog.addEventListener('cancel', function() { event.preventDefault() }) //on ESC key
+            dialog.showModal()
+            
+            const sb = LoginBusiness()
         
-            sb.ensureLogin(Cookies.get('auth'))	//redirect to login if necessary
+             $('#form1').jsForm() //bind blank form
+            //sb.detail('#form1') 
         
-            //blank form with defaults
-            sb.detail('#form1') 
+             $('#error').text('') //Clear error display
         
-            //version without observer
-            $('#form1').submit({auth: Cookies.get('auth')+'x'}, sb.save); 
-        
+            //set onSubmit handler
+            $('#form1').submit(sb.login); 
+            
         }
         
       </script>

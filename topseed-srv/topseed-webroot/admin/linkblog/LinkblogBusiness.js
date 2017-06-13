@@ -95,6 +95,12 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 				}
             );
         }
+		, ensureLogin(auth) {
+
+			console.log(':', auth)
+			// if no cookie, go to login 
+			if (!auth) sb.redirect('/admin/login/')
+		}
 	})//'class'
 
 	//Instantiate Business

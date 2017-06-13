@@ -69,14 +69,15 @@ var BDS = Class.extend({ //IE11-compatible base class for Data Access Object
 		return params.join("&");
 	}
 
-	, _post: function(fetch_,ROOT_, url_, data_) { //static
+	, _post: function(fetch_,ROOT_, url_, data_, token_) { //static
 		//var xjt_ = Cookies.get(BDS.XJT)
 		//var xb_  = Cookies.get(BDS.XBASIC)
 		console.log('fetching ', url_)
 		return fetch_(ROOT_ + url_ , { //1 call
 				method: 'post'
 				, headers: {
-					'Content-Type': 'application/json',
+					'Content-Type': 'application/json'
+					, 'X-JToken' : JSON.stringify(token_)
 				}
 				, body: JSON.stringify(data_)
 			}).then(function(response) { //2 returns a promise

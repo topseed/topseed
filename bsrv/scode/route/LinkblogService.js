@@ -50,11 +50,19 @@ router.post('/', function (req, res) {
 
 	if (ApiConfig.REQUIRE_AUTH.linkblog.includes('write')) {
 		const jt = TokenAuth.getJToken(req)
-		if (!TokenAuth.isTokenValid(jt)) {
+		
+		TokenAuth.isTokenValidPromise(jt).then(function (result){
+			//valid, let processing continue
+		}).catch(function (err){
+			console.log('Auth failed on write')
+			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
+			return
+		})
+		/*if (!TokenAuth.isTokenValid(jt)) {
 			console.log('Auth failed on update')
 			res.status(403).send(JSON.stringify('Auth required, IP Logged')).end()
 			return
-		}
+		}*/
 	}
 
 	const row = req.body

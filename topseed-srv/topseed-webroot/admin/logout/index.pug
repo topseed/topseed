@@ -1,0 +1,21 @@
+extends  ../../_part/admin/_baseShell
+
+block head
+	title Admin Logout
+	include ../../_part/admin/_header
+
+block main
+	.mui-container-fluid
+		//-p 
+		//-p Good bye!
+
+	script.
+		TS.onAppReady(UIinit) 
+		function UIinit() {
+			Cookies.remove('auth') //Ensure logout
+			//console.log('done logout')
+			new BLX().redirect('/page/one/#') //Blank # forces full screen refresh, including menu
+		}
+
+block footer
+	include ../../_part/_footer

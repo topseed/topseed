@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Linkblog Admin</title>
+    <title>Admin Logout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -38,41 +38,13 @@
       }	
     </script>
     <div id="content-wrapper">
-      <div class="mui-container-fluid">
-        <form class="mui-form" id="form1" onsubmit="return false">
-          <h2 class="mui--pull-left">Add Linkblog Item</h2>
-          <h2 class="mui--pull-right">
-            <button class="mui-btn mui-btn--raised" type="submit">Save</button><a class="mui-btn mui-btn--raised" href="./">Cancel</a>
-          </h2><span class="mui--clearfix"></span>
-          <div class="mui-textfield">
-            <input name="data.url" type="text" required="" autofocus="autofocus">
-            <label>URL</label>
-          </div>
-          <div class="mui-textfield">
-            <input name="data.head_line" type="text" required="">
-            <label>Description</label>
-          </div>
-          <div class="mui-textfield">
-            <input name="data.dateStr" type="text" required="">
-            <label>Date</label>
-          </div>
-        </form>
-      </div>
+      <div class="mui-container-fluid"></div>
       <script>
-        TS.loadOnAppReady('/admin/linkblog/LinkblogBusiness.js', UIinit) 
-        
+        TS.onAppReady(UIinit) 
         function UIinit() {
-        
-            var sb = LinkblogBusiness()
-        
-            sb.ensureLogin(Cookies.get('auth'))	//redirect to login if necessary
-        
-            //blank form with defaults
-            sb.detail('#form1') 
-        
-            //version without observer
-            $('#form1').submit({auth: Cookies.get('auth')+'x'}, sb.save); 
-        
+        	Cookies.remove('auth') //Ensure logout
+        	//console.log('done logout')
+        	new BLX().redirect('/page/one/#') //Blank # forces full screen refresh, including menu
         }
         
       </script>

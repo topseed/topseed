@@ -9,12 +9,13 @@ block main
 		p 
 		p Welcome to the Admin Module!
 		p Select 'Linkblog from the Menu to administer link entries.
-		//-include _hello.html 
 
 	script.
 		TS.onAppReady(UIinit) 
 		function UIinit() {
-			console.log('Blog Admin Home onAppReady')
+			console.log('Topseed Admin Console home onAppReady')
+			if (!Cookies.get('auth')) 
+				new BLX().redirect('/admin/login/')
 		}
 
 block footer

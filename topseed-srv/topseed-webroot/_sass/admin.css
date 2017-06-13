@@ -110,6 +110,7 @@ figure {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -333,6 +334,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -368,6 +370,7 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -555,6 +558,8 @@ textarea {
   text-transform: uppercase;
   color: #000;
   background-color: #FFF;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   height: 36px;
@@ -599,25 +604,32 @@ textarea {
     text-decoration: none;
     color: #000; }
   .mui-btn:hover, .mui-btn:focus {
+    -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2); }
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       .mui-btn:hover, .mui-btn:focus {
+        -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2); } }
     @supports (-ms-ime-align: auto) {
       .mui-btn:hover, .mui-btn:focus {
+        -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2); } }
   .mui-btn:active:hover {
+    -webkit-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2); }
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       .mui-btn:active:hover {
+        -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2);
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2); } }
     @supports (-ms-ime-align: auto) {
       .mui-btn:active:hover {
+        -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2);
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2); } }
   .mui-btn:disabled, .mui-btn.mui--is-disabled {
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.60;
+    -webkit-box-shadow: none;
     box-shadow: none; }
 
 .mui-btn + .mui-btn {
@@ -626,24 +638,31 @@ textarea {
 .mui-btn--flat {
   background-color: transparent; }
   .mui-btn--flat:hover, .mui-btn--flat:focus, .mui-btn--flat:active, .mui-btn--flat:active:hover {
+    -webkit-box-shadow: none;
     box-shadow: none;
     background-color: #f2f2f2; }
 
 .mui-btn--raised, .mui-btn--fab {
+  -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2); }
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .mui-btn--raised, .mui-btn--fab {
+      -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
       box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2); } }
   @supports (-ms-ime-align: auto) {
     .mui-btn--raised, .mui-btn--fab {
+      -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
       box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2); } }
   .mui-btn--raised:active, .mui-btn--fab:active {
+    -webkit-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2); }
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       .mui-btn--raised:active, .mui-btn--fab:active {
+        -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2);
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2); } }
     @supports (-ms-ime-align: auto) {
       .mui-btn--raised:active, .mui-btn--fab:active {
+        -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2);
         box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12), -1px 0px 2px rgba(0, 0, 0, 0.12), 0 0px 4px rgba(0, 0, 0, 0.12), 1px 3px 4px rgba(0, 0, 0, 0.2); } }
 
 .mui-btn--fab {
@@ -818,6 +837,7 @@ textarea {
  * MUI Container module
  */
 .mui-container {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-right: auto;
   margin-left: auto;
@@ -842,6 +862,7 @@ textarea {
       max-width: 1170px; } }
 
 .mui-container-fluid {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-right: auto;
   margin-left: auto;
@@ -929,6 +950,7 @@ textarea {
     clear: both; }
 
 .mui-col-xs-1, .mui-col-sm-1, .mui-col-md-1, .mui-col-lg-1, .mui-col-xs-2, .mui-col-sm-2, .mui-col-md-2, .mui-col-lg-2, .mui-col-xs-3, .mui-col-sm-3, .mui-col-md-3, .mui-col-lg-3, .mui-col-xs-4, .mui-col-sm-4, .mui-col-md-4, .mui-col-lg-4, .mui-col-xs-5, .mui-col-sm-5, .mui-col-md-5, .mui-col-lg-5, .mui-col-xs-6, .mui-col-sm-6, .mui-col-md-6, .mui-col-lg-6, .mui-col-xs-7, .mui-col-sm-7, .mui-col-md-7, .mui-col-lg-7, .mui-col-xs-8, .mui-col-sm-8, .mui-col-md-8, .mui-col-lg-8, .mui-col-xs-9, .mui-col-sm-9, .mui-col-md-9, .mui-col-lg-9, .mui-col-xs-10, .mui-col-sm-10, .mui-col-md-10, .mui-col-lg-10, .mui-col-xs-11, .mui-col-sm-11, .mui-col-md-11, .mui-col-lg-11, .mui-col-xs-12, .mui-col-sm-12, .mui-col-md-12, .mui-col-lg-12 {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   min-height: 1px;
   padding-left: 15px;
@@ -1236,6 +1258,7 @@ textarea {
   margin-bottom: 22px;
   border-radius: 0;
   background-color: #FFF;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12); }
   .mui-panel:before, .mui-panel:after {
     content: " ";
@@ -1244,9 +1267,11 @@ textarea {
     clear: both; }
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .mui-panel {
+      -webkit-box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.12), -1px 0px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
       box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.12), -1px 0px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12); } }
   @supports (-ms-ime-align: auto) {
     .mui-panel {
+      -webkit-box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.12), -1px 0px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
       box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.12), -1px 0px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12); } }
 
 /**
@@ -1294,6 +1319,7 @@ textarea {
     font-weight: 400;
     line-height: 15px;
     overflow-x: hidden;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap; }
   .mui-textfield > textarea {
@@ -1310,6 +1336,7 @@ textarea {
   font-size: 16px;
   line-height: 32px;
   color: rgba(0, 0, 0, 0.26);
+  -o-text-overflow: clip;
   text-overflow: clip;
   cursor: text;
   pointer-events: none; }
@@ -1321,6 +1348,7 @@ textarea {
   transform: translate(0px, 0px);
   font-size: 12px;
   line-height: 15px;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis; }
 
 .mui-textfield--float-label > input:not(:focus).mui--is-not-empty ~ label, .mui-textfield--float-label > input:not(:focus)[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty) ~ label, .mui-textfield--float-label > input:not(:focus):not(:empty):not(.mui--is-empty):not(.mui--is-not-empty) ~ label,
@@ -1333,6 +1361,7 @@ textarea {
   -webkit-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis; }
 
 .mui-textfield--wrap-label {
@@ -1347,6 +1376,7 @@ textarea {
 
 .mui-textfield > input,
 .mui-textfield > textarea {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   background-color: transparent;
@@ -1356,6 +1386,7 @@ textarea {
   outline: none;
   width: 100%;
   padding: 0;
+  -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0px;
   font-size: 16px;
@@ -1461,6 +1492,8 @@ textarea {
  * MUI Helpers module
  */
 .mui--no-transition {
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none; }
 
 .mui--no-user-select {
@@ -1577,18 +1610,23 @@ textarea {
     padding-right: 5px; }
 
 .mui--z1, #sidedrawer, #appbar {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .mui--z2, dialog {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .mui--z3 {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 
 .mui--z4 {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
 .mui--z5 {
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
 .mui--clearfix:before, .mui--clearfix:after {
@@ -1835,9 +1873,12 @@ html {
   min-height: 100vh; }
 
 body {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1863,7 +1904,9 @@ body {
 #sidedrawer {
   z-index: 200;
   min-height: 100vh;
+  -webkit-transition: -webkit-transform .15s ease;
   transition: -webkit-transform .15s ease;
+  -o-transition: transform .15s ease;
   transition: transform .15s ease;
   transition: transform .15s ease, -webkit-transform .15s ease; }
 
@@ -1908,12 +1951,16 @@ body {
   cursor: pointer; }
 
 #appbar {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -1955,6 +2002,7 @@ body {
   color: #FFF; }
 
 #content-wrapper {
+  -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -1976,12 +2024,16 @@ body {
   z-index: 50; }
 
 #footer_div {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -2012,3 +2064,6 @@ dialog > .mui-panel {
 
 #loginpopup {
   max-width: 250px; }
+
+#error {
+  color: red; }
