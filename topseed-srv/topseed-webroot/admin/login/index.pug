@@ -1,47 +1,35 @@
 extends  ../../_part/admin/_baseShell
 
 block head
-    title News Admin
+    title Topseed Admin Console Login
     include ../../_part/admin/_header
 
 block main
-    dialog#loginpopup
-        .mui-panel
-            form#form1.mui-form(onsubmit='return false')
-                legend Login
-                #error
-                p
-                .mui-textfield
-                    input(name='data.user', type='text', required='', autofocus='autofocus')
-                    label Username/Email
-                .mui-textfield
-                    input(name='data.password', type='password', required='')
-                    label Password
-                button.mui-btn.mui-btn--raised(type='submit') Login
-                a.mui-btn.mui-btn--raised(href='page/one/#') Cancel
+    include loginpopup
 
     script.
         TS.loadOnAppReady('/admin/login/LoginBusiness.js', UIinit) 
 
         function UIinit() {
 
-            const sb = LoginBusiness()
-
             var dialog = document.querySelector('dialog')
             dialogPolyfill.registerDialog(dialog)
             dialog.addEventListener('cancel', function() { event.preventDefault() }) //on ESC key
             dialog.showModal()
-  
+
+            $('#appbar #content-wrapper #footer').css('opacity', '1');
+
+            const sb = LoginBusiness()
+
             $('#form1').jsForm() //bind blank form
             //sb.detail('#form1') 
 
-            // $('#error').text('') //Clear error display
-
             //set onSubmit handler
             $('#form1').submit(sb.login); 
-            
-        }
+        } 
 
 block footer
     include ../../_part/_footer
+
+        
 

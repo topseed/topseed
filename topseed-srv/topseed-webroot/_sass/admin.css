@@ -2062,11 +2062,38 @@ dialog + .backdrop {
 dialog > .mui-panel {
   margin-bottom: 0; }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  html {
+    position: relative; }
+  body {
+    margin-bottom: 48px;
+    min-height: 1vh; }
+  #ss1 {
+    display: block; }
+  #footer {
+    bottom: 0;
+    height: 48px;
+    left: 0;
+    position: absolute; } }
+
+@media all and (-ms-high-contrast: none) and (max-width: 600px), (-ms-high-contrast: active) and (max-width: 600px) {
+  body {
+    margin-bottom: 48px; }
+  #footer {
+    height: 48px; }
+  #footer_div {
+    height: 48px; } }
+
 body {
   opacity: 1 !important; }
 
 #loginpopup {
   max-width: 250px; }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #loginpopup {
+    width: 250px; } }
 
 #error {
   color: red; }

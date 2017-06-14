@@ -11,7 +11,7 @@
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-3.2.1.js"></script>
     <script src="/_js/admin.js" async=""></script>
     <meta name="description" content="">
-    <style>body { opacity: 0.1 }</style>
+    <style>body {opacity: 0.1;}</style>
   </head>
   <body>
     <link rel="stylesheet" href="/_sass/admin.css" lazyload="1">
@@ -50,6 +50,8 @@
         	console.log('Topseed Admin Console home onAppReady')
         	//if (!Cookies.get('auth')) 
         	//	new BLX().redirect('/admin/login/')
+        	//else
+        	//	$('#appbar,#content-wrapper,#footer').css('opacity', '1');
         }
         
       </script>

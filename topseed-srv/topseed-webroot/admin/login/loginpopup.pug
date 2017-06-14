@@ -1,0 +1,14 @@
+dialog#loginpopup
+    .mui-panel
+        form#form1.mui-form(onsubmit='return false')
+            legend Login
+            #error
+            p
+            .mui-textfield
+                input(name='data.user', type='text', required='', autofocus='autofocus')
+                label Username/Email
+            .mui-textfield
+                input(name='data.password', type='password', required='')
+                label Password
+            button.mui-btn.mui-btn--raised(type='submit') Login
+            a.mui-btn.mui-btn--raised(href='page/one/#') Cancel

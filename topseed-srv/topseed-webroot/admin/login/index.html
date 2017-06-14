@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>News Admin</title>
+    <title>Topseed Admin Console Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <link rel="icon" href="/favicon.ico">
@@ -11,7 +11,7 @@
     <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-3.2.1.js"></script>
     <script src="/_js/admin.js" async=""></script>
     <meta name="description" content="">
-    <style>body { opacity: 0.1 }</style>
+    <style>body {opacity: 0.1;}</style>
   </head>
   <body>
     <link rel="stylesheet" href="/_sass/admin.css" lazyload="1">
@@ -62,22 +62,21 @@
         
         function UIinit() {
         
-            const sb = LoginBusiness()
-        
             var dialog = document.querySelector('dialog')
             dialogPolyfill.registerDialog(dialog)
             dialog.addEventListener('cancel', function() { event.preventDefault() }) //on ESC key
             dialog.showModal()
         
+            $('#appbar #content-wrapper #footer').css('opacity', '1');
+        
+            const sb = LoginBusiness()
+        
             $('#form1').jsForm() //bind blank form
             //sb.detail('#form1') 
         
-            // $('#error').text('') //Clear error display
-        
             //set onSubmit handler
             $('#form1').submit(sb.login); 
-            
-        }
+        } 
         
       </script>
     </div>

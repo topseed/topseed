@@ -25,11 +25,10 @@
 // To reduce the size of the generated CSS, we commented out some 
 // unused components in /_imports/mui/mui.scss 
 @import './_colors'
-@import './dialog' 
+@import './_dialog' 
 @import './_base'
-
 //@import ./_imports/dataTables.jqueryui.scss
-//@import './_ieFooter' //use to support IE 
+@import './_ieFooter' //use to support IE 
 
 //Site custom override examples ===================================================
 body
@@ -41,9 +40,16 @@ body
 
 
 //Page specific styles ff =========================================================
-
 #loginpopup 
 	max-width: 250px /* needed for Edge to center the popup */
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)	
+	#loginpopup 
+		width: 250px /* needed for IE */
+
 #error
 	color: red	
+
+//login-protected
+//#appbar, #content-wrapper, #footer
+//	opacity: 0.1	

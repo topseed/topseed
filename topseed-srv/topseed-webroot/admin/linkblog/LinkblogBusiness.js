@@ -101,12 +101,12 @@ function LinkblogBusiness() {// 'closure|module'-iso.
 				}
             );
         }
-		, ensureLogin(auth) {
-
-			console.log(':', auth)
-			// if no cookie, go to login 
-			if (!auth) sb.redirect('/admin/login/')
-			//Better: add the target page as URL parameter
+		, ensureLogin: function(auth) {
+			if (!auth) 
+				sb.redirect('/admin/login/') // if no cookie, go to login 
+				//Better: add the target page as URL parameter
+			else	
+				$('body').children().css('opacity', '1'); //show page
 		}
 	})//'class'
 
