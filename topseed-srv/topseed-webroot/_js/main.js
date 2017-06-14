@@ -4,12 +4,9 @@ loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 		console.log('main loading')
 
 		loadjs([
-			'https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/system-production.js'
-			,'/_js/BDS.js'
+			'/_js/BDS.js'
 			,'/_js/BLX.js'
 			//,'/_js/vendor/jquery.jsForm.min.js'
-
-			,'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
 
 			], { success: function(){
 				startApp()
@@ -18,6 +15,7 @@ loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 	}//suc
 })
 
+/*
 var TTObj2 = {
   typ: null
 , $new: null
@@ -25,6 +23,7 @@ var TTObj2 = {
 , $html: null
 , err: null
 }
+*/
 
 function startApp(){
 	
