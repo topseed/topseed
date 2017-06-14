@@ -10,6 +10,8 @@ script(src='https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-3.2.
 script(src='/_js/main.js', async='')
 
 meta(name='description', content='')
+//- It is much faster to load large css in the body (see _baseShell), where body opacity is reset to 1,
+//- Adding this single style here avoids page yank in Firefox.
 style.
     body {opacity: 0.1;}
 
