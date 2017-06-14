@@ -2,7 +2,6 @@
 	, "version": "1.0.1"
 	, "description": "Best Practices for Mobile-first Web Apps "
 	, "repository": { "type": "git", "url" : "https://github.com/topseed/topseed.git"}
-	, "license": "MIT"
 	, "engines": { "npm": ">=5", "node": ">=8" }
 	, "scripts": { "start": "node index" }
 	, "dependencies": { 

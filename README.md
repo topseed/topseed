@@ -25,14 +25,15 @@ Best practice is to be frame work agnostic, and to notice that only 2 tiers matt
 - Use Material Design, SASS, and BEM Standard
 - Use Pug to improve reuse and reduce maintenance costs.
 
-Topseed showcases things that a front developer does, that a full stack developer struggles with. 
+Topseed showcases things that a front end developer does, that a full stack developer struggles with. 
 
-Hello world example source: <https://github.com/topseed/topseed>
+Hello world example source: <https://github.com/topseed/topseed-helloworld>
+
 Sites using Topseed:
 - This: <http://1595566120.rsc.cdn77.org>
-- <http://www.rfidthings.com>
-- <http://therapybyjill.com>
-- <http://masons-foundation.org>
+- <https://www.rfidthings.com>
+- <https://therapybyjill.com>
+- <https://masons-foundation.org>
 
 
 Also, from time to time, usually one a month, we hold online training and an announcement will be posted in-there, so please join in any case. 
@@ -40,6 +41,6 @@ Consulting is available, leave a message on the gitter forum.
 Ex feedback: <http://meetup.com/HackerDojo/events/235472685>
 < >
 
-For discussion, comments and Q/A: http://gitter.im/topseed-demos/Lobby
+For discussion, comments and Q/A: http://gitter.im/topseed/Lobby
 
-[![Join the chat at https://gitter.im/topseed-demos/Lobby](https://badges.gitter.im/topseed-demos/Lobby.svg)](https://gitter.im/topseed-demos/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/topseed/Lobby](https://badges.gitter.im/topseed/Lobby.svg)](https://gitter.im/topseed/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
