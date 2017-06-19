@@ -6,6 +6,7 @@ loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
 		loadjs([
 			'/_js/BDS.js'
 			,'/_js/BLX.js'
+			//, '/github.com/topseed/topseed-npm/blob/master/BLX.js'
 			//,'/_js/vendor/jquery.jsForm.min.js'
 
 			], { success: function(){
