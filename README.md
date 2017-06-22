@@ -1,3 +1,6 @@
+**Breaking** Topseed contributor <a href='https://m.appthings.io/en/team/index.html' target='_blank'>Wolfgang Gehner</a> speaks at "Web App Front-End Development Best Practices 2017" meetups on <a href='https://www.meetup.com/advanced-interaction-dev2/events/240909876/' target='_blank'>Jun 28, 2017 (Irvine, CA)</a> and
+<a href='https://www.meetup.com/advanced-interaction-dev2/events/240909049/' target='_blank'>Jun 29, 2017 (Redlands, CA)</a>.
+
 # topseed - seed project
 
 Topseed aims to be a showcase of best practices and approaches for developers and designers who want to build stunning mobile-first web apps with some of the best technologies available now.
