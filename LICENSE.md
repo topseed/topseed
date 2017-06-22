@@ -4,7 +4,7 @@ the MIT License (MIT) below applies.
 ---------------------
 The MIT License (MIT)
 
-Copyright (c) 2017 Wolfgang Gehner and Vic Cekvenich
+Copyright (c) 2017 Wolfgang Gehner
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
