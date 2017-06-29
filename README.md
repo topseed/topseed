@@ -1,5 +1,4 @@
-**Breaking:** Topseed contributor <a href='https://m.appthings.io/en/team/index.html' target='_blank'>Wolfgang Gehner</a> speaks at "Web App Front-End Development Best Practices 2017" meetups on <a href='https://www.meetup.com/advanced-interaction-dev2/events/240909876/' target='_blank'>Jun 28, 2017 (Irvine, CA)</a> and
-<a href='https://www.meetup.com/advanced-interaction-dev2/events/240909049/' target='_blank'>Jun 29, 2017 (Redlands, CA)</a>.
+**Breaking:** appthings.io announces Web App Front-End Best Practices Lab book by topseed contributor <a href='https://m.appthings.io/en/team/index.html' target='_blank'>Wolfgang Gehner</a>. Preview it <a href='https://m.appthings.io/en/books/wgBookPreview.pdf' target='_blank'>here</a>. Feedback to author appreciated!
 
 # topseed - seed project
 
@@ -11,17 +10,23 @@ productive and creative. And that we know to be maintainable. And that we expect
 We welcome scrutiny and feedback from anyone who tries to follow our approaches. We also welcome code contributions from seasoned designers and developers.
 
 ## Some best practices demonstrated:
-- DOM-centric to be more friendly with team that includes interactive designers that code
-- Use page transitions for a Single Page Application (SPA) feel that works with SEO
-- Can be static (serverless), deployed to CDN edge cache to scale (fetch() microservices)
-- Accelerated Mobile Pages (AMP) that can boost SEO, in same or separate subdomain
-- Native Mobile Apps 
-- Server side data-binding(SSR) and in-browser data binding
-- Use web component libraries: <http://jeffcarp.github.io/frontend-hyperpolyglot>
-- Use Material Design, SASS, and BEM Standard
-- Use Pug to improve reuse and reduce maintenance costs.
+1. Apply design guidelines (e.g. Material Design, MUICSS) for beauty and consistency
+2. Use SASS, BEM and Preprocessors for clean and maintainable CSS
+3. Use Pug to improve reuse and make your HTML more maintainable (static or node)
+4. Go max. static; deploy to CDN edge cache to scale for performance
+5. Use AppShell and page transitions for SPA/rich client feel AND SEO
+6. Use AMP to speed up time-to-glass with viewport rendering and early completion
+7. Be DOM-centric to be more friendly with team that includes interactive designers that code
+8. Use PageBusiness, Promises and Fetch(microservice) for cleaner code
+9. Use Web Component libraries:  <http://jeffcarp.github.io/frontend-hyperpolyglot>
+10. Use Phonegap/Cordova in-app browser for efficient Mobile apps
+11. Use Server-side rendering (SSR) for extreme SEO
 
-Hello world example source: <https://github.com/topseed/topseed-helloworld>
+Hello world example source: 
+<https://github.com/topseed/topseed-helloworld>
+
+Seed/Starter Project as basis for your app: 
+<https://github.com/topseed/topseed>
 
 Tutorial: 
 <https://docs.topseed.io/tutorial/> 
