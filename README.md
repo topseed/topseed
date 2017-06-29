@@ -18,7 +18,7 @@ We welcome scrutiny and feedback from anyone who tries to follow our approaches.
 6. Use AMP to speed up time-to-glass with viewport rendering and early completion
 7. Be DOM-centric to be more friendly with team that includes interactive designers that code
 8. Use PageBusiness, Promises and Fetch(microservice) for cleaner code
-9. Use Web Component libraries _in a way that avoids lock-in_
+9. Use Web Component libraries _in ways that avoid lock-in_
 10. Use Phonegap/Cordova in-app browser for efficient Mobile apps
 11. Use Server-side rendering (SSR) for extreme SEO
 
