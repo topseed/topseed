@@ -2,14 +2,12 @@ meta(charset='utf-8')
 meta(name='viewport', content='width=device-width,minimum-scale=1,initial-scale=1')
 link(rel='icon', href='/favicon.ico')
 meta(http-equiv='X-UA-Compatible', content='IE=edge')
+meta(name='description', content='')
 
 script(src='//code.jquery.com/jquery-3.2.1.slim.min.js', async)
-script(src='https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/loadjs.min.js')
-script(src='https://cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-3.4.js')
+//- setup loads key libs and /_js/main.js 
+script(src='//cdn.rawgit.com/topseed/topseed-turbo/master/setup/setup-6.1.js')
 
-script(src='/_js/main.js', async) 
-
-meta(name='description', content='')
 //- It is much faster to load large css in the body (see _baseShell), where body opacity is reset to 1,
 //- Adding this single style here avoids page yank in Firefox.
 style.

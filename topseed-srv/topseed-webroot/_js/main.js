@@ -1,47 +1,34 @@
-'use strict'
-loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
-	success: function(){
-		console.log('main loading')
+//requires setup-6.0.js or higher
+var TM = {
 
-		loadjs([
-			'/_js/BDS.js'
-			,'/_js/BLX.js'
-			//, '/github.com/topseed/topseed-npm/blob/master/BLX.js'
-			//,'/_js/vendor/jquery.jsForm.min.js'
+	loadLibs: function(){
+		console.log('loadLibs called')
 
-			], { success: function(){
-				startApp()
+		//most of these could be in cache.mf
+		return Promise.all([
+			TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/vendor/jquery.jsForm.min.js')
+			, TS.load('/_js/BLX.js')
+			, TS.load('/_js/BDS.js')
+			, TS.load('//rawgit.com/topseed/topseed-turbo/master/release/topseed-turbo-latest.js')
+		])
+		.then(TM.libsLoaded)
+	}
+
+	, libsLoaded: function(){
+		
+		TS.signalAppReady()
+
+		TT.ScontentID = '#content-wrapper'
+		TT.handle(function(evt) {
+			if(TT.PRE == evt.typ)  {
+				//$('#content-wrapper').fadeTo(100,.2)
 			}
-	})//loadjs
-	}//suc
-})
+			if(TT.PAGE == evt.typ)  {
+				$(TT.ScontentID).html(evt.$new)
+			}
+		})
+	}
 
-/*
-var TTObj2 = {
-  typ: null
-, $new: null
-, delta: null
-, $html: null
-, err: null
-}
-*/
+} //class
 
-function startApp(){
-	
-	TS.signalAppReady()
-	console.log('main js ready')
-
-	TT.ScontentID ='#content-wrapper'
-	TT.handle(function(evt) {
-		console.log(':')
-		if (TT.PRE == evt.typ)  {//start
-			console.log(evt.$new)
-			//$('#content-wrapper').fadeTo(100,.2)
-		}
-		if (TT.PAGE == evt.typ)  {//new pg loaded
-			$(TT.ScontentID).html(evt.$new)
-			//$('#content-wrapper').fadeTo(100,1)
-		}
-	})
-
-}//startApp()
+TM.loadLibs()
