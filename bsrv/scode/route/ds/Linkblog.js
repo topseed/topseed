@@ -1,6 +1,6 @@
 'use strict'
 const BaseFB = require('./BaseFB')
-const Util = require('topseed-util')
+const Util = require('topseed-utils')
 const U = new Util() 
 
 class Linkblog extends BaseFB {

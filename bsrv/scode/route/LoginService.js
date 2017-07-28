@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 
-//const Util = require('topseed-util')
+//const Util = require('topseed-utils')
 //const U = new Util()
 const TokenAuth = require('./ds/TokenAuth')
 

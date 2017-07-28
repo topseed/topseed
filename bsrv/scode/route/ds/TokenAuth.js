@@ -13,6 +13,13 @@ class TokenAuth {
 
 		//In real life, we might do an asynchronous call to an authentication service or database
 		//Here we just match to ApiConfig.TOKEN_AUTH_USER. 
+		//Typically, a user has been added to a database during registration.
+		//When registering a user, you can use npm bcrypt as follows:
+		//var encryptedPw = bcrypt.hashSync(user.password, 14)
+		//user.password = encryptedPw
+		//Then below, when you've retrieved the user from the db, you can test with:
+		//var passwordMatches = bcrypt.compareSync(credential.password, user.password)
+
 		return new Promise(function (resolve, reject){
 			if (!credential_)
 				reject(new Error('Credentials incomplete'))

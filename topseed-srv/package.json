@@ -1,29 +1,35 @@
-{	"name" : "topseed"
-	, "version": "1.0.1"
-	, "description": "Best Practices for Mobile-first Web Apps "
-	, "repository": {"type": "git","url": "https://github.com/topseed/topseed.git"}
-	, "license": "SEE LICENSE IN LICENSE.md"	
-	, "engines": { "npm": ">=5", "node": ">=8" }
-	, "scripts": { "start": "node index" }
-	, "dependencies": { 
-		"express": ">=4.1"
-
-		, "cors": ">=2.8"
-		, "compression": ">=1.6"
-		, "body-parser": ">=1.1"
-		, "is_js": ">=0.9"
-		, "riot": ">=3.4"
-		, "cheerio": ">=0.2"
-		, "moment": ">=2.1"
-		, "scribe-js": ">=2.0"
-		, "debug": ">=2.6"
-		, "bugsnag": ">=1.9"
-		, "node-fetch": ">=1.6"
-		, "markdown-it": ">=8.3"
-		, "flyd": ">=0.2.4"
-		, "topseed-util": "=1.2.1"
-
-		, "node-cache": ">=4.1"
-
+{
+	"name": "topseed",
+	"version": "1.0.1",
+	"description": "Best Practices for Mobile-first Web Apps ",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/topseed/topseed.git"
+	},
+	"license": "SEE LICENSE IN LICENSE.md",
+	"engines": {
+		"npm": ">=5",
+		"node": ">=8"
+	},
+	"scripts": {
+		"start": "node index"
+	},
+	"dependencies": {
+		"express": ">=4.1",
+		"cors": ">=2.8",
+		"compression": ">=1.6",
+		"body-parser": ">=1.1",
+		"is_js": ">=0.9",
+		"riot": ">=3.4",
+		"cheerio": ">=0.2",
+		"moment": ">=2.1",
+		"scribe-js": ">=2.0",
+		"debug": ">=2.6",
+		"bugsnag": ">=1.9",
+		"node-fetch": ">=1.6",
+		"markdown-it": ">=8.3",
+		"flyd": ">=0.2.4",
+		"topseed-utils": ">=25.0.1",
+		"node-cache": ">=4.1"
 	}
 }

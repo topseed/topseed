@@ -1,10 +1,10 @@
 const fs = require('fs')
-const useragent = require('useragent')
+//const useragent = require('useragent')
 const isj = require('is_js')
-const Util = require('topseed-util')
+const Util = require('topseed-utils')
 const U = new Util() 
 
-useragent(true)
+//useragent(true)
 
 // ###################### middle filter
 const ROOT = './' + ServerConfig.WEBROOT
