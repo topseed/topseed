@@ -1,53 +1,42 @@
-'use strict'
-loadjs.ready(['polyfills', 'keyLibs'], {// loaded setup libs
-	success: function(){
+TM = {
 
-		loadjs([
-			//frp:
-			'//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js'
-			,'/_js/BLX.js'
-			,'/_js/BDS.js'
-			,'//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js'
-			,'//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css'
-			//,'//cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js'
-			//,'//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js'
-			,'//cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js'
-			,'/_js/vendor/jquery.jsForm.min.js'
-			,'//cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.7/dialog-polyfill.min.js' //login dialog
+	loadLibs: function(){
+		console.log('admin.js loadLibs called')
 
+		//most of these could be in cache.mf
+		return Promise.all([
+			TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/vendor/jquery.jsForm.min.js')
+			, TS.load('/_js/BLX.js')
+			, TS.load('/_js/BDS.js')
+			, TS.load('//rawgit.com/topseed/topseed-turbo/master/release/topseed-turbo-latest.js')
+			, TS.load('//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js')
+			, TS.load('//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')
+			, TS.load('//cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js')
+			, TS.load('//cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.7/dialog-polyfill.min.js') //login dialog
+		])
+		.then(TM.libsLoaded)
+	}
 
-			], { success: function(){
-				console.log('loaded admin/data tables')
-				startApp()
+	, libsLoaded: function(){
+		
+		TS.signalAppReady()
+		console.log('admin js ready')
+
+		TT.ScontentID ='#content-wrapper'
+		TT.handle(function(evt) {
+			console.log(':')
+			if (TT.PRE == evt.typ)  {//start
+				//console.log(evt.$new)
+				//$('#content-wrapper').fadeTo(100,.2)
 			}
-	})//loadjs
-	}//suc
-})
+			if (TT.PAGE == evt.typ)  {//new pg loaded
+				$(TT.ScontentID).html(evt.$new)
+				//$('#content-wrapper').fadeTo(100,1)
+			}
+		})
 
-var TTObj2 = {
-  typ: null
-, $new: null
-, delta: null
-, $html: null
-, err: null
-}
+	}//startApp()
 
-function startApp(){
-	
-	TS.signalAppReady()
-	console.log('admin js ready')
+} //class
 
-	TT.ScontentID ='#content-wrapper'
-	TT.handle(function(evt) {
-		console.log(':')
-		if (TT.PRE == evt.typ)  {//start
-			//console.log(evt.$new)
-			//$('#content-wrapper').fadeTo(100,.2)
-		}
-		if (TT.PAGE == evt.typ)  {//new pg loaded
-			$(TT.ScontentID).html(evt.$new)
-			//$('#content-wrapper').fadeTo(100,1)
-		}
-	})
-
-}//startApp()
+TM.loadLibs()
