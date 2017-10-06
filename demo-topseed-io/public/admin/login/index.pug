@@ -19,10 +19,10 @@ block main
 
             $('#appbar #content-wrapper #footer').css('opacity', '1');
 
-            const sb = LoginBusiness()
-
             $('#form1').jsForm() //bind blank form
             //sb.detail('#form1') 
+
+            const sb = LoginBusiness()
 
             //set onSubmit handler
             $('#form1').submit(sb.login); 

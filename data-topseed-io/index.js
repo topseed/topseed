@@ -13,8 +13,8 @@ server.use(bodyParser.json())
 server.use(cors())
 
 //server.use(express.static(ApiConfig.WEBROOT)) for API response
-server.use('/linkblog', require('./scode/route/LinkblogService')) 
-server.use('/login', require('./scode/route/LoginService')) 
+server.use('/linkblog', require('./server/route/LinkblogService')) 
+server.use('/login', require('./server/route/LoginService')) 
 
 //###################### start the server
 server.listen(ApiConfig.PORT, '0.0.0.0', function() {
